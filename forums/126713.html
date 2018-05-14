@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Collapse multi-quoted posts. - Better Battlelog Forums #126713</title>
+    <link rel="stylesheet" href="../stylesheets/page.css" type="text/css">
+<script src="../scripts/p.js"></script>
+</head>
+<body class="forums-post left-side"><h2>Collapse multi-quoted posts. - Better Battlelog Forums #126713</h2><a href="sitemap.html">Sitemap</a>        <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2014-09-09T16:32:52+02:00">09. September 2014 16:32</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">zeharti</div></div>            </div>
+            <div class="post-main">
+                Well sometimes discussions get hot and specific between two people.<br />
+They may quote each other like an infinite loop.So just making the page @$#^*<br />
+<br />
+So BBL should only show last posters text in quote.And previous posters text in same quote should be collapsed with an expand option.<br />
+<br />
+something like this.<br />
+____________________________________________<br />
+<div class="tag tag-i">diceguy said:</div><br />
+  well this seems .......        <div class="tag tag-b"> CLICK TO EXPAND</div><br />
+____________________________________________<br />
+<div class="tag tag-i">EA_guy said:</div><br />
+ But the fact can........        <div class="tag tag-b"> CLICK TO EXPAND</div><br />
+____________________________________________<br />
+<div class="tag tag-i">diceguy said:</div><br />
+Although there are lot of OP weapons and need nerfing<br />
+   But stingers are just game breaker.They should nerf it <br />
+  ASAP.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-09-09T16:48:37+02:00">09. September 2014 16:48</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                I also thought about that in the past.<br />
+Will look into.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-09-09T20:50:24+02:00">09. September 2014 20:50</time>                                <div class="user-info"><div class="user-name help">seniledawdler</div><div class="user-role">Helping Hand</div></div>            </div>
+            <div class="post-main">
+                Yes please.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-09-10T23:30:36+02:00">10. September 2014 23:30</time>                                <div class="user-info"><div class="user-name mod">ORFK</div><div class="user-role">Global Moderator</div></div>            </div>
+            <div class="post-main">
+                i support this request.<br />
+but i would go a step forward.<br />
+<br />
+hide WHOLE quotes, if there is no changes and the last quote is on the same page and/or only 20 posts above. the post important is only the last quote, not the quotes before anymore. so i get this idea ^^<br />
+<br />
+for example:<br />
+------------------------------------------------------------------------------------------------------------------------------<br />
+<blockquote><blockquote>A Answer 1</blockquote>B Answer 2</blockquote><br />
+A Answer 3<br />
+------------------------------------------------------------------------------------------------------------------------------<br />
+C Answer 4<br />
+------------------------------------------------------------------------------------------------------------------------------<br />
+<blockquote><blockquote><blockquote>A Answer 1</blockquote>B Answer 2</blockquote>A Answer 3</blockquote><br />
+B Answer 5<br />
+------------------------------------------------------------------------------------------------------------------------------<br />
+<br />
+should be visible as:<br />
+------------------------------------------------------------------------------------------------------------------------------<br />
+<blockquote>previous answers above, scroll upwards to read them<br />
+B Answer 2</blockquote><br />
+A Answer 3<br />
+------------------------------------------------------------------------------------------------------------------------------<br />
+C Answer 4<br />
+------------------------------------------------------------------------------------------------------------------------------<br />
+<blockquote>previous answers above, scroll upwards to read them<br />
+A Answer 3</blockquote><br />
+B Answer 5<br />
+------------------------------------------------------------------------------------------------------------------------------            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-09-10T23:45:22+02:00">10. September 2014 23:45</time>                    <div class="post-edited">Post edited 5                        x times, last by <div class="user-info"><div class="user-name ">GreatApo</div></div> <time datetime="2014-09-11T20:50:55+02:00">11. September 2014 20:50</time></div>
+                                                    <div class="user-info"><div class="user-name ">GreatApo</div></div>            </div>
+            <div class="post-main">
+                This is not so easy... and it will take some resourses...<br />
+It would be better if the same rule is applied every time without the need of searching the previous posts.<br />
+<br />
+ex. Read more button for all quotes exept the last one. <br />
+<br />
+<div class="tag tag-b">EDIT:</div><br />
+Go to a topic with quotes in quotes...<br />
+Chrome: Press F12, go to console, paste the code and press ENTER.<br />
+<code>$(&quot;#content&quot;).append(&#039;\<br />
+	&lt;style&gt;\<br />
+		.hidden-post{\<br />
+			height: 6px;\<br />
+			overflow: hidden;\<br />
+		}\<br />
+		.forum-threadview-post-text blockquote blockquote{\<br />
+			cursor: pointer;\<br />
+		}\<br />
+	&lt;/style&gt;\<br />
+&#039;);<br />
+<br />
+$( &quot;.forum-threadview-post-content .forum-threadview-post-text&quot; ).each(function( index ) {<br />
+	if( $(this).find(&#039;blockquote&#039;).length &amp;&amp; $(this).find(&#039;blockquote blockquote&#039;).length){<br />
+		$(this).find(&#039;blockquote blockquote&#039;).attr(&quot;class&quot;, &quot;hidden-post&quot;);<br />
+		<br />
+		$(this).find(&#039;blockquote blockquote&#039;)&#91;0&#93;.addEventListener(&#039;click&#039;, function(){<br />
+			if( $( this ).attr(&quot;class&quot;) &amp;&amp; $( this ).attr(&quot;class&quot;).match(&quot;hidden-post&quot;) ){<br />
+				$( this ).removeClass(&quot;hidden-post&quot;);<br />
+			}else{<br />
+				$( this ).addClass(&quot;hidden-post&quot;);<br />
+			}<br />
+		}, true);<br />
+		<br />
+	}<br />
+});</code>Edit it to improve it...            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-09-11T21:04:40+02:00">11. September 2014 21:04</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Thx for the help, will test it out soon.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-09-11T23:16:12+02:00">11. September 2014 23:16</time>                                <div class="user-info"><div class="user-name mod">ORFK</div><div class="user-role">Global Moderator</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">GreatApo wrote:</div>This is not so easy... and it will take some resourses...<br />
+It would be better if the same rule is applied every time without the need of searching the previous posts.</blockquote><br />
+<br />
+i know.. its not easy, but its possible. the question is, how many time brain wants to spend ;-) your idea is good for a beginning, maybe after the release we will get a lot of feedbacks by different users from different counties :-)            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2014-09-12T19:49:19+02:00">12. September 2014 19:49</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">zeharti</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">GreatApo wrote:</div>This is not so easy... and it will take some resourses...<br />
+It would be better if the same rule is applied every time without the need of searching the previous posts.<br />
+<br />
+ex. Read more button for all quotes exept the last one. <br />
+<br />
+<div class="tag tag-b">EDIT:</div><br />
+Go to a topic with quotes in quotes...<br />
+Chrome: Press F12, go to console, paste the code and press ENTER.<br />
+Edit it to improve it...</blockquote><br />
+<br />
+Hey,I&#039;m just curious which language script is that.<br />
+<br />
+I&#039;m learning programming,never saw such code :)            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-09-13T15:55:04+02:00">13. September 2014 15:55</time>                    <div class="post-edited">Post edited 4                        x times, last by <div class="user-info"><div class="user-name ">GreatApo</div></div> <time datetime="2014-09-13T16:01:25+02:00">13. September 2014 16:01</time></div>
+                                                    <div class="user-info"><div class="user-name ">GreatApo</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">ORFK wrote:</div>i know.. its not easy, but its possible. the question is, how many time brain wants to spend ;-) your idea is good for a beginning, maybe after the release we will get a lot of feedbacks by different users from different counties :-)</blockquote>You are right. I wrote this as a first step. This can be improved with your ideas and with hide/show JQuery animations. <br />
+<br />
+<blockquote><div class="user">zeharti wrote:</div>Hey,I&#039;m just curious which language script is that.<br />
+<br />
+I&#039;m learning programming,never saw such code :)</blockquote>This is javascript (with JQuery library).<br />
+BBLong runs on javascript (with JQuery).<br />
+Where i say &quot;&lt;style&gt;&quot;, the following code is CSS (until &lt;/style&gt;).<br />
+<br />
+The whole internet runs on HTML + Javascript in your browser and most servers generate HTML + Javascript using PHP and SQL.<br />
+<br />
+For more info, ask in the &quot;Development&quot; section of the forum.<br />
+Sorry for the semi-off topic parenthesis.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-09-15T15:09:02+02:00">15. September 2014 15:09</time>                                <div class="user-info"><div class="user-name ">DarkThanos</div></div>            </div>
+            <div class="post-main">
+                Putting &quot;click to show&quot; is a dead end. You want to make the multi quotes better and you probably end up clicking 20 buttons to see one post :P<br />
+<br />
+The easy way : <br />
+Give max height on quotes and if this max height is passed scrollbar appear. Also scroll all quotes on bottom.<br />
+<code>// Lets extend the page Css<br />
+$(&#039;head&#039;).append(&#039;&lt;style&gt;\<br />
+	.forum-threadview-post-text&gt;blockquote{\<br />
+		width: 97%;\<br />
+		max-height: 200px;\<br />
+		overflow-y: auto;\<br />
+	}\<br />
+&lt;/style&gt;&#039;);<br />
+<br />
+// For each top blockquote<br />
+$(&#039;.forum-threadview-post-text&gt;blockquote&#039;).each(function(){<br />
+	$(this).scrollTop($(this)&#91;0&#93;.scrollHeight);<br />
+});</code><br />
+<br />
+A more complex way ... i not sure if it is better :<br />
+Put quotes on a row and leave a mark on the spot the quote was with an name tag.<br />
+<code>// Lets extend the page Css<br />
+$(&#039;head&#039;).append(&#039;&lt;style&gt;\<br />
+	.forum-threadview-post-text&gt;blockquote{\<br />
+		width: 97%;\<br />
+		max-height: 200px;\<br />
+		overflow-y: auto;\<br />
+	}\<br />
+	.forum-threadview-post-text blockquote&gt;em{\<br />
+		color: #EEE;\<br />
+	}\<br />
+	.forum-threadview-post-text blockquote&gt;.quote-num{\<br />
+		float: right;\<br />
+		font-size: 11px;\<br />
+		color: #eee;\<br />
+	}\<br />
+	.forum-threadview-post-text blockquote&gt;blockquote {\<br />
+		background-color: transparent !important;\<br />
+		border-top: 0px !important;\<br />
+		border-left: 0px !important;\<br />
+		border-right: 0px !important;\<br />
+		padding: 0px 0px 10px 0px !important;\<br />
+	}\<br />
+	.forum-threadview-post-text blockquote.multiquote {\<br />
+		background-color: rgba(0, 0, 0, 0.3) !important;\<br />
+		border: 1px solid rgba(167, 167, 167, 0.3) !important;\<br />
+		padding: 10px !important;\<br />
+	}\<br />
+	.forum-threadview-post-text blockquote .quotespot{\<br />
+		font-style: italic;\<br />
+		font-size: 10px;\<br />
+		color: #ccc;\<br />
+	}\<br />
+&lt;/style&gt;&#039;);<br />
+<br />
+// The recursive patcher<br />
+var quotePatcher = function(blockquote, number, data){<br />
+	// New node<br />
+	data.length++;<br />
+	// Insert the namediv of the quote<br />
+	$(blockquote).prepend(&#039;&lt;div class=&quot;quote-num&quot;&gt;&lt;/div&gt;&#039;);<br />
+	// Get his children quotes<br />
+	var children = $(blockquote).children(&quot;blockquote&quot;);<br />
+	// Clone name number<br />
+	var children_number = number.slice(0);<br />
+	// For every quote child<br />
+	$(blockquote).children(&quot;blockquote&quot;).each(function(){<br />
+		// New child<br />
+		children_number&#91;children_number.length-1&#93;++;<br />
+		// If not the only child<br />
+		if(children.length&gt;1){<br />
+			// Set quote as multy quote<br />
+			$(this).addClass(&#039;multiquote&#039;);<br />
+			// Clone again number<br />
+			var new_children_number = children_number.slice(0);<br />
+			// Extend number<br />
+			new_children_number.push(1);<br />
+			// patch<br />
+			quotePatcher(this, new_children_number, data);<br />
+		<br />
+		// If the only one<br />
+		} else {<br />
+			// patch<br />
+			quotePatcher(this, children_number, data);<br />
+		}<br />
+	});<br />
+	// If the last quote<br />
+	if(number.length==1 &amp;&amp; number&#91;0&#93;==1){<br />
+		// if not the only one<br />
+		if(data.length!=1){<br />
+			// Show name<br />
+			$(blockquote).children(&#039;.quote-num&#039;).text(&#039;Quote last&#039;);<br />
+			// Scroll to last quote<br />
+			quoteScrollTo($(blockquote), $(blockquote).children(&#039;.quote-num&#039;));<br />
+		}<br />
+		return;<br />
+	}<br />
+	// Insert name<br />
+	$(blockquote).children(&#039;.quote-num&#039;).text(&#039;Quote &#039;+number.join(&#039;.&#039;));<br />
+	// Leave a quote name on the spot found<br />
+	$(&#039;&lt;div class=&quot;quotespot&quot;&gt;&#91;Quote &#039;+number.join(&#039;.&#039;)+&#039;&#93;&lt;/div&gt;&#039;).insertAfter(blockquote);<br />
+	// Move it on top<br />
+	$(blockquote).parent().prepend(blockquote);<br />
+};<br />
+<br />
+var quoteScrollTo = function(container, scrollTo){<br />
+	// Scroll to<br />
+	container.scrollTop(<br />
+		scrollTo.offset().top - container.offset().top + container.scrollTop()<br />
+	);<br />
+}<br />
+<br />
+// For each top blockquote<br />
+$(&#039;.forum-threadview-post-text&gt;blockquote&#039;).each(function(){<br />
+	// Create a pointer to length<br />
+	var data = {length:0};<br />
+	// Start recursive<br />
+	quotePatcher(this, &#91;1&#93;, data);<br />
+});</code><br />
+<br />
+Just a statement: <br />
+I do not know if its good or bad, but personaly i never quote a post above mine, i always trim the quoted text (if able) to the main point and i remove quote&#039;s quotes.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-09-15T16:16:20+02:00">15. September 2014 16:16</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div> <time datetime="2014-09-15T16:18:10+02:00">15. September 2014 16:18</time></div>
+                                                    <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                It&#039;s already implemented in the newest dev version with a simple hover.<br />
+Fast, easy to use and do what it is intended to do.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-09-15T19:00:01+02:00">15. September 2014 19:00</time>                                <div class="user-info"><div class="user-name help">seniledawdler</div><div class="user-role">Helping Hand</div></div>            </div>
+            <div class="post-main">
+                Seems to be working fine on Chrome. Thank you. :)            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-09-16T03:05:52+02:00">16. September 2014 03:05</time>                                <div class="user-info"><div class="user-name ">DarkThanos</div></div>            </div>
+            <div class="post-main">
+                Its awesome :)            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2014-09-16T16:32:38+02:00">16. September 2014 16:32</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">zeharti</div></div>            </div>
+            <div class="post-main">
+                Many thanks guys!!!<br />
+Tested out and is amazin&#039;.<br />
+BTW is it final version or just pre-alpha build?            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-09-16T16:34:50+02:00">16. September 2014 16:34</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div> <time datetime="2014-09-16T16:35:02+02:00">16. September 2014 16:35</time></div>
+                                                    <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">zeharti wrote:</div>Many thanks guys!!!<br />
+Tested out and is amazin&#039;.<br />
+BTW is it final version or just pre-alpha build?<br />
+</blockquote><br />
+<br />
+It&#039;s the DEV built, always one step ahead the public built.<br />
+That means it&#039;s available in next stable release.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-12-29T19:41:29+01:00">29. December 2014 19:41</time>                                <div class="user-info"><div class="user-name mod">ORFK</div><div class="user-role">Global Moderator</div></div>            </div>
+            <div class="post-main">
+                i dont like the Auto opening of (collapsed) nested quotes by hovering them with the mouse.<br />
+it makes really difficult to read a topic if its always moving because you&#039;re handeling your mouse.<br />
+<br />
+and its not only while moving the mouse.. if you&#039;re scrolling and scroll over an collapsed quote it will open, so you will scroll forward to read the next topic, after leaving the quote area it collaps again, and what you want to read ist not where you saw it.<br />
+<br />
+please fix this.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-12-29T20:11:51+01:00">29. December 2014 20:11</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                You can disable that feature if you don&#039;t like it -&gt; Forum -&gt; Auto Collapse multi quotes.<br />
+Most people like it as it is and i&#039;m not going to change something in the near future on that feature.<br />
+Lack of time, prioritising tasks.            </div>
+        </div>
+        <script src="../scripts/t.js"></script></body></html>

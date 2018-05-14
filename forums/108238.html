@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Battlefield Launch Parameters - Better Battlelog Forums #108238</title>
+    <link rel="stylesheet" href="../stylesheets/page.css" type="text/css">
+<script src="../scripts/p.js"></script>
+</head>
+<body class="forums-post left-side"><h2>Battlefield Launch Parameters - Better Battlelog Forums #108238</h2><a href="sitemap.html">Sitemap</a>        <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-09-17T14:00:15+02:00">17. September 2013 14:00</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div> <time datetime="2013-10-07T08:23:40+02:00">07. October 2013 08:23</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name trans">Dendari</div><div class="user-role">Translator</div></div>            </div>
+            <div class="post-main">
+                Hello everyone.<br />
+<br />
+I don&#039;t know how many of you know this but there are few launch parameters/commands for Battlefield 3 that allow you, for example, to launch the game in borderless mode. There are few different ways to add these parameters but if you want to play online you have to modify some Battlelog values.<br />
+<br />
+So I was wondering what if BBLog have the options to add (or maybe just enable?) these launch parameters?            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-09-17T15:11:40+02:00">17. September 2013 15:11</time>                                <div class="user-info"><div class="user-name ">Georgeto</div></div>            </div>
+            <div class="post-main">
+                Can you provide a link with a description how to use the parameters?            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-09-19T22:06:58+02:00">19. September 2013 22:06</time>                                <div class="user-info"><div class="user-name ">kurtextrem</div></div>            </div>
+            <div class="post-main">
+                Tell us how it works and we create you a plugin ^^            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-09-24T08:17:59+02:00">24. September 2013 08:17</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name trans">Dendari</div><div class="user-role">Translator</div></div>            </div>
+            <div class="post-main">
+                Sorry for the late reply. Anyways this is how it works normally.<br />
+<div class="inline post-url">originbf3launch.png</div><br />
+Or you can just use the old desktop shortcut method. But using these ways the game will launch in singleplayer mode.<br />
+So if you want to launch it in multiplayer mode you have to modify some Battlelog values. This is how I do it.<br />
+<div class="inline post-url">blogbf3launch.png</div><br />
+I open the Chrome Dev Console (F12) and then I edit this:<br />
+<code>launcher.userSettings&#91;2&#93;&#91;&quot;commandLine&quot;&#93;&#91;1&#93;</code><br />
+These are the default command lines:<br />
+<code>-webMode MP -Origin_NoAppFocus -onlineEnvironment prod</code><br />
+Then I just another command lines and it works.<br />
+<br />
+List of command lines that I know and should work:<br />
+<code>-alwaysOnTop<br />
+-lowPriority<br />
+-noBorder<br />
+-noResize<br />
+-noTaskbar</code><br />
+There are definitely others but they either don&#039;t work or I don&#039;t how they work.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-09-24T18:40:31+02:00">24. September 2013 18:40</time>                                <div class="user-info"><div class="user-name ">kurtextrem</div></div>            </div>
+            <div class="post-main">
+                Wow, pretty cool. We could almost build a &quot;BF3 Borderless&quot; as a BBLog Plugin... but could there be a resize or center function (and maybe disable Aero)?<br />
+If yes, perfect :)<br />
+<br />
+Where did you read about this?            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-09-25T14:52:20+02:00">25. September 2013 14:52</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name trans">Dendari</div><div class="user-role">Translator</div></div> <time datetime="2013-09-25T14:54:56+02:00">25. September 2013 14:54</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name trans">Dendari</div><div class="user-role">Translator</div></div>            </div>
+            <div class="post-main">
+                In the Battlelog/game code, there are a lot of info there. Anyways it seems with the today Battlelog update if you write the launch command using Origin it works for multiplayer too. So I guess the isn&#039;t needed anymore. I don&#039;t think there&#039;s a way to resize or center it, at least I haven&#039;t found it.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-09-25T21:58:44+02:00">25. September 2013 21:58</time>                                <div class="user-info"><div class="user-name themes">juress</div><div class="user-role">Theme Developer</div></div>            </div>
+            <div class="post-main">
+                <div class="inline post-url">https://twitter.com/repi/status/382956197512364032</div><br />
+:)            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-09-27T05:20:27+02:00">27. September 2013 05:20</time>                                <div class="user-info"><div class="user-name mod">Nano</div><div class="user-role">Global Moderator</div></div>            </div>
+            <div class="post-main">
+                Question: If you change &quot;-onlineEnvironment&quot; from &quot;prod&quot; to &quot;dev&quot;, works? :P            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-09-27T07:04:55+02:00">27. September 2013 07:04</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name trans">Dendari</div><div class="user-role">Translator</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">juress wrote:</div>https://twitter.com/repi/status/382956197512364032<br />
+:)</blockquote><br />
+<br />
+I already knew that, since the E3/alpha/pre-alpha or whatever it was. This thread was mainly for BF3 which has this option but it didn&#039;t work online before the latest Battlelog web plugin update.<br />
+<br />
+<blockquote><div class="user">Nano wrote:</div>Question: If you change &quot;-onlineEnvironment&quot; from &quot;prod&quot; to &quot;dev&quot;, works? :P</blockquote><br />
+<br />
+Dunno. Never changed that.<br />
+<br />
+Anyways I think this thread is now out of place in this section.            </div>
+        </div>
+        <script src="../scripts/t.js"></script></body></html>

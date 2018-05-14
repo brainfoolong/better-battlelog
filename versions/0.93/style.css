@@ -1,0 +1,343 @@
+/**
+* Better Battlelog Addon Inject CSS for Firefox
+* Licensed under GPLv3
+*
+* Project is open source for maximum transparence
+* So can you can nothing bad happens here
+*
+* In far future we consider to pack this directly in the addon xpi install file to
+* make injecting of css obsulete and also fit to mozilla addon requirements.
+*/
+
+.bblog{
+    position: absolute;
+    top:105px;
+    left:-41px;
+    width:40px;
+    height:81px;
+    cursor: pointer;
+    z-index:999;
+    background-image: url(../../img/btn.png);
+}
+
+.bblog .addon-update{
+    position:absolute;
+    left:3px;
+    top:4px;
+    color:#ff9c00;
+    text-shadow:black 1px 1px 0px;
+    font-size: 9px;
+    line-height: 12px;
+    width:37px;
+    text-align: center;
+}
+
+.bblog .latest-news{
+    font-size: 10px;
+    position:relative;
+    top:-5px;
+}
+
+.bblog .latest-news a,
+.bblog .latest-news a:hover,
+.bblog .latest-news a:active{
+    color:#ff9c00;
+    font-size: 10px;
+}
+
+.bblog .bblog_menu{
+    position: absolute;
+    left:41px;
+    top:0px;
+    width:200px;
+    background-color: #222222;
+    padding:10px;
+    padding-bottom: 15px;
+    color:white;
+    display: none;
+    cursor: auto;
+    box-shadow: inset 10px 0px 5px #111111;
+    border-bottom-right-radius: 10px;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: -1px;
+    font-family: Arial,sans-serif;
+    z-index:999;
+}
+
+.bblog .bblog_menu.expanded{
+    width:650px;
+}
+
+.bblog span.extOption{
+    width:16px;
+    height:16px;
+    position:relative;
+    display:inline-block;
+    background-image: url(../../silk/cog.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    top:4px;
+    padding-right: 7px;
+}
+
+.bblog .bblog_menu h4{
+    font-size: 16px;
+    line-height: 20px;
+    padding:0px;
+    margin: 0px;
+    margin-bottom: 5px;
+    letter-spacing: normal;
+    font-family: "BebasNeueRegular",Arial,sans-serif;
+}
+
+.bblog .extOptionContainer{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding:5px;
+    background-color: #2a2a2a;
+    border-radius: 3px;
+}
+
+.bblog .bblog_menu .options{
+    width:200px;
+}
+
+.bblog .bblog_menu .options .expand{
+    display: none;
+}
+
+.bblog .bblog_menu.expanded .expand{
+    position:absolute;
+    left:220px;
+    width:420px;
+    display: block;
+    top:10px;
+}
+
+.bblog .bblog_menu .options input{
+    position: relative;
+    top:2px;
+}
+
+.bblog .bblog_menu .options .sub{
+    font-size: 11px;
+    color:#ff9c00;
+}
+
+.bblog .bblog_menu .options .sub a
+.bblog .bblog_menu .options .sub a:hover,
+.bblog .bblog_menu .options .sub a:visited,
+.bblog .bblog_menu .options .sub a:link{
+    font-size: 9px;
+    color:#ff9c00;
+}
+
+.bblog .bblog_menu textarea{
+    padding:3px;
+    background-color: white;
+    border:1px solid #e5e5e5;
+    font-size: 12px;
+    line-height: 16px;
+    font-family: arial;
+    letter-spacing: normal;
+    width:95%;
+}
+
+.bblog_weaponInfo{
+    margin-top: 10px;
+}
+
+.bblog_weaponInfo .venice-single-stats-column-height{
+    height:224px;
+}
+
+.bblog_weaponInfo .venice-statsitem-box-item,
+.bblog_weaponInfo .venice-statsitem-bar-title{
+    text-transform: none;
+    height: auto;
+}
+
+.bblog_weaponInfo .venice-statsitem-bar-title{
+    width:120px;
+}
+
+.bblog_weaponInfo .venice-statsitem-bar-value{
+    float:left;
+    width:120px;
+}
+
+.bblog_weaponInfo .torso{
+    background-image: url(../../img/damage-torso.jpg);
+    width:128px;
+    height:250px;
+    position:absolute;
+    margin-left: 162px;
+    top:10px;
+}
+
+.bblog_weaponInfo .extraInfos .info{
+    background-image: url(../../silk/information.png);
+    display:inline-block;
+    width:16px;
+    height:16px;
+    position:absolute;
+    margin-top: -1px;
+    margin-left: 2px;
+}
+
+.bblog_weaponInfo .extraInfos .venice-statsitem-bar-value{
+    padding-left: 15px;
+}
+
+.bblog_weaponInfo .damagemodel .venice-statsitem-box-item{
+    float:left;
+    width:80px;
+    clear: none;
+}
+
+.bblog_weaponInfo .damagemodel .venice-statsitem-bar-title,
+.bblog_weaponInfo .damagemodel .venice-statsitem-bar-value{
+    float: none;
+    white-space: nowrap;
+    text-align: center;
+    width: auto;
+    margin: 0px;
+}
+
+.bblog_weaponInfo .damagemodel .venice-statsitem-bar-title{
+    color:#777777;
+}
+
+.bblog_weaponInfo .damagemodel .venice-statsitem-bar-container{
+    width:200px;
+    margin-top: 5px;
+}
+
+.bblog_weaponInfo .accuracy{
+    height:260px;
+}
+
+.bblog_weaponInfo .accuracy .common-box-container{
+    height:260px;
+    overflow: hidden;
+}
+
+.bblog_weaponInfo .plotinfo .info{
+    background-image: url(../../silk/information.png);
+    display:inline-block;
+    width:16px;
+    height:16px;
+    position:absolute;
+    margin-top: -1px;
+    margin-left: 2px;
+}
+
+.bblog_weaponInfo .plotinfo .venice-statsitem-bar-value{
+    padding-left: 15px;
+}
+
+.bblog_weaponInfo .plotdesc .venice-statsitem-bar-container{
+    font-size: 12px;
+    line-height: 17px;
+}
+
+.bblog_weaponswitch{
+    font-family: "BebasNeueRegular",Arial,sans-serif !important;
+    font-size: 30px;
+    line-height: 34px;
+    color:#333333;
+    cursor:pointer;
+    letter-spacing: normal;
+}
+
+.bblog_weaponswitch .hidden{
+    display: none;
+}
+
+.bblog_weaponswitch a{
+    display: inline-block;
+    width:180px;
+    font-family: "BebasNeueRegular",Arial,sans-serif;
+    font-size: 18px;
+    line-height: 26px;
+    color:#555555;
+    letter-spacing: normal;
+}
+
+a.to-last-update span{
+    background-image: url(../../img/goto-last.png);
+    display:inline-block;
+    width:12px;
+    height:11px;
+    padding-left: 4px;
+    padding-right: 2px;
+    position:relative;
+    top:1px;
+    background-position: top center;
+    background-repeat: no-repeat;
+    opacity:0.6;
+}
+
+a.to-last-update span:hover{
+    opacity:1;
+}
+
+.bblog_userradar_profile{
+    width:13px;
+    height:13px;
+    position:absolute;
+    right:20px;
+    cursor: pointer;
+    border-radius:2px;
+    z-index:2;
+}
+
+#serverguide-middle .bblog_userradar_profile{
+    top:10px;
+}
+
+.bblog_userradar_profile span{
+    display: inline-block;
+    width:11px;
+    height:11px;
+    position:relative;
+    top:-2px;
+    left:1px;
+    background-image: url(../../img/radar-states.png);
+    background-position: 0px;
+}
+
+.bblog_userradar_profile:hover,
+.bblog_userradar_profile.active{
+    background-color: #222222;
+}
+
+.bblog_userradar_profile:hover span,
+.bblog_userradar_profile.active span{
+    background-position: -11px;
+}
+
+.bblog_userradar_warning{
+    margin-bottom: 2px;
+    margin-top: 2px;
+    padding:5px;
+    color:#222222;
+    font-size: 11px;
+    border-bottom:1px solid #eaeaea;
+    background-color: white;
+}
+
+.bblog_userradar_warning span{
+    background-image: url(../../img/radar-states.png);
+    display: inline-block;
+    width:11px;
+    height:11px;
+    background-position: right;
+    margin-right: 3px;
+    position:relative;
+    top:2px;
+}

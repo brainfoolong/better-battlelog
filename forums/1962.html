@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Server Browser - Better Battlelog Forums #1962</title>
+    <link rel="stylesheet" href="../stylesheets/page.css" type="text/css">
+<script src="../scripts/p.js"></script>
+</head>
+<body class="forums-post left-side"><h2>Smart Server Browser - Better Battlelog Forums #1962</h2><a href="sitemap.html">Sitemap</a>        <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-08-24T22:06:05+02:00">24. August 2012 22:06</time>                    <div class="post-edited">Post edited 6                        x times, last by <div class="user-info"><div class="user-name ">ocknoz</div></div> <time datetime="2013-11-14T20:07:14+01:00">14. November 2013 20:07</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">ocknoz</div></div>            </div>
+            <div class="post-main">
+                (Note: currently only BF3 is supported; will start working on a BF4 version soon)<br />
+<br />
+I wrote a plugin for the Server Browser which disables filter options not valid in combination with the currently selected filters.<br />
+<br />
+Example:<br />
+* Back to Karkand maps disabled because Karkand expansion isn&#039;t selected.<br />
+* Close Quarters maps disabled because they don&#039;t support the only selected Game Mode: Conquest Large.<br />
+Screenshot:<br />
+<div class="inline post-url">http://img687.imageshack.us/img687/1404/smartserverbrowser.png</div><br />
+<br />
+In the future disabling of other filter options which don&#039;t make sense would be nice. <br />
+If you have other ideas which options to disable when then just post them here. <br />
+<br />
+So far I only tested it in Chrome and Firefox using the theme &quot;Dark Theme by Hille - Mod by Juress&quot;.<br />
+If you find bugs then please report them here as well.<br />
+<br />
+Plugin URL:<br />
+<div class="inline post-url">http://oganon.dyndns.org:11080/zkn/bf3/bblog-plugin-smart-server-browser.js</div><br />
+Development version (may contain more bugs than official version):<br />
+<div class="inline post-url">http://oganon.dyndns.org:11080/zkn/bf3/bblog-plugin-smart-server-browser-dev.js</div><br />
+<br />
+If you&#039;re curious what the current rule set looks like then search for this line:<br />
+// *** RULES BEGIN ***<br />
+<br />
+Change Log:<br />
+<br />
+2013-03-29<br />
+* added supported game modes for After Math maps (thanks to Brady_The)<br />
+<br />
+2013-03-28<br />
+* End Game maps only support these modes: CTF, AirSuperiority, Conquest, ModeRush, SquadRush, TeamDM, SquadDM (thanks to Brady_The for the list)<br />
+* added TeamDM16 as supported by all maps (thanks to Wolf68k)<br />
+<br />
+2012-11-26<br />
+* disabled these if only Close Quarters is selected: Rush, SquadRush, Conquest, ConquestLarge, ConquestAssault, ConquestAssaultLarge<br />
+<br />
+2012-11-24<br />
+* Works with BBlog 3.0<br />
+* Armored Kill maps only enabled for these modes: TankSuperiority, Conquest, ConquestLarge, TeamDM, Rush, SquadRush, SquadDM<br />
+* Aftermath maps and mode Scavenger only enabled if Aftermath Expansion selected<br />
+<br />
+2012-11-18<br />
+* if &quot;Filters&quot; is checked under &quot;Advanced settings&quot;, automatically de-selects all of the Presets (normal, hardcore, inf-only)<br />
+<br />
+2012-11-11<br />
+* Armored Kill maps disabled if TeamDM16 is selected<br />
+<br />
+2012-09-07<br />
+* Armored Kill maps and Tank Superiority mode require expansion<br />
+<br />
+2012-08-25<br />
+* icons of disabled maps are now converted to grayscale (doesn&#039;t yet work in Firefox)<br />
+<br />
+2012-08-23<br />
+* rewrote checking if filters are enabled, now uses a declarative set of rules<br />
+* selecting no Game, Size, Mode, or Map means that all are selected<br />
+* Close Quarters maps: added rules to require a valid Game Mode<br />
+<br />
+2012-08-20<br />
+* changed disabling of filters: <br />
+* overlay is now fully transparent (only prevents selecting the filter), <br />
+* underlying list item is half transparent (making it look disabled)<br />
+<br />
+2012-08-15<br />
+* show a semi transparent overlay on top of disabled filter options (instead of hiding them completely)<br />
+* disable game modes &#039;Team DM Close quarters&#039; and &#039;Gun Master&#039; when &#039;Close quarters&#039; is deselected            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-08-24T22:08:46+02:00">24. August 2012 22:08</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">ocknoz</div></div>            </div>
+            <div class="post-main">
+                (reserved)            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-08-28T00:37:03+02:00">28. August 2012 00:37</time>                                <div class="user-info"><div class="user-name ">CptChaosNL</div></div>            </div>
+            <div class="post-main">
+                Nice plugin indeed! But I see a bug on the screenshot. You&#039;ve activated 2 kinds of BF3: Vanilla and Close Quarters. But somehow the Close Quarters maps are disabled?            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-08-31T00:25:22+02:00">31. August 2012 00:25</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">ocknoz</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">CptChaosNL wrote:</div>Nice plugin indeed! But I see a bug on the screenshot. You&#039;ve activated 2 kinds of BF3: Vanilla and Close Quarters. But somehow the Close Quarters maps are disabled?</blockquote><br />
+Because of this:<br />
+Close Quarters maps disabled because they don&#039;t support the only selected Game Mode: Conquest Large.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-08-31T09:21:50+02:00">31. August 2012 09:21</time>                                <div class="user-info"><div class="user-name mod">ORFK</div><div class="user-role">Global Moderator</div></div>            </div>
+            <div class="post-main">
+                Nice Plugin, i like it ands thats really what i searched.<br />
+<br />
+but:<br />
+-&gt; if i have selected &quot;Gun Master&quot; or &quot;Conquest Domination&quot;, the normal Maps from B2K and Normal BF3 are not &quot;hidden&quot; / &quot;grey&quot; / &quot;not visible&quot;. i have ONLY selected Gunmaster or Conquest Domination.<br />
+<br />
+if i select Conquest Large (no Conquest Assault) all B2K maps are still visible.<br />
+<br />
+Pls dont forget:<br />
+Conquest Large, Conquest: All general BF3 Maps and Gulf of Oman<br />
+Conquest Assault Large, Conquest Assault: Strike at Karkand, Sharqi Peninsula, Wake Island<br />
+Rush, Sqd Rush, Team DM, Sqd DM: All general BF3 Maps, all B2K Maps<br />
+Conquest Domination, Gun Master: All Close Quarters Maps<br />
+<br />
+if i select a Map, you could make the gamemodes invisible. so you can see wich gamemode is available on wich map.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-09-07T16:00:35+02:00">07. September 2012 16:00</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">ocknoz</div></div>            </div>
+            <div class="post-main">
+                Hi ORFK,<br />
+<br />
+sorry for the delay, I didn&#039;t have much spare time lately.<br />
+I totally agree with you that what you suggested would be nice to have. I&#039;m just not sure how to fit disabling of modes based on map selection into my current set of rules. I don&#039;t want to disable a valid filter by mistake so I left them enabled for now.<br />
+<br />
+Until then you can try out the latest version here:<br />
+<div class="inline post-url">http://amsrv.dyndns.org/zkn/bf3/bblog-plugin-smart-server-browser-dev.js</div><br />
+I&#039;ll update the official version of the plugin once this is confirmed working correctly.<br />
+<br />
+Changes in development version:<br />
+* Armored Kill maps and Tank Superiority mode require expansion<br />
+* general BF3 maps only support these modes: Conquest, Rush, SquadRush, SquadDM, TeamDM, ConquestLarge<br />
+* all Karkand maps support: Rush, SquadRush, TeamDM, SquadDM<br />
+* in addition to that:<br />
+- Gulf of Oman supports: ConquestLarge, Conquest<br />
+- Strike at Karkand, Sharqi Peninsula, and Wake Island support: ConquestAssaultLarge and ConquestAssault<br />
+<br />
+I still need: <br />
+- verification that the above is working correctly<br />
+- a complete list of modes supported by the Armored Kill maps.<br />
+Also, do ConquestAssaultLarge and ConquestAssault require the Karkand expansion?<br />
+<br />
+Edit:<br />
+I think I can do disabling modes based on map selection. But I would need a *complete* list of modes supported by each map. Which means -- if everything else is correct -- I only need the modes supported by the Armored Kill maps.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-09-07T18:01:15+02:00">07. September 2012 18:01</time>                                <div class="user-info"><div class="user-name mod">ORFK</div><div class="user-role">Global Moderator</div></div>            </div>
+            <div class="post-main">
+                thank you for your work.<br />
+i really respect good and helpful plugins like yours!<br />
+in a few hours i will be at home and i can check your dev version.<br />
+will give you a feedback maybe tomorrow or on sunday.<br />
+<br />
+wish you a nice evening &amp; weekend =)            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-09-07T18:07:49+02:00">07. September 2012 18:07</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">ocknoz</div></div>            </div>
+            <div class="post-main">
+                Thank you! Looking forward to your comments. Enjoy the weekend!<br />
+<br />
+Edit: <br />
+Originally I also wanted to validate the Game Size filters but that doesn&#039;t seem to make much sense:<br />
+<div class="inline post-url">http://symthic.com/forum/index.php?page=Thread&amp;threadID=2610</div>            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-09-07T18:17:19+02:00">07. September 2012 18:17</time>                                <div class="user-info"><div class="user-name ">Wolf68k</div></div>            </div>
+            <div class="post-main">
+                Odd. For some reason in your screen shot it shows the Armored Kill maps and modes being hidden but for me they stay showing.<br />
+<div class="inline post-url">http://i.imgur.com/HhoLC.png</div>            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-09-07T18:30:51+02:00">07. September 2012 18:30</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">ocknoz</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">Wolf68k wrote:</div>Odd. For some reason in your screen shot it shows the Armored Kill maps and modes being hidden but for me they stay showing.<br />
+<div class="inline post-url">http://i.imgur.com/HhoLC.png</div></blockquote><br />
+That screenshot is from my development version (for the link see a few posts above). Support for Armored Kill isn&#039;t yet in the official version because I still need some feedback if the development version is working correctly.<br />
+I didn&#039;t think anyone would notice if I updated the screenshot already ^^<br />
+<br />
+Edit:<br />
+I edited the first post to include the URL to the development version there as well.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-09-07T19:17:51+02:00">07. September 2012 19:17</time>                                <div class="user-info"><div class="user-name ">Wolf68k</div></div>            </div>
+            <div class="post-main">
+                I had to completely remove the first one but it works. Thanks.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-09-09T12:14:36+02:00">09. September 2012 12:14</time>                                <div class="user-info"><div class="user-name ">DanMan</div></div>            </div>
+            <div class="post-main">
+                Nice, thanks. I got one more idea for this: <div class="inline post-url">http://getbblog.com/viewtopic.php?f=2&amp;t=520&quot;</div> target=&quot;_blank&quot; rel=&quot;nofollow<br />
+<br />
+The gist: if &quot;Filters&quot; is checked under &quot;Advanced settings&quot;, automatically de-select all of the &quot;Presets&quot; (normal, hardcore, inf-only). I think that would already suffice.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-11-11T03:19:55+01:00">11. November 2012 03:19</time>                                <div class="user-info"><div class="user-name ">Wolf68k</div></div>            </div>
+            <div class="post-main">
+                Just noticed a bug.<br />
+When Team DM 16 Player is selected the Armored Kill maps are still showing. That is a Close Quarters only            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-11-11T20:50:07+01:00">11. November 2012 20:50</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">ocknoz</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">Wolf68k wrote:</div>Just noticed a bug.<br />
+When Team DM 16 Player is selected the Armored Kill maps are still showing. That is a Close Quarters only</blockquote><br />
+I haven&#039;t yet added any rules for Armored Kill because I was unsure what game types and sizes the maps support.<br />
+<br />
+I just checked and TDM16 also showed one match on Seine Crossing. So I wonder which maps exactly do support it?<br />
+<br />
+I didn&#039;t add a Game Mode rule for Armored Kill maps because before I only could specify *complete* lists of supported Game Types. I extended stuff so now Armored Kill maps get disabled when TeamDM16 is selected.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-11-11T20:58:13+01:00">11. November 2012 20:58</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">ocknoz</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">DanMan wrote:</div>Nice, thanks. I got one more idea for this: <div class="inline post-url">http://getbblog.com/viewtopic.php?f=2&amp;t=520&quot;</div> target=&quot;_blank&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; rel=&quot;nofollow<br />
+<br />
+The gist: if &quot;Filters&quot; is checked under &quot;Advanced settings&quot;, automatically de-select all of the &quot;Presets&quot; (normal, hardcore, inf-only). I think that would already suffice.</blockquote><br />
+<br />
+Sorry, I didn&#039;t get back to you on this. I don&#039;t have much time at the moment. I&#039;ll look into it as soon as I have more spare time.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-11-13T21:09:53+01:00">13. November 2012 21:09</time>                                <div class="user-info"><div class="user-name ">Wolf68k</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">ocknoz wrote:</div><blockquote><div class="user">Wolf68k wrote:</div>Just noticed a bug.<br />
+When Team DM 16 Player is selected the Armored Kill maps are still showing. That is a Close Quarters only</blockquote><br />
+I haven&#039;t yet added any rules for Armored Kill because I was unsure what game types and sizes the maps support.<br />
+<br />
+I just checked and TDM16 also showed one match on Seine Crossing. So I wonder which maps exactly do support it?<br />
+<br />
+I didn&#039;t add a Game Mode rule for Armored Kill maps because before I only could specify *complete* lists of supported Game Types. I extended stuff so now Armored Kill maps get disabled when TeamDM16 is selected.</blockquote><br />
+Well for sure you can filter out AK when Conquest Domination and Gun Master since those are for sure CQ only.<br />
+<br />
+As for the TDM16 I&#039;ve seen nothing but CQ maps but then since Battlelog doesn&#039;t always list all of the servers, you can refresh and get a completely different list of servers, it&#039;s hard to tell.<br />
+<br />
+Speaking as an admin that has access to maplist in Procon, there is TDM Close Quarters listed as the Gametype which seems to be the only ones that correlate to TDM16.<br />
+<br />
+Also I noticed that the 2 Assault modes filters also list the AK maps which is another that AK doesn&#039;t do. Assault is so far exclusive to the B2K maps.<br />
+<br />
+AK besides doing Tank Superiority also does; Conquest normal and Large, TDM, Rush, Squad Rush, and SquadDM            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-11-13T22:12:28+01:00">13. November 2012 22:12</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">ocknoz</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">DanMan wrote:</div>Nice, thanks. I got one more idea for this: <div class="inline post-url">http://getbblog.com/viewtopic.php?f=2&amp;t=520&quot;</div> target=&quot;_blank&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot; rel=&quot;nofollow<br />
+<br />
+The gist: if &quot;Filters&quot; is checked under &quot;Advanced settings&quot;, automatically de-select all of the &quot;Presets&quot; (normal, hardcore, inf-only). I think that would already suffice.</blockquote><br />
+<br />
+If you&#039;re still interested: I tried to implement this in the current development version of the plugin (see first post for the URL). Let me know if this works for you and if it has any unwanted side effects.<br />
+<br />
+Make sure you disable the official version of the plugin first.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-11-19T07:43:19+01:00">19. November 2012 07:43</time>                                <div class="user-info"><div class="user-name ">Wolf68k</div></div>            </div>
+            <div class="post-main">
+                I&#039;ve been using the dev version this whole time (oop?) and it&#039;s still showing the AK maps for the Assault, CD and GM filters            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-11-21T17:54:10+01:00">21. November 2012 17:54</time>                                <div class="user-info"><div class="user-name plugin">dapil</div><div class="user-role">Plugin Developer</div></div>            </div>
+            <div class="post-main">
+                Can you please update this to work with v3.0? It&#039;s very useful.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-11-24T15:35:22+01:00">24. November 2012 15:35</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name ">ocknoz</div></div> <time datetime="2012-11-24T15:41:23+01:00">24. November 2012 15:41</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">ocknoz</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">Wolf68k wrote:</div>I&#039;ve been using the dev version this whole time (oop?) and it&#039;s still showing the AK maps for the Assault, CD and GM filters</blockquote><br />
+<br />
+I just changed it to this, let me know your thoughts:<br />
+Armored Kill maps only enabled for these modes: TankSuperiority, Conquest, ConquestLarge, TeamDM, Rush, SquadRush, SquadDM<br />
+<br />
+Currently official and development version are identical. <br />
+<br />
+Don&#039;t worry about using the development version: Most of the time they are the same. But during the time I work on the plugin the development version will sometimes not work correctly.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-11-24T15:35:38+01:00">24. November 2012 15:35</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name ">ocknoz</div></div> <time datetime="2012-11-24T15:37:07+01:00">24. November 2012 15:37</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">ocknoz</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">dapil wrote:</div>Can you please update this to work with v3.0? It&#039;s very useful.</blockquote><br />
+<br />
+Thank you, I just updated it and added minimal support for Aftermath. See top post for Change Log.<br />
+<br />
+As always I now need the complete list of game modes supported by the new maps.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-11-24T16:19:30+01:00">24. November 2012 16:19</time>                                <div class="user-info"><div class="user-name plugin">dapil</div><div class="user-role">Plugin Developer</div></div>            </div>
+            <div class="post-main">
+                Thanks!! Do you updated the dev version or the official one?            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-11-25T13:03:58+01:00">25. November 2012 13:03</time>                                <div class="user-info"><div class="user-name ">=[KsK]= Podracer</div></div>            </div>
+            <div class="post-main">
+                Works fine on v3. THX!            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-11-25T16:28:17+01:00">25. November 2012 16:28</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">ocknoz</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">dapil wrote:</div>Thanks!! Do you updated the dev version or the official one?</blockquote><br />
+<br />
+Both, they are currently identical.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-11-25T19:07:23+01:00">25. November 2012 19:07</time>                                <div class="user-info"><div class="user-name ">jack</div></div>            </div>
+            <div class="post-main">
+                On close quarters, you should disable both rushes, both conquests and both conquest assaults<br />
+<div class="inline post-url">http://i.imgur.com/uBzSi.jpg</div>            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-11-26T20:36:41+01:00">26. November 2012 20:36</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">ocknoz</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">jack wrote:</div>On close quarters, you should disable both rushes, both conquests and both conquest assaults<br />
+<div class="inline post-url">http://i.imgur.com/uBzSi.jpg</div></blockquote><br />
+<br />
+Thanks, I updated it.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-11-28T20:16:31+01:00">28. November 2012 20:16</time>                                <div class="user-info"><div class="user-name plugin">dapil</div><div class="user-role">Plugin Developer</div></div>            </div>
+            <div class="post-main">
+                You could add, that if I select a map, only playable game modes will be white, other modes will be grey.<br />
+<br />
+Oh and I found this (you probably don&#039;t need it, but I&#039;m posting it just to be sure):<br />
+<br />
+Conquest Assault: Talah Market<br />
+Conquest/Conquest Large: Azadi Palace, Epicenter, Markaz Monolith<br />
+Gun Master: Azadi Palace, Epicenter, Markaz Monolith, Talah Market<br />
+Rush: Azadi Palace, Epicenter, Markaz Monolith, Talah Market<br />
+Scavenger: Azadi Palace, Epicenter, Markaz Monolith, Talah Market<br />
+Squad Deathmath: Azadi Palace, Epicenter, Markaz Monolith, Talah Market<br />
+Squad Rush: Azadi Palace, Epicenter, Markaz Monolith, Talah Market<br />
+TDM Close Quarters (TDM 16 Players):  Azadi Palace, Epicenter, Markaz Monolith, Talah Market<br />
+Team Deathmath: Azadi Palace, Epicenter, Markaz Monolith, Talah Market            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-03-09T09:07:39+01:00">09. March 2013 09:07</time>                    <div class="post-edited">Post edited 5                        x times, last by <div class="user-info"><div class="user-name ">Brady_The</div></div> <time datetime="2013-03-09T09:14:22+01:00">09. March 2013 09:14</time></div>
+                                                    <div class="user-info"><div class="user-name ">Brady_The</div></div>            </div>
+            <div class="post-main">
+                I really like this plugin. :-) Here are the information for the last DLC, Endgame:<br />
+<br />
+<div class="tag tag-b">File Name:</div> Operation Riverside<br />
+<div class="tag tag-b">Map Name:</div> XP5_001<br />
+<div class="tag tag-b">Game modes:</div> Capture the Flag, Air Superiority, Conquest, Rush, Squad Rush, Team Deathmatch, Squad Deathmatch<br />
+<br />
+<div class="tag tag-b">File Name:</div> Nebandan Flats<br />
+<div class="tag tag-b">Map Name:</div> XP5_002<br />
+<div class="tag tag-b">Game modes:</div> Capture the Flag, Air Superiority, Conquest, Rush, Squad Rush, Team Deathmatch, Squad Deathmatch<br />
+<br />
+<div class="tag tag-b">File Name:</div> Kiasar Railroad<br />
+<div class="tag tag-b">Map Name:</div> XP5_003<br />
+<div class="tag tag-b">Game modes:</div> Capture the Flag, Air Superiority, Conquest, Rush, Squad Rush, Team Deathmatch, Squad Deathmatch<br />
+<br />
+<div class="tag tag-b">File Name:</div> Sabalan Pipeline<br />
+<div class="tag tag-b">Map Name:</div> XP5_004<br />
+<div class="tag tag-b">Game modes:</div> Capture the Flag, Air Superiority, Conquest, Rush, Squad Rush, Team Deathmatch, Squad Deathmatch<br />
+<br />
+<div class="inline font-size-50">Source: <div class="inline post-url">http://blogs.battlefield.com/2013/02/end-game-maps-overview/</div></div>            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-03-14T18:04:02+01:00">14. March 2013 18:04</time>                                <div class="user-info"><div class="user-name ">Wolf68k</div></div>            </div>
+            <div class="post-main">
+                All maps now support TDM16 aka TDM Close Quarters<br />
+All Aftermath maps support Gun Master<br />
+<br />
+It&#039;s been so long since he&#039;s updated the plug I&#039;m starting to think he gave up on it.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-03-20T22:49:13+01:00">20. March 2013 22:49</time>                                <div class="user-info"><div class="user-name ">Wolf68k</div></div>            </div>
+            <div class="post-main">
+                I don&#039;t know much about JavaScript, however I was able to add the End Game info to the plugin. The problem is the way he has it written to disable Close Quarter modes for the non-Close Quarter expansions.<br />
+For example when you select any other expansion pack it automatically disables TDM16 and GM. Yet Aftermath came out supporting GM, and as I said before all of the maps now support TDM16.<br />
+<br />
+And because End Game isn&#039;t part of the script when you select EG it for some reason disables all modes but for SDM, TDM, CTF and AS. So you have to trick the plugin but first selecting Conquest (or whatever mode you want to play) and then select End Game.<br />
+<br />
+I also don&#039;t have a way to test what little I do have to see if I fixed anything to any degree.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-03-28T16:02:58+01:00">28. March 2013 16:02</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">ocknoz</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">Brady_The wrote:</div>I really like this plugin. :-) Here are the information for the last DLC, Endgame</blockquote><br />
+Thanks for the list, this was exactly what I needed.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-03-28T16:05:46+01:00">28. March 2013 16:05</time>                    <div class="post-edited">Post edited 2                        x times, last by <div class="user-info"><div class="user-name ">ocknoz</div></div> <time datetime="2013-03-28T17:54:10+01:00">28. March 2013 17:54</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">ocknoz</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">Wolf68k wrote:</div>All maps now support TDM16 aka TDM Close Quarters<br />
+All Aftermath maps support Gun Master</blockquote><br />
+I added TDM16 to all maps. However, for Aftermath maps to enable/disable correctly, I would need a <div class="tag tag-b">complete</div> list of modes supported by Aftermath maps. Something similar to this list:<br />
+<div class="inline post-url">http://getbblog.com/en/board/post/87628</div><br />
+<br />
+<blockquote><div class="user">Wolf68k wrote:</div><br />
+It&#039;s been so long since he&#039;s updated the plug I&#039;m starting to think he gave up on it.</blockquote><br />
+Sorry, been really busy lately. And since I don&#039;t get notifications when someone posts in this thread I forgot to check back here. <br />
+Edit: I just noticed the &quot;Watch Topic&quot; button :&gt;<br />
+<br />
+Please take a look at the latest version and let me know if it needs any corrections.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-03-28T17:50:31+01:00">28. March 2013 17:50</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name ">Brady_The</div></div> <time datetime="2013-03-28T17:54:27+01:00">28. March 2013 17:54</time></div>
+                                                    <div class="user-info"><div class="user-name ">Brady_The</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">ocknoz wrote:</div><blockquote><div class="user">Wolf68k wrote:</div>All maps now support TDM16 aka TDM Close Quarters<br />
+All Aftermath maps support Gun Master</blockquote><br />
+Please take a look at the latest version and let me know if it needs any corrections.</blockquote><br />
+Awesome!<br />
+<br />
+Info for Aftermath:<br />
+<br />
+<div class="tag tag-b">File Name:</div> Markaz Monolith<br />
+<div class="tag tag-b">Map Name:</div> XP4_FD<br />
+<div class="tag tag-b">Game modes:</div> Conquest Large, Conquest Small, Rush, Squad Rush, Squad Deathmatch, TDM, TDM Close Quarters, Gun Master, Scavenger<br />
+<br />
+<div class="tag tag-b">File Name:</div> Azadi Palace<br />
+<div class="tag tag-b">Map Name:</div> XP4_Parl<br />
+<div class="tag tag-b">Game modes:</div> Conquest Large, Conquest Small, Rush, Squad Rush, Squad Deathmatch, TDM, TDM Close Quarters, Gun Master, Scavenger<br />
+<br />
+<div class="tag tag-b">File Name:</div> Epicenter<br />
+<div class="tag tag-b">Map Name:</div> XP4_Quake<br />
+<div class="tag tag-b">Game modes:</div> Conquest Large, Conquest Small, Rush, Squad Rush, Squad Deathmatch, TDM, TDM Close Quarters, Gun Master, Scavenger<br />
+<br />
+<div class="tag tag-b">File Name:</div> Talah Market<br />
+<div class="tag tag-b">Map Name:</div> XP4_Rubble<br />
+<div class="tag tag-b">Game modes:</div> Assault64, Rush, Squad Rush, Squad Deathmatch, TDM, TDM Close Quarters, Gun Master, Scavenger<br />
+<br />
+<div class="inline font-size-50">Source: Procon Maplist</div>            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-03-29T02:19:19+01:00">29. March 2013 02:19</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">ocknoz</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">Brady_The wrote:</div>Info for Aftermath</blockquote><br />
+Done, thanks a lot!            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-10-18T22:26:49+02:00">18. October 2013 22:26</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">ocknoz</div></div>            </div>
+            <div class="post-main">
+                updated plugin URL            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-10-31T10:47:37+01:00">31. October 2013 10:47</time>                                <div class="user-info"><div class="user-name ">Cr4z33</div></div>            </div>
+            <div class="post-main">
+                In BL for BF4 it looks like the Custom Region entry doesn&#039;t get saved.<br />
+<br />
+If I move to another page and come back the entry setting is lost and I have to set it again from the scratch.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-11-14T20:08:55+01:00">14. November 2013 20:08</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">ocknoz</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">Cr4z33 wrote:</div>In BL for BF4 it looks like the Custom Region entry doesn&#039;t get saved.<br />
+<br />
+If I move to another page and come back the entry setting is lost and I have to set it again from the scratch.</blockquote><br />
+<br />
+Are you sure the issue you describe is related to this plugin? Because currently only BF3 is supported, this plugin shouldn&#039;t touch the BF4 pages.<br />
+<br />
+I&#039;ill start working on a BF4 version a soon as I have more spare time.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-11-14T23:18:46+01:00">14. November 2013 23:18</time>                                <div class="user-info"><div class="user-name ">Brady_The</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">Cr4z33 wrote:</div>In BL for BF4 it looks like the Custom Region entry doesn&#039;t get saved.<br />
+<br />
+If I move to another page and come back the entry setting is lost and I have to set it again from the scratch.</blockquote><br />
+This is a Battlelog issue.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-11-15T09:38:31+01:00">15. November 2013 09:38</time>                                <div class="user-info"><div class="user-name ">Cr4z33</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">ocknoz wrote:</div>Are you sure the issue you describe is related to this plugin? Because currently only BF3 is supported, this plugin shouldn&#039;t touch the BF4 pages.<br />
+<br />
+I&#039;ill start working on a BF4 version a soon as I have more spare time.</blockquote><br />
+<br />
+<blockquote><div class="user">Brady_The wrote:</div>This is a Battlelog issue.</blockquote><br />
+Oh alright then.            </div>
+        </div>
+        <script src="../scripts/t.js"></script></body></html>

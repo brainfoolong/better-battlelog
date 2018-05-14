@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Plugin won't load directly from Github - Better Battlelog Forums #48695</title>
+    <link rel="stylesheet" href="../stylesheets/page.css" type="text/css">
+<script src="../scripts/p.js"></script>
+</head>
+<body class="forums-post left-side"><h2>Plugin won&#039;t load directly from Github - Better Battlelog Forums #48695</h2><a href="sitemap.html">Sitemap</a>        <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-11-22T17:02:31+01:00">22. November 2012 17:02</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div> <time datetime="2012-11-23T07:35:01+01:00">23. November 2012 07:35</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">Weyland</div></div>            </div>
+            <div class="post-main">
+                Like the title says. I am unable to load plugins directly from Github. I think this has to do with the fact that it uses the https protocol but I&#039;m not sure why exactly. Just the fact that all plugins hosted on Github with links similar to this: <div class="inline post-url">https://raw.github.com/Weyland/bblog-fix-elements/master/plugin.js</div><br />
+<br />
+Could someone test this for me and see if it works? If not, could this please be fixed?<br />
+<br />
+It would make development through collaboration a lot easier.<br />
+<br />
+Thanks!            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-11-22T17:04:39+01:00">22. November 2012 17:04</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                I&#039;ll be sure it&#039;s because of https.<br />
+Chrome and probably also firefox don&#039;t allow secure &lt;-&gt; unsecure connections withs scripts.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-11-22T17:10:39+01:00">22. November 2012 17:10</time>                    <div class="post-edited">Post edited 2                        x times, last by <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div> <time datetime="2012-11-22T17:11:25+01:00">22. November 2012 17:11</time></div>
+                                                    <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                A solution could be a http proxy on your server that serve the files.<br />
+Example:<br />
+<br />
+<div class="inline post-url">http://mypage.com/proxy?url=https//xsafasdf</div><br />
+<br />
+That serves the same as https//xsafasdf            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-11-22T17:36:42+01:00">22. November 2012 17:36</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">Weyland</div></div>            </div>
+            <div class="post-main">
+                Alright. I will look into setting up a proxy server then. Thanks for the info!            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-02-16T17:20:16+01:00">16. February 2013 17:20</time>                                <div class="user-info"><div class="user-name plugin">dapil</div><div class="user-role">Plugin Developer</div></div>            </div>
+            <div class="post-main">
+                Weird is, that I can load and use plugins from HTTPS GitHb addresses normally.            </div>
+        </div>
+        <script src="../scripts/t.js"></script></body></html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[BF4][v1.1.2] Ambient Light - Better Battlelog Forums #114514</title>
+    <link rel="stylesheet" href="../stylesheets/page.css" type="text/css">
+<script src="../scripts/p.js"></script>
+</head>
+<body class="forums-post left-side"><h2>[BF4][v1.1.2] Ambient Light - Better Battlelog Forums #114514</h2><a href="sitemap.html">Sitemap</a>        <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2014-02-03T15:53:24+01:00">03. February 2014 15:53</time>                    <div class="post-edited">Post edited 14                        x times, last by <div class="user-info"><div class="user-name ">Blodjer</div></div> <time datetime="2014-07-15T22:40:28+02:00">15. July 2014 22:40</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">Blodjer</div></div>            </div>
+            <div class="post-main">
+                Here is a plugin that tries to reduce the ambient light (in real life), while playing Battlefield 4.<br />
+The plugin focuses on the wlan controlled <div class="tag tag-u">Philips Hue Lights</div>. It can also darken <div class="tag tag-u">Battlelog</div>.<br />
+It is useful when you have Battlelog open on a second screen (like me).<br />
+<br />
+<div class="post-image-prepared inline"></div><br />
+<div class="spoiler-button"><span>Changelog</span></div><div class="spoiler">1.1.2<br />
+* fixed a bug where battlelog was not correctly brighten<br />
+* fixed a problem with the new Hue API<br />
+* some other code changes<br />
+<br />
+1.1.1<br />
+* optimize the code<br />
+* optimize the &#039;darken battlelog&#039; function<br />
+* fixed a bug where a new battle report was not indicated<br />
+<br />
+1.1<br />
+* The Hue-Lights can now indicate a new available battle report<br />
+* fixed a bug where the game-status-bar was not darken<br />
+* some code changes<br />
+<br />
+1.0.1<br />
+* some code optimizations<br />
+<br />
+1.0<br />
+* initial version</div><br />
+Plugin Link: <div class="inline post-url">https://docs.google.com/uc?export=download&amp;id=0B92U9QpSX5jKSEVtckhTaDNkT2c</div><br />
+<br />
+Philips Hue: <div class="inline post-url">http://meethue.com/en-us/this-is-hue/an-introduction/</div><br />
+<br />
+<br />
+<div class="inline font-size-50">Google Translate</div>            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-02-03T18:00:30+01:00">03. February 2014 18:00</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Interesting.<br />
+<br />
+Some hints:<br />
+<br />
+* Not use &quot;localStorage&quot;, it will be flushed from battlelog sometimes. Use &quot;instance.storage&quot; instead.<br />
+* Not use &quot;window.focus = &quot; or something like that. It eleminates all prev. attached handlers. Use &quot;$(window).on(&#039;focus&#039;, function(){});&quot; instead.<br />
+* For ajax use &quot;$.getJSON&quot; or &quot;$.ajax&quot; instead of XMLHttpRequest&quot; - Its cross browser safe.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2014-02-03T18:17:34+01:00">03. February 2014 18:17</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">Blodjer</div></div>            </div>
+            <div class="post-main">
+                Thanks for your help. <br />
+Its my first try to do something in Javascript. I&#039;ll take a look at your hints tomorrow.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-10-01T19:55:53+02:00">01. October 2014 19:55</time>                                <div class="user-info"><div class="user-name ">ZeRoHuNt3r</div></div>            </div>
+            <div class="post-main">
+                How to install ??            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2014-10-01T20:26:18+02:00">01. October 2014 20:26</time>                    <div class="post-edited">Post edited 2                        x times, last by <div class="user-info"><div class="user-name ">Blodjer</div></div> <time datetime="2014-10-01T20:34:13+02:00">01. October 2014 20:34</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">Blodjer</div></div>            </div>
+            <div class="post-main">
+                1. Open the BetterBattlelog Sidebar<br />
+2. Click on &#039;Plugins&#039;<br />
+3. Copy and Paste this link (https://docs.google.com/uc?export=download&amp;id=0B92U9QpSX5jKSEVtckhTaDNkT2c) into the textfield<br />
+4. Press Enter<br />
+5. Reload Battlelog (F5)<br />
+<br />
+When you open now the Sidebar and scrolls down you should the some options for the Ambient Light Plugin.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-10-01T22:24:30+02:00">01. October 2014 22:24</time>                                <div class="user-info"><div class="user-name mod">ORFK</div><div class="user-role">Global Moderator</div></div>            </div>
+            <div class="post-main">
+                nice feature :-D thats the future! good work :-)            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-10-17T22:32:49+02:00">17. October 2014 22:32</time>                    <div class="post-edited">Post edited 2                        x times, last by <div class="user-info"><div class="user-name ">Bluscream</div></div> <time datetime="2014-10-17T22:36:43+02:00">17. October 2014 22:36</time></div>
+                                                    <div class="user-info"><div class="user-name ">Bluscream</div></div>            </div>
+            <div class="post-main">
+                Could you upload it directly to a webspace so we can have a auto-updated version without the need of the customplugin space?<br />
+<br />
+<br />
+For now i uploaded it on my Dropbox to add it just with the URL<br />
+<div class="inline post-url">https://dl.dropboxusercontent.com/u/33225956/BBLog/plugins/ambient_light/ambient_light.js</div>            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2014-10-18T00:02:40+02:00">18. October 2014 00:02</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">Blodjer</div></div>            </div>
+            <div class="post-main">
+                You can use my link i post above. It is always the latest version. You can add it also just with the URL.            </div>
+        </div>
+        <script src="../scripts/t.js"></script></body></html>

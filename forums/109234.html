@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Convert background page to event page in chrome - Better Battlelog Forums #109234</title>
+    <link rel="stylesheet" href="../stylesheets/page.css" type="text/css">
+<script src="../scripts/p.js"></script>
+</head>
+<body class="forums-post left-side"><h2>Convert background page to event page in chrome - Better Battlelog Forums #109234</h2><a href="sitemap.html">Sitemap</a>        <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-10-09T21:35:43+02:00">09. October 2013 21:35</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div> <time datetime="2013-10-31T13:33:41+01:00">31. October 2013 13:33</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">kurtextrem</div></div>            </div>
+            <div class="post-main">
+                <div class="inline post-url">https://developer.chrome.com/extensions/event_pages.html</div><br />
+Should be possible.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-10-10T07:24:50+02:00">10. October 2013 07:24</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">kurtextrem wrote:</div>https://developer.chrome.com/extensions/event_pages.html<br />
+Should be possible.</blockquote><br />
+<br />
+Why should i do that?<br />
+BBLog always require the background page, immediately on start until the end, everytime the DOM changes in battlelog (almost everytime).<br />
+<br />
+And on the other hand, the background.js doesn&#039;t require that much memory or performance, it just have a simple listener for storage issues.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-10-10T09:54:42+02:00">10. October 2013 09:54</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">kurtextrem</div></div>            </div>
+            <div class="post-main">
+                You did not get the sense of event pages.<br />
+<blockquote>The event page was listening for an event, and the event is dispatched.<br />
+A content script or other extension sends a message.<br />
+Another view in the extension (for example, a popup) calls runtime.getBackgroundPage.</blockquote><br />
+<br />
+If Battlelog is active, the event page can be active. If not, why should it be active? Only the content script calls the background page and the content script is only active when Battlelog is.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-10-10T09:59:25+02:00">10. October 2013 09:59</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Well, i just give it a try but i don&#039;t expect that this is working well.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-10-10T10:02:33+02:00">10. October 2013 10:02</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">kurtextrem</div></div>            </div>
+            <div class="post-main">
+                It should work fine. The &quot;background&quot; page goes live whenever a content script sends a message. It&#039;s the case, because the content script is indeed sending &quot;messages&quot; to store content.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-10-10T10:33:09+02:00">10. October 2013 10:33</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Well, tested it right now.<br />
+Seems to work but i can&#039;t notice any memory or usage difference, weither in idle nor in use mode.<br />
+<br />
+Anyway, things for clearing me up about this, never thought deeper about that.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-10-10T11:10:26+02:00">10. October 2013 11:10</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">kurtextrem</div></div>            </div>
+            <div class="post-main">
+                You could just add it anyways for the next version, shouldn&#039;t hurt ^^            </div>
+        </div>
+        <script src="../scripts/t.js"></script></body></html>

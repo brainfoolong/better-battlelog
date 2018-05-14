@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stars on the weapon icons - Better Battlelog Forums #2050</title>
+    <link rel="stylesheet" href="../stylesheets/page.css" type="text/css">
+<script src="../scripts/p.js"></script>
+</head>
+<body class="forums-post left-side"><h2>Stars on the weapon icons - Better Battlelog Forums #2050</h2><a href="sitemap.html">Sitemap</a>        <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-09-20T15:45:21+02:00">20. September 2012 15:45</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">sobol6803</div></div>            </div>
+            <div class="post-main">
+                Hi. I have idea for new feature for battlelog. I would do that myself (and I still want), but I&#039;m not that good at editing existing sites (i can write one, but not so much edit from the outside). Here&#039;s my idea:<br />
+<br />
+<div class="inline post-url">http://imageshack.us/a/img545/2224/blogstars.png</div><br />
+<br />
+I showed it only for 3 weapons, but i want it on each in every class. I wrote some script myself, but i need a little help to move on. At first, i want to write number of kills on every weapon icon. I wrote that:<br />
+<br />
+<code>var handler = function(){<br />
+var data = BBLog.getCachedJsonRequest(&quot;weaponsPopulateStats&quot;, &quot;lastFirst&quot;, &quot;json&quot;);<br />
+                if(data){<br />
+                    var items = $(&quot;#profile-stats-weapons-secondary-column profile-stats-unlock-progression-kit-items:first div.profile-stats-unlock-progression-kit-item a&quot;);<br />
+					<br />
+                    for(i in data.data.mainWeaponStats){<br />
+                        var weapon = data.data.mainWeaponStats&#91;i&#93;;<br />
+                        var weaponTr = items.filter(&quot;&#91;href*=&#039;iteminfo/&quot;+weapon.slug+&quot;/&#039;&#93;&quot;).closest(&quot;div&quot;).not(&quot;&#91;data-shots&#93;&quot;);<br />
+					 	 if(weaponTr.size()){<br />
+                            weaponTr.attr(&quot;data-shots&quot;, true);<br />
+                            var td = weaponTr.find(&quot;div.last&quot;).prev();<br />
+                            td.find(&quot;.profile-stats-unlock-progression-kit-items&quot;).addClass(&quot;bblog-stars&quot;);<br />
+                            var html = $(<br />
+                                &#039;&#039;+weapon.kills+&#039;&#039;<br />
+                            );<br />
+                            td.find(&quot;.profile-stats-unlock-progression-kit-items&quot;).append(html);<br />
+                        }<br />
+                    }<br />
+                }<br />
+			}<br />
+<br />
+BBLog.bindDomChange(handler);<br />
+handler();</code><br />
+<br />
+But it won&#039;t work. I would need a debugger for JS, &quot;var_dump&quot; or &quot;print_r&quot; from PHP would do that, but JS doesn&#039;t have that. :( By adding my .JS file as plugin to BBlog i can&#039;t debug my variables with Firebug, so at that moment I&#039;m blind and I need a little help. Could anyone help me?            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-09-20T19:05:47+02:00">20. September 2012 19:05</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                console.log() is your debug statement, very similar to var_dump in php.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-09-21T00:35:27+02:00">21. September 2012 00:35</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">sobol6803</div></div>            </div>
+            <div class="post-main">
+                Thanks for feedback! I knew console.log(), console.debug(), etc., but I thought that it only works in my browser, not inside the script. That helped me a lot!<br />
+<br />
+First thing I need to know is if you&#039;d consider to implement that in official BBlog plugin? If not, I&#039;ll public that as separate plugin for BBlog.<br />
+<br />
+I worked few hours and i managed to develop that:<br />
+<br />
+<div class="inline post-url">http://imageshack.us/a/img411/7519/bblogstars2.png</div><br />
+<br />
+As you can see it&#039;s working, but it needs several fixes:<br />
+1. Weapons as M16A4, M4 and M320&#039;s have no stars, because they &quot;share&quot; kills with M16A3, M4A1 and the M320. Do I have to do a special &quot;if&#039;s&quot; for these weapons or it&#039;s easier to implement?<br />
+2. Little stars have bug with z-index (weapon has smaller z-index value than the star, but it&#039;s still on the top). I think the DOM tree should be build differently to fix that.<br />
+3. CSS styles could be more esthetic, but I&#039;m not an artist and it suits me. :P<br />
+4. The code needs (i think) a little optimization, because method &quot;BBLog.getCachedJsonRequest&quot; with &quot;weaponsPopulateStats&quot; argument requests a lot of stats the plugin doesn&#039;t need.<br />
+<br />
+Here&#039;s the code:<br />
+<code>/**<br />
+* The plugin is showing your stars at every gun icon.<br />
+*<br />
+* @author Humanoss<br />
+* @version 1.0<br />
+* @date 20.09.2012<br />
+* @url <div class="inline post-url">http://google.com</div><br />
+*/<br />
+<br />
+var handler = function(){<br />
+var data = BBLog.getCachedJsonRequest(&quot;weaponsPopulateStats&quot;, &quot;lastFirst&quot;, &quot;json&quot;);<br />
+    if(data){<br />
+        var items = $(&quot;#profile-stats-weapons-secondary-column  div.profile-stats-unlock-progression-kit-item a&quot;);<br />
+        for(i in data.data.mainWeaponStats){<br />
+            var weapon = data.data.mainWeaponStats&#91;i&#93;;<br />
+            var weaponTr = items.filter(&quot;&#91;href*=&#039;iteminfo/&quot;+weapon.slug+&quot;/&#039;&#93;&quot;).closest(&quot;div&quot;).not(&quot;&#91;data-shots&#93;&quot;);<br />
+            if(weaponTr.size()){<br />
+                weaponTr.attr(&quot;data-shots&quot;, true);<br />
+                var html = $(<br />
+                    &#039;&#039;+Math.floor(weapon.kills/100)+&#039;&#039;<br />
+                );<br />
+				weaponTr.children(&quot;div.progress&quot;).append(html);<br />
+            }<br />
+        }<br />
+    }<br />
+}<br />
+<br />
+BBLog.bindDomChange(handler);<br />
+handler();</code><br />
+And link:<br />
+<div class="inline post-url">http://www.sobol6803.yoyo.pl/bbstars.js</div>            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-09-24T15:39:58+02:00">24. September 2012 15:39</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Looks pretty neat, i&#039;ll think about a integration.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-09-24T15:49:41+02:00">24. September 2012 15:49</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">sobol6803</div></div>            </div>
+            <div class="post-main">
+                Thanks! I&#039;m looking forward to it!<br />
+<br />
+It needs a different position in DOM tree, because i found 2 more bugs:<br />
+1. When someone doesn&#039;t have a weapon unlocked, the star and number are repositioned (the divs the script is making shouldn&#039;t be in &quot;#progress&quot; div.<br />
+2. When someone has more than 9 stars, the star is covering the number. &quot;Float&quot; in CSS should do the work.<br />
+<br />
+Would you want me to fix all that stuff or you&#039;ll take care of it on your own?            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-09-24T15:58:48+02:00">24. September 2012 15:58</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                No, i already have done some fixes.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-09-26T04:41:09+02:00">26. September 2012 04:41</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">sobol6803</div></div>            </div>
+            <div class="post-main">
+                Well, could I get a little peak at what you&#039;ve done? :P And when we can expect the next update?            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-09-26T08:15:24+02:00">26. September 2012 08:15</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Update out now.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-09-26T14:46:35+02:00">26. September 2012 14:46</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">sobol6803</div></div>            </div>
+            <div class="post-main">
+                I&#039;ve found bug with z-index:<br />
+<br />
+<div class="inline post-url">http://imageshack.us/a/img842/9458/bblogstars.png</div><br />
+<br />
+And it could be positioned in right bottom corner, because it&#039;s &quot;flying&quot; now.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-09-26T14:48:35+02:00">26. September 2012 14:48</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Already reported. <div class="inline post-url">http://getbblog.com/viewtopic.php?f=3&amp;t=778</div><br />
+About flying, i saw it. It&#039;s just a firefox issue. Also on Todo.            </div>
+        </div>
+        <script src="../scripts/t.js"></script></body></html>

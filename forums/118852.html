@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Codeleak? New Battlefield already in the work or a big update in Battlelog? - Better Battlelog Forums #118852</title>
+    <link rel="stylesheet" href="../stylesheets/page.css" type="text/css">
+<script src="../scripts/p.js"></script>
+</head>
+<body class="forums-post left-side"><h2>Codeleak? New Battlefield already in the work or a big update in Battlelog? - Better Battlelog Forums #118852</h2><a href="sitemap.html">Sitemap</a>        <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2014-05-27T12:35:21+02:00">27. May 2014 12:35</time>                    <div class="post-edited">Post edited 45                        x times, last by <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div> <time datetime="2014-05-28T07:08:59+02:00">28. May 2014 07:08</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                <div class="tag tag-b">This topic is the original initiator of the codeleak of 27.05.2014 - Many people started dig into the code after this topic has been started</div> <br />
+<br />
+<div class="tag tag-u">Research Status</div><br />
+Some &quot;almost, facts&quot; found during code research - Last update 27.05.2014 18:15 UTC:<br />
+* New Game Name: Battlefield Hardline (Possible codenames: Havanna, Omaha)<br />
+* New Game Mode: Bloodmoney, Heist (Clearly visible in code - GameMode List)<br />
+* Alpha and Beta in use or preperation (Found both parts in code)<br />
+* Commander Mode (Found in icons, see bellow)<br />
+* Soldier Classes: Enforcer, Mechanic, Operator, Professional (Clearly visible in code)<br />
+* Platforms: (PS3, XBOX 360) - Differs in some code parts - Always present in code PS4, XBOX One and PC<br />
+* Teams: THIEVES, SWAT<br />
+* All internal names for unlocks, weapons, vehicles, items<br />
+<div class="inline post-url">http://getbblog.com/board/post/118881</div><br />
+<div class="inline post-url">http://getbblog.com/board/post/118882</div><br />
+<div class="inline post-url">http://getbblog.com/board/post/118883</div><br />
+<div class="inline post-url">http://getbblog.com/board/post/118884</div><br />
+<div class="inline post-url">http://getbblog.com/board/post/118885</div><br />
+<div class="inline post-url">http://getbblog.com/board/post/118886</div><br />
+* Pretty much all graphs for weapons, vehicles, accessories, etc...: <div class="inline post-url">http://www.koenv.com/blog/2014/5/battlefield-hardline</div><br />
+* Finally, it&#039;s officially announced. You heard it here first :) <div class="inline post-url">http://blogs.battlefield.com/2014/05/bf-hardline-coming-this-fall/</div><br />
+<br />
+=====<br />
+<br />
+I&#039;ve found a little bit with the todays battlelog update!<br />
+Somebody have ideas what that does mean?<br />
+<br />
+I don&#039;t think it does mean BattleField Heroes because Heroes have a internal ID with &quot;256&quot; and the new icons internally handles as &quot;8192&quot;.<br />
+<br />
+<div class="inline post-url">http://eaassets-a.akamaihd.net/bl-cdn/cdnprefix/production-99/public/common/icons/bfh-platforms-horizontal.png</div><br />
+<div class="inline post-url">http://eaassets-a.akamaihd.net/bl-cdn/cdnprefix/production-99/public/common/game_icons_bfh.png</div><br />
+<br />
+Found here:<br />
+<div class="inline post-url">http://eaassets-a.akamaihd.net/bl-cdn/cdnprefix/production-99/public/generated-sass/bf4-static.css</div><br />
+<br />
+Also this site returns a blank error page<br />
+<div class="inline post-url">http://battlelog.battlefield.com/bfh</div><br />
+<br />
+That does not happen on any other page that not exist.<br />
+<br />
+<div class="tag tag-u">Update:</div><br />
+A reddit user suggested it as &quot;Battlefield Havana&quot; - Codename for new battlefield?<br />
+<br />
+<div class="tag tag-u">Update2:</div><br />
+There are also some more code fragments in some javascript files from battlelog.<br />
+Sounds pretty legit for a new game in the battlefield universe, that comes also into battlelog.<br />
+<br />
+<div class="tag tag-u">Update3:</div><br />
+As you can see, the new game will probably be released for PS3, PS4, XBOX 360, XBOX One and PC - The yellow plus means maybe a &quot;Premium&quot; Account.<br />
+<br />
+<div class="tag tag-u">Update4:</div><br />
+label:&quot;Enforcer&quot;,val:data.scores.sc_enforcer<br />
+label:&quot;Mechanic&quot;,val:data.scores.sc_mechanic<br />
+label:&quot;Operator&quot;,val:data.scores.sc_operator<br />
+label:&quot;Professional&quot;,val:data.scores.sc_professional<br />
+<br />
+That means that we have 4 different soldier types<br />
+<br />
+Enforcer, Mechanic, Operator, Professional<br />
+<br />
+Found here: <div class="inline post-url">http://eaassets-a.akamaihd.net/bl-cdn/cdnprefix/production-99/public/generated/en_US/bundle_base_bottombundles_1874370188.js</div><br />
+<br />
+<div class="tag tag-u">Update5:</div><br />
+All research work in the code let me come to the point that the game will be presented soon - Maybe on E3. Just rumours but all code i&#039;ve found looks pretty much &quot;working&quot; and too much detailed for a &quot;test dummy placeholder code&quot;.<br />
+<br />
+<div class="tag tag-u">Update6</div><br />
+<code>...currentGame===games.BFH)&amp;&amp;S.cookieGet(&quot;autoOpenBattlescreen&quot;))</code><br />
+Looks like we have a battlescreen.<br />
+<br />
+<div class="tag tag-u">Update7</div><br />
+<code>exports.initOmahaHeader=function(){</code><br />
+Another codename found in code: Omaha<br />
+<code>dialog.showVideoPlayer({<br />
+title:&quot;Heist tutorial&quot;,videoUrl:&quot;/bfh/alphavideo&quot;,imageUrl:&quot;/public/base/bfh/map_images/335x160/mp_downtown-f96f7952.jpg&quot;,jplayer:{</code><br />
+Alpha Status confirmed - Map &quot;MP_Downtown&quot; - With tutorial - Image currently not works.<br />
+<br />
+<br />
+<br />
+<div class="tag tag-u">Update8</div><br />
+<code>if(S.globalContext.showBfhWelcomeToBeta){<br />
+$.dialog({<br />
+},{<br />
+template:&quot;npx.bfhdialogpcfirstlogin&quot;,modal:true,hideContainer:false<br />
+})</code><br />
+Seems like a Beta is also already in preperation for PC<br />
+<br />
+<br />
+<br />
+<div class="tag tag-u">Update9</div><br />
+GameModes i&#039;ve found - There some new in there (BLOODMONEY)<br />
+<div class="spoiler-button"><span>Game Modes New</span></div><div class="spoiler">AIRSUPERIORITY: 8388608<br />
+BLOODMONEY: 268435456<br />
+BOMBSQUAD: 1048576<br />
+CAPTURETHEFLAG: 524288<br />
+CARRIERASSAULT: 33554432<br />
+CARRIERASSAULTLARGE: 67108864<br />
+CARRIERASSAULTSMALL: 134217728<br />
+COMBATMISSION: 8192<br />
+CONQUEST: 1<br />
+CONQUESTASSAULTLARGE: 128<br />
+CONQUESTASSAULTSMALL: 256<br />
+CONQUESTLARGE: 64<br />
+CONQUESTSMALL: 1<br />
+DOMINATION: 1024<br />
+ELIMINATION: 16777216<br />
+FIRETEAM_SURVIVOR: 32768<br />
+GUNMASTER: 512<br />
+HEIST: 2147483648<br />
+NONE: 1<br />
+OBJECTIVERAID: 262144<br />
+OBLITERATION: 2097152<br />
+ONSLAUGHT: 16<br />
+RUSH: 2<br />
+RUSHLARGE: 2<br />
+RUSHSMALL: 2<br />
+SCAVENGER: 4194304<br />
+SECTORCONTROL: 16384<br />
+SPORT: 65536<br />
+SQDM: 8<br />
+SQRUSH: 4<br />
+SQUADDEATHMATCH: 8<br />
+SQUADRUSH: 4<br />
+TANKSUPERIORITY: 131072<br />
+TEAMDEATHMATCH: 32<br />
+TEAMDEATHMATCHC: 2048<br />
+TEAMDEATHMATCH_FIRETEAM: 4096<br />
+UNKNOWN: 1</div><br />
+<br />
+<div class="tag tag-u">Update10</div><br />
+Footage and &quot;Battlefield Hardline&quot; Logo.<br />
+<div class="inline post-url">http://www.reddit.com/r/battlefield_4/comments/26lfyo/codeleak_new_battlefield_already_in_the_work_or_a/chs7lnt</div><br />
+<br />
+<div class="tag tag-u">Update11</div><br />
+<div class="spoiler-button"><span>Images</span></div><div class="spoiler"><br />
+Source: <div class="inline post-url">http://www.koenv.com/blog/2014/5/battlefield-hardline</div><br />
+And: <div class="inline post-url">http://eaassets-a.akamaihd.net/bl-cdn/cdnprefix/production-100/public/generated-sass/bfh.css</div><br />
+<br />
+<div class="inline post-url">http://eaassets-a.akamaihd.net/battlelog/bb/bfh/video/heist-video-tutorial-thumb-6f357e23.jpg</div><br />
+<div class="inline post-url">http://eaassets-a.akamaihd.net/battlelog/bb/bfh/serverbrowser/quickmatch-box-blood-money-ef762b37.jpg</div><br />
+<div class="inline post-url">http://eaassets-a.akamaihd.net/battlelog/bb/bfh/serverbrowser/quickmatch-box-heist-55e26337.jpg</div><br />
+</div><br />
+<br />
+<div class="tag tag-u">Update12</div><br />
+Teams found in code:<br />
+THIEVES, SWAT<br />
+<br />
+<div class="tag tag-u">Update 13</div><br />
+<div class="inline post-url">http://eaassets-a.akamaihd.net/battlelog/bb/bfh/icons/kit-icons-medium-509fb045.png</div><br />
+A Commander icon is also in the graphs<br />
+<br />
+<div class="tag tag-u">Update14</div><br />
+All internal names for unlocks, weapons, vehicles, items<br />
+<div class="inline post-url">http://getbblog.com/board/post/118881</div><br />
+<div class="inline post-url">http://getbblog.com/board/post/118882</div><br />
+<div class="inline post-url">http://getbblog.com/board/post/118883</div><br />
+<div class="inline post-url">http://getbblog.com/board/post/118884</div><br />
+<div class="inline post-url">http://getbblog.com/board/post/118885</div><br />
+<div class="inline post-url">http://getbblog.com/board/post/118886</div><br />
+<br />
+Reddit here:<br />
+<div class="inline post-url">http://www.reddit.com/r/battlefield_4/comments/26lfyo/codeleak_new_battlefield_already_in_the_work_or_a/</div><br />
+<br />
+Another leak thread that confirmes the name and some images and other stuff.<br />
+<div class="inline post-url">http://www.koenv.com/blog/2014/5/battlefield-hardline</div><br />
+<div class="inline post-url">http://www.reddit.com/r/battlefield_4/comments/26lfyo/codeleak_new_battlefield_already_in_the_work_or_a/chs7lnt</div>            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-05-27T13:12:21+02:00">27. May 2014 13:12</time>                    <div class="post-edited">Post edited 8                        x times, last by <div class="user-info"><div class="user-name trans">Dendari</div><div class="user-role">Translator</div></div> <time datetime="2014-05-27T14:25:25+02:00">27. May 2014 14:25</time></div>
+                                                    <div class="user-info"><div class="user-name trans">Dendari</div><div class="user-role">Translator</div></div>            </div>
+            <div class="post-main">
+                Yeah it&#039;s probably the rumored SWAT themed BF game. I&#039;ve found quite a lot of info...<br />
+<br />
+EDIT1: The code-name is apparently Omaha.<br />
+<br />
+EDIT2: Possible game modes: TDM, Turf War (Small and Large), Heist and Blood Mooney.<br />
+<br />
+EDIT3: Possible teams: SWAT, Thieves, &quot;LW&quot; and &quot;CR&quot;.<br />
+<br />
+EDIT4: The game is pretty much ready for E3, Heist and Blood Mooney will be playable on the map High Tension (MP_Downtown).<br />
+<br />
+EDIT5: I believe Commander mode will be available too.<br />
+<br />
+EDIT6: Possible &quot;classes&quot; (maybe they&#039;re just loadouts): Enforcer, Mastermind, Techincian and Professional. There should be vehicles too.<br />
+<br />
+EDIT7: Possible in-game store where you can buy weapons and accessories (hopefully ala CounterStrike).<br />
+<br />
+EDIT8: There will be the police baton (&quot;The police baton is used in melee combat to deter wrongdoes from bad behavior.&quot;)            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-05-27T13:48:27+02:00">27. May 2014 13:48</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name ">shavedap3</div></div> <time datetime="2014-05-27T13:56:34+02:00">27. May 2014 13:56</time></div>
+                                                    <div class="user-info"><div class="user-name ">shavedap3</div></div>            </div>
+            <div class="post-main">
+                I pointed this out on reddit but i wil say it here too, Battlefield Hardline I&#039;m convinced of this based on youtube tags I found on a YouTubers video, one of the youtubers that recently visited San Francisco. <br />
+He will no doubt remove the tags once he sees my comments and I really don&#039;t want to drop anyone in it so don&#039;t want to name names.<br />
+<br />
+I took a gayazo of it but the said youtuber puts his name in the keywords too so don&#039;t want to share it in public. <br />
+<br />
+Until todays leak I had an inkling but now its easy to put 2 and 2 together. I could still be wrong but I doubt it.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2014-05-27T14:07:00+02:00">27. May 2014 14:07</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div> <time datetime="2014-05-27T14:16:59+02:00">27. May 2014 14:16</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                New information found in code<br />
+<br />
+label:&quot;Enforcer&quot;,val:data.scores.sc_enforcer<br />
+label:&quot;Mechanic&quot;,val:data.scores.sc_mechanic<br />
+label:&quot;Operator&quot;,val:data.scores.sc_operator<br />
+label:&quot;Professional&quot;,val:data.scores.sc_professional<br />
+<br />
+That means that we have 4 different soldier types<br />
+<br />
+Enforcer, Mechanic, Operator, Professional<br />
+<br />
+Found here:<br />
+<div class="inline post-url">http://eaassets-a.akamaihd.net/bl-cdn/cdnprefix/production-99/public/generated/en_US/bundle_base_bottombundles_1874370188.js</div><br />
+<br />
+All things let me come to the point that the game will be presented soon - Maybe on E3.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2014-05-27T15:12:15+02:00">27. May 2014 15:12</time>                    <div class="post-edited">Post edited 3                        x times, last by <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div> <time datetime="2014-05-27T15:15:07+02:00">27. May 2014 15:15</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                <div class="tag tag-u">Update6</div><br />
+<code>...currentGame===games.BFH)&amp;&amp;S.cookieGet(&quot;autoOpenBattlescreen&quot;))</code><br />
+Sounds like we have a battlescreen.<br />
+<br />
+<br />
+<div class="tag tag-u">Update7</div><br />
+<code>exports.initOmahaHeader=function(){</code><br />
+Another codename found in code: Omaha<br />
+<code>dialog.showVideoPlayer({<br />
+title:&quot;Heist tutorial&quot;,videoUrl:&quot;/bfh/alphavideo&quot;,imageUrl:&quot;/public/base/bfh/map_images/335x160/mp_downtown-f96f7952.jpg&quot;,jplayer:{</code><br />
+Alpha Status confirmed - Map &quot;MP_Downtown&quot; - With tutorial - Image currently not works.<br />
+<br />
+<code>if(S.globalContext.showBfhWelcomeToBeta){<br />
+$.dialog({<br />
+},{<br />
+template:&quot;npx.bfhdialogpcfirstlogin&quot;,modal:true,hideContainer:false<br />
+})</code><br />
+Seems like a Beta is also already in preperation            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-05-27T15:20:53+02:00">27. May 2014 15:20</time>                                <div class="user-info"><div class="user-name ">kurtextrem</div></div>            </div>
+            <div class="post-main">
+                A few images: <div class="inline post-url">https://twitter.com/BFDaily/status/471277762905657345/photo/1</div>            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2014-05-27T15:38:20+02:00">27. May 2014 15:38</time>                    <div class="post-edited">Post edited 2                        x times, last by <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div> <time datetime="2014-05-27T15:42:59+02:00">27. May 2014 15:42</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                <div class="tag tag-u">Update9</div><br />
+GameModes i&#039;ve found - There some new in there (BLOODMONEY)<br />
+<br />
+<br />
+AIRSUPERIORITY: 8388608<br />
+BLOODMONEY: 268435456<br />
+BOMBSQUAD: 1048576<br />
+CAPTURETHEFLAG: 524288<br />
+CARRIERASSAULT: 33554432<br />
+CARRIERASSAULTLARGE: 67108864<br />
+CARRIERASSAULTSMALL: 134217728<br />
+COMBATMISSION: 8192<br />
+CONQUEST: 1<br />
+CONQUESTASSAULTLARGE: 128<br />
+CONQUESTASSAULTSMALL: 256<br />
+CONQUESTLARGE: 64<br />
+CONQUESTSMALL: 1<br />
+DOMINATION: 1024<br />
+ELIMINATION: 16777216<br />
+FIRETEAM_SURVIVOR: 32768<br />
+GUNMASTER: 512<br />
+HEIST: 2147483648<br />
+NONE: 1<br />
+OBJECTIVERAID: 262144<br />
+OBLITERATION: 2097152<br />
+ONSLAUGHT: 16<br />
+RUSH: 2<br />
+RUSHLARGE: 2<br />
+RUSHSMALL: 2<br />
+SCAVENGER: 4194304<br />
+SECTORCONTROL: 16384<br />
+SPORT: 65536<br />
+SQDM: 8<br />
+SQRUSH: 4<br />
+SQUADDEATHMATCH: 8<br />
+SQUADRUSH: 4<br />
+TANKSUPERIORITY: 131072<br />
+TEAMDEATHMATCH: 32<br />
+TEAMDEATHMATCHC: 2048<br />
+TEAMDEATHMATCH_FIRETEAM: 4096<br />
+UNKNOWN: 1            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2014-05-27T19:46:18+02:00">27. May 2014 19:46</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div> <time datetime="2014-05-27T19:52:19+02:00">27. May 2014 19:52</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Internal Names of Unlocks:<br />
+<br />
+AKM<br />
+BallisticShield<br />
+BaseBallBat<br />
+BreachingCharge<br />
+CR_SurvivalList<br />
+DeployCamera<br />
+FIM92A<br />
+G36C<br />
+GasGrenade<br />
+Grapple_Hook<br />
+Grenade_M67<br />
+HKS_45C<br />
+ICS9<br />
+Knife<br />
+LaserTripMine<br />
+M16A4<br />
+M40A5<br />
+M9<br />
+MG36<br />
+P90<br />
+PTI91<br />
+PoliceBaton<br />
+RPG7<br />
+RepairTool<br />
+SAIGA308<br />
+SBS12_Short<br />
+SW38<br />
+TaserGun<br />
+Tech_9<br />
+UMP45<br />
+ZipLineGun<br />
+_870P            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2014-05-27T19:48:08+02:00">27. May 2014 19:48</time>                    <div class="post-edited">Post edited 3                        x times, last by <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div> <time datetime="2014-05-27T19:52:13+02:00">27. May 2014 19:52</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Internal Names of Weaponaccessories Unlocks:<br />
+<br />
+ACOG<br />
+Bipod<br />
+CP1_Prismatic<br />
+Compact4X<br />
+Compensator<br />
+Coyotee<br />
+DeltaPoint<br />
+EOTech<br />
+ExtendedMag<br />
+FlashLight<br />
+FlashSuppressor<br />
+ForeGrip_Angeled<br />
+ForeGrip_Ergo<br />
+ForeGrip<br />
+ForeGrip_Potato<br />
+ForeGrip_RussianFolding<br />
+ForeGrip_Studd<br />
+GhostRing<br />
+HeavyBarrel<br />
+IronSights<br />
+Kobra<br />
+M145<br />
+MuzzleBreak<br />
+Optics_Default<br />
+PKA<br />
+PKS07<br />
+PK_AS<br />
+PSO<br />
+PistolLaser_Red<br />
+RMR<br />
+RX01<br />
+StraightPullBolt<br />
+Suppressor_FH762MG<br />
+Suppressor_Minimonster<br />
+TacticalLight<br />
+TargetPointer<br />
+Trubrite<br />
+VisionKing            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2014-05-27T19:49:53+02:00">27. May 2014 19:49</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div> <time datetime="2014-05-27T19:52:08+02:00">27. May 2014 19:52</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Internal Names of Weapons:<br />
+<br />
+AKM<br />
+BallisticShield<br />
+BaseBallBat<br />
+BreachingCharge<br />
+CR_SurvivalList<br />
+DeployableCamera<br />
+FIM92A<br />
+G36C<br />
+GasGrenade<br />
+GrappleHook<br />
+Grenade_M67<br />
+HKS_45C<br />
+ICS9<br />
+Knife<br />
+LaserTripMine<br />
+M16A4<br />
+M40A5<br />
+M9<br />
+MG36<br />
+P90<br />
+PTI91<br />
+PoliceBaton<br />
+RPG7<br />
+RepairTool<br />
+SAIGA308<br />
+SBS12_Short<br />
+SW38<br />
+TaserGun<br />
+Tech_9<br />
+UMP45<br />
+ZipLineGun<br />
+_870P            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2014-05-27T19:51:16+02:00">27. May 2014 19:51</time>                    <div class="post-edited">Post edited 2                        x times, last by <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div> <time datetime="2014-05-27T19:52:01+02:00">27. May 2014 19:52</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Internal Names of Vehicles:<br />
+<br />
+Attack_HELI_CR<br />
+Attack_HELI_LE<br />
+CAT_CR<br />
+CAT_LE<br />
+COUPE_CR<br />
+COUPE_LE<br />
+Fuel_Tanker<br />
+MSP_CR<br />
+MSP_LE<br />
+SEDAN_CR<br />
+SEDAN_LE<br />
+SUV_CR<br />
+SUV_LE<br />
+Street_Motorcycle_CR<br />
+Street_Motorcycle_LE<br />
+Transport_Heli_CR<br />
+Transport_Heli_LE<br />
+Utility_Van            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2014-05-27T19:53:17+02:00">27. May 2014 19:53</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div> <time datetime="2014-05-27T19:55:56+02:00">27. May 2014 19:55</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Internal Names of Vehicle Unlocks:<br />
+<br />
+AirCooler<br />
+FireExtinquisher<br />
+GasGrenade<br />
+GunnerSpotLight<br />
+HMG<br />
+HeatSeeker<br />
+IRFlares<br />
+LMG<br />
+Maintenance<br />
+MiniGun<br />
+MobileSpawnPoint<br />
+Optics_Default<br />
+Paint_Core_COP<br />
+Paint_Stealth<br />
+ProximityScanner<br />
+Shell_HE<br />
+Shell_HVCCS            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2014-05-27T19:55:43+02:00">27. May 2014 19:55</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Internal Names of Kit Items:<br />
+<br />
+AmmoBag_Crm<br />
+BallisticShield<br />
+BreachingCharge<br />
+CR_SurvivalList<br />
+Decoy<br />
+DeployCamera<br />
+GasGrenade<br />
+GasMask<br />
+Grapple_Hook<br />
+Grenade_M67<br />
+LaserTripMine<br />
+MedicBag_CR<br />
+RepairTool<br />
+SurvivalList_Skill<br />
+ZipLineGun            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-05-27T20:10:38+02:00">27. May 2014 20:10</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name ">kurtextrem</div></div> <time datetime="2014-05-27T20:10:54+02:00">27. May 2014 20:10</time></div>
+                                                    <div class="user-info"><div class="user-name ">kurtextrem</div></div>            </div>
+            <div class="post-main">
+                Great Job, Brain!<br />
+They fear bringing back the M16A3... it&#039;s the A4 again, lol. Nice to see G36 back and also the G36C. I hope this this studio was able to get the right ROF in the game... yeah, DICE, I&#039;m looking at your &quot;we know ROFs better than the manufacture itself.&quot;            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-05-27T22:12:39+02:00">27. May 2014 22:12</time>                                <div class="user-info"><div class="user-name trans">ArnoldLayne</div><div class="user-role">Translator</div></div>            </div>
+            <div class="post-main">
+                Amazing leaked!<br />
+<br />
+But...it&acute;s a new game? A bf4 modification? - better than to kill dinosaurs!<br />
+<br />
+The fact is i hope to be a good game.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-05-27T22:17:48+02:00">27. May 2014 22:17</time>                                <div class="user-info"><div class="user-name mod">Meaurk</div><div class="user-role">Global Moderator</div></div>            </div>
+            <div class="post-main">
+                We just made our reputation bigger in The Netherlands. One of the biggest tech-sites (Tweakers) has just mentioned GetBBLog into one of its posts regarding the above discussed leakage.<br />
+<br />
+Please note that this site is in Dutch. For translations you can use the well known Chrome optione. :-)<br />
+Source: <div class="inline post-url">http://tweakers.net/nieuws/96279/afbeeldingen-op-ea-site-wijzen-op-komst-battlefield-hardline.html</div>            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-05-27T22:18:33+02:00">27. May 2014 22:18</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name ">elementofprg</div></div> <time datetime="2014-05-27T22:35:08+02:00">27. May 2014 22:35</time></div>
+                                                    <div class="user-info"><div class="user-name ">elementofprg</div></div>            </div>
+            <div class="post-main">
+                Many of the images, especially ones that bf4 assets just inverted I haven&#039;t been able to find in the code myself. Nor references to anything like &quot;/battlelog/bb/bfh/gamedata/weaponaccessory/&quot; however i see stuff like &quot;/public/base/bfh/&quot; Can you confirm some of the images posted on other sites?<br />
+<br />
+EDIT:<br />
+oops, never mind. Didn&#039;t see the link to the CCS file.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-05-27T23:31:01+02:00">27. May 2014 23:31</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name themes">juress</div><div class="user-role">Theme Developer</div></div> <time datetime="2014-05-27T23:31:38+02:00">27. May 2014 23:31</time></div>
+                                                    <div class="user-info"><div class="user-name themes">juress</div><div class="user-role">Theme Developer</div></div>            </div>
+            <div class="post-main">
+                Battlefield Counter Strike Pay Day! YAY!<br />
+(I aint gonna use SWAT, cause lets face it, it&#039;s gonna be a massively arcady game... sadly)            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2014-05-28T07:06:54+02:00">28. May 2014 07:06</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Finally, it&#039;s officially announced.<br />
+You heard it here first :)<br />
+<div class="inline post-url">http://blogs.battlefield.com/2014/05/bf-hardline-coming-this-fall/</div>            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2014-05-28T14:09:30+02:00">28. May 2014 14:09</time>                    <div class="post-edited">Post edited 3                        x times, last by <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div> <time datetime="2014-05-28T18:27:58+02:00">28. May 2014 18:27</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                First gameplay video - But i&#039;m not 100% sure if its is a real gameplay.<br />
+The graphics looks not like a frostbite 3 game.<br />
+<br />
+Edit: Video is offline - No wonder :)<br />
+<br />
+<div class="inline post-url">https://www.youtube.com/watch?v=ecrE4qfqI4g</div>            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-05-28T15:19:05+02:00">28. May 2014 15:19</time>                                <div class="user-info"><div class="user-name ">kurtextrem</div></div>            </div>
+            <div class="post-main">
+                I guess it&#039;s not fully complete and / or the quality of the video is bad. (See the unrendered models at same point of the video)            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-05-28T23:41:40+02:00">28. May 2014 23:41</time>                                <div class="user-info"><div class="user-name help">xXJumpyXx</div><div class="user-role">Helping Hand</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">BrainFooLong wrote:</div>Edit: Video is offline - No wonder :)</blockquote><br />
+The video can be downloaded from MEGA for anyone who is interested, I came across the link and thought I&#039;d post it here.<br />
+<br />
+<div class="inline post-url">https://mega.co.nz/#!pI8CSRaJ!OVhVvDykzkSAw-Ak39QCbsyspqcQq-Dm7d623YKzPQc</div>            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-05-29T03:00:12+02:00">29. May 2014 03:00</time>                                <div class="user-info"><div class="user-name ">Nannex</div></div>            </div>
+            <div class="post-main">
+                Nope it&#039;s been deleted too.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-05-29T12:36:44+02:00">29. May 2014 12:36</time>                                <div class="user-info"><div class="user-name help">seniledawdler</div><div class="user-role">Helping Hand</div></div>            </div>
+            <div class="post-main">
+                teh video:<br />
+<div class="inline post-url">http://www.dualshockers.com/2014/05/28/battlefield-hardline-gameplay-trailer-leaked/</div>            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-05-29T15:02:22+02:00">29. May 2014 15:02</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name help">xXJumpyXx</div><div class="user-role">Helping Hand</div></div> <time datetime="2014-05-29T17:07:36+02:00">29. May 2014 17:07</time></div>
+                                                    <div class="user-info"><div class="user-name help">xXJumpyXx</div><div class="user-role">Helping Hand</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">seniledawdler wrote:</div>teh video:<br />
+<div class="inline post-url">http://www.dualshockers.com/2014/05/28/battlefield-hardline-gameplay-trailer-leaked/</div></blockquote><br />
+Seems to be gone there too.<br />
+<div class="tag tag-b">EDIT:</div> NVM, it still works there, my mistake.<br />
+<br />
+Let&#039;s see how long it takes for EA to get Google to remove the video from my Google Drive.<br />
+Can be watched and downloaded here: <div class="inline post-url">https://drive.google.com/file/d/0B636uoifw-5oVUFjbktMRVpDZzQ/edit?usp=sharing</div>            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-05-29T16:36:58+02:00">29. May 2014 16:36</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name help">seniledawdler</div><div class="user-role">Helping Hand</div></div> <time datetime="2014-05-29T16:37:36+02:00">29. May 2014 16:37</time></div>
+                                                    <div class="user-info"><div class="user-name help">seniledawdler</div><div class="user-role">Helping Hand</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">xXJumpyXx wrote:</div>Seems to be gone there too.</blockquote><br />
+<br />
+Tried just now and it played well. Tested on another browsers in case there was some cache shenanigans going on. Perhaps adblocker blocks the ad and then won&#039;t play the video?            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-05-29T17:04:41+02:00">29. May 2014 17:04</time>                                <div class="user-info"><div class="user-name help">xXJumpyXx</div><div class="user-role">Helping Hand</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">seniledawdler wrote:</div>Tried just now and it played well. Tested on another browsers in case there was some cache shenanigans going on. Perhaps adblocker blocks the ad and then won&#039;t play the video?</blockquote><br />
+<br />
+You&#039;re right :) Was a mix of &#039;HTTPS Everywhere&#039; forcing https on Playwire, which made it not load the player, and &#039;AdBlock Plus&#039; blocking some element.<br />
+<br />
+My mistake.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-05-29T17:58:10+02:00">29. May 2014 17:58</time>                                <div class="user-info"><div class="user-name mod">Nano</div><div class="user-role">Global Moderator</div></div>            </div>
+            <div class="post-main">
+                <div class="inline post-url">http://battlelog.battlefield.com/omaha</div><br />
+<br />
+Returns a &quot;Not Found&quot; error too.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2014-05-30T14:28:06+02:00">30. May 2014 14:28</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div> <time datetime="2014-05-30T14:28:20+02:00">30. May 2014 14:28</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                I&#039;m not sure if BF Hardline and the confusing &quot;Omaha&quot; are same games.<br />
+Why they should use 2 different battlelog urls and 2 codenames for one game (havanna, ohama). <br />
+Hmm...            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-05-30T14:49:12+02:00">30. May 2014 14:49</time>                                <div class="user-info"><div class="user-name ">kurtextrem</div></div>            </div>
+            <div class="post-main">
+                Let&#039;s see what E3 will  bring.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-05-30T15:21:38+02:00">30. May 2014 15:21</time>                                <div class="user-info"><div class="user-name trans">Dendari</div><div class="user-role">Translator</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">BrainFooLong wrote:</div>I&#039;m not sure if BF Hardline and the confusing &quot;Omaha&quot; are same games.<br />
+Why they should use 2 different battlelog urls and 2 codenames for one game (havanna, ohama). <br />
+Hmm...</blockquote><br />
+<br />
+Omaha is the codename and if you notice when you click on the &quot;omaha url&quot; it&#039;ll redirect to &quot;bfh&quot;.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2014-05-30T15:59:19+02:00">30. May 2014 15:59</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div> <time datetime="2014-05-30T15:59:44+02:00">30. May 2014 15:59</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                <code>Omaha is the codename and if you notice when you click on the &quot;omaha url&quot; it&#039;ll redirect to &quot;bfh&quot;</code><br />
+<br />
+That is definetly new since a few minutes. They pushed out a update few minutes ago :)            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-05-30T18:15:35+02:00">30. May 2014 18:15</time>                                <div class="user-info"><div class="user-name mod">Nano</div><div class="user-role">Global Moderator</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">BrainFooLong wrote:</div>I&#039;m not sure if BF Hardline and the confusing &quot;Omaha&quot; are same games.<br />
+Why they should use 2 different battlelog urls and 2 codenames for one game (havanna, ohama). <br />
+Hmm...</blockquote><br />
+<br />
+In leaked video, they shows &quot;Omaha&quot; everytime.<br />
+But in BLog, this can be a shortcut, i think.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-05-31T13:15:53+02:00">31. May 2014 13:15</time>                                <div class="user-info"><div class="user-name mod">Meaurk</div><div class="user-role">Global Moderator</div></div>            </div>
+            <div class="post-main">
+                Omaha is the codename for Hardline, in Origin you can pre-order BF: Hardline now. The URL mentions &#039;omaha&#039;, see below.<br />
+<br />
+<div class="inline post-url">https://www.origin.com/en-us/store/buy/omaha/pc-download/base-game/digital-deluxe-edition</div>            </div>
+        </div>
+        <script src="../scripts/t.js"></script></body></html>

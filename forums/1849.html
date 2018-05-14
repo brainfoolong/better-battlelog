@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HowTo - Change Background with BBLog - Better Battlelog Forums #1849</title>
+    <link rel="stylesheet" href="../stylesheets/page.css" type="text/css">
+<script src="../scripts/p.js"></script>
+</head>
+<body class="forums-post left-side"><h2>HowTo - Change Background with BBLog - Better Battlelog Forums #1849</h2><a href="sitemap.html">Sitemap</a>        <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-07-03T13:58:14+02:00">03. July 2012 13:58</time>                    <div class="post-edited">Post edited 6                        x times, last by <div class="user-info"><div class="user-name mod">ORFK</div><div class="user-role">Global Moderator</div></div> <time datetime="2013-11-04T19:42:36+01:00">04. November 2013 19:42</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name mod">ORFK</div><div class="user-role">Global Moderator</div></div>            </div>
+            <div class="post-main">
+                With BBLog 2.0 you can change the Background Image and Color of Battlelog like you want. For this you have to go to BBLog Center -&gt; Minor Improvement -&gt; Change Battlelog Background.<br />
+<br />
+Many BBLog user asked, how they have to include the CSS Code, so i will write here a tutorial based on my german version.<br />
+<br />
+There are 2 different ways how you can use it, a simple and a more complicated way.<br />
+<br />
+<div class="tag tag-b">1.) Simple way:</div><br />
+Just include ONLY the URL of you Graph into the Text Area and Save it.<br />
+This is easy but have one problem. Yout Background Image will be repeated ongoing.<br />
+<br />
+Check for an Example: (Just include following line into text area)<br />
+<code>http://battlelog-cdn.battlefield.com/public/comcenter/unread.gif</code><br />
+<br />
+<div class="tag tag-b">2.) Customizable, complicated way:</div><br />
+On this way you can customize your background more than on the first way, but you have to do more things. You have to include a correct CSS Code, otherwise it won&#039;t work like you want. i have written here a description wich is the easiest way to generate this code.<br />
+<br />
+Most important point: the &quot; and &#039; signs you just need by the Image URL, nowhere else.<br />
+<br />
+<div class="tag tag-b">2.1.) Background Color:</div><br />
+next we will define the background color. for this you should use the HEX Code. For Example <div class="tag tag-u">#ffffff</div> for white, <div class="tag tag-u">#ff0000</div> for red or <div class="tag tag-u">#000000</div> for black and else. Photoshop, GIMP and other graphic/photo editors can help you to find the right HEX Code. You can use the names for colors too, for example <div class="tag tag-u">red, green, blue</div> and else. if you want to learn more about this topic please read: <div class="inline post-url">http://en.wikipedia.org/wiki/Web_colors</div><br />
+<br />
+<div class="tag tag-b">2.2.) Background position:</div><br />
+by the next step you have to define the position of your background image. here you should following the Rule <div class="tag tag-u">HORIZONTAL VERTICAL</div> because if you use only dates in pixel for the position, it will ALWAYS follow this rule!<br />
+<br />
+for example: if you write 200px 100px, the left top corner of the image will be positioned 200px on the RIGHT SIDE and 100px UNDER the TOP of the left top corner of the browser window.<br />
+Example: <div class="inline post-url">http://temp.elchalarm.net/bblog-background/position/200px_100px/</div><br />
+<br />
+if you write 0px 0px it will exactly begin in the left top corner of the browser.<br />
+Example: <div class="inline post-url">http://temp.elchalarm.net/bblog-background/position/0px_0px/</div><br />
+<br />
+if you write -300px -200px it will begin 300px on the LEFT SIDE and 200px OVER the TOP of the left top corner of the  browser window.<br />
+Example: <div class="inline post-url">http://temp.elchalarm.net/bblog-background/position/-300px_-200px/</div><br />
+<br />
+you can use words <div class="tag tag-u">left</div>, <div class="tag tag-u">center</div> or <div class="tag tag-u">right</div> for horizontal position and <div class="tag tag-u">top</div>, <div class="tag tag-u">center</div> or <div class="tag tag-u">bottom</div> for vertical position too. but dont forget the Rule, first horizontal position, secound vertical. The last option is the command <div class="tag tag-u">fixed</div>. This command let the background image fixed on the left top corner of the browser, so if you have a long page and you&#039;re scrolling, the background image will follow the window.<br />
+<br />
+<div class="tag tag-b">2.3.) Background Repeat:</div><br />
+Last topic before we arrive to the image itself, is repeating of the image. generally all browsers repeating the image in the X and Y direction. if you dont want this, you have to use the commands <div class="tag tag-u">repeat-x</div>, <div class="tag tag-u">repeat-y</div> or <div class="tag tag-u">no-repeat</div>. the command <div class="tag tag-u">repeat</div> is the generall setting of the most browsers, so its not important.<br />
+<br />
+repeat-x only repeat the background image in the X Direction, repeat-y only in the verticality.<br />
+<br />
+here few examples for you:<br />
+Repeat: <div class="inline post-url">http://temp.elchalarm.net/bblog-background/repeat/repeat/</div><br />
+No Repeat: <div class="inline post-url">http://temp.elchalarm.net/bblog-background/repeat/no-repeat/</div><br />
+Repeat in X: <div class="inline post-url">http://temp.elchalarm.net/bblog-background/repeat/repeat-x/</div><br />
+Repeat in Y: <div class="inline post-url">http://temp.elchalarm.net/bblog-background/repeat/repeat-y/</div><br />
+<br />
+<div class="tag tag-b">2.4.) Background Image:</div><br />
+Now the Background Image. You have different ways to include it but you have alway to write the full path to the graphic. so you have to use one of these commands, adress is a space holder for the path:<br />
+<code>url(&quot;ADRESS&quot;)<br />
+url(&#039;ADRESS&#039;)<br />
+url(ADRESS)</code><br />
+<br />
+<div class="tag tag-b">Full Examples how it could work:</div><br />
+i have created for you some examples so you can test it how it could work.<br />
+for this i took the background from bf3stats.com<br />
+<br />
+<code>#ffffff -200px 400px no-repeat url(&quot;http://files.bf3stats.com/img/bf3/sitebg.jpg&quot;)</code> <br />
+<code>#ffffff fixed no-repeat url(&quot;http://files.bf3stats.com/img/bf3/sitebg.jpg&quot;)</code> <br />
+<code>#ffffff center top no-repeat url(&quot;http://files.bf3stats.com/img/bf3/sitebg.jpg&quot;)</code> <br />
+<code>#ffffff center top repeat url(&quot;http://battlelog-cdn.battlefield.com/public/comcenter/unread.gif&quot;)</code><br />
+<br />
+Hope i could help you. have fun by using the background function from BBLog.<br />
+If you want to learn more, please read: <div class="inline post-url">http://www.w3schools.com/cssref/css3_pr_background.asp</div>            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-07-03T14:27:05+02:00">03. July 2012 14:27</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Nice Tut. Please move it to other section. Its not a request.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-07-03T14:28:08+02:00">03. July 2012 14:28</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Forget it. It&#039;s an announcement :-) All is ok.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-11-04T19:43:08+01:00">04. November 2013 19:43</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name mod">ORFK</div><div class="user-role">Global Moderator</div></div>            </div>
+            <div class="post-main">
+                updated - codes and tutorial are working again.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-10-29T17:23:31+01:00">29. October 2014 17:23</time>                                <div class="user-info"><div class="user-name ">XxCrAzY-DaVexX</div></div>            </div>
+            <div class="post-main">
+                Can someone make a YouTube tut?            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2014-10-30T18:19:18+01:00">30. October 2014 18:19</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name mod">ORFK</div><div class="user-role">Global Moderator</div></div>            </div>
+            <div class="post-main">
+                did you already read my tutorial? that should help and answer all you questions. i won&#039;t make a tutorial video because it has to many possibilities which i won&#039;t reflect.            </div>
+        </div>
+        <script src="../scripts/t.js"></script></body></html>

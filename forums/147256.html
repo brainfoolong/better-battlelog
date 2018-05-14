@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Keyboard Navigation in Assignment list and Dogtag list - Better Battlelog Forums #147256</title>
+    <link rel="stylesheet" href="../stylesheets/page.css" type="text/css">
+<script src="../scripts/p.js"></script>
+</head>
+<body class="forums-post left-side"><h2>Keyboard Navigation in Assignment list and Dogtag list - Better Battlelog Forums #147256</h2><a href="sitemap.html">Sitemap</a>        <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2016-01-01T17:17:26+01:00">01. January 2016 17:17</time>                    <div class="post-edited">Post edited 3                        x times, last by <div class="user-info"><div class="user-name ">Lexo91</div></div> <time datetime="2016-01-01T17:21:00+01:00">01. January 2016 17:21</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">Lexo91</div></div>            </div>
+            <div class="post-main">
+                Keyboard Navigation in Assignment and Dogtag:<br />
+<br />
+Example Code: <br />
+<code>$(window).keyup(function(event) {<br />
+    var $activeListElement = $(&#039;.box-content li.active&#039;);<br />
+    if ($activeListElement.length) {<br />
+        if (event.keyCode === 39 || event.keyCode === 68) { // right arrow or d<br />
+            $activeListElement.next().find(&#039;div&#039;).first().click();<br />
+        } else if (event.keyCode === 37 || event.keyCode === 65) { // left arrow or a<br />
+            $activeListElement.prev().find(&#039;div&#039;).first().click();<br />
+        } else if (event.keyCode === 38 || event.keyCode === 87) { // up arrow or w<br />
+            $activeListElement.prevAll().eq(4).find(&#039;div&#039;).first().click();<br />
+        } else if (event.keyCode === 40 || event.keyCode === 83) { // down arrow or s<br />
+            $activeListElement.nextAll().eq(4).find(&#039;div&#039;).first().click();<br />
+        }<br />
+    }<br />
+});</code>            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2016-01-01T17:57:00+01:00">01. January 2016 17:57</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Cool, i suggest you to create a custom plugin for this feature.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2016-01-01T20:49:51+01:00">01. January 2016 20:49</time>                    <div class="post-edited">Post edited 3                        x times, last by <div class="user-info"><div class="user-name ">Lexo91</div></div> <time datetime="2016-01-01T21:21:53+01:00">01. January 2016 21:21</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">Lexo91</div></div>            </div>
+            <div class="post-main">
+                so i tried to convert it to a plugin but the storage is not doing what I expected.<br />
+The option disable enable does strange thing sometimes on reload the storage is false.<br />
+<br />
+Here is my code:  <div class="inline post-url">https://gist.github.com/alexander-schranz/d70b3759857382b99b1a</div><br />
+<br />
+Edit: Ok get it the handler is called before the storage is updated. Fixed in in revision 4<br />
+<br />
+Currently cant upload it (blocked by admin) Created a thread in Custom Plugins: <div class="inline post-url">https://getbblog.com/en/board/topic/147275/1/Keyboard-Navigation-in-Assignment-list-and-Dogtag-list</div>            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2016-01-02T11:59:09+01:00">02. January 2016 11:59</time>                                <div class="user-info"><div class="user-name mod">Meaurk</div><div class="user-role">Global Moderator</div></div>            </div>
+            <div class="post-main">
+                You should now be able to upload the latest revision of the plugin. :-)            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2016-01-02T12:42:20+01:00">02. January 2016 12:42</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">Lexo91</div></div>            </div>
+            <div class="post-main">
+                Thank you! Its up2date.            </div>
+        </div>
+        <script src="../scripts/t.js"></script></body></html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bblog dosent work with the https version of battlelog - Better Battlelog Forums #1939</title>
+    <link rel="stylesheet" href="../stylesheets/page.css" type="text/css">
+<script src="../scripts/p.js"></script>
+</head>
+<body class="forums-post left-side"><h2>bblog dosent work with the https version of battlelog - Better Battlelog Forums #1939</h2><a href="sitemap.html">Sitemap</a>        <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-08-13T23:04:30+02:00">13. August 2012 23:04</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">lord of the cottage</div></div>            </div>
+            <div class="post-main">
+                hello bblog dosent work if you force <div class="inline post-url">https://battlelog.battlefield.com</div><br />
+can make it work with the https version aswell?<br />
+<br />
+bblog version 2.2.1 <br />
+browser firefox            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-08-13T23:16:23+02:00">13. August 2012 23:16</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                That is true. BBLog is designed to (not) do this because https is a secure thing.<br />
+BBLog doesn&#039;t have https certificates because it costs money (120 &euro; per year).<br />
+And BBLog&#039;s first directive is: Be secure, be serious.<br />
+BBLog Addon requires some connections to BBLog servers (Addon checks, news, cloud, etc...) and that connection is not secure because of the lack of a ssl certificate.<br />
+So therefore we don&#039;t add support for https. Technically it is not a problem but it&#039;s not secure to connect from https  http.<br />
+And a self signed certificate is also a no-go.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-08-13T23:23:53+02:00">13. August 2012 23:23</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">lord of the cottage</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">brain wrote:</div>That is true. BBLog is designed to (not) do this because https is a secure thing.<br />
+BBLog doesn&#039;t have https certificates because it costs money (120 &euro; per year).<br />
+And BBLog&#039;s first directive is: Be secure, be serious.<br />
+BBLog Addon requires some connections to BBLog servers (Addon checks, news, cloud, etc...) and that connection is not secure because of the lack of a ssl certificate.<br />
+So therefore we don&#039;t add support for https. Technically it is not a problem but it&#039;s not secure to connect from https  http.<br />
+And a self signed certificate is also a no-go.</blockquote><br />
+<br />
+i just tought you could leave bblogs conncetions unsecure and just make it possible to connect to battefields servers securly but a guess you dont like the idea            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-08-13T23:26:52+02:00">13. August 2012 23:26</time>                                <div class="user-info"><div class="user-name mod">ORFK</div><div class="user-role">Global Moderator</div></div>            </div>
+            <div class="post-main">
+                as he said:<br />
+<blockquote>Technically it is not a problem but it&#039;s not secure to connect from https  http.</blockquote><br />
+<br />
+that means, a user HAVE a SECURED Connection if he have https.<br />
+So, if he use BBLog unsecured he DON&#039;T have a 100% secured connection during using https.<br />
+<br />
+We DONT WANT that the users have misstakes like this.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-08-14T14:39:58+02:00">14. August 2012 14:39</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Yep. Secure to unsecure or unsecure to secure connection as a no-go for us (and should also be a no-go for all others).            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-08-15T00:43:34+02:00">15. August 2012 00:43</time>                                <div class="user-info"><div class="user-name help">xXJumpyXx</div><div class="user-role">Helping Hand</div></div>            </div>
+            <div class="post-main">
+                Seems like GoDaddy.com is giving away 1 year certifications FREE of charge for open source projects.<br />
+Last time I checked BBLog is open source so I guess you could grab a certificate if you feel like it brain :P<br />
+<div class="inline post-url">https://www.godaddy.com/ssl/ssl-open-source.aspx</div><br />
+<br />
+If nothing else it could be nice to try it for 1 year, when it&#039;s free and all.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-08-15T03:08:47+02:00">15. August 2012 03:08</time>                                <div class="user-info"><div class="user-name ">AlaskanFyrDragon</div></div>            </div>
+            <div class="post-main">
+                godaddy gave me a free SSL for a year when i bought the hosting for my charity.  it wasn&#039;t part of the plan or anything...  i just asked them if they would do it, and they did.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-08-15T11:57:50+02:00">15. August 2012 11:57</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                The problem is, i also have a 1 year free SSL certificate from my hoster BUT after this year it costs much money.<br />
+If a integrate SSL now and than remove it in 1 year again we have 2 problems:<br />
+<br />
+1. Code that need to be reworked again<br />
+2. Many pissed off people.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-08-15T18:10:58+02:00">15. August 2012 18:10</time>                                <div class="user-info"><div class="user-name help">xXJumpyXx</div><div class="user-role">Helping Hand</div></div>            </div>
+            <div class="post-main">
+                Oh, I understand.<br />
+<br />
+I guess you can use one of the free (free for ever) certification services out there that no browser recognizes and for that matter puts up a WARNING every time you try to load the page. LoL, joke...            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2015-06-15T18:52:32+02:00">15. June 2015 18:52</time>                                <div class="user-info"><div class="user-name ">Georgeto</div></div>            </div>
+            <div class="post-main">
+                Looking forward to the launch of <div class="inline post-url">https://letsencrypt.org/</div> ...            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2015-06-15T19:10:38+02:00">15. June 2015 19:10</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">Georgeto wrote:</div>Looking forward to the launch of <div class="inline post-url">https://letsencrypt.org/</div> ...</blockquote><br />
+<br />
+Yep, i am too.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2015-06-20T03:21:38+02:00">20. June 2015 03:21</time>                                <div class="user-info"><div class="user-name mod">ORFK</div><div class="user-role">Global Moderator</div></div>            </div>
+            <div class="post-main">
+                this project looks interessting :-)<br />
+i will keep an eye on them too!            </div>
+        </div>
+        <script src="../scripts/t.js"></script></body></html>

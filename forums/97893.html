@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BBLOG is not working - Better Battlelog Forums #97893</title>
+    <link rel="stylesheet" href="../stylesheets/page.css" type="text/css">
+<script src="../scripts/p.js"></script>
+</head>
+<body class="forums-post left-side"><h2>BBLOG is not working - Better Battlelog Forums #97893</h2><a href="sitemap.html">Sitemap</a>        <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-05-08T21:59:27+02:00">08. May 2013 21:59</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div> <time datetime="2013-05-09T11:18:19+02:00">09. May 2013 11:18</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">sultanomar</div></div>            </div>
+            <div class="post-main">
+                after some improvments on the battlelog, it uses https for accessing the site, but bblog does not work if the url starts with https://<br />
+where can i change it            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-05-08T22:05:45+02:00">08. May 2013 22:05</time>                                <div class="user-info"><div class="user-name mod">Jos&eacute; Ortega</div><div class="user-role">Global Moderator</div></div>            </div>
+            <div class="post-main">
+                Battlelog doesn&#039;t use HTTPS unless you write HTTPS on the link itself, so don&#039;t use it.<br />
+<br />
+BBLog won&#039;t work in HTTPS links to keep your information safe.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-05-08T22:09:27+02:00">08. May 2013 22:09</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name ">sultanomar</div></div> <time datetime="2013-05-08T22:10:45+02:00">08. May 2013 22:10</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">sultanomar</div></div>            </div>
+            <div class="post-main">
+                i think it is something new<br />
+when i write battlelog.battlefield.com on my browser it automatically directs to https<br />
+and as far as i know https is more secure than http<br />
+well the &quot;s&quot; at the end of the http means http secure            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-05-08T22:42:29+02:00">08. May 2013 22:42</time>                                <div class="user-info"><div class="user-name mod">Meaurk</div><div class="user-role">Global Moderator</div></div>            </div>
+            <div class="post-main">
+                Your antivirus program or another security problem may be forcing you to use https. Disable all antivirus programs and try it again.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-05-09T11:18:08+02:00">09. May 2013 11:18</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                https is more secure, yes.<br />
+BBLog doesn&#039;t support https, why?<br />
+<br />
+Detailed Explanation:<br />
+We (getbblog.com) don&#039;t have a signed SSL certificate, which is needed for https. This cost a lot of money.<br />
+And BBLog (the addon) connect to getbblog.com for some API requests.<br />
+So if you on the http battlelog version, the addon contact our server via http too -&gt; All is fine<br />
+But if you use the https battlelog version, the addon can only contact the http version of getbblog.com. Than http &lt;-&gt; https connections required, that&#039;s not secure, therefore we don&#039;t support BBLog on https battlelog.<br />
+<br />
+And a sidenode: https of battlelog is NOT working 100% - I got the info from DICE that battlelog doesn&#039;t have a real working https version of battlelog.<br />
+<br />
+So, something on your PC force you to the https site. Maybe a addon or anti virus program. Deactivate this for battlelog.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-05-09T14:16:35+02:00">09. May 2013 14:16</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">sultanomar</div></div>            </div>
+            <div class="post-main">
+                thanks for all the answers, i love bblog addon            </div>
+        </div>
+        <script src="../scripts/t.js"></script></body></html>

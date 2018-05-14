@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BBLog Drop Down menu - Better Battlelog Forums #111504</title>
+    <link rel="stylesheet" href="../stylesheets/page.css" type="text/css">
+<script src="../scripts/p.js"></script>
+</head>
+<body class="forums-post left-side"><h2>BBLog Drop Down menu - Better Battlelog Forums #111504</h2><a href="sitemap.html">Sitemap</a>        <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-11-21T03:24:07+01:00">21. November 2013 03:24</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name ">GameFreakBoy</div></div> <time datetime="2013-11-21T04:12:48+01:00">21. November 2013 04:12</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">GameFreakBoy</div></div>            </div>
+            <div class="post-main">
+                Could some one explain how to incorporate the drop down menu in BBLog (the one you get when clicking signature, server radar, etc). I&#039;ve been playing around with it for a few days and can&#039;t seem to figure it out.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-11-21T07:25:17+01:00">21. November 2013 07:25</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div> <time datetime="2013-11-21T07:26:06+01:00">21. November 2013 07:26</time></div>
+                                                    <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                It is not really a dropdown menu.<br />
+It scrolls to a specific point when you click on it.<br />
+<br />
+Here is a quick jQuery example for it - You must have a valid page for it (with &lt;body&gt; and &lt;html&gt; tag):<br />
+<br />
+HTML Code:<br />
+<code>&lt;input type=&quot;button&quot; onclick=&quot;scrollToElement(&#039;#anchor&#039;)&quot; value=&quot;Click Me&quot;/&gt;<br />
+&lt;div id=&quot;anchor&quot; style=&quot;position:relative; margin-top:2000px;&quot;&gt;Scroll to me&lt;/div&gt;</code><br />
+<br />
+<br />
+JS Code:<br />
+<code>function scrollToElement(selector){<br />
+    $(&quot;html,body&quot;).animate({scrollTop : $(selector).offset().top});<br />
+}</code>            </div>
+        </div>
+        <script src="../scripts/t.js"></script></body></html>

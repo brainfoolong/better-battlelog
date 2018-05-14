@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[BF3/BF4][v3.0] Platoon Dropdown - Better Battlelog Forums #107331</title>
+    <link rel="stylesheet" href="../stylesheets/page.css" type="text/css">
+<script src="../scripts/p.js"></script>
+</head>
+<body class="forums-post left-side"><h2>[BF3/BF4][v3.0] Platoon Dropdown - Better Battlelog Forums #107331</h2><a href="sitemap.html">Sitemap</a>        <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-08-28T22:43:12+02:00">28. August 2013 22:43</time>                    <div class="post-edited">Post edited 25                        x times, last by <div class="user-info"><div class="user-name plugin">dapil</div><div class="user-role">Plugin Developer</div></div> <time datetime="2015-03-04T21:06:51+01:00">04. March 2015 21:06</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name plugin">dapil</div><div class="user-role">Plugin Developer</div></div>            </div>
+            <div class="post-main">
+                This plugin adds a submenu to the Platoons item in the header and you can add your platoons to the menu.<br />
+<br />
+Feedback and translations to other languages will be appreciated.<br />
+<br />
+<div class="spoiler-button"><span>Changelog</span></div><div class="spoiler">3.0 - major rewrite (again), better user experience and stability, notice when there are no platoons set up, ability to choose a game for each platoon, nicer settings menu<br />
+2.1.1 - added french (thanks to MajorSheppardI), portuguese (thanks to ArnoldLayne) and german (thanks to Brady_The) translations<br />
+2.1 - full support for BF4<br />
+2.0 - saving system rewritten, partial support for BF4<br />
+1.0.1 - prepared the plugin for BF4 ( <div class="inline post-url">http://getbblog.com/board/topic/108455/1/Theme-and-Plugin-Preparations-for-BF4</div> )<br />
+1.0 - initial version</div><br />
+<div class="inline font-size-200">You can install this plugin from the plugin gallery:<br />
+<div class="inline post-url">http://getbblog.com/plugin/126693/Platoon-Dropdown</div></div><br />
+<br />
+<div class="inline font-size-50">Github repository: <div class="inline post-url">https://github.com/dpeukert/bblog</div></div>            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-12-03T22:48:37+01:00">03. December 2013 22:48</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name ">GameFreakBoy</div></div> <time datetime="2013-12-03T22:50:44+01:00">03. December 2013 22:50</time></div>
+                                                    <div class="user-info"><div class="user-name ">GameFreakBoy</div></div>            </div>
+            <div class="post-main">
+                Until DICE comes out with the button, could you do this and add the drop down to it? :)<br />
+<code>if(BBLog.cache(&quot;mode&quot;) == &quot;bf4&quot;){<br />
+   if($(&quot;.main-nav .base-section-menu&quot;).children().children(&quot;a&#91;href*=&#039;platoon&#039;&#93;&quot;).length &lt; 1){<br />
+   $(&quot;.main-nav .base-section-menu&quot;).append(&quot;&lt;li data-page=&#039;platoons&#039;&gt;&lt;a class=&#039;wfont&#039; href=&#039;/bf3/platoon/landing/&#039;target=&#039;_blank&#039;&gt;Platoons&lt;/a&gt;&lt;/li&gt;&quot;);<br />
+}}</code>            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-12-06T23:36:19+01:00">06. December 2013 23:36</time>                    <div class="post-edited">Post edited 2                        x times, last by <div class="user-info"><div class="user-name plugin">dapil</div><div class="user-role">Plugin Developer</div></div> <time datetime="2013-12-06T23:37:54+01:00">06. December 2013 23:37</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name plugin">dapil</div><div class="user-role">Plugin Developer</div></div>            </div>
+            <div class="post-main">
+                New URL, new rewritten saving system. Should be less buggy now.<br />
+<br />
+New URL:<br />
+<div class="inline post-url">http://dapil.github.io/platoon-dropdown-bblog/platoon-dropdown.js</div><br />
+<br />
+<blockquote><div class="user">GameFreakBoy wrote:</div>Until DICE comes out with the button, could you do this and add the drop down to it? :)</blockquote><br />
+<br />
+Menu item added, but the BF4 Battlelog doesn&#039;t seem to like my dropdown :( Will look into it more.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2014-06-06T23:14:54+02:00">06. June 2014 23:14</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name plugin">dapil</div><div class="user-role">Plugin Developer</div></div>            </div>
+            <div class="post-main">
+                This plugin supports both BF3 and BF4 from now.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-06-07T03:07:26+02:00">07. June 2014 03:07</time>                                <div class="user-info"><div class="user-name trans">ArnoldLayne</div><div class="user-role">Translator</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">dapil wrote:</div>This plugin supports both BF3 and BF4 from now.</blockquote><br />
+<br />
+Portuguese Version...<br />
+<br />
+<code>&quot;pt&quot; : {<br />
+            &quot;plugin.description&quot; : &quot;Gerenciar Tropas exibidas&quot;,<br />
+            &quot;text.description&quot; : &quot;Aqui voc&ecirc; pode escolher quais tropas ser&atilde;o exibidas. Voc&ecirc; pode obter o ID de uma tropa na URL da seguinte p&aacute;gina, por exemplo: <div class="inline post-url">http://battlelog.battlefield.com/bf3/en/platoon/2832655241424190855/</div> o ID &eacute; &lt;strong&gt;2832655241424190855&lt;/strong&gt;.&quot;,<br />
+            &quot;button.add&quot; : &quot;Adicionar&quot;,<br />
+            &quot;hint.name&quot; : &quot;Nome Exibido&quot;,<br />
+            &quot;hint.id&quot; : &quot;ID da Tropa&quot;,<br />
+         },</code>            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-06-07T03:39:44+02:00">07. June 2014 03:39</time>                    <div class="post-edited">Post edited 3                        x times, last by <div class="user-info"><div class="user-name ">Brady_The</div></div> <time datetime="2014-06-07T03:43:40+02:00">07. June 2014 03:43</time></div>
+                                                    <div class="user-info"><div class="user-name ">Brady_The</div></div>            </div>
+            <div class="post-main">
+                <div class="spoiler-button"><span>German translation</span></div><div class="spoiler"><code>&quot;de&quot; : {<br />
+            &quot;plugin.description&quot; : &quot;Verwalte angezeigte Platoons&quot;,<br />
+            &quot;text.description&quot; : &quot;In diesem Dialog kannst du ausw&amp;auml;hlen welche Platoons angezeigt werden sollen. Die ID des gew&amp;uuml;nschten Platoons kannst du der Seiten-URL entnehmen. Beispiel: URL = <div class="inline post-url">http://battlelog.battlefield.com/bf4/platoons/view/4726603585846748181/</div> Platoon-ID = &lt;strong&gt;4726603585846748181&lt;/strong&gt;.&quot;,<br />
+            &quot;button.add&quot; : &quot;Hinzuf&amp;uuml;gen&quot;,<br />
+            &quot;hint.name&quot; : &quot;Anzeigename&quot;,<br />
+            &quot;hint.id&quot; : &quot;Platoon-ID&quot;,<br />
+         },</code><br />
+</div>            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-06-07T09:02:01+02:00">07. June 2014 09:02</time>                                <div class="user-info"><div class="user-name ">MajorSheppardI</div></div>            </div>
+            <div class="post-main">
+                Hello. What are we supposed to see ? Because i have the dropdown but nothing is written. I&#039;m using latest Chrome. Thanks            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2014-06-07T09:07:28+02:00">07. June 2014 09:07</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name plugin">dapil</div><div class="user-role">Plugin Developer</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">MajorSheppardI wrote:</div>Hello. What are we supposed to see ? Because i have the dropdown but nothing is written. I&#039;m using latest Chrome. Thanks</blockquote><br />
+<br />
+Did you configure the platoons in the settings?            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2014-06-07T09:10:47+02:00">07. June 2014 09:10</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name plugin">dapil</div><div class="user-role">Plugin Developer</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">ArnoldLayne wrote:</div><blockquote><div class="user">dapil wrote:</div>This plugin supports both BF3 and BF4 from now.</blockquote><br />
+<br />
+Portuguese Version...<br />
+<br />
+<code>&quot;pt&quot; : {<br />
+            &quot;plugin.description&quot; : &quot;Gerenciar Tropas exibidas&quot;,<br />
+            &quot;text.description&quot; : &quot;Aqui voc&ecirc; pode escolher quais tropas ser&atilde;o exibidas. Voc&ecirc; pode obter o ID de uma tropa na URL da seguinte p&aacute;gina, por exemplo: <div class="inline post-url">http://battlelog.battlefield.com/bf3/en/platoon/2832655241424190855/</div> o ID &eacute; &lt;strong&gt;2832655241424190855&lt;/strong&gt;.&quot;,<br />
+            &quot;button.add&quot; : &quot;Adicionar&quot;,<br />
+            &quot;hint.name&quot; : &quot;Nome Exibido&quot;,<br />
+            &quot;hint.id&quot; : &quot;ID da Tropa&quot;,<br />
+         },</code></blockquote><br />
+<br />
+<blockquote><div class="user">Brady_The wrote:</div><div class="spoiler-button"><span>German translation</span></div><div class="spoiler"><code>&quot;de&quot; : {<br />
+            &quot;plugin.description&quot; : &quot;Verwalte angezeigte Platoons&quot;,<br />
+            &quot;text.description&quot; : &quot;In diesem Dialog kannst du ausw&amp;auml;hlen welche Platoons angezeigt werden sollen. Die ID des gew&amp;uuml;nschten Platoons kannst du der Seiten-URL entnehmen. Beispiel: URL = <div class="inline post-url">http://battlelog.battlefield.com/bf4/platoons/view/4726603585846748181/</div> Platoon-ID = &lt;strong&gt;4726603585846748181&lt;/strong&gt;.&quot;,<br />
+            &quot;button.add&quot; : &quot;Hinzuf&amp;uuml;gen&quot;,<br />
+            &quot;hint.name&quot; : &quot;Anzeigename&quot;,<br />
+            &quot;hint.id&quot; : &quot;Platoon-ID&quot;,<br />
+         },</code><br />
+</div><br />
+</blockquote><br />
+<br />
+Thanks, both are added.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-06-07T09:11:22+02:00">07. June 2014 09:11</time>                                <div class="user-info"><div class="user-name ">MajorSheppardI</div></div>            </div>
+            <div class="post-main">
+                I didn&#039;t join any platoon yet. So i am not able to set name and id.<br />
+Anyway yes i checked it on the settings.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2014-06-07T09:12:16+02:00">07. June 2014 09:12</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name plugin">dapil</div><div class="user-role">Plugin Developer</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">MajorSheppardI wrote:</div>I didn&#039;t join any platoon yet. So i am not able to set name and id.<br />
+Anyway yes i checked it on the settings.</blockquote><br />
+<br />
+Nothing is shown if you do not fill in any platoons            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-06-07T09:17:57+02:00">07. June 2014 09:17</time>                                <div class="user-info"><div class="user-name ">MajorSheppardI</div></div>            </div>
+            <div class="post-main">
+                Okay. Anyway each time i refresh Chrome; the Platton Dropdown settings are unchecked.<br />
+If it&#039;s working it&#039;s maybe my browser            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2014-06-07T09:20:17+02:00">07. June 2014 09:20</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name plugin">dapil</div><div class="user-role">Plugin Developer</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">MajorSheppardI wrote:</div>Okay. Anyway each time i refresh Chrome; the Platton Dropdown settings are unchecked.<br />
+If it&#039;s working it&#039;s maybe my browser</blockquote><br />
+<br />
+It shouldn&#039;t matter if it is checked or not. Did you tried putting some random data in the popup to see if it works?            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-06-07T09:24:47+02:00">07. June 2014 09:24</time>                                <div class="user-info"><div class="user-name ">MajorSheppardI</div></div>            </div>
+            <div class="post-main">
+                I made some random platoon name and his id and i am not able to press Enter button too.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2014-06-07T09:32:31+02:00">07. June 2014 09:32</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name plugin">dapil</div><div class="user-role">Plugin Developer</div></div>            </div>
+            <div class="post-main">
+                Oh, I see what you mean. Try to click the add button and then refresh the page. It should work. The list isn&#039;t automatically updated, I will probably change it to do it so.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-07-26T00:09:42+02:00">26. July 2014 00:09</time>                                <div class="user-info"><div class="user-name ">Krayziesoldier</div></div>            </div>
+            <div class="post-main">
+                For me it doesn&#039;t work. I filled my platoon id and refreshed but nothing happens. The dropdown stays empty.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2014-07-26T08:37:00+02:00">26. July 2014 08:37</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name plugin">dapil</div><div class="user-role">Plugin Developer</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">Krayziesoldier wrote:</div>For me it doesn&#039;t work. I filled my platoon id and refreshed but nothing happens. The dropdown stays empty.<br />
+</blockquote><br />
+<br />
+I&#039;ll look into it on Sunday.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-09-11T18:15:30+02:00">11. September 2014 18:15</time>                    <div class="post-edited">Post edited 2                        x times, last by <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div> <time datetime="2014-09-11T18:16:01+02:00">11. September 2014 18:16</time></div>
+                                                    <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                I&#039;ll suggest to add some information to the empty dropdown.<br />
+I searched some minutes until i checked that i need to goto the BBLog settings :)<br />
+<br />
+Maybe add the button to the entry editor also to the dropdown.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2014-09-21T22:33:10+02:00">21. September 2014 22:33</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name plugin">dapil</div><div class="user-role">Plugin Developer</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">BrainFooLong wrote:</div>I&#039;ll suggest to add some information to the empty dropdown.<br />
+I searched some minutes until i checked that i need to goto the BBLog settings :)<br />
+<br />
+Maybe add the button to the entry editor also to the dropdown.</blockquote><br />
+<br />
+This is now fixed, along with many improvements and new features.            </div>
+        </div>
+        <script src="../scripts/t.js"></script></body></html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Platoon Friends - Better Battlelog Forums #1910</title>
+    <link rel="stylesheet" href="../stylesheets/page.css" type="text/css">
+<script src="../scripts/p.js"></script>
+</head>
+<body class="forums-post left-side"><h2>Platoon Friends - Better Battlelog Forums #1910</h2><a href="sitemap.html">Sitemap</a>        <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-07-31T11:55:17+02:00">31. July 2012 11:55</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">Horfic</div></div>            </div>
+            <div class="post-main">
+                Hi,<br />
+I&#039;m currently working on a plugin which adds all current platoon members which are online to the comcenter. Of course sorted by groups.<br />
+<br />
+It is based on the dicefriends plugin and although it is working, it only does so when I add an alert to it.<br />
+<br />
+I can&#039;t get it to work without the alert. Maybe somebody has an idea ord figures it out.<br />
+<br />
+The development link to the plugin is: <div class="inline post-url">http://labs.web-wack.at/platoonFriends.js</div><br />
+<br />
+Regards,<br />
+Horfic            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-07-31T12:30:38+02:00">31. July 2012 12:30</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                It&#039;s a simple &quot;problem&quot; but a bit harder to fix.<br />
+Your problem is that you use some iterations, and in it you call functions/methods.<br />
+And thats the point with the problem - Javascript is ASYNC, so it could happen that your iteration is finished but some method calls in it are still in queue in a undefined order.<br />
+Thats also the reason why most things in javascript apis like jQuery work with callbacks.<br />
+<br />
+When you call &quot;alert&quot; on every iteration step, the script stops at this point but already queued method calls still be processed.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-08-20T18:52:14+02:00">20. August 2012 18:52</time>                                <div class="user-info"><div class="user-name ">morre599</div></div>            </div>
+            <div class="post-main">
+                I was inspired by this script and made it work. It is a litle buggy but it works.<br />
+<code>var PlatoonFriends = {<br />
+    updateInterval : 60*5,<br />
+    init : function () {<br />
+        <br />
+        var friendListSurface = $S(&quot;comcenter-surface-friends&quot;);<br />
+        friendListSurface.oldUpdate = friendListSurface.update;<br />
+        friendListSurface.update = function(itemState, opts) { var ret = this.oldUpdate(itemState, opts); PlatoonFriends.update(); return ret;}<br />
+        friendListSurface.oldRefresh = friendListSurface.refresh;<br />
+        friendListSurface.refresh = function() { var ret = this.oldRefresh(); PlatoonFriends.update(); return ret;}<br />
+        <br />
+//        PlatoonFriends.update();<br />
+        setInterval(function(){ PlatoonFriends.update(); }, this.updateInterval * 1000);<br />
+    },<br />
+    <br />
+    update : function() {	<br />
+        var platoons = Surface.globalContext.userContext.platoons;<br />
+        var platoonsObj = &#91;&#93;;<br />
+        var playerList = &#91;&#93;;<br />
+        for (var i = 0; i  0) {<br />
+                // if yes, clear it<br />
+                platoonContainer.empty();<br />
+            } else {<br />
+                // if no, create it<br />
+                $(&#039;#comcenter-surface-friends #comcenterOnlineFriends&#039;).before(<br />
+                    $(&#039;&#039;).attr(&#039;id&#039;, &#039;comcenterPlatoonFriends-&#039;+id)<br />
+                    );<br />
+                 <br />
+//                $(&#039;#comcenter-surface-friends .comcenter-add-friend&#039;).before(<br />
+//                    $(&#039;&#039;).attr(&#039;id&#039;, &#039;comcenterPlatoonFriends-&#039;+id)<br />
+//                    );<br />
+            }<br />
+            <br />
+            var playerNum = (playerList&#91;id&#93;.length &#039;).attr(&#039;id&#039;, &#039;comcenter-surface-friends_&#039; + player.userId);<br />
+        <br />
+        var playerElement = $(&#039;#comcenter-surface-friends_&#039; + player.userId);<br />
+        <br />
+//        .removeClass(&#039;comcenter-friend-online&#039;)<br />
+        <br />
+        playerElement.find(&#039;#comcenter-&#039; + player.userId).addClass(&quot;comcenter-platoonfriend-&quot;+platoonId+&quot;-online&quot;);<br />
+        <br />
+        playerContainer.append(playerElement.clone());<br />
+        playerElement.remove();<br />
+             <br />
+        $(&#039;#comcenterPlatoonFriends-&#039;+platoonId).append(playerContainer);<br />
+    },<br />
+    <br />
+    displayComcenterSeparator : function(playerCount, platoonId, platoon) {<br />
+        var separator = $(&#039;&#039;).attr(&#039;id&#039;, &#039;comcenter-platoonfriends-&#039; + platoonId + &#039;-separator&#039;).addClass(&quot;comcenter-separator showing-online&quot;);<br />
+        <br />
+        $(&#039;#comcenterPlatoonFriends-&#039; + platoonId).append(<br />
+            separator.append(<br />
+                $(&#039;&#039;).addClass(&#039;dropdownicon&#039;)<br />
+                ).append(<br />
+                $(&#039;&#039;).attr(&#039;id&#039;, &#039;comcenterPlatoonFriends-&#039; + platoonId).append(<br />
+                    $(&#039;&#039;).text(playerCount.toString() + &#039; &#039; + platoon.platoonName)<br />
+                    )<br />
+                )<br />
+            );<br />
+                <br />
+        separator.bind(&quot;click&quot;, function (e) {<br />
+            var bar = $(&quot;#comcenter-platoonfriends-&quot; + platoonId + &quot;-separator&quot;);<br />
+            if (bar.hasClass(&quot;showing-online&quot;)) {<br />
+                bar.removeClass(&quot;showing-online&quot;);<br />
+                $(&quot;.comcenter-platoonfriend-&quot;+platoonId+&quot;-online&quot;).addClass(&quot;comcenter-friend-hidden&quot;);<br />
+                bar.data(&#039;platoonShow&#039;, false);<br />
+            } else {<br />
+                bar.addClass(&quot;showing-online&quot;);<br />
+                $(&quot;.comcenter-platoonfriend-&quot;+platoonId+&quot;-online&quot;).removeClass(&quot;comcenter-friend-hidden&quot;);<br />
+                bar.data(&#039;platoonShow&#039;, true);<br />
+            }<br />
+            comcenter.resizeComCenter();<br />
+        });<br />
+    },<br />
+<br />
+    makeCallbackWithParam : function(f, p) {<br />
+        var self = this;<br />
+        return function(json) {<br />
+            f.call(self, json, p);<br />
+        }<br />
+    }<br />
+}<br />
+<br />
+PlatoonFriends.Helpers = {<br />
+    makeLocalizedUrl : function(path){<br />
+        var url = &quot;&quot;;<br />
+        if(BBLog.battlelogLanguage != null &amp;&amp; BBLog.battlelogLanguage != &#039;en&#039;)<br />
+            url = &#039;/bf3/&#039; + BBLog.battlelogLanguage + path;<br />
+        else<br />
+            url = &#039;/bf3&#039; + path;<br />
+        return url;<br />
+    }<br />
+};<br />
+<br />
+PlatoonFriends.Platoon = {<br />
+    parseOnlineMembers &#93;;<br />
+<br />
+        for(var i in members) {<br />
+            var member = members&#91;i&#93;;<br />
+            var user = member.user;<br />
+<br />
+            // if player is member of the platoon (not only invited) and in a PC game<br />
+            //if(member.membershipLevel &gt;= 4 &amp;&amp; user.presence.isPlaying &amp;&amp; user.presence.platform == 1 )<br />
+            if(member.membershipLevel &gt;= 4 &amp;&amp; user.presence.isOnline &amp;&amp; json.context.me.userId != user.userId) {<br />
+                var player =<br />
+                {<br />
+                    name : user.username,<br />
+                    userId : user.userId,<br />
+                    personaId : member.personaId,<br />
+                    userAvatar : user.gravatarMd5,<br />
+                    serverGuid : user.presence.serverGuid,<br />
+                    serverName : user.presence.serverName<br />
+                }<br />
+<br />
+                playerList.push(player);<br />
+            }<br />
+        }<br />
+//        return playerList;<br />
+        return (playerList.length &gt; 0) ? playerList &#93;;<br />
+    }<br />
+}<br />
+<br />
+var handler = function () {<br />
+    PlatoonFriends.init();<br />
+}<br />
+$(document).ready(function() { <br />
+//    BBLog.bindDomChange(handler);<br />
+//    handler();<br />
+    PlatoonFriends.init();<br />
+    PlatoonFriends.update();<br />
+});</code>            </div>
+        </div>
+        <script src="../scripts/t.js"></script></body></html>

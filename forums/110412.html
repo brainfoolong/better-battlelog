@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Using layer details window breaks editor - Better Battlelog Forums #110412</title>
+    <link rel="stylesheet" href="../stylesheets/page.css" type="text/css">
+<script src="../scripts/p.js"></script>
+</head>
+<body class="forums-post left-side"><h2>Using layer details window breaks editor - Better Battlelog Forums #110412</h2><a href="sitemap.html">Sitemap</a>        <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-11-01T21:31:58+01:00">01. November 2013 21:31</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div> <time datetime="2013-11-04T09:58:07+01:00">04. November 2013 09:58</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">GameFreakBoy</div></div>            </div>
+            <div class="post-main">
+                With 3.7.0.4 changing the angle or size will cause the drag boxes on the corners and sides to not update with the object. Deselecting and re selecting seems to fix this.<br />
+Changing the top and left values and then immediately trying to re size manually breaks everything and gives you values of NaN. Moving the object slightly by hand after setting those values will prevent this from happening.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-11-02T12:48:54+01:00">02. November 2013 12:48</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Ok. The bug with NAN i&#039;ve found. <br />
+Just doing that <br />
+<code>emblem.emblem.canvas._activeObject&#91;attr&#93; = parseFloat(this.value);<br />
+// instead of that<br />
+emblem.emblem.canvas._activeObject&#91;attr&#93; = this.value;</code><br />
+<br />
+But i cannot find any solution to update that damn control positions.<br />
+I&#039;ve tried out so many things with the emblem functions but non really worked.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-11-02T13:01:16+01:00">02. November 2013 13:01</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Ok, i&#039;ve found that also battlelog native functions doesn&#039;t update the controls properly (Rotate button, Flip Button). I have to wait that they fix it.            </div>
+        </div>
+        <script src="../scripts/t.js"></script></body></html>

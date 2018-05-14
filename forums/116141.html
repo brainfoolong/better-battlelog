@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Filter to hide PBBans / GCC servers? - Better Battlelog Forums #116141</title>
+    <link rel="stylesheet" href="../stylesheets/page.css" type="text/css">
+<script src="../scripts/p.js"></script>
+</head>
+<body class="forums-post left-side"><h2>Filter to hide PBBans / GCC servers? - Better Battlelog Forums #116141</h2><a href="sitemap.html">Sitemap</a>        <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2014-03-19T08:32:17+01:00">19. March 2014 08:32</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name ">Merky2k</div></div> <time datetime="2014-03-19T08:48:23+01:00">19. March 2014 08:48</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">Merky2k</div></div>            </div>
+            <div class="post-main">
+                Hello, I am wondering if it would be possible to create a filter to hide servers running PBBans / GCC ban streaming?<br />
+<br />
+INB4 FLAME:<br />
+<br />
+The reason why I am asking this is because I was banned from all of their servers for using a dot in the middle of my screen as a crosshair using Xfire overlay. This, in my opinion and to Punkbuster isn&#039;t considered cheating and can be used in real life using a marker, a small piece of paper or blu-tac (which I would normally use).<br />
+The only real reason I even used it in the first place is that a different game I played (APB:Reloaded) the Devs in charge of the game said that they would not ban for it and neither would punkbuster, but it is a grey area. So I just assumed it would be safe on all PB games. However PBBans/GCC are not punkbuster and are ultra anal about their anti-cheat measures to the point where they would rather you never play the game again than have a small dot on your screen.<br />
+I did try to appeal, I even brought up the fact that there are gaming monitors which even have a pre-built in crosshair overlay (Asus&#039;s one is called &quot;Game Plus&quot; and has a configurable and extensive crosshair overlay).[https://www.asus.com/Monitors_Projectors/VG248QE/]<br />
+<br />
+I probably wouldn&#039;t even need it if I didn&#039;t have Astigmatism in my left eye. (Astigmatism is basically a different shaped eyeball which, to me makes it difficult to determine things like the middle of my screen)<br />
+<br />
+Oh, and when I asked the admins about their opinions of different bans; they pretty much said using a crosshair overlay may not be the same as using an aimbot or anything but they don&#039;t give out warnings or temp bans; it&#039;s permanent or never. Pretty lame imo.<br />
+<br />
+Here&#039;s a link to my case just incase people think I&#039;m BSing. (I would have never believed anybody would be banned for a small dot till now lol)<br />
+<br />
+<div class="inline post-url">http://www.pbbans.com/mbi-viewban-8b6147d1-vb325328.html</div><br />
+<br />
+TLDR; <br />
+Would like a filer to hide servers using pbbans/gcc servers (can grab a list of server ips for it externally).<br />
+Don&#039;t like their methods.<br />
+Don&#039;t want to re-buy BF4+Premium.<br />
+DO like BBlog.<br />
+<br />
+I could add it my self if there is a way to manually add IPs of a server to the server radar list.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-03-19T12:48:33+01:00">19. March 2014 12:48</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name themes">juress</div><div class="user-role">Theme Developer</div></div> <time datetime="2014-03-19T12:50:30+01:00">19. March 2014 12:50</time></div>
+                                                    <div class="user-info"><div class="user-name themes">juress</div><div class="user-role">Theme Developer</div></div>            </div>
+            <div class="post-main">
+                Don&#039;t think thats possible. You could only make a plugin that removes servers running GCC/PBBans that actually have that included in the name, but most of them don&#039;t so it&#039;s kinda pointless.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-03-19T17:44:51+01:00">19. March 2014 17:44</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Well, at max a request for a plugin. In general i mean: Useless and not possible anyway without performance problems.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-03-24T07:50:44+01:00">24. March 2014 07:50</time>                                <div class="user-info"><div class="user-name mod">Jos&eacute; Ortega</div><div class="user-role">Global Moderator</div></div>            </div>
+            <div class="post-main">
+                So, even if a plugin is created for this, there will be a huge impact in performance just to hide some kind of servers, right?<br />
+<br />
+Can you explain why is that? maybe to many calls to the Battlelog servers?            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-03-24T08:07:09+01:00">24. March 2014 08:07</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                There is no way to do a bulk search on the specific ban software/website for a bunch of server at one time.<br />
+This means one server = one request to one provider.<br />
+<br />
+So short calc:<br />
+<br />
+20 Servers in Serverbrowser, check for PBB and GCC = 40 Requests = Pretty much horrible in any way of thinking.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2014-03-24T12:36:15+01:00">24. March 2014 12:36</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">Merky2k</div></div>            </div>
+            <div class="post-main">
+                There is an external list showing all servers (with server IPs) that run these programs. Would there still be no way to simply add in an exclusion filter or server radar filter with the designated IPs?<br />
+I notice adding a server to the radar means adding some kind of URL id that links to the corresponding server, would it not be possible to add IP:Port or something like this?<br />
+<br />
+I could technically copy+paste every single server on the external list into google till I find every single server running it (till more gets added) but this would take a significant amount of time.<br />
+<br />
+This really wouldn&#039;t be a problem if they didn&#039;t straight up perma-ban for little things with no final say, forcing to buy the game(+premium) again only to have them check IPs and re-ban your new game you just payed ~$80 for because they are &quot;the law&quot;.<br />
+<br />
+I hope you can understand my frustration here.<br />
+<br />
+I commend their efforts and what they are doing, just needs to be done a little differently is all.<br />
+<br />
+Sorry for the hassle, BBlog community.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-03-30T10:38:39+02:00">30. March 2014 10:38</time>                                <div class="user-info"><div class="user-name ">DarkThanos</div></div>            </div>
+            <div class="post-main">
+                Hey,<br />
+<br />
+Ok, let me begin by saying that a do like the server to have an anti-cheat system/software but, i dont like crossgame ban and ip ban. Maybe a warning if you have been banned on an other game. For reasons like your, not all games have the same rules and because, maybe i do like cheating on a game but playing seriusly on an other. A friend of mine was playing BF3 on a server and most players back then was using hacks on that server, he download one and run it... now we cant play bf4 on all servers together...<br />
+<br />
+An addon like this will be usefull both to guys like u and for others too. I can use it to avoid hackers. You can use it to avoid entering and got kick .. <br />
+<br />
+Any way... here is my suggestion.<br />
+As BrainFooLong said this can heve an impact on performance... but... we can intergrate it on server info.<br />
+On server browser list, when you click a server the info side bar come up. There under the &quot;Join Server&quot; button we can add 2 indicator if the server is streaming on &quot;pbbans&quot; or on &quot;ggc&quot;, so 2 requests when u click to see server&#039;s info.<br />
+<br />
+pbbans have a search which can propably be used (&quot;http://www.pbbans.com/msi.php&quot;)<br />
+ggc dont have but most server are having &quot;External Banlists:AntiCheat Inc.&quot; and they have (&quot;http://www.anticheatinc.net/forums/streaming.php&quot;) i dont know if this can be used...<br />
+<br />
+We can also put a cache on last 100 servers and each entry 3-days cache expire... So that if the same server come up within 3 days you dont do the request again.            </div>
+        </div>
+        <script src="../scripts/t.js"></script></body></html>

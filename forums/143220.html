@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manually set Away status in Com Center. - Better Battlelog Forums #143220</title>
+    <link rel="stylesheet" href="../stylesheets/page.css" type="text/css">
+<script src="../scripts/p.js"></script>
+</head>
+<body class="forums-post left-side"><h2>Manually set Away status in Com Center. - Better Battlelog Forums #143220</h2><a href="sitemap.html">Sitemap</a>        <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2015-08-23T01:53:58+02:00">23. August 2015 01:53</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">JesusChrist454</div></div>            </div>
+            <div class="post-main">
+                I looked around and did a search, but I couldn&#039;t find any previous requests for this feature.  <br />
+<br />
+I was curious as to whether it would be possible to be able to use BBlog to somehow override Battlelogs away status timer, so that we could be able to set our status as we chose.  Right now, I believe the away status is triggered automatically after a set amount of time of inactivity on BL.  So, would it be extremely difficult to somehow add a feature to make it possible for us to have that &quot;Away&quot; text appear under your name in the Com Center at the click of a button?  <br />
+<br />
+I know that this is nowhere near being a necessity, or if other people would even find it useful.  However, it would be a nice addition to the already awesome BBLog.  If it were that easy to add, then maybe even give us the possibility to quickly change our status to Invisible as well.  I was thinking something similar to the dropdown box in Origin where you can set yourself as Online, Away, or Invisible.  Maybe place a drop down box around the top right of BL, right next to where you see your player name and avatar.  <br />
+<br />
+I don&#039;t expect anyone to get behind this and I&#039;m sure it won&#039;t be considered, merely because of how &quot;useless&quot; it would be to most.  I&#039;m actually more interested in how much would actually be involved in doing something like this, or whether or not it would be possible to create something on my own.  <br />
+<br />
+Anyway, thanks for this awesome thing that is Better Battlelog and keep up the great work!<br />
+<br />
+JC            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2015-08-23T17:08:38+02:00">23. August 2015 17:08</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                I don&#039;t think that this is possible because there is simple no option in battlelog do change that behaviour.<br />
+I don&#039;t know that much about the status mechanics but i guess that all timeouts are defined on server side because this is a multi application feature (Origin, Battlelog). <br />
+Maybe it is possible to trigger &quot;Go Away&quot; manually, but currently i simply don&#039;t know that.<br />
+<br />
+As you already have noticed it, it is no real feature for BBLog but maybe someone will made a plugin or even test if it is possible.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2016-01-07T23:49:26+01:00">07. January 2016 23:49</time>                    <div class="post-edited">Post edited 2                        x times, last by <div class="user-info"><div class="user-name plugin">I-MrFixIt-I</div><div class="user-role">Plugin Developer</div></div> <time datetime="2016-01-08T00:05:55+01:00">08. January 2016 00:05</time></div>
+                                                    <div class="user-info"><div class="user-name plugin">I-MrFixIt-I</div><div class="user-role">Plugin Developer</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">JesusChrist454 wrote:</div>I looked around and did a search, but I couldn&#039;t find any previous requests for this feature.  <br />
+<br />
+I was curious as to whether it would be possible to be able to use BBlog to somehow override Battlelogs away status timer, so that we could be able to set our status as we chose.  Right now, I believe the away status is triggered automatically after a set amount of time of inactivity on BL.  So, would it be extremely difficult to somehow add a feature to make it possible for us to have that &quot;Away&quot; text appear under your name in the Com Center at the click of a button?  <br />
+<br />
+I know that this is nowhere near being a necessity, or if other people would even find it useful.  However, it would be a nice addition to the already awesome BBLog.  If it were that easy to add, then maybe even give us the possibility to quickly change our status to Invisible as well.  I was thinking something similar to the dropdown box in Origin where you can set yourself as Online, Away, or Invisible.  Maybe place a drop down box around the top right of BL, right next to where you see your player name and avatar.  <br />
+<br />
+I don&#039;t expect anyone to get behind this and I&#039;m sure it won&#039;t be considered, merely because of how &quot;useless&quot; it would be to most.  I&#039;m actually more interested in how much would actually be involved in doing something like this, or whether or not it would be possible to create something on my own.  <br />
+<br />
+Anyway, thanks for this awesome thing that is Better Battlelog and keep up the great work!<br />
+<br />
+JC</blockquote><br />
+<br />
+So, what I found so far.<br />
+Once your are away the browser is responding following data from this url: <div class="inline post-url">http://battlelog.battlefield.com/bf4/comcenter/checkIdle/</div><br />
+<code>{&quot;type&quot;:&quot;success&quot;,&quot;message&quot;:&quot;IDLE&quot;,&quot;data&quot;:{}}</code><br />
+Once your are back online you get the following data from this url: <div class="inline post-url">http://battlelog.battlefield.com/bf4/de/comcenter/setActive/</div><br />
+<code>{&quot;type&quot;:&quot;success&quot;,&quot;message&quot;:&quot;OK&quot;,&quot;data&quot;:{}}</code><br />
+<br />
+So I would say, that if you open this url <div class="inline post-url">http://battlelog.battlefield.com/bf4/comcenter/setActive/</div> that you are marked as &quot;active&quot; in battlelog.<br />
+<br />
+We can test it if you want, just add me on battlelog and we will see what we get. <div class="inline post-url">http://battlelog.battlefield.com/bf4/user/I-MrFixIt-I/</div>            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2016-01-08T07:13:13+01:00">08. January 2016 07:13</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Thx for your work but this &quot;feature&quot; is already rejected.<br />
+You don&#039;t need to invest more time on this request. This was also never a real intended feature for BBLog.            </div>
+        </div>
+        <script src="../scripts/t.js"></script></body></html>

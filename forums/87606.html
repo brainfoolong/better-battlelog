@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Server radar (Local Bug - Firefox related) - Better Battlelog Forums #87606</title>
+    <link rel="stylesheet" href="../stylesheets/page.css" type="text/css">
+<script src="../scripts/p.js"></script>
+</head>
+<body class="forums-post left-side"><h2>Server radar (Local Bug - Firefox related) - Better Battlelog Forums #87606</h2><a href="sitemap.html">Sitemap</a>        <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-03-09T04:20:21+01:00">09. March 2013 04:20</time>                    <div class="post-edited">Post edited 11                        x times, last by <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div> <time datetime="2013-03-12T10:08:56+01:00">12. March 2013 10:08</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">Brady_The</div></div>            </div>
+            <div class="post-main">
+                Hey Guys,<br />
+<br />
+it&#039;s me again. Unfortunately I have to create another case. It might be related to my last problem ( <div class="inline post-url">http://getbblog.com/en/board/topic/85381/1/Soldier-radar-Local-soldier-comments</div> ), but I don&#039;t know.<br />
+<br />
+It&#039;s a really weird bug. I don&#039;t know how long I tested this, to make sure that I don&#039;t open a unnecessary thread but I could re-adjust it every single time. I might affect other settings too that I am not aware off, but the Server radar is the most obvious one. It seems that it&#039;s just a Firefox (19.0.2) problem because I couldn&#039;t re-adjust it with SRWare Iron (based on Chromium). <div class="tag tag-i">Edit: Well, actually I am able to get the same bug on Chrome, with importing the bblog-settings.json I made with Firefox.</div><br />
+<br />
+<div class="tag tag-b">Initial situation:</div><br />
+- Server is on radar list, but it doesn&#039;t show off in the server list, nor in the server details:<br />
+<div class="inline post-url">http://localhostr.com/file/mojw05oqjzcY/1_serverradar.png</div><br />
+<div class="inline post-url">http://localhostr.com/file/hKJdK3SWkPIw/2_serverlist.png</div><br />
+<div class="inline post-url">http://localhostr.com/file/0oNS7SoJBN6b/3_serverdetails.png</div><br />
+-&gt; Not flagged red, no &quot;This server is on your radar&quot; warning,  default &quot;JOIN SERVER&quot; font color, &quot;Add to Radar&quot; instead of &quot;Remove from Radar&quot; button.<br />
+<br />
+<div class="tag tag-b">What I did:</div><br />
+- Deinstalled Addon<br />
+- Deleted %appdata%\Mozilla\Firefox\Profiles\[PROFILE]\extensions\jid1-qQSMEVsYTOjgYA@jetpack<br />
+- Deleted %appdata%\Mozilla\Firefox\Profiles\[PROFILE]\jetpack<br />
+- Reinstalled Addon<br />
+<br />
+<div class="tag tag-b">What happens:</div><br />
+- Server Radar with fresh installed Addon works perfectly fine <div class="tag tag-u">BUT</div><br />
+- As soon as I change settings (doesn&#039;t matter if I change themes, doesn&#039;t matter if I check something, doesn&#039;t matter if I uncheck something, doesn&#039;t matter if I add a plugin, anything) the server radar stop working. The server is still on the server radar, but I have the problems listed above in <div class="tag tag-b">Initial situation</div>.<br />
+<br />
+I have no idea if I am just retarded, if it&#039;s just me having this really strange problem or if it&#039;s something else but I would like to fix it, because I use the Server Radar a lot. Any suggestions?<br />
+<br />
+Thanks in advance (even for reading ;-))<br />
+<br />
+Brady            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-03-09T08:17:36+01:00">09. March 2013 08:17</time>                                <div class="user-info"><div class="user-name themes">juress</div><div class="user-role">Theme Developer</div></div>            </div>
+            <div class="post-main">
+                // fixed the gigantic button in my theme (firefox only) - <div class="tag tag-i">NOT SOLVING THIS PROBLEM</div>...            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-03-09T08:47:08+01:00">09. March 2013 08:47</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">Brady_The</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">juress wrote:</div>// fixed the gigantic button in my theme (firefox only) - <div class="tag tag-i">NOT SOLVING THIS PROBLEM</div>...</blockquote><br />
+<br />
+I am glad that I can help. Haha            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-03-11T13:12:58+01:00">11. March 2013 13:12</time>                                <div class="user-info"><div class="user-name ">Alucard-The-Oni</div></div>            </div>
+            <div class="post-main">
+                Exactly same problem here, the radar is pretty much the only reason I even use BBLog so I would love to see a solution for this fast.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-03-11T13:21:26+01:00">11. March 2013 13:21</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Under consideration.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-03-11T17:31:59+01:00">11. March 2013 17:31</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">Brady_The</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">BrainFooLong wrote:</div>Under consideration.</blockquote><br />
+<br />
+Awesome. Thanks a lot!            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-03-12T08:41:36+01:00">12. March 2013 08:41</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Found the bug. It&#039;s really crazy that this bug happen.<br />
+Added a hotfix (no need to update the addon), but the hotfix probably doesn&#039;t work in some cases.<br />
+Really fixed in next bblog release (no ETA).            </div>
+        </div>
+        <script src="../scripts/t.js"></script></body></html>

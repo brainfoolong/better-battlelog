@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Endless Appending - Better Battlelog Forums #111578</title>
+    <link rel="stylesheet" href="../stylesheets/page.css" type="text/css">
+<script src="../scripts/p.js"></script>
+</head>
+<body class="forums-post left-side"><h2>Endless Appending - Better Battlelog Forums #111578</h2><a href="sitemap.html">Sitemap</a>        <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-11-23T00:03:29+01:00">23. November 2013 00:03</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name ">GameFreakBoy</div></div> <time datetime="2013-11-23T00:03:55+01:00">23. November 2013 00:03</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">GameFreakBoy</div></div>            </div>
+            <div class="post-main">
+                This gives me an endless loop of appending the image over and over.<br />
+<code>var source = &quot;&#039;&quot; + &quot;test.png&quot; + &quot;&#039;&quot;;<br />
+var link = &quot;&#039;http://getbblog.com/en/&#039;&quot;;<br />
+var secondLevel = &quot;&lt;a href=&quot; + link + &quot;&gt;&lt;img src=&quot; + source + &quot;&gt;&lt;/a&gt;&quot;;<br />
+var topLevel = &quot;&lt;li&gt;&quot; + secondLevel + &quot;&lt;/li&gt;&quot;;<br />
+var hasBadge = $(&quot;.forum-threadview-post-tags&quot;).has(topLevel).length;<br />
+if(hasBadge == 0){$(&quot;.forum-threadview-post-tags&quot;).append(topLevel);}</code><br />
+<br />
+Is there something wrong with that if statement?            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-11-26T03:20:35+01:00">26. November 2013 03:20</time>                                <div class="user-info"><div class="user-name ">poisonblx</div></div>            </div>
+            <div class="post-main">
+                Whatever&#039;s causing it isn&#039;t blatantly jumping out at me, but my brain&#039;s not really running js/jquery mode right now (neck deep in some embedded toys I&#039;m playing with at the moment).<br />
+<br />
+My guess would be that has() isn&#039;t actually picking up the child element properly... trade it out for .find() perhaps? And, barring that working, toss in a unique class in the elements you inject somewhere and do a find against that, count length, and inject if it&#039;s missing.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-11-26T03:48:01+01:00">26. November 2013 03:48</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name ">GameFreakBoy</div></div> <time datetime="2013-11-26T03:48:13+01:00">26. November 2013 03:48</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">GameFreakBoy</div></div>            </div>
+            <div class="post-main">
+                I found it earlier today. Thanks though. :P<br />
+<code>var hasBadge = $(&quot;.forum-threadview-post-tags&quot;).children().children(&quot;a&#91;href=&quot; + badgeLink + &quot;&#93;&quot;).length;</code>            </div>
+        </div>
+        <script src="../scripts/t.js"></script></body></html>

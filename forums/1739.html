@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Teamspeak Viewer - Better Battlelog Forums #1739</title>
+    <link rel="stylesheet" href="../stylesheets/page.css" type="text/css">
+<script src="../scripts/p.js"></script>
+</head>
+<body class="forums-post left-side"><h2>Teamspeak Viewer - Better Battlelog Forums #1739</h2><a href="sitemap.html">Sitemap</a>        <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-06-03T12:54:40+02:00">03. June 2012 12:54</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">netcrew</div></div>            </div>
+            <div class="post-main">
+                Hi there, i like to write a Plugin for BB Log.<br />
+My TS Viewer based on TS3 PHP Framework and it works independent from the standard permissions, with this viewer u have a maximum on securitysettings! <br />
+Besides, one is able to show a specific channel too!<br />
+<br />
+You must add only a new user<br />
+and a new servergroup<br />
+<br />
+Servergrouppermissions:<br />
+Global - management<br />
+b_serverquery_login = yes<br />
+<br />
+Virtual Server - Information<br />
+b_virtualserver_select = yes<br />
+b_virtualserver_channel_list = yes<br />
+b_virtualserver_client_list = yes<br />
+<br />
+Group - Information<br />
+b_virtualserver_servergroup_list = yes<br />
+b_virtualserver_channelgroup_list = yes<br />
+<br />
+b_group_is_permanent = yes<br />
+<br />
+thats it!<br />
+<br />
+BUT now i have a problem, how can i include my ts3 viewer in this javascript?<br />
+basicly i open the file &quot;bblog.js&quot; go to line 155 and now? ^^<br />
+<br />
+i know php doesnt works on a local machine without any php/apache server,<br />
+therefore i would like &quot;include&quot; this from my external serveraddress.<br />
+<br />
+i must &quot;&quot; only ...!<br />
+<br />
+I share the Viewer, if there included by BBLog ;)            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-06-03T16:34:37+02:00">03. June 2012 16:34</time>                                <div class="user-info"><div class="user-name mod">ORFK</div><div class="user-role">Global Moderator</div></div>            </div>
+            <div class="post-main">
+                i think there are more than one points why it doesnt work.<br />
+<br />
+1.) Server have no fsock open allowed<br />
+2.) you cant include PHP in a existing website with an addon or with javascript.<br />
+<br />
+i think you can only create a own Website where the TS Viewer is running and than include this page with iFrame in your own Battlelog Layout / Template.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-06-03T16:45:22+02:00">03. June 2012 16:45</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Right, BBLog is a JavaScript extension.<br />
+You cannot include PHP Code in JavaScript.<br />
+As ORFK said - You must have your website the serve the content and than you can serve the site via iframe, thats it.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-06-03T21:09:17+02:00">03. June 2012 21:09</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">netcrew</div></div>            </div>
+            <div class="post-main">
+                Hmm but we can request a AJAX call to send a JSON, this calls a php function? ;)<br />
+Tricky but it works.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-06-03T22:44:12+02:00">03. June 2012 22:44</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                You can do it, but its definitely no feature for a BBLog request. You can make it for your own but we never integrate something like this.            </div>
+        </div>
+        <script src="../scripts/t.js"></script></body></html>

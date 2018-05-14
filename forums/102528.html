@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Advanced Player Links - Cheatometer, i-stats, metabans, and ACI - Better Battlelog Forums #102528</title>
+    <link rel="stylesheet" href="../stylesheets/page.css" type="text/css">
+<script src="../scripts/p.js"></script>
+</head>
+<body class="forums-post left-side"><h2>Advanced Player Links - Cheatometer, i-stats, metabans, and ACI - Better Battlelog Forums #102528</h2><a href="sitemap.html">Sitemap</a>        <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-06-28T09:32:51+02:00">28. June 2013 09:32</time>                    <div class="post-edited">Post edited 10                        x times, last by <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div> <time datetime="2013-09-26T13:39:50+02:00">26. September 2013 13:39</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">bionik</div></div>            </div>
+            <div class="post-main">
+                Quick links to research a player.<br />
+<br />
+<div class="inline post-url">http://i.imgur.com/abehaA4.png</div><br />
+<br />
+Plugin Link: <div class="inline post-url">http://bf3playerlinks.appspot.com/player-links.js</div><br />
+<br />
+<div class="inline font-size-200">UPDATE:</div><br />
+Today this plugin had it&#039;s first major update.  It now includes 100% MORE I-stats!  I collaborated with I-stats over the last couple weeks to build this tool, and it&#039;s awesome.  In summary, it gets data from I-stats.net to display their evaluation of the player you&#039;re looking at--which includes a flag for locked stats (impossible stats) and if i-stats has banned them.  Also, It shows a list of previous names used by the player, which solves a number of problems that can arise with people that change their name frequently.<br />
+<br />
+<br />
+Inspired by the cheat-o-meter plugin: <div class="inline post-url">http://getbblog.com/en/board/topic/2026/1/Cheat-O-Meter</div><br />
+<br />
+Double shout out to Pun1a the cheat-o-meter plugin guy.  His work laid the foundation for my work.<br />
+<br />
+v1.1 release - now with 100% more istats!  displays i-stats evaluation<br />
+update: Depreciating original links, new link: <div class="inline post-url">http://bf3playerlinks.appspot.com/player-links.js</div><br />
+v0.2 Fixed bug on non-english battlelog (hopefully), and added bf3stats link.<br />
+v0.1  Release            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-06-28T09:42:03+02:00">28. June 2013 09:42</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name mod">Jos&eacute; Ortega</div><div class="user-role">Global Moderator</div></div> <time datetime="2013-06-28T09:59:05+02:00">28. June 2013 09:59</time></div>
+                                                    <div class="user-info"><div class="user-name mod">Jos&eacute; Ortega</div><div class="user-role">Global Moderator</div></div>            </div>
+            <div class="post-main">
+                Fixed link to pun1a&#039;s thread<br />
+<br />
+This only includes some links to those cheat-statics pages but not pun1a&#039;s cheatometer itself, right?<br />
+<br />
+Also, upload the plugin to another service like dropbox, because it doesnt seems to work with the GDrive link you&#039;ve provided..<br />
+<div class="tag tag-b"><br />
+EDIT:</div><br />
+<br />
+Reporting first noticeable bug.<br />
+<br />
+English battlelog works perfectly as far as i know, but any other language seems to have random problems... the link for some reason override for something like:<br />
+<br />
+<div class="inline post-url">http://metabans.com/search/ViruzKiller47</div><div class="tag tag-b">ChatCrearchatcon</div><br />
+<div class="inline post-url">http://www.team-des-fra.fr/CoM/bf3.php?p=ViruzKiller47</div><div class="tag tag-b">ChatCrearchatcon</div><br />
+<br />
+The ChatCrearchatcon or whatever, is in the language of battlelog, for example, those links were made in spanish battlelog, but in italian battlelog it is something like:<br />
+<br />
+<div class="inline post-url">http://www.team-des-fra.fr/CoM/bf3.php?p=ViruzKiller47</div><div class="tag tag-b">ChatCreaunachatdigruppocon</div>            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-06-28T10:13:00+02:00">28. June 2013 10:13</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">bionik</div></div>            </div>
+            <div class="post-main">
+                I added an alternate link, that links to dropbox.  <br />
+<br />
+<blockquote>This only includes some links to those cheat-statics pages but not pun1a&#039;s cheatometer itself, right?</blockquote><br />
+<br />
+This is correct.  It&#039;s just a very basic plugin that adds custom links.  Nothing fancy here.<br />
+<br />
+<br />
+I&#039;ll take a look and figure out the best way to get a player&#039;s username            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-06-28T19:19:30+02:00">28. June 2013 19:19</time>                                <div class="user-info"><div class="user-name ">kurtextrem</div></div>            </div>
+            <div class="post-main">
+                <div class="inline post-url">http://kurtextrem.de/bbl/CheatOMeter.js</div><br />
+<br />
+<code>var profileLink = $(&#039;.profile-avatar &gt; a&#039;).attr(&#039;href&#039;),<br />
+username = profileLink.match(/user\/(.+)\//)&#91;1&#93;</code><br />
+This is perfectly save, even for other languages.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-06-28T22:08:14+02:00">28. June 2013 22:08</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">bionik</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">kurtextrem wrote:</div>http://kurtextrem.de/bbl/CheatOMeter.js<br />
+<br />
+<code>var profileLink = $(&#039;.profile-avatar &gt; a&#039;).attr(&#039;href&#039;),<br />
+username = profileLink.match(/user\/(.+)\//)&#91;1&#93;</code><br />
+This is perfectly save, even for other languages.</blockquote><br />
+<br />
+Nice!  Updated using this code, seems to work.  Before this update, I changed Battelog language and was unable to recreate the issue wasakakero brought up.   But hopefully this fixes it.  Currently it works in english and I checked spanish, korean, and japanese (random sample).            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-06-29T00:53:00+02:00">29. June 2013 00:53</time>                                <div class="user-info"><div class="user-name mod">Jos&eacute; Ortega</div><div class="user-role">Global Moderator</div></div>            </div>
+            <div class="post-main">
+                It works perfectly now, good job.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-06-29T08:29:26+02:00">29. June 2013 08:29</time>                                <div class="user-info"><div class="user-name ">Fenriswolf</div></div>            </div>
+            <div class="post-main">
+                very nice.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-06-30T12:21:52+02:00">30. June 2013 12:21</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">bionik</div></div>            </div>
+            <div class="post-main">
+                Thanks for the positive feedback and help fixing that bug. I-stats is going to give me some code so I can display their evaluation using this plugin--feature coming soon :).<br />
+<br />
+Also I shared this on reddit, go give me that reddit love: <div class="inline post-url">http://www.reddit.com/r/battlefield3/comments/1hcxoi/hey_reddit_i_created_a_tool_to_help_investigate/</div>            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-07-05T01:09:59+02:00">05. July 2013 01:09</time>                                <div class="user-info"><div class="user-name ">backbone</div></div>            </div>
+            <div class="post-main">
+                Thanks a lot dude !            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-07-13T00:14:55+02:00">13. July 2013 00:14</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">bionik</div></div>            </div>
+            <div class="post-main">
+                In preparation of a BIG update, I&#039;ve moved the link of the plugin.  The new link is: <div class="inline post-url">http://bf3playerlinks.appspot.com/player-links.js</div><br />
+<br />
+<br />
+If you&#039;re reading this, you should update your link.  However, the old link (and alternate link) will continue to work for the life of the plugin.  Currently they&#039;re set to read from the new link.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-07-26T12:51:00+02:00">26. July 2013 12:51</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">bionik</div></div>            </div>
+            <div class="post-main">
+                <div class="inline font-size-200"><div class="tag tag-b">Announcement:</div></div> <br />
+<br />
+I&#039;ve updated the Original Post.  Today is the first major release for this plugin.  <div class="tag tag-b">It now includes 100% more I-stats!</div>  I&#039;ve collaborated with I-stats over the past couple weeks to make this tool, and it&#039;s awesome.  In summary, it now show&#039;s I-stats&#039; player evaluation and highlights any key events such as an I-stats ban or stats&#039; lock*.  Also I-stats returns a list of alias&#039; which is great for tracking down suspicious players and more importantly:  if you&#039;re like me and have a friend list full of knuckleheads who change their name every day, now you get to know who is who.  :D<br />
+<br />
+<br />
+Cheers!<br />
+<br />
+<br />
+*I stats takes a snapshot of a players&#039; impossible stats, so if they get reset by EA they&#039;re not permanently lost.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-07-26T13:52:36+02:00">26. July 2013 13:52</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Nice and clean coded plugin.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-07-26T13:55:41+02:00">26. July 2013 13:55</time>                                <div class="user-info"><div class="user-name themes">juress</div><div class="user-role">Theme Developer</div></div>            </div>
+            <div class="post-main">
+                Oooh, I&#039;m Conspicuous.<br />
+Nice plugin tho, gj :)            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-11-11T13:44:51+01:00">11. November 2013 13:44</time>                                <div class="user-info"><div class="user-name ">Huck4bee</div></div>            </div>
+            <div class="post-main">
+                Not working for BF4?            </div>
+        </div>
+        <script src="../scripts/t.js"></script></body></html>

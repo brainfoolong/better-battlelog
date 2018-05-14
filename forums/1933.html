@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Workaround for Install under Chrome 21+ - Better Battlelog Forums #1933</title>
+    <link rel="stylesheet" href="../stylesheets/page.css" type="text/css">
+<script src="../scripts/p.js"></script>
+</head>
+<body class="forums-post left-side"><h2>Workaround for Install under Chrome 21+ - Better Battlelog Forums #1933</h2><a href="sitemap.html">Sitemap</a>        <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-08-11T10:16:49+02:00">11. August 2012 10:16</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div> <time datetime="2013-03-15T17:53:49+01:00">15. March 2013 17:53</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name">Guest</div></div>            </div>
+            <div class="post-main">
+                <div class="tag tag-b"><div class="tag tag-u">Edit brain: No need to do any of that complicated things. Click on the download button at the right and follow the installation video guide.<br />
+</div></div><br />
+<br />
+Google wants users to not install extensions from a local file or non-webstore sites since Version 21 and up<br />
+<br />
+But there is a possible Worakaround to install Better Battlelog without any blocking by Chrome and without the need to upload it to the Webstore.<br />
+<br />
+The &quot;only&quot; thing to do is add a value to the registry to whitelist the individual website hosting the addon.<br />
+<br />
+Here are the steps to do:<br />
+[*]Check the Existence of HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\ExtensionInstallSources in the Registry.[/*:m]<br />
+<br />
+[*]if the Key is not present don&#039;t worry, it should only be there in a few cases[/*:m]<br />
+[*]Download the attached add-key.reg.txt File it will add a needed key to whitlist this site[/*:m]<br />
+[*]if you want to reverse it use the attached remove-key.reg.txt (but it could be that updates will not work)[/*:m]<br />
+<br />
+[*]if the Key is present you need to add a new String Value (REG_SZ-Type)[/*:m]<br />
+[*]the names are index based so if you have already 3 Entries in the list you should give it &quot;4&quot; as name[/*:m]<br />
+[*]otherwise the extension will fail to install and Chrome displays a warning[/*:m]<br />
+<br />
+Notes:<br />
+<br />
+[*]As always, if you are working with tools like regedit, please be careful to not delete or add any other key&#039;s - doing so will may cause your system to not work properly.[/*:m]<br />
+[*]You need to have Admin rights[/*:m]<br />
+[*]You need to rename the 2 files, because of your security they are uploaded as txt file - you may also check them before running[/*:m]<br />
+[*]Details about the customization can be found here: <div class="inline post-url">http://support.google.com/a/bin/answer.py?hl=en&amp;answer=187945&amp;topic=1064262&amp;ctx=topic</div>[/*:m]            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-08-11T10:17:34+02:00">11. August 2012 10:17</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Ehm. Did you ever read the information at the download page?<br />
+It gives you a much simplier way to do this.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-08-11T10:31:29+02:00">11. August 2012 10:31</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name">Guest</div></div>            </div>
+            <div class="post-main">
+                Okay, i tried it - and it is working.. did not know about this easy way before.<br />
+I am sorry for it.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-08-11T14:07:47+02:00">11. August 2012 14:07</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                No problem. Thanks for your work.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-08-12T02:51:50+02:00">12. August 2012 02:51</time>                                <div class="user-info"><div class="user-name mod">Nano</div><div class="user-role">Global Moderator</div></div>            </div>
+            <div class="post-main">
+                Just add &quot;--enable-easy-off-store-extension-install&quot; in your Chrome Shortcut.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-08-12T09:41:50+02:00">12. August 2012 09:41</time>                                <div class="user-info"><div class="user-name mod">ORFK</div><div class="user-role">Global Moderator</div></div>            </div>
+            <div class="post-main">
+                it goes easier and easier as in the first post xD            </div>
+        </div>
+        <script src="../scripts/t.js"></script></body></html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[SNIPPET] Getting some useful informations from bblog - Better Battlelog Forums #67997</title>
+    <link rel="stylesheet" href="../stylesheets/page.css" type="text/css">
+<script src="../scripts/p.js"></script>
+</head>
+<body class="forums-post left-side"><h2>[SNIPPET] Getting some useful informations from bblog - Better Battlelog Forums #67997</h2><a href="sitemap.html">Sitemap</a>        <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-12-08T16:39:07+01:00">08. December 2012 16:39</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name ">GosuSan</div></div> <time datetime="2012-12-08T16:49:26+01:00">08. December 2012 16:49</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">GosuSan</div></div>            </div>
+            <div class="post-main">
+                I had to write a little snippet to gain some information about the currently logged user:<br />
+<br />
+<code>//get the html source of the assignments-link<br />
+var code = $(&#039;li&#91;data-page=&quot;assignments&quot;&#93;&#039;).html();<br />
+//trim to anything inside href=&quot;&quot;<br />
+var url = code.match(&#039;href=\&quot;(.*)\&quot;&#039;);<br />
+//write the splittet data into an array<br />
+var data = url&#91;1&#93;.split(&quot;/&quot;);<br />
+//optional for debugging purposes output per alert)<br />
+alert(&quot;Game: &quot;+data&#91;1&#93;+&quot;\nLanguage: &quot;+data&#91;2&#93;+&quot;\nUsername: &quot;+data&#91;4&#93;+&quot;\nUser-ID: &quot;+data&#91;6&#93;);</code><br />
+<br />
+How you can see, this snippet stores Game-ID, Language-ID, Username and User-ID in an array (data).<br />
+<br />
+This can be useful for building own links etc.<br />
+<br />
+Thats all for know :)            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-12-08T18:11:24+01:00">08. December 2012 18:11</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                All that is already stored in the BBLog cache<br />
+<code>BBLog.cache(&quot;soldier.id&quot;)<br />
+BBLog.cache(&quot;soldier.name&quot;)<br />
+BBLog.cache(&quot;account.name&quot;)<br />
+BBLog.cache(&quot;platform&quot;)</code>            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-12-08T20:37:30+01:00">08. December 2012 20:37</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">GosuSan</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">BrainFooLong wrote:</div>All that is already stored in the BBLog cache<br />
+<code>BBLog.cache(&quot;soldier.id&quot;)<br />
+BBLog.cache(&quot;soldier.name&quot;)<br />
+BBLog.cache(&quot;account.name&quot;)<br />
+BBLog.cache(&quot;platform&quot;)</code></blockquote><br />
+<br />
+Oh, good to know :)<br />
+<br />
+I will then rewrite some of my plugins!<br />
+<br />
+Thank you :&gt;            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-02-14T21:39:10+01:00">14. February 2013 21:39</time>                                <div class="user-info"><div class="user-name plugin">dapil</div><div class="user-role">Plugin Developer</div></div>            </div>
+            <div class="post-main">
+                Is language stored in BBlog cache?            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-02-14T22:32:58+01:00">14. February 2013 22:32</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">dapil wrote:</div>Is language stored in BBlog cache?</blockquote><br />
+<br />
+<code>BBLog.cache(&quot;battlelog.language&quot;); // Language from Battlelog, with trailing slash<br />
+BBLog.cache(&quot;language&quot;); // Language for the addon, same as battlelog, if available in BBLog, otherwise EN</code>            </div>
+        </div>
+        <script src="../scripts/t.js"></script></body></html>

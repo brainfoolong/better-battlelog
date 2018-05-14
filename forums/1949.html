@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Award optimization - Better Battlelog Forums #1949</title>
+    <link rel="stylesheet" href="../stylesheets/page.css" type="text/css">
+<script src="../scripts/p.js"></script>
+</head>
+<body class="forums-post left-side"><h2>Award optimization - Better Battlelog Forums #1949</h2><a href="sitemap.html">Sitemap</a>        <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-08-16T23:21:57+02:00">16. August 2012 23:21</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">KillerKooK</div></div>            </div>
+            <div class="post-main">
+                So after shooting in the dark for a bit, I finally got this plug-in working.<br />
+<br />
+Note: You have to disable &quot;Award Improvements&quot; in the better battlelog settings.<br />
+<br />
+This code allows you to change the order of the medals and ribbons.<br />
+<br />
+If you want to try out my layout, here is a link to my plug-in: <div class="inline post-url">https://dl.dropbox.com/s/jgrkcfz9q6t48ii/Awards-2.0.js</div><br />
+<br />
+<code>/** <br />
+/** <br />
+	Award optimization 2.0<br />
+	<br />
+	@author KillerKooK<br />
+	@version 1.3<br />
+	<br />
+	Change log:<br />
+	1.2 The medal and ribbon lists can now be ordered individually.  Removed the typo fix and put it into a separate plug-in.<br />
+	1.3 Since battlelog changed the order of the medals and ribbons, the indexes need to be reorder. <br />
+	<br />
+	To use, you must disable &quot;Award Improvements&quot; under the &quot;Minor Improvements&quot; in the better battlelog settings.<br />
+	<br />
+	This plug-in allows you to change the order of the medals and ribbons.<br />
+	<br />
+	/** Medal indexes<br />
+		Assult rifle medal - 0<br />
+		Carbine medal - 1<br />
+		Light Machine gun medal - 2<br />
+		Sniper rifle medal - 3 <br />
+		Shotgun medal - 5 <br />
+		PDW medal - 6 <br />
+		Handgun medal - 4 <br />
+		Melee medal - 7 <br />
+		Resupply medal - 32 <br />
+		Repair medal - 33 <br />
+		Medical medal - 34 <br />
+		Surveillance medal - 35 <br />
+		Transport warfare medal - 19 <br />
+		Armor warfare medal - 20 <br />
+		Air warfare medal - 21<br />
+		Stationary emplacement medal - 22 <br />
+		Anti vehicle medal - 8 <br />
+		Accuracy medal - 9 <br />
+		Avenger medal - 10 <br />
+		Savior medal - 11 	<br />
+		Nemesis medal - 12 <br />
+		Suppression medal - 13 <br />
+		MVP medal - 14<br />
+		2nd MVP medal - 15 <br />
+		3rd MVP medal - 16<br />
+		Ace Squad medal - 17<br />
+		Combat efficiency medal - 18 <br />
+		Rush medal - 25 <br />
+		M-com Attacker medal - 23 <br />
+		M-com Defender medal - 24 	<br />
+		Conquest medal - 26<br />
+		Flag attacker medal - 30		<br />
+		Flag defender medal - 31 <br />
+		Team Deathmatch medal - 27 <br />
+		Squad Rush medal - 28 <br />
+		Squad Deathmatch medal - 29 <br />
+		Tank Superiority medal - 50<br />
+		Domination medal - 51<br />
+		Gun master medal - 52<br />
+		US Marines service medal - 40<br />
+		RU Army service medal - 41<br />
+		Assault service medal - 42<br />
+		Engineer service medal - 43<br />
+		Support service medal - 44<br />
+		Recon service medal - 45<br />
+		Tank service medal - 46<br />
+		Helicopter service medal - 47<br />
+		Jet service medal - 48<br />
+		Stationary service medal - 49<br />
+		M18 Claymore medal - 38<br />
+		Mortar medal - 36<br />
+		Laser Designator medal - 37<br />
+		Radio Beacon medal - 39<br />
+		<br />
+		Ribbon indexes<br />
+		Assult rifle ribbon - 0<br />
+		Carbine ribbon -  1<br />
+		Light Machine gun ribbon - 2<br />
+		Sniper rifle ribbon - 3<br />
+		Shotgun ribbon - 5<br />
+		PDW ribbon - 6<br />
+		Handgun ribbon - 4<br />
+		Melee ribbon - 7<br />
+		Resupply ribbon - 41<br />
+		Repair ribbon - 42<br />
+		Medical ribbon - 43<br />
+		Surveillance ribbon - 44<br />
+		Transport warfare ribbon - 23<br />
+		Armor warfare ribbon - 24<br />
+		Air warfare ribbon - 25<br />
+		Stationary emplacement ribbon - 26<br />
+		Disable vehicle ribbon - 8<br />
+		Anti vehicle ribbon - 9<br />
+		Accuracy ribbon - 10<br />
+		Avenger ribbon - 11<br />
+		Savior ribbon - 12	<br />
+		Nemesis ribbon - 13<br />
+		Suppression ribbon - 14<br />
+		MVP ribbon - 15<br />
+		2nd MVP ribbon - 16<br />
+		3rd MVP ribbon - 17<br />
+		Ace Squad ribbon -  18<br />
+		Combat efficiency ribbon - 19<br />
+		Rush ribbon - 34<br />
+		Rush winner ribbon - 29<br />
+		M-com Attacker ribbon - 27<br />
+		M-com Defender ribbon - 28<br />
+		Conquest ribbon - 35<br />
+		Conquest winner ribbon - 30<br />
+		Flag attacker ribbon - 39		<br />
+		Flag defender ribbon -  40<br />
+		Team deathmatch ribbon - 36<br />
+		Team deathmatch winner ribbon - 31<br />
+		Squad rush ribbon - 37<br />
+		Squad Rush winner ribbon - 32<br />
+		Squad deathmatch ribbon - 38<br />
+		Squad Deathmatch winner ribbon - 33<br />
+		Tank superiority winner ribbon - 45 <br />
+		Domination winner ribbon - 46<br />
+		Gun master winner ribbon - 47<br />
+		Squad spawn ribbon - 21	<br />
+		Squad wipe ribbon - 22<br />
+<br />
+		Anti explosives ribbon - 20		<br />
+	*/<br />
+<br />
+var handler = function(){	<br />
+	if(!BBLog.storage(&quot;optimizeAwards&quot;) &amp;&amp; window.location.href.match(/\/awards\//)){<br />
+		var container = $(&quot;#profile-stats-awards-progression&quot;).not(&quot;&#91;data-optimization&#93;&quot;);<br />
+		if(container.size()){<br />
+			container.attr(&quot;data-optimization&quot;, true);<br />
+			var all = container.find(&quot;.profile-stats-awards-progression-body&quot;);<br />
+			all.prepend(&#039;&#039;);<br />
+			var allItems = container.find(&quot;.profile-stats-unlock-progression-kit-item&quot;);<br />
+			var med = all.eq(0);<br />
+			var rib = all.eq(1);<br />
+			<br />
+			//EDIT MEDAL ORDER HERE<br />
+			var medals = &#91;0, 1, 2, 3, 5, 6, 4, 7, 32, 33, 34, 35, 19, 20, 21, 22, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 25, 23, 24, 26, 30, 31, 27, 28, 29, 50, 51, 52, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 38, 36, 37, 39&#93;;<br />
+			<br />
+			//EDIT RIBBON ORDER HERE<br />
+			var ribbons = &#91;0, 1, 2, 3, 5, 6, 4, 7, 41, 42, 43, 44, 23, 24, 25, 26, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 34, 29, 27, 28, 35, 30, 39, 40, 36, 31, 37, 32, 38, 33, 45, 46, 47, 21, 22, 20&#93;;<br />
+			<br />
+			//medals that are earned by time have a percent<br />
+			medPercent = &#91;40, 41, 42, 43, 44, 45, 46, 47, 48, 49&#93;;<br />
+			<br />
+			//medals that arn&#039;t earned by ribbons or time<br />
+			medOther = &#91;36, 37, 38, 39&#93;;<br />
+			<br />
+			// mapping medals to ribbons<br />
+			var medToRib = { 0 : 0, 1 : 1, 2 : 2, 3 : 3, 4 : 4, 5 : 5, 6 : 6, 7 : 7, 8 : 9, <br />
+			9 : 10, 10 : 11, 11 : 12, 12 : 13, 13 : 14, 14 : 15, 15 : 16, 16 : 17, 17 : 18, <br />
+			18 : 19, 19 : 23, 20 : 24, 21 : 25, 22 : 26, 23 : 27, 24 : 28, 25 : 29, 26 : 30, <br />
+			27 : 31, 28 : 32, 29 : 33, 30 : 39, 31 : 40, 32 : 41,  33 : 42, 34 : 43, 36 : 44, <br />
+			50 : 45, 51 : 46, 52 &#93;; <br />
+			var appendElementsRib = &#91;&#93;;			<br />
+			<br />
+			for (i = 0; i &quot;)&#91;2&#93;<br />
+					var neededCounts = parseInt(haveNeed.match(/\d+/g)&#91;1&#93;);<br />
+					var haveCounts = parseInt(haveNeed.match(/\d+/g)&#91;0&#93;);<br />
+					<br />
+					var required = neededCounts - haveCounts;					<br />
+					required = isNaN(required) || required == 0 ? neededCounts &#93;);<br />
+					if (percNum &#039;+perc+&#039;&#039;);<br />
+				}						<br />
+				<br />
+				//Link medals and ribbons that have matches.<br />
+				if(medToRib&#91;medIndex&#93; &gt;= 0) {					<br />
+					var ribEl = rib.find(&quot;.profile-stats-unlock-progression-kit-item&#93;+&quot;)&quot;);<br />
+					// on mouseenter highlight grouped entries<br />
+					medEl.bind(&quot;mouseenter&quot;, {&quot;ribEl&quot; : ribEl}, function(ev){<br />
+						var el = ev.data.ribEl;<br />
+						allItems.removeClass(&quot;bblog-hovered-item&quot;);<br />
+						el.addClass(&#039;bblog-hovered-item&#039;);<br />
+						}).bind(&quot;mouseleave&quot;, function(ev){<br />
+						allItems.removeClass(&quot;bblog-hovered-item&quot;);<br />
+					});<br />
+					<br />
+					// on mouseenter highlight grouped entries<br />
+					ribEl.bind(&quot;mouseenter&quot;, {&quot;medEl&quot; : medEl}, function(ev){<br />
+						var el = ev.data.medEl;<br />
+						allItems.removeClass(&quot;bblog-hovered-item&quot;);<br />
+						el.addClass(&#039;bblog-hovered-item&#039;);<br />
+						}).bind(&quot;mouseleave&quot;, function(ev){<br />
+						allItems.removeClass(&quot;bblog-hovered-item&quot;);<br />
+					});			<br />
+				}<br />
+				appendElementsMed.push(medEl);				<br />
+			}<br />
+			<br />
+			for (i = 0; i &#039;);<br />
+		}<br />
+	}<br />
+};<br />
+// add handler to the domchange list<br />
+BBLog.bindDomChange(handler);<br />
+// execute the handler once for immediate initialization<br />
+handler();		</code>            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-08-18T17:36:35+02:00">18. August 2012 17:36</time>                                <div class="user-info"><div class="user-name ">GameFreakBoy</div></div>            </div>
+            <div class="post-main">
+                Do you think you could get the typo fix as a plugin of its own?            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-08-18T20:57:42+02:00">18. August 2012 20:57</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">KillerKooK</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">GameFreakBoy wrote:</div>Do you think you could get the typo fix as a plugin of its own?</blockquote><br />
+<br />
+This will just fix the typos.  Will work if the &quot;Award Improvements&quot; setting is enabled or disabled.<br />
+<br />
+<div class="inline post-url">https://dl.dropbox.com/s/1ahltn75480j0w4/Awards_Typo_Fix.js</div><br />
+<br />
+<code>/** <br />
+	Award typo fix<br />
+	<br />
+	Fixes some typos in the titles of some of the medals and ribbons that got patched in game but not in the battlelog. <br />
+	Anti-Explosive increased from 2 to 3<br />
+	Air Warfare reduced from 6 to 5<br />
+	<br />
+	@author KillerKooK<br />
+	@version 1.1<br />
+	<br />
+	Change log:<br />
+	1.1 Removed M-com Deffender and Nemesis from the typo list<br />
+	<br />
+*/<br />
+<br />
+var handler = function(){<br />
+	if(window.location.href.match(/\/awards\//)){<br />
+		var container = $(&quot;#profile-stats-awards-progression&quot;).not(&quot;&#91;data-optimization2&#93;&quot;);<br />
+		if(container.size()){<br />
+			container.attr(&quot;data-optimization2&quot;, true);<br />
+			var all = container.find(&quot;.profile-stats-awards-progression-body&quot;);<br />
+			var rib = all.eq(1);<br />
+			<br />
+			for(var i=0; i= 0) {<br />
+					ribEl.attr(&quot;title&quot;, ribEl.attr(&quot;title&quot;).replace(&quot;6&quot;,&quot;5&quot;));<br />
+				} else if (ribEl.attr(&quot;title&quot;).search(&quot;ANTI EXPLOSIVES&quot;) &gt;= 0) {<br />
+					ribEl.attr(&quot;title&quot;, ribEl.attr(&quot;title&quot;).replace(&quot;2&quot;,&quot;3&quot;));<br />
+				}					 <br />
+			}<br />
+		}<br />
+	}	<br />
+};<br />
+<br />
+// add handler to the domchange list<br />
+BBLog.bindDomChange(handler);<br />
+// execute the handler once for immediate initialization<br />
+handler();	</code>            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-08-20T16:59:30+02:00">20. August 2012 16:59</time>                                <div class="user-info"><div class="user-name ">GameFreakBoy</div></div>            </div>
+            <div class="post-main">
+                Thanks man! :)            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-09-04T21:33:22+02:00">04. September 2012 21:33</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">KillerKooK</div></div>            </div>
+            <div class="post-main">
+                Updated the plug-ins for the new battlelog patch.            </div>
+        </div>
+        <script src="../scripts/t.js"></script></body></html>

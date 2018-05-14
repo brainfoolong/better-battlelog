@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete item from storage - Better Battlelog Forums #147559</title>
+    <link rel="stylesheet" href="../stylesheets/page.css" type="text/css">
+<script src="../scripts/p.js"></script>
+</head>
+<body class="forums-post left-side"><h2>Delete item from storage - Better Battlelog Forums #147559</h2><a href="sitemap.html">Sitemap</a>        <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2016-01-08T21:04:40+01:00">08. January 2016 21:04</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name plugin">I-MrFixIt-I</div><div class="user-role">Plugin Developer</div></div>            </div>
+            <div class="post-main">
+                Hello together,<br />
+<br />
+quick question. How can I delete an item from the BBLog storage? The removeItem function which is JS providing is here not working, someone has a quick tip?<br />
+<br />
+Also is says: &quot;Please use this not as much because users browser storage is limited&quot;. Does it mean that I should not create like 100 vars in the storage or does it mean that the stored data shouldn&#039;t be to big? Because for a plugin I would like to save some server guids. Depending on how much server the user wants to store it&#039;s possible that there are a lot of guids in it.<br />
+Is there a number of data I shouldn&#039;t exceed?            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2016-01-08T21:08:37+01:00">08. January 2016 21:08</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div> <time datetime="2016-01-08T21:09:30+01:00">08. January 2016 21:09</time></div>
+                                                    <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                It simply depends on the size of the saved data, see &quot;localStorage&quot; limitations of Html5.<br />
+All plugins and bblog itself share one localStorage element, therefore the plugin should not save tons of data.<br />
+<br />
+If you mean delete storage in a plugin, always use &quot;instance.storage()&quot;, overwrite your value with &quot;null&quot;, this means &quot;deleted&quot; in our case. Explicit delete does not exist. If you call the storage getter you also get null when the key doesn&#039;t exist.            </div>
+        </div>
+        <script src="../scripts/t.js"></script></body></html>

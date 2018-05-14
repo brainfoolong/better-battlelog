@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Award hover outline on Firefox - Better Battlelog Forums #1972</title>
+    <link rel="stylesheet" href="../stylesheets/page.css" type="text/css">
+<script src="../scripts/p.js"></script>
+</head>
+<body class="forums-post left-side"><h2>Award hover outline on Firefox - Better Battlelog Forums #1972</h2><a href="sitemap.html">Sitemap</a>        <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-08-27T20:01:23+02:00">27. August 2012 20:01</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name help">seniledawdler</div><div class="user-role">Helping Hand</div></div>            </div>
+            <div class="post-main">
+                Yes I know it&#039;s not bblog&#039;s fault, it&#039;s FF thing that it renders outline outside the box-shadow instead right after border.<br />
+<br />
+Anyhow, we can circumvent this by using double shadow instead of outline and shadow.<br />
+<br />
+Old way:<br />
+<code>.bblog-hovered-item{<br />
+    background-color:#CCEEFF;<br />
+    outline:1px solid #00AEFF !important;<br />
+    z-index:9;<br />
+    box-shadow: 0px 0px 10px #111111;<br />
+}</code><br />
+<br />
+How we can make it better:<br />
+<code>.bblog-hovered-item{<br />
+    background-color:#CCEEFF;<br />
+    z-index:9;<br />
+    box-shadow: 0 0 2px #00AEFF, 0px 0px 10px #111111;<br />
+}</code><br />
+(2px seemed better at least to me in my tests instead of 1px)            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-08-27T20:48:14+02:00">27. August 2012 20:48</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Good idea, will add this in the next release.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-08-28T18:15:45+02:00">28. August 2012 18:15</time>                                <div class="user-info"><div class="user-name help">xXJumpyXx</div><div class="user-role">Helping Hand</div></div>            </div>
+            <div class="post-main">
+                That&#039;s a really neat fix.<br />
+But why not make it &quot;0 0 0 1px&quot; (added a 0 and made it 1px) instead? That way it will look like a normal 1 pixel border/outline.<br />
+<code>.bblog-hovered-item{<br />
+    background-color: #CCEEFF;<br />
+    z-index: 9;<br />
+    box-shadow: 0 0 0 1px #00AEFF, 0px 0px 10px #111111;<br />
+}</code><br />
+It&#039;s something I happen to run across while working on a theme just now.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-08-28T20:10:38+02:00">28. August 2012 20:10</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name help">seniledawdler</div><div class="user-role">Helping Hand</div></div>            </div>
+            <div class="post-main">
+                In my tests the 1px looked weaker than the current outline effect. I don&#039;t know how they calculate the shadow drop off with 1px but to me the 2px looked more like the outline there is at the moment.<br />
+<br />
+I don&#039;t object 1px, it&#039;s no big deal. :)<br />
+<br />
+edit:<br />
+Nooble me. There was one 0 more. Forgot you can set the spread thing to 0. Yes that 0 0 0 1px is better way to go.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-08-28T22:30:19+02:00">28. August 2012 22:30</time>                                <div class="user-info"><div class="user-name help">xXJumpyXx</div><div class="user-role">Helping Hand</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">seniledawdler wrote:</div>edit:<br />
+Nooble me. There was one 0 more. Forgot you can set the spread thing to 0. Yes that 0 0 0 1px is better way to go.</blockquote>A little zero is easy to miss, I added a smaller explanation so that no one else misses it as well.            </div>
+        </div>
+        <script src="../scripts/t.js"></script></body></html>

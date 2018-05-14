@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Need Some help with installing Content Channels - Better Battlelog Forums #99362</title>
+    <link rel="stylesheet" href="../stylesheets/page.css" type="text/css">
+<script src="../scripts/p.js"></script>
+</head>
+<body class="forums-post left-side"><h2>Need Some help with installing Content Channels - Better Battlelog Forums #99362</h2><a href="sitemap.html">Sitemap</a>        <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-05-30T15:49:26+02:00">30. May 2013 15:49</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">NL_Flat</div></div>            </div>
+            <div class="post-main">
+                I followed the Directions, had to get my PHP updated on my host provider, Now running PHP 5.3.21  When I run the PHP and getting the following ?? <br />
+<br />
+date(): It is not safe to rely on the system&#039;s timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected &#039;America/New_York&#039; for &#039;EDT/-4.0/DST&#039; instead in file Bla Bla Bla .php (1137)<br />
+<br />
+#0 Bla Bla Bla.php(47): error(&#039;date(): It is n...&#039;)<br />
+#1 [internal function]: phpErrorHandler(2, &#039;date(): It is n...&#039;, &#039;/hsphere/local/...&#039;, 1137, Array)<br />
+#2 Bla Bla Bla .php(1137): date(&#039;Y&#039;)<br />
+#3 {main}<br />
+<br />
+??<br />
+Really would like to see this action            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-05-30T17:27:04+02:00">30. May 2013 17:27</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Your PHP is misconfigured.<br />
+You must set in your php.ini a valid timezone.<br />
+<br />
+The option is called &quot;date.timezone&quot; an the &quot;[Date]&quot; section.<br />
+Per default it&#039;s commented out.<br />
+<br />
+For my case its<code>date.timezone = &quot;Europe/Berlin&quot;</code>            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-05-31T16:16:49+02:00">31. May 2013 16:16</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name ">NL_Flat</div></div> <time datetime="2013-05-31T16:18:14+02:00">31. May 2013 16:18</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">NL_Flat</div></div>            </div>
+            <div class="post-main">
+                Thanks for your reply, <br />
+<br />
+I&#039;m  a noob at this.  Where does that go? <br />
+<br />
+Im guessing here?<br />
+<br />
+line 1137   <code>2013 &lt;?=date(&quot;Y&quot;) != 2013 ? &quot; - &quot;.date(&quot;Y&quot;) : NULL?&gt; :: Powered by &lt;a href=&quot;&lt;?=BBLOG_URL?&gt;&quot; target=&quot;_blank&quot;&gt;Better Battlelog&lt;/a&gt; - Worldwide Leading Battlelog Browser Addon</code><br />
+<br />
+if so what and where do I add &#039;America/New_York&#039; for &#039;EDT/-4.0/DST&#039;<br />
+<br />
+thanks again for your reply            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-05-31T16:20:12+02:00">31. May 2013 16:20</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">NL_Flat wrote:</div>Thanks for your reply, <br />
+<br />
+I&#039;m  a noob at this.  Where does that go? <br />
+<br />
+Im guessing here?<br />
+<br />
+line 1137   <code>2013 &lt;?=date(&quot;Y&quot;) != 2013 ? &quot; - &quot;.date(&quot;Y&quot;) : NULL?&gt; :: Powered by &lt;a href=&quot;&lt;?=BBLOG_URL?&gt;&quot; target=&quot;_blank&quot;&gt;Better Battlelog&lt;/a&gt; - Worldwide Leading Battlelog Browser Addon</code><br />
+<br />
+if so what and where do I add &#039;America/New_York&#039; for &#039;EDT/-4.0/DST&#039;<br />
+<br />
+thanks again for your reply </blockquote><br />
+<br />
+No, as i said, your PHP is misconfigured.<br />
+You need to modify the global php.ini file in your PHP installation.<br />
+If you don&#039;t have access to this file you must contact your webhoster.<br />
+For normal this error don&#039;t should happen when a hoster have a good PHP setup.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-05-31T17:33:50+02:00">31. May 2013 17:33</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">NL_Flat</div></div>            </div>
+            <div class="post-main">
+                Yep, Thank you again, gave them a call and all is working  <br />
+<br />
+<br />
+:D            </div>
+        </div>
+        <script src="../scripts/t.js"></script></body></html>

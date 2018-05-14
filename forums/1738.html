@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Need Help by my Design - Better Battlelog Forums #1738</title>
+    <link rel="stylesheet" href="../stylesheets/page.css" type="text/css">
+<script src="../scripts/p.js"></script>
+</head>
+<body class="forums-post left-side"><h2>Need Help by my Design - Better Battlelog Forums #1738</h2><a href="sitemap.html">Sitemap</a>        <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-06-01T16:05:51+02:00">01. June 2012 16:05</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name mod">ORFK</div><div class="user-role">Global Moderator</div></div>            </div>
+            <div class="post-main">
+                Hello all!<br />
+everybody who can understand german should read this topic here: <div class="inline post-url">http://www.pytal.de/topic,0,0,11512,9999#l</div> all others should continious at this point.<br />
+<br />
+i have created my new template for my ooold blog.<br />
+for more details please check this topic:<br />
+<div class="inline post-url">http://getbblog.com/viewtopic.php?f=15&amp;p=1715#p1715</div><br />
+<br />
+now i have two problems:<br />
+1.) Display: Inline; and Vertical-align: middle;<br />
+<br />
+Why didn&#039;t work the vertical-align definition for the black box with the radius on the left, bottom side? currently its not included but the problem is the same. the same happens if i use for the mother element &quot;display: inline;&quot;<br />
+<br />
+2.) the content boxes in the middle (i give them a background color in different greys, so you can see them better), one of them, the right one, have the picture included.<br />
+<br />
+if i use by the picture right: xxx px; it didn&#039;t make a different as i would use left: xxx px;. whats wrong here? if i write left or right... always it will be placed from the left side.<br />
+<br />
+<br />
+hope you can help me a little bit :-S<br />
+<br />
+didn&#039;t work with HTML and CSS for a long time and myybe i have forgotten some points...            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-06-01T17:36:46+02:00">01. June 2012 17:36</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                1. Only  elements can display vertical-align: correctly.<br />
+2. To easy positioning a background image use:<br />
+background-image:url(yoururl);<br />
+background-position: top left;<br />
+or<br />
+background-position: 10px 10px;<br />
+<br />
+German Reference: <div class="inline post-url">http://www.css4you.de/background-position.html</div>            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-06-01T18:13:07+02:00">01. June 2012 18:13</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name mod">ORFK</div><div class="user-role">Global Moderator</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">brain wrote:</div>1. Only  elements can display vertical-align: correctly.</blockquote><br />
+ohh okey i didn&#039;t knew that.<br />
+<br />
+<blockquote>2. To easy positioning a background image use:l</blockquote><br />
+thats not my problem. background are not a problem (like you see on different places) the problem is with the div and the image and the position of the div in the parent div.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-06-03T17:48:31+02:00">03. June 2012 17:48</time>                                <div class="user-info"><div class="user-name mod">Nano</div><div class="user-role">Global Moderator</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">ORFK wrote:</div><br />
+<blockquote>2. To easy positioning a background image use:l</blockquote><br />
+thats not my problem. background are not a problem (like you see on different places) the problem is with the div and the image and the position of the div in the parent div.</blockquote><br />
+<br />
+Put your image as image background in your div, using the code above.<br />
+<br />
+It&#039;s wordpress (or template to wp)?            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-06-03T20:44:35+02:00">03. June 2012 20:44</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name mod">ORFK</div><div class="user-role">Global Moderator</div></div>            </div>
+            <div class="post-main">
+                yeah thats not really the problem, it have do to with the div.<br />
+i dont know why but when there is a &quot;float&quot; and/or a &quot;position realtive&quot; i cant use the right side as references from the parent element.<br />
+<br />
+i have always to made the relations to the left side. but now i have &quot;solved&quot; it i will work with margin, so i can use for the width 100% of the parent element and can change it more easier.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-06-03T22:46:14+02:00">03. June 2012 22:46</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                You never should combine float and position at the same time.<br />
+Float is per defination a specific position model and a combination of that will always result in unexpected problems.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-06-04T00:34:58+02:00">04. June 2012 00:34</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name mod">ORFK</div><div class="user-role">Global Moderator</div></div>            </div>
+            <div class="post-main">
+                but if i have two or more rows with different and always variable content i have to work with this, it i want that everythink is next to the other :-/            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-06-04T07:56:08+02:00">04. June 2012 07:56</time>                                <div class="user-info"><div class="user-name mod">Nano</div><div class="user-role">Global Moderator</div></div>            </div>
+            <div class="post-main">
+                Why you don&#039;t use a framework?<br />
+<br />
+Like <div class="inline post-url">http://960.gs</div> <div class="inline post-url">http://twitter.github.com/bootstrap/</div> or something else?            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-06-04T09:21:00+02:00">04. June 2012 09:21</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name mod">ORFK</div><div class="user-role">Global Moderator</div></div>            </div>
+            <div class="post-main">
+                why should i? like i know is a framework a library for often used elements. i never worked with frameworks,  so please explain it for me =D            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-06-05T08:15:02+02:00">05. June 2012 08:15</time>                                <div class="user-info"><div class="user-name mod">Nano</div><div class="user-role">Global Moderator</div></div>            </div>
+            <div class="post-main">
+                Is more usefull. You can pay attention only in design, &#039;cause framework do the rest.<br />
+<br />
+<blockquote><br />
+<div class="tag tag-b">Why should I use a framework?</div><br />
+Do you feel like you spend a good amount of time designing, then an equal amount of time coding those designs? With frameworks, you can cut your coding time down by half. Why half? With a framework, you can knock out the basic layout using a grid system which is cross-browser compatible (ie6, ie7, FF, Safari, Chrome) and then focus on your custom style sheet.<br />
+<br />
+<div class="tag tag-b">How to use a framework?</div><br />
+The first time I used Blueprint, I started using it after I had designed my page &ndash; I was essentially retro-fitting Blueprint to my design. I would not recommend using Blueprint in this way, I felt restricted and was annoyed with Blueprint. I ended up making it work, but wasn&rsquo;t ultimately happy. The best way to use a framework is from the beginning, before you start designing setup your grid &ndash; it makes a world of difference! Blueprint has some great resources for setting up grids for use in Photoshop and Illustrator.<br />
+<br />
+<div class="tag tag-b">When to use a framework?</div><br />
+Anytime! I have been using the 960gs framework for landing pages because of its small footprint (3.6kb) and quick ability to get up and running. I love the confidence of knowing the layout will work cross-browser, so it allows me to get my designs up and running fast (very important! in web).<br />
+</blockquote><br />
+From <div class="inline post-url">http://www.onerutter.com/web/css/css-grid-frameworks-the-whatwhenwhyhow.html</div><br />
+<br />
+In my case, i start test the Twitter Bootstrap + Wordpress. I have a friend testing the 960Grid. Both works with WP, btw.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-06-05T12:03:49+02:00">05. June 2012 12:03</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name mod">ORFK</div><div class="user-role">Global Moderator</div></div>            </div>
+            <div class="post-main">
+                ok, i will take a look.<br />
+<br />
+so but now...<br />
+how will it help me... i think i my content i have two columns, not more.<br />
+except the navigation and footer. for what should i use now the grid?<br />
+<br />
+why is it so good to use it?            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-08-15T12:16:14+02:00">15. August 2012 12:16</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name mod">ORFK</div><div class="user-role">Global Moderator</div></div>            </div>
+            <div class="post-main">
+                Not needed help anymore, but i have now a compelte new design<br />
+Header and Logo is not completed yet, but the generall content area, sidebar and dynamic moving ist builded in.<br />
+<br />
+so you have the exclusive right to see my pre-Beta.<br />
+please rate it and give me a feedback. (pls remember: i working a lot with space holder)<br />
+<br />
+<div class="inline post-url">http://eeel.ch/yaba</div>            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-08-17T17:23:53+02:00">17. August 2012 17:23</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name mod">ORFK</div><div class="user-role">Global Moderator</div></div>            </div>
+            <div class="post-main">
+                i think i will reorder a littel bit my website this evening... =)<br />
+be ready to check out tomorrow a new pre-beta            </div>
+        </div>
+        <script src="../scripts/t.js"></script></body></html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[BF4 Beta] Name Your Weapon - Better Battlelog Forums #112640</title>
+    <link rel="stylesheet" href="../stylesheets/page.css" type="text/css">
+<script src="../scripts/p.js"></script>
+</head>
+<body class="forums-post left-side"><h2>[BF4 Beta] Name Your Weapon - Better Battlelog Forums #112640</h2><a href="sitemap.html">Sitemap</a>        <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-12-19T18:56:13+01:00">19. December 2013 18:56</time>                    <div class="post-edited">Post edited 8                        x times, last by <div class="user-info"><div class="user-name ">GameFreakBoy</div></div> <time datetime="2013-12-21T16:49:41+01:00">21. December 2013 16:49</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">GameFreakBoy</div></div>            </div>
+            <div class="post-main">
+                Edit: local storage does not persist through closing a window completely. What is the command to use BBLog storage, and why does using instance.t() only work up until the first space?<br />
+<br />
+I saw this in CS:GO and I thought it was pretty neat. Here is a plugin that does the same(within battlelog only of course :( ) Spaces are allowed.<br />
+<div class="inline post-url">https://dl.dropboxusercontent.com/s/p60f4m3jz2d5pw5/weapon_name.js</div><br />
+You set the name in the weapon edit screen; there is also a reset button in case you want to get rid of the nick name. <div class="spoiler-button"><span>Screen Shot</span></div><div class="spoiler"><div class="inline post-url">Screenshot 2013-12-19 12.45.25.png</div></div><br />
+<div class="spoiler-button"><span>Screen Shot</span></div><div class="spoiler"><div class="inline post-url">Screenshot 2013-12-19 12.41.08.png</div></div><br />
+<div class="spoiler-button"><span>Updates</span></div><div class="spoiler">Update Dec 20, 2013: Max amount of names set at 10 to avoid over using storage.</div>            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-12-20T15:11:57+01:00">20. December 2013 15:11</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name ">kurtextrem</div></div> <time datetime="2013-12-20T15:12:10+01:00">20. December 2013 15:12</time></div>
+                                                    <div class="user-info"><div class="user-name ">kurtextrem</div></div>            </div>
+            <div class="post-main">
+                If you want our help you might want to provide an unminified plugin.<br />
+<br />
+But nice idea.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-12-20T16:43:07+01:00">20. December 2013 16:43</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">GameFreakBoy</div></div>            </div>
+            <div class="post-main">
+                Oh yeah. This one should be easier to read. If you want to test it remove www and replace it with dl.<br />
+<div class="inline post-url">https://www.dropbox.com/s/h8h55rk3giqmv7e/name_your_weapon.js</div>            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-12-20T20:40:50+01:00">20. December 2013 20:40</time>                                <div class="user-info"><div class="user-name ">kurtextrem</div></div>            </div>
+            <div class="post-main">
+                I do it like this in my plugins:<br />
+<code>instance: null,<br />
+ init: function (instance) { <br />
+       this.instance = instance<br />
+       this.domchange()<br />
+ },<br />
+domchange: function () { <br />
+        this.weaponName()<br />
+ },  </code><br />
+<br />
+you can refer to the instance using this:<br />
+<code>this.instance.storage(&quot;storagekey&quot;)</code>            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-12-20T21:45:27+01:00">20. December 2013 21:45</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">GameFreakBoy</div></div>            </div>
+            <div class="post-main">
+                So something like that? Also, what do you do about remove the storage?            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-12-21T07:54:09+01:00">21. December 2013 07:54</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Check out the example plugin that explains mostly all what you need.<br />
+Read carefully the code documentation in the example.<br />
+<br />
+<div class="inline post-url">http://getbblog.com/plugins/example.js</div>            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-12-21T08:41:57+01:00">21. December 2013 08:41</time>                                <div class="user-info"><div class="user-name ">kurtextrem</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">GameFreakBoy wrote:</div>So something like that? Also, what do you do about remove the storage?</blockquote><br />
+<br />
+<code>this.instance.storage(&quot;storagekey&quot;) = null</code> or undefined.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-03-22T18:33:29+01:00">22. March 2014 18:33</time>                    <div class="post-edited">Post edited 5                        x times, last by <div class="user-info"><div class="user-name ">D4rkBurn</div></div> <time datetime="2014-03-22T18:44:03+01:00">22. March 2014 18:44</time></div>
+                                                    <div class="user-info"><div class="user-name ">D4rkBurn</div></div>            </div>
+            <div class="post-main">
+                Ok            </div>
+        </div>
+        <script src="../scripts/t.js"></script></body></html>

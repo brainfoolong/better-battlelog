@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User/Serverradar and the new feature - Better Battlelog Forums #1826</title>
+    <link rel="stylesheet" href="../stylesheets/page.css" type="text/css">
+<script src="../scripts/p.js"></script>
+</head>
+<body class="forums-post left-side"><h2>User/Serverradar and the new feature - Better Battlelog Forums #1826</h2><a href="sitemap.html">Sitemap</a>        <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-06-27T16:19:37+02:00">27. June 2012 16:19</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">=[KsK]= Podracer</div></div>            </div>
+            <div class="post-main">
+                Where can i find the .json File to put it on our server to share the blacklists with people?            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-06-27T16:24:52+02:00">27. June 2012 16:24</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Every .json file is described bellow the textarea of the external list feature.<br />
+Copy and modify that for your needs and put on your server, than add the link to the file on your server in the textarea. <br />
+Thats it.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-06-27T16:38:37+02:00">27. June 2012 16:38</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">=[KsK]= Podracer</div></div>            </div>
+            <div class="post-main">
+                Ok, but when i open the sample with the editor it&acute;s very uncomfortable to read and understand:<br />
+<br />
+<blockquote>// EXAMPLE FILE<br />
+BBLog.sourceCallback(<br />
+    {<br />
+        type : &#039;user&#039;,<br />
+        list : {<br />
+            // name could also be empty but for better reading you should also add the name<br />
+            // the user id is the URL user id which can be extracted from the user statistic page link<br />
+            // example: <div class="inline post-url">http://battlelog.battlefield.com/bf3/soldier/</div>{user-name}/stats/{user-id}/<br />
+            &#039;344922784&#039; : {&quot;name&quot; : &#039;DJ-Brainnrg&#039;},<br />
+            &#039;123456789&#039; : {&quot;name&quot; : &#039;FooBar123&#039;}<br />
+        }<br />
+    }<br />
+);</blockquote><br />
+Is it possible to copy the own list into this sample whitout the {} and stuff?<br />
+Otherwise it&acute;s not too simple.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-06-27T17:22:25+02:00">27. June 2012 17:22</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                No, this structure is required to get it working.<br />
+Therefore the example file exists.<br />
+And moved, no bug.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-06-28T04:08:08+02:00">28. June 2012 04:08</time>                                <div class="user-info"><div class="user-name mod">Nano</div><div class="user-role">Global Moderator</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">=[KsK wrote:</div>= Podracer]Ok, but when i open the sample with the editor it&acute;s very uncomfortable to read and understand:<br />
+<br />
+<blockquote>// EXAMPLE FILE<br />
+BBLog.sourceCallback(<br />
+    {<br />
+        type : &#039;user&#039;,<br />
+        list : {<br />
+            // name could also be empty but for better reading you should also add the name<br />
+            // the user id is the URL user id which can be extracted from the user statistic page link<br />
+            // example: <div class="inline post-url">http://battlelog.battlefield.com/bf3/soldier/</div>{user-name}/stats/{user-id}/<br />
+            &#039;344922784&#039; : {&quot;name&quot; : &#039;DJ-Brainnrg&#039;},<br />
+            &#039;123456789&#039; : {&quot;name&quot; : &#039;FooBar123&#039;}<br />
+        }<br />
+    }<br />
+);</blockquote><br />
+Is it possible to copy the own list into this sample whitout the {} and stuff?<br />
+Otherwise it&acute;s not too simple.</blockquote><br />
+<br />
+Use <div class="tag tag-b">http://www.flos-freeware.ch/</div> to edit these files.<br />
+<br />
+And this is simple. Just edit the numbers with UserID, &quot;name&quot; stays name (it&#039;s a function) and change &#039;FooBar123&#039; with username.<br />
+Lines starting with // are comment lines, so you can comment some updates.<br />
+<br />
+So, you just edit example file deleting (or commenting) 2 exemple lines and add your lines, with format below (inside original {}:<br />
+<code>&#039;00000000&#039; : {&quot;name&quot; : &#039;Username&#039;},</code><br />
+<br />
+Final file:<br />
+<code>// My Radar File<br />
+BBLog.sourceCallback(<br />
+    {<br />
+        type : &#039;user&#039;,<br />
+        list : {<br />
+            // name could also be empty but for better reading you should also add the name<br />
+            // the user id is the URL user id which can be extracted from the user statistic page link<br />
+            // example: <div class="inline post-url">http://battlelog.battlefield.com/bf3/soldier/</div>{user-name}/stats/{user-id}/<br />
+            //Original lines<br />
+            //&#039;344922784&#039; : {&quot;name&quot; : &#039;DJ-Brainnrg&#039;}, <br />
+            //&#039;123456789&#039; : {&quot;name&quot; : &#039;FooBar123&#039;}<br />
+            &#039;00000000&#039; : {&quot;name&quot; : &#039;Username&#039;},<br />
+            &#039;11111111&#039; : {&quot;name&quot; : &#039;Player2&#039;},<br />
+            &#039;1234567890&#039; : {&quot;name&quot; : &#039;PlayerName&#039;}<br />
+        }<br />
+    }<br />
+);</code><br />
+<br />
+Spaces in front of line are purely aesthetic.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-11-28T16:02:52+01:00">28. November 2012 16:02</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">=[KsK]= Podracer</div></div>            </div>
+            <div class="post-main">
+                Userradar not longer working or just invisible after v3 update?<br />
+There is no visible Button nearby the original triangle one in Battlelog.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-11-28T16:04:55+01:00">28. November 2012 16:04</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Userradar features had changed completly.<br />
+You need to read the option tooltips.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-11-28T16:41:28+01:00">28. November 2012 16:41</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">=[KsK]= Podracer</div></div>            </div>
+            <div class="post-main">
+                Ok, but where can i find it?            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-11-28T16:54:23+01:00">28. November 2012 16:54</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name help">xXJumpyXx</div><div class="user-role">Helping Hand</div></div> <time datetime="2012-11-28T16:54:40+01:00">28. November 2012 16:54</time></div>
+                                                    <div class="user-info"><div class="user-name help">xXJumpyXx</div><div class="user-role">Helping Hand</div></div>            </div>
+            <div class="post-main">
+                Try here :)<br />
+<div class="inline post-url">https://dl.dropbox.com/u/65189162/Sk%C3%A4rmklipp.PNG</div>            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-11-28T17:00:01+01:00">28. November 2012 17:00</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">=[KsK]= Podracer</div></div>            </div>
+            <div class="post-main">
+                That works, but the complete List on our server (the .json File) seems to not work any longer.<br />
+The list contains over 670 names.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-11-28T17:28:48+01:00">28. November 2012 17:28</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name help">xXJumpyXx</div><div class="user-role">Helping Hand</div></div> <time datetime="2012-11-28T17:31:14+01:00">28. November 2012 17:31</time></div>
+                                                    <div class="user-info"><div class="user-name help">xXJumpyXx</div><div class="user-role">Helping Hand</div></div>            </div>
+            <div class="post-main">
+                Are you sure?<br />
+<br />
+BBLog Options -&gt; General Improvements -&gt; Soldier Radar -&gt; Radar Sources -&gt; Add the .json URL.<br />
+The Radar Sources button is in the top right corner.<br />
+<br />
+It should work as long as you add it that way and the .json file is structured/formatted the right way.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-11-28T17:38:48+01:00">28. November 2012 17:38</time>                    <div class="post-edited">Post edited 4                        x times, last by <div class="user-info"><div class="user-name ">=[KsK]= Podracer</div></div> <time datetime="2012-11-28T17:40:14+01:00">28. November 2012 17:40</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">=[KsK]= Podracer</div></div>            </div>
+            <div class="post-main">
+                Ah, found the missing link!<br />
+<br />
+first line changes from <blockquote><div class="tag tag-b">BBLog.sourceCallback(</div></blockquote><br />
+in <blockquote><div class="tag tag-b">BBLog.handle(&quot;source.callback&quot;,</div></blockquote> <br />
+<br />
+Now it works fine.<br />
+<br />
+Thank you!            </div>
+        </div>
+        <script src="../scripts/t.js"></script></body></html>

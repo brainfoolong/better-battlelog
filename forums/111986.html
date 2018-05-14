@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[BF4/BF3 Template] Clan/Platoon Badge Maker - Better Battlelog Forums #111986</title>
+    <link rel="stylesheet" href="../stylesheets/page.css" type="text/css">
+<script src="../scripts/p.js"></script>
+</head>
+<body class="forums-post left-side"><h2>[BF4/BF3 Template] Clan/Platoon Badge Maker - Better Battlelog Forums #111986</h2><a href="sitemap.html">Sitemap</a>        <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-12-02T18:26:58+01:00">02. December 2013 18:26</time>                    <div class="post-edited">Post edited 12                        x times, last by <div class="user-info"><div class="user-name ">GameFreakBoy</div></div> <time datetime="2013-12-21T16:52:50+01:00">21. December 2013 16:52</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">GameFreakBoy</div></div>            </div>
+            <div class="post-main">
+                It didn&#039;t end up the way I was hoping it to be. I wanted it to seem like the option was integrated into the platoon settings itself, but in order to make it work across all platoon members you would have to do some extra steps anyway. (For those of you who don&#039;t have a code editor, I recomend <div class="inline post-url">http://notepad-plus-plus.org/</div> It is very simple to use.)<br />
+So you are gonna have to make some adjustments to the code yourself. The only thing that you should have to adjust is &#039;isPlatoonMember&#039;, &#039;badgeLink&#039;,&#039;imgSource&#039;, and &#039;toolTip&#039;. Once you have that to your liking, everyone who is in the isPlatoonMember array will have something similar to the DICE badge next to their posts and profile. I tested it with a list of 86 members and it worked just fine; I can&#039;t imagine 100 being very bad. Make sure to share your own modified version with the rest of your platoon so that you can all see it!<br />
+<br />
+Download this script and make your adjustments:<br />
+<div class="inline post-url">https://www.dropbox.com/s/44m3c0yxlzaqql1/platoon_badge.js</div><br />
+(Download link at the top right.)<br />
+<br />
+Instead of putting your platoon members in by hand just use this script:<br />
+<div class="inline post-url">https://dl.dropboxusercontent.com/s/vathv12ntb9rtiq/platoon_member_extractor.js</div><br />
+Go to your member list, open up the console (F12 in chrome), and copy/paste the array it gives you. If it doesn&#039;t show up as a list of names, refresh the page.<br />
+<br />
+Enjoy :)<br />
+<br />
+Image: <div class="inline post-url">https://dl.dropboxusercontent.com/s/q58ywxlfd08c731/Screenshot%202013-12-02%2012.39.55.png</div><br />
+<br />
+<div class="spoiler-button"><span>Updates</span></div><div class="spoiler">Updated template to include the badge region on the stats page and added bonus platoon feature. (Founders get a highlight to their messages when posting in their own platoon.)</div>            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-12-02T19:26:13+01:00">02. December 2013 19:26</time>                    <div class="post-edited">Post edited 2                        x times, last by <div class="user-info"><div class="user-name plugin">dapil</div><div class="user-role">Plugin Developer</div></div> <time datetime="2013-12-02T20:20:40+01:00">02. December 2013 20:20</time></div>
+                                                    <div class="user-info"><div class="user-name plugin">dapil</div><div class="user-role">Plugin Developer</div></div>            </div>
+            <div class="post-main">
+                I thought about something similar few months ago. Your is surely better then mine would be. It looks awesome!            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-12-02T20:05:57+01:00">02. December 2013 20:05</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">GameFreakBoy</div></div>            </div>
+            <div class="post-main">
+                I saw that here: <div class="inline post-url">http://getbblog.com/en/board/topic/47326/1/Clan-emblem</div> :P<br />
+I figured since quite a while has passed since that post that no one was going to do it.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-10-01T20:39:26+02:00">01. October 2014 20:39</time>                                <div class="user-info"><div class="user-name ">ZeRoHuNt3r</div></div>            </div>
+            <div class="post-main">
+                I edit the scipt and uploaded @ Dropbox to use it. But it dosnt work.<br />
+<br />
+var isPlatoonMember = [&quot;ZeRoHuNt3r&quot;, &quot;EFG-sandfire&quot;, &quot;EFG-TOOo_MAD4YOU&quot;, &quot;XiaoIong&quot;, &quot;EFG-I-rule-you&quot;, &quot;ThorStain4r&quot;, &quot;ScHaBBii&quot;, &quot;Amonarth&quot;, MasterSpec&quot;, &quot;ShredderSummer&quot;];<br />
+        var badgeLink = &quot;&#039;http://www.efg-clan.de/&#039;&quot;;<br />
+        // URL or URI is accepted for the image source. Keep in mind that a URL makes HTTP requests.<br />
+        // URI Generator: <div class="inline post-url">http://dopiaza.org/tools/datauri/index.php</div><br />
+        var imgSource = &quot;&#039;&quot; + &quot;http://www.efg-clan.de/include/images/usergallery/img_5.gif&quot; + &quot;&#039;&quot;;<br />
+        var toolTip = &quot;&#039;&quot; + &quot;http://www.efg-clan.de&quot; + &quot;&#039;&quot;;<br />
+<br />
+What do i wrong.            </div>
+        </div>
+        <script src="../scripts/t.js"></script></body></html>

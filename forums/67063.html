@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Extract Information from battlelog - Better Battlelog Forums #67063</title>
+    <link rel="stylesheet" href="../stylesheets/page.css" type="text/css">
+<script src="../scripts/p.js"></script>
+</head>
+<body class="forums-post left-side"><h2>Extract Information from battlelog - Better Battlelog Forums #67063</h2><a href="sitemap.html">Sitemap</a>        <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-12-06T23:01:33+01:00">06. December 2012 23:01</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name ">GosuSan</div></div> <time datetime="2012-12-06T23:09:25+01:00">06. December 2012 23:09</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">GosuSan</div></div>            </div>
+            <div class="post-main">
+                Hi, it&#039;s me again :)<br />
+<br />
+i have another question: How is it possible to extract information <br />
+out of the battlelog site or out of an url on the page?<br />
+<br />
+I want to expand my plugin, but i need the username as a variable,<br />
+or i won&#039;t get it to work. <br />
+<br />
+Can anyone tell me how to do this?<br />
+<br />
+Thanks in advance<br />
+<br />
+EDIT:<br />
+This is the section in the HTML source code where the username is stored (on every page)<br />
+<code>&lt;li data-track=&quot;header.stats.overview&quot; class=&quot;bubble-title-inner base-header-extralink&quot; data-page=&quot;stats&quot; data-tooltip=&quot;Stats&quot;&gt;<br />
+ &lt;a href=&quot;/bf3/en/soldier/GosuSan/stats/200934537/&quot;&gt;<br />
+ &lt;span class=&quot;base-header-extralink-icon stats&quot;&gt;&lt;/span&gt;<br />
+ &lt;/a&gt;<br />
+ &lt;/li&gt;</code>            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-12-07T01:14:21+01:00">07. December 2012 01:14</time>                                <div class="user-info"><div class="user-name ">GameFreakBoy</div></div>            </div>
+            <div class="post-main">
+                What will this plugin do?            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-12-07T07:31:38+01:00">07. December 2012 07:31</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Well, moved this to the webcoding forum because it&#039;s not a plugin questions, it&#039;s a general coding question.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-12-07T10:00:57+01:00">07. December 2012 10:00</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name ">GosuSan</div></div> <time datetime="2012-12-07T12:53:25+01:00">07. December 2012 12:53</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">GosuSan</div></div>            </div>
+            <div class="post-main">
+                @GameFreakBoy:<br />
+<br />
+It will replace the big COOP-Button on the home page with several, not directly reachable sites<br />
+such as Favourites, Friends, etc. But only if i get it to work of course :)<br />
+<br />
+EDIT:<br />
+Code for extracting username: <br />
+<br />
+<code>//get html<br />
+var link = $(&#039;li&#91;data-page=&quot;stats&quot;&#93;&#039;).html();<br />
+//matches everythin between /soldier/ and /stats/<br />
+var matches = link.match(&#039;\/soldier\/(.*)\/stats\/&#039;);</code><br />
+<br />
+:)            </div>
+        </div>
+        <script src="../scripts/t.js"></script></body></html>

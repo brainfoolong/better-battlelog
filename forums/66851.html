@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>A little Problem with the language system - Better Battlelog Forums #66851</title>
+    <link rel="stylesheet" href="../stylesheets/page.css" type="text/css">
+<script src="../scripts/p.js"></script>
+</head>
+<body class="forums-post left-side"><h2>A little Problem with the language system - Better Battlelog Forums #66851</h2><a href="sitemap.html">Sitemap</a>        <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-12-06T19:45:11+01:00">06. December 2012 19:45</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">GosuSan</div></div>            </div>
+            <div class="post-main">
+                Hi there,<br />
+<br />
+i got a little problem with my Plugin Source.<br />
+It replaces the COOP button on the home-page with a link to your server favourites.<br />
+<br />
+Folowing works fine:<br />
+<code>BBLog.handle(&quot;add.plugin&quot;, {<br />
+	//plugin ID<br />
+	id : &quot;coop-to-favourites&quot;,<br />
+	//plugin name<br />
+	name : &quot;COOP to Server-Favourites&quot;,<br />
+<br />
+	init : function(instance){<br />
+		this.ChangeCOOPtoFAV();<br />
+	},<br />
+<br />
+	domchange : function(instance){<br />
+		this.ChangeCOOPtoFAV();<br />
+	},<br />
+	<br />
+	// main-function<br />
+	ChangeCOOPtoFAV : function()<br />
+	{<br />
+	// replace COOP with FAV<br />
+	$(&quot;#main-loggedin-header-puff-coop&quot;).attr(&quot;data-href&quot;, &quot;/bf3/servers/favourites/&quot;);<br />
+	$(&quot;#main-loggedin-header-puff-coop &gt; .main-loggedin-header-puff-content &gt; .wfont&quot;).html(&quot;favourites&quot;);<br />
+		// hide COOP counter<br />
+		$(&quot;#main-loggedin-header-puff-coop &gt; .main-loggedin-header-puff-content &gt; .main-loggedin-header-puff-play&quot;).hide();<br />
+<br />
+	}<br />
+});</code><br />
+<br />
+When i now add the language specific code (see below) it doesn&#039;t work.<br />
+<br />
+<code>BBLog.handle(&quot;add.plugin&quot;, {<br />
+	//plugin ID<br />
+	id : &quot;coop-to-favourites&quot;,<br />
+	//plugin name<br />
+	name : &quot;COOP to Server-Favourites&quot;,<br />
+	// language strings<br />
+    translations : {<br />
+        &quot;en&quot; : {<br />
+            &quot;lang.fav&quot; : &quot;favourites&quot;<br />
+        },<br />
+        &quot;de&quot; : {<br />
+            &quot;lang.fav&quot; : &quot;favoriten&quot;<br />
+        }<br />
+    },<br />
+<br />
+	init : function(instance){<br />
+		this.ChangeCOOPtoFAV();<br />
+	},<br />
+<br />
+	domchange : function(instance){<br />
+		this.ChangeCOOPtoFAV();<br />
+	},<br />
+	<br />
+	// main-function<br />
+	ChangeCOOPtoFAV : function()<br />
+	{<br />
+	// replace COOP with FAV<br />
+	$(&quot;#main-loggedin-header-puff-coop&quot;).attr(&quot;data-href&quot;, &quot;/bf3/servers/favourites/&quot;);<br />
+	$(&quot;#main-loggedin-header-puff-coop &gt; .main-loggedin-header-puff-content &gt; .wfont&quot;).html(&quot;lang.fav&quot;);<br />
+		// hide COOP counter<br />
+		$(&quot;#main-loggedin-header-puff-coop &gt; .main-loggedin-header-puff-content &gt; .main-loggedin-header-puff-play&quot;).hide();<br />
+<br />
+	}<br />
+});</code><br />
+<br />
+Plugins still works, but the button title is &quot;lang.fav&quot;.<br />
+Can anyone tell me what i forgot?<br />
+<br />
+Thanks in Advance!<br />
+<br />
+GosuSan            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-12-06T20:02:41+01:00">06. December 2012 20:02</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                <code>...html(instance.t(&quot;lang.fav&quot;)); // hide COOP counter</code>            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-12-06T20:03:21+01:00">06. December 2012 20:03</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div> <time datetime="2012-12-06T20:03:32+01:00">06. December 2012 20:03</time></div>
+                                                    <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                And also need to<br />
+<br />
+<code>instance.ChangeCOOPtoFAV(instance);</code>            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-12-06T20:20:07+01:00">06. December 2012 20:20</time>                    <div class="post-edited">Post edited 6                        x times, last by <div class="user-info"><div class="user-name ">GosuSan</div></div> <time datetime="2012-12-07T13:39:00+01:00">07. December 2012 13:39</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">GosuSan</div></div>            </div>
+            <div class="post-main">
+                Thanks for your reply!<br />
+<br />
+I am soory, i&#039;m still new to JS developing i have another question.<br />
+<br />
+I understand this:<br />
+<code>...html(instance.t(&quot;lang.fav&quot;)); // hide COOP counter</code><br />
+<br />
+But what does this?<br />
+<code>instance.ChangeCOOPtoFAV(instance);</code><br />
+<br />
+And where do i have to put it in the sourcecode?<br />
+<br />
+Sry for my bad english, it&#039;s not my native language.<br />
+<br />
+EDIT: This is the full code: <div class="tag tag-b">DELETED</div><br />
+<br />
+GosuSan            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-12-06T21:12:51+01:00">06. December 2012 21:12</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                You have to change this<br />
+<code>init : function(instance){ <br />
+this.ChangeCOOPtoFAV(); <br />
+}, <br />
+domchange : function(instance){ <br />
+this.ChangeCOOPtoFAV(); <br />
+},</code><br />
+<br />
+to this <br />
+<br />
+<code>init : function(instance){ <br />
+instance.ChangeCOOPtoFAV(instance); <br />
+}, <br />
+domchange : function(instance){ <br />
+instance.ChangeCOOPtoFAV(instance); <br />
+},</code><br />
+<br />
+That you have &quot;instance&quot; available in your custom function.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-12-06T21:17:32+01:00">06. December 2012 21:17</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name ">GosuSan</div></div> <time datetime="2012-12-06T21:19:53+01:00">06. December 2012 21:19</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">GosuSan</div></div>            </div>
+            <div class="post-main">
+                Ah ok, thank you very much for the fast support.<br />
+<br />
+I think i&#039;ll release the plugin tomorrow. <br />
+<br />
+I first want to look into the code of some other plugins to learn more about this language <br />
+and the bblog plugin system.<br />
+<br />
+Thanks again<br />
+<br />
+GosuSan<br />
+<br />
+EDIT: another question: is it hard to create a button in the bblog-menu to enable / disable this little plugin?<br />
+It is not really needed, but i wonder how to do this.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-12-06T21:21:41+01:00">06. December 2012 21:21</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                See the example plugin...<br />
+it describes all whats possible.<br />
+You can also add it to your plugin list to see what it is doing.<br />
+<br />
+<div class="inline post-url">http://getbblog.com/plugins/example.js</div>            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-12-06T22:30:24+01:00">06. December 2012 22:30</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">GosuSan</div></div>            </div>
+            <div class="post-main">
+                Thanks, this helped me a lot!<br />
+You can close this thread if you want, at the moment all my questions are answered.<br />
+<br />
+And many thanks to the whole bblog team, it&#039;s a great work you are doing here!<br />
+<br />
+GosuSan            </div>
+        </div>
+        <script src="../scripts/t.js"></script></body></html>

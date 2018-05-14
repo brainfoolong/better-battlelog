@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Favoriteserver plugin - Better Battlelog Forums #1934</title>
+    <link rel="stylesheet" href="../stylesheets/page.css" type="text/css">
+<script src="../scripts/p.js"></script>
+</head>
+<body class="forums-post left-side"><h2>Favoriteserver plugin - Better Battlelog Forums #1934</h2><a href="sitemap.html">Sitemap</a>        <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-08-12T11:45:34+02:00">12. August 2012 11:45</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">morre599</div></div>            </div>
+            <div class="post-main">
+                I have put together a pluigin so i can have my favorite server on the home page. Like this:<br />
+<div class="inline post-url">http://img39.imageshack.us/img39/7120/battlelogbattlefieldcome.png</div><br />
+I cant get the join server butons to work. I do not see where I can find &quot;gameid&quot; and the &quot;guid&quot; parameters that you have to send when you submit the forme.<br />
+<br />
+The form i send looks like this:<code></code><br />
+<br />
+Does someone know how I get hold of &quot;gameid&quot; and the &quot;guid&quot; parameters?<br />
+<br />
+The code looks like this:<code>ServerFavorites = {<br />
+    servers : &#91;&#93;,<br />
+    serverId &#93;,<br />
+    apiUrl : &quot;http://api.bf3stats.com/pc/server/&quot;,<br />
+    <br />
+    init : function() {<br />
+        this.serverId&#91;0&#93; = &quot;09570e32-dbb7-4059-8158-460b5c15b77e&quot;;<br />
+        this.serverId&#91;1&#93; = &quot;3e532eab-320c-437d-a7f8-1bd9dda2c719&quot;;<br />
+        this.serverId&#91;2&#93; = &quot;f9ba51bc-e9b0-40ad-bee5-02ddd56ef92f&quot;;<br />
+        this.serverId&#91;3&#93; = &quot;018a8c29-2c78-40c7-acb9-bd08ac6f88f7&quot;;<br />
+        this.serverId&#91;4&#93; = &quot;690a349d-6029-4431-9050-a4845bb43c48&quot;;  <br />
+        <br />
+        var element = $(&quot;#main-loggedin-content &gt; #main-loggedin-leftcolumn&quot;);<br />
+        element.empty();<br />
+        element.append(<br />
+            $(&quot;&quot;).append(document.createTextNode(&#039;Absolution Crew eSport&acute;s servers&#039;))<br />
+        )<br />
+<br />
+        for (i = 0; i  35) {<br />
+                servers.srvName = servers.srvName.slice(0,35) + &#039;...&#039;;<br />
+            }<br />
+            <br />
+            servers.players = data.srv.players + &quot;/&quot; + data.srv.slots<br />
+            servers.mode = data.srv.mode_name<br />
+            servers.mapName = data.srv.map_name<br />
+            servers.mapImage = data.srv.map_image<br />
+            servers.url = data.srv.battlelog<br />
+            servers.mapImage = data.srv.map_image<br />
+            servers.ip = data.srv.ip<br />
+            servers.port = data.srv.port<br />
+            servers.id = data.srv.id<br />
+            <br />
+            var element = $(&quot;#main-loggedin-content &gt; #main-loggedin-leftcolumn&quot;);<br />
+            <br />
+            element.append(<br />
+                $(&quot;&quot;).append(<br />
+                    $(&quot;&quot;).append(<br />
+                        $(&quot;&quot;).append(<br />
+                            $(&quot;&quot;)<br />
+                        )<br />
+                    )<br />
+                ).append(<br />
+                    $(&quot;&quot;).append(<br />
+                        $(&quot;&quot;).text(servers.srvName)<br />
+                    ).append($(&quot;&quot;)).append(document.createTextNode(servers.players + &#039; players&#039;)).<br />
+                            append($(&quot;&quot;)).append(document.createTextNode(servers.mapName)).<br />
+                            append($(&quot;&quot;)).append(document.createTextNode(servers.mode))<br />
+                ).append($(&#039;&#039;).append(<br />
+                        $(&#039;&#039;).addClass(&#039;base-left serverguide-join-server base-no-ajax&#039;).attr(<br />
+                        {<br />
+                            method : &#039;GET&#039;, <br />
+                            id : &#039;serverguide-show-joinserver-form&#039;, <br />
+                            action : servers.url, <br />
+                            guid : &#039;&#039;,<br />
+                            &#039;data-processed-server&#039; : &#039;true&#039;<br />
+                        }<br />
+                        ).append(<br />
+                        $(&#039;&#039;).attr(&#039;type&#039;, &#039;hidden&#039;).attr(&#039;name&#039;, &#039;gameip&#039;).attr(&#039;value&#039;, servers.ip)).append(<br />
+                        $(&#039;&#039;).attr(&#039;type&#039;, &#039;hidden&#039;).attr(&#039;name&#039;, &#039;gameid&#039;).attr(&#039;value&#039;, &#039;&#039;)).append(<br />
+                        $(&#039;&#039;).attr(&#039;type&#039;, &#039;hidden&#039;).attr(&#039;name&#039;, &#039;gameport&#039;).attr(&#039;value&#039;, servers.port)).append(<br />
+                        $(&#039;&#039;).attr(&#039;type&#039;, &#039;hidden&#039;).attr(&#039;name&#039;, &#039;gamename&#039;).attr(&#039;value&#039;, 2)).append(<br />
+                        $(&#039;&#039;).attr(&#039;type&#039;, &#039;hidden&#039;).attr(&#039;name&#039;, &#039;action&#039;).attr(&#039;value&#039;, &#039;&#039;)).append(<br />
+                        $(&#039;&#039;).attr(&#039;type&#039;, &#039;submit&#039;).attr(&#039;name&#039;, &#039;submit&#039;).attr(&#039;value&#039;, &#039;Join server&#039;).addClass(&#039;base-button-arrow-almost-gigantic&#039;)<br />
+                    ))<br />
+               ).append($(&#039;&#039;)).attr(&#039;class&#039;, &#039;base-clear&#039;)<br />
+            ).append($(&#039;&#039;));<br />
+<br />
+                <br />
+        });<br />
+    },<br />
+    <br />
+    makeLocalizedUrl : function(path)<br />
+    {<br />
+        var url = &quot;&quot;;<br />
+        if(BBLog.battlelogLanguage != null &amp;&amp; BBLog.battlelogLanguage != &#039;en&#039;)<br />
+            url = &#039;/bf3/&#039; + BBLog.battlelogLanguage + path;<br />
+        else<br />
+            url = &#039;/bf3&#039; + path;<br />
+        return url;<br />
+    }<br />
+<br />
+};<br />
+<br />
+<br />
+$(document).ready(function() {<br />
+    $(&#039;ul.base-header-soldier-nav&#039;).css({&quot;margin-right&quot;:&quot;-35px&quot;});<br />
+    ServerFavorites.init();<br />
+});</code>            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-08-12T13:29:27+02:00">12. August 2012 13:29</time>                                <div class="user-info"><div class="user-name themes">juress</div><div class="user-role">Theme Developer</div></div>            </div>
+            <div class="post-main">
+                Wou, those are some big buttons :D            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-08-12T13:57:12+02:00">12. August 2012 13:57</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">morre599</div></div>            </div>
+            <div class="post-main">
+                Yes i know, any idea on how to get the &quot;gameid&quot; and the &quot;guid&quot; variables?            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-08-12T14:45:15+02:00">12. August 2012 14:45</time>                                <div class="user-info"><div class="user-name themes">juress</div><div class="user-role">Theme Developer</div></div>            </div>
+            <div class="post-main">
+                Well those are fetched into the join server button on the server page or server browser page. <br />
+So you should store them somehow.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-08-13T22:06:35+02:00">13. August 2012 22:06</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">morre599</div></div>            </div>
+            <div class="post-main">
+                I get the variables from BBLog.getJSONFromBattlelog(&#039;bla bla url&#039;), but i can&acute;t get the button to work. Have Dice added some kind of security for this?            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-08-14T00:12:28+02:00">14. August 2012 00:12</time>                                <div class="user-info"><div class="user-name trans">Dendari</div><div class="user-role">Translator</div></div>            </div>
+            <div class="post-main">
+                The &quot;Join Server&quot; button should use the gamemanager/launcher.<br />
+I&#039;m not really sure anyways, I&#039;m not an expert with these things.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-08-15T07:12:02+02:00">15. August 2012 07:12</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">morre599</div></div>            </div>
+            <div class="post-main">
+                I managed to make the buttons to work with this code:<br />
+<code>$(&#039;.hellions-mupp-class form&#039;).submit(function (event) {<br />
+    event.preventDefault();<br />
+    $(&quot;#gamecontrol-game-launcher&quot;).show();<br />
+    gamemanager.joinServerByUrl($(this).attr(&quot;action&quot;), null, function(foundServer) {});<br />
+    return false;<br />
+});</code>            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-08-28T00:39:22+02:00">28. August 2012 00:39</time>                                <div class="user-info"><div class="user-name ">CptChaosNL</div></div>            </div>
+            <div class="post-main">
+                This is a nice plugin. Any plans on releasing it?            </div>
+        </div>
+        <script src="../scripts/t.js"></script></body></html>

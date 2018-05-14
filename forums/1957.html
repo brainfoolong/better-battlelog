@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stats Quick Links Ordering - Better Battlelog Forums #1957</title>
+    <link rel="stylesheet" href="../stylesheets/page.css" type="text/css">
+<script src="../scripts/p.js"></script>
+</head>
+<body class="forums-post left-side"><h2>Stats Quick Links Ordering - Better Battlelog Forums #1957</h2><a href="sitemap.html">Sitemap</a>        <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-08-22T02:25:57+02:00">22. August 2012 02:25</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">encryptedband</div></div>            </div>
+            <div class="post-main">
+                I didn&#039;t see anyone who had done this and it annoyed me so I figured I&#039;d make something to fix it for myself. I decided that if it helps anyone they can use it as well.<br />
+<br />
+This will make the Awards stat button fit in the top soldier area and will re-order the links to match the ordering in your stats.<br />
+<br />
+<code>var reorderIcons = false;<br />
+var handler = function() {<br />
+    if (reorderIcons) return;<br />
+<br />
+    $(&quot;ul.base-header-soldier-nav &gt; li &gt; a&quot;).css(&quot;padding&quot;, &quot;0px 8px&quot;);<br />
+    var order   = &#91;&#93;;<br />
+    var ul      = $(&#039;ul.base-header-soldier-nav&#039;);<br />
+    var els     = $(&#039;ul.base-header-soldier-nav &gt; li&#039;);<br />
+    var last    = 0;<br />
+    $.each(els, function() {<br />
+        switch ($(this).attr(&#039;data-page&#039;)) {<br />
+            case &#039;stats&#039;:<br />
+                current = 0;<br />
+                break;<br />
+            case &#039;weapons&#039;:<br />
+                current = 1;<br />
+                break;<br />
+            case &#039;vehicles&#039;:<br />
+                current = 2;<br />
+                break;<br />
+            case &#039;awards&#039;:<br />
+                current = 3;<br />
+                break;<br />
+            case &#039;assignments&#039;:<br />
+                current = 4;<br />
+                break;<br />
+            case &#039;dogtags&#039;:<br />
+                current = 5;<br />
+                break;<br />
+            case &#039;loadout&#039;:<br />
+                current = 6;<br />
+                break;<br />
+            case &#039;unlocks&#039;&#93;);<br />
+    });<br />
+<br />
+    if (order.length  b&#91;0&#93; ? 1 &#93;).is(&#039;li&#039;)) {<br />
+            ul.append(el&#91;1&#93;);<br />
+        }<br />
+    });<br />
+    reorderIcons = true;<br />
+};<br />
+BBLog.bindDomChange(handler);<br />
+handler();       <br />
+<br />
+var handler = function() {<br />
+    if (window.location.href.match(/\/loadout\//) &amp;&amp; !$(&#039;#to-top&#039;).is(&#039;button&#039;)) {<br />
+        $(&#039;TOP&#039;).appendTo($(&#039;div.profile-stats-loadout-header-actions&#039;));<br />
+        $(&#039;#to-top&#039;).css({&#039;margin&#039;:&#039;0px 0px 0px 10px&#039;,&#039;float&#039;:&#039;right&#039;}).click(function(){ $(&#039;html, body&#039;).animate({ scrollTop: 0 }, 0); });<br />
+    }   <br />
+};  <br />
+BBLog.bindDomChange(handler);<br />
+handler();</code>            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-08-22T03:00:16+02:00">22. August 2012 03:00</time>                                <div class="user-info"><div class="user-name">Guest</div></div>            </div>
+            <div class="post-main">
+                Is <div class="inline post-url">http://getbblog.com/viewtopic.php?f=3&amp;t=597</div> what you are talking about?            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-08-22T23:01:52+02:00">22. August 2012 23:01</time>                                <div class="user-info"><div class="user-name ">ezek1el3000</div></div>            </div>
+            <div class="post-main">
+                Thank you very much!<br />
+<br />
+If someone is interested: <div class="inline post-url">https://dl.dropbox.com/s/640nc6o21mzg45g/quicklinkssort.js</div><br />
+<br />
+<div class="tag tag-b">EDIT: Link fixed</div>            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-08-23T21:53:02+02:00">23. August 2012 21:53</time>                                <div class="user-info"><div class="user-name ">_und3rl1n3d</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">ezek1el3000 wrote:</div>Thank you very much!<br />
+<br />
+If someone is interested: <div class="inline post-url">https://dl-web.dropbox.com/get/betterbattlelog/quicklinkssort.js?w=7043d858</div></blockquote><br />
+<br />
+The link is broken.<br />
+<br />
+Here is my link: <div class="inline post-url">http://labs.localhostr.de/bblog/o/quicklinkssort.js</div>            </div>
+        </div>
+        <script src="../scripts/t.js"></script></body></html>

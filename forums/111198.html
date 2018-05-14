@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[BF4/BF3ish]Battlefeed Filter - Better Battlelog Forums #111198</title>
+    <link rel="stylesheet" href="../stylesheets/page.css" type="text/css">
+<script src="../scripts/p.js"></script>
+</head>
+<body class="forums-post left-side"><h2>[BF4/BF3ish]Battlefeed Filter - Better Battlelog Forums #111198</h2><a href="sitemap.html">Sitemap</a>        <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-11-15T20:25:06+01:00">15. November 2013 20:25</time>                    <div class="post-edited">Post edited 4                        x times, last by <div class="user-info"><div class="user-name ">GameFreakBoy</div></div> <time datetime="2013-12-24T02:02:38+01:00">24. December 2013 02:02</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">GameFreakBoy</div></div>            </div>
+            <div class="post-main">
+                There is so much going on in the feed. With this you can select what you don&#039;t want to see. So far it can block battlereports, battlepacks, forum posts, and I am working on trying to block favorited servers.<br />
+<br />
+<div class="inline post-url">https://dl.dropboxusercontent.com/s/zhvbkssvwknwmhr/feed_filter.js</div><br />
+<br />
+Dropbox decided to move the file to a new URL. This one should work.<br />
+<br />
+What do you think?<br />
+<div class="spoiler-button"><span>Update</span></div><div class="spoiler"><br />
+23-12-2013 Added a filter to remove the friendship messages.</div>            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-11-15T21:21:29+01:00">15. November 2013 21:21</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name ">Brady_The</div></div> <time datetime="2013-11-15T21:21:42+01:00">15. November 2013 21:21</time></div>
+                                                    <div class="user-info"><div class="user-name ">Brady_The</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">GameFreakBoy wrote:</div>What do you think?</blockquote><br />
+It&#039;s awesome. I don&#039;t really care about other peoples battle packs. Especially because most share literally every single one, not just an awesome bundle, etc.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-11-15T23:22:16+01:00">15. November 2013 23:22</time>                    <div class="post-edited">Post edited 2                        x times, last by <div class="user-info"><div class="user-name ">poisonblx</div></div> <time datetime="2013-11-16T19:29:53+01:00">16. November 2013 19:29</time></div>
+                                                    <div class="user-info"><div class="user-name ">poisonblx</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">GameFreakBoy wrote:</div>There is so much going on in the feed. With this you can select what you don&#039;t want to see. So far it can block battlereports, battlepacks, forum posts, and I am working on trying to block favorited servers.<br />
+<br />
+<div class="inline post-url">https://dl.dropboxusercontent.com/s/zhvbkssvwknwmhr/feed_filter.js</div><br />
+<br />
+What do you think?</blockquote><br />
+<br />
+I think this might be what you&#039;re after for sniping those favorited servers:<br />
+<code>$(&quot;#main-feed-container .feed-story-heading a&#91;href^=&#039;/bf4/servers/show&#039;&#93;&quot;).parents(&#039;li.feed-single-item&#039;).remove();</code><br />
+( <div class="inline post-url">http://api.jquery.com/attribute-starts-with-selector/</div> )<br />
+<br />
+Aside from that, I like it! I might actually, occasionally, glance at the battlefeed now.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-11-15T23:57:52+01:00">15. November 2013 23:57</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name trans">Dendari</div><div class="user-role">Translator</div></div> <time datetime="2013-11-15T23:58:31+01:00">15. November 2013 23:58</time></div>
+                                                    <div class="user-info"><div class="user-name trans">Dendari</div><div class="user-role">Translator</div></div>            </div>
+            <div class="post-main">
+                Nice plugin! Would be possible to block the unlocks too? And what about the campaign missions report?            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-11-16T03:34:36+01:00">16. November 2013 03:34</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name ">poisonblx</div></div> <time datetime="2013-11-16T19:29:01+01:00">16. November 2013 19:29</time></div>
+                                                    <div class="user-info"><div class="user-name ">poisonblx</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">Dendari wrote:</div>Nice plugin! Would be possible to block the unlocks too? And what about the campaign missions report?</blockquote><br />
+<br />
+Well, for campaign missions, grabbing with this should do the trick:<br />
+<code>$(&quot;#main-feed-container .feed-story-heading a&#91;href^=&#039;/bf4/campaign/level&#039;&#93;&quot;).parents(&#039;li.feed-single-item&#039;)</code><br />
+<br />
+unlocks vary a bit based on type from what I can tell, but the people on my friends list aren&#039;t overly spam-tastic enough for me to test these:<br />
+<div class="spoiler-button"><span>code</span></div><div class="spoiler"><code>$(&#039;.award-item&#039;).parents(&#039;.feed-story&#039;) // might cover everything, probably too much!<br />
+$(&#039;.award-item .vehicleunlock_unlock&#039;).parents(&#039;li.feed-single-item&#039;)<br />
+$(&#039;.award-item .dogtags&#039;).parents(&#039;li.feed-single-item&#039;)<br />
+$(&#039;.award-item .weapon_unlock&#039;).parents(&#039;li.feed-single-item&#039;)<br />
+$(&#039;.award-item .battlepacks&#039;).parents(&#039;li.feed-single-item&#039;)<br />
+$(&#039;.award-item .servicestar&#039;).parents(&#039;li.feed-single-item&#039;)  or  $(&#039;.award-item .award_star&#039;).parents(&#039;li.feed-single-item&#039;)<br />
+$(&#039;.award-item .award_ribbons&#039;).parents(&#039;li.feed-single-item&#039;)<br />
+$(&#039;.rank-icon&#039;).parents(&#039;li.feed-single-item&#039;)</code></div><br />
+<br />
+As an added bonus, for the game-specific items (aka anything other than &quot;now friends!&quot;)<br />
+<div class="spoiler-button"><span>code</span></div><div class="spoiler"><code>$(&quot;span.common-gameicon-hori.common-game-2048-1&quot;).parents(&#039;li.feed-single-item&#039;) // BF4 - PC<br />
+$(&quot;span.common-gameicon-hori.common-game-2-1&quot;).parents(&#039;li.feed-single-item&#039;) // BF3 - PC<br />
+$(&quot;span.common-gameicon-hori.common-game-4096-1&quot;).parents(&#039;li.feed-single-item&#039;) // MOHW - PC</code><br />
+<br />
+Values for common-game-&lt;gameid&gt;-&lt;platformid&gt;:<br />
+<code>var games = {<br />
+  BFBC2 : 1,<br />
+  BF3 : 2,<br />
+  BF1942 : 4,<br />
+  BF1943 : 8,<br />
+  BFVIETNAM : 16,<br />
+  BF2 : 32,<br />
+  BF2142 : 64,<br />
+  BFBC : 128,<br />
+  BFHEROES : 256,<br />
+  BFMC : 512,<br />
+  BFP4F : 1024,<br />
+  /*  */<br />
+  WARSAW : 2048,<br />
+  /*  */<br />
+  MOHW : 4096<br />
+};<br />
+var platforms = {<br />
+  PC : 1,<br />
+  XBOX360 : 2,<br />
+  PS3 : 4,<br />
+  XBOX : 8,<br />
+  PS2 : 16,<br />
+  PS4 : 32,<br />
+  XBOXONE : 64<br />
+};</code></div><br />
+<br />
+But... that&#039;s just things I tripped over in the process of digging through the code for my own purposes, it&#039;s up to GameFreakBoy to decide if he wants to go about sifting through all that :)            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-11-16T03:56:02+01:00">16. November 2013 03:56</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">GameFreakBoy</div></div>            </div>
+            <div class="post-main">
+                Once I get back to my machine I will play with it. Im posting this from a tablet now. Thanks for the help poison. :)<br />
+I haven&#039;t used href very much.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-11-16T19:01:52+01:00">16. November 2013 19:01</time>                                <div class="user-info"><div class="user-name trans">Dendari</div><div class="user-role">Translator</div></div>            </div>
+            <div class="post-main">
+                Is it just me or it doesn&#039;t work if you&#039;re in the BF3 Battlelog?            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-11-16T20:44:39+01:00">16. November 2013 20:44</time>                                <div class="user-info"><div class="user-name ">poisonblx</div></div>            </div>
+            <div class="post-main">
+                Looks like it&#039;s just setup to run against BF4, though I believe the structure of the feed&#039;s the same on everything it uses, so it might be able to be applied directly to both.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-11-17T02:05:32+01:00">17. November 2013 02:05</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">GameFreakBoy</div></div>            </div>
+            <div class="post-main">
+                I was thinking of making an option to block all of bf4 feed from bf3.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-11-18T00:04:26+01:00">18. November 2013 00:04</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name ">GameFreakBoy</div></div> <time datetime="2013-11-19T03:09:30+01:00">19. November 2013 03:09</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">GameFreakBoy</div></div>            </div>
+            <div class="post-main">
+                This seems to want to delete all posts, even ones that have the BF3 icon. Any ideas?<br />
+<code>var bf4Icon = $(&#039;span&#91;class^=&quot;.common-game-2048-&quot;&#93;&#039;)<br />
+$(&quot;#main-feed-container .feed-story-infoarea&quot;).children().children(bf4Icon).parent().parent().parent().parent().parent().remove();</code><br />
+<br />
+It worked without the variable. Although I can&#039;t say if it will work when other platforms other than PC are involved.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-12-23T17:35:23+01:00">23. December 2013 17:35</time>                                <div class="user-info"><div class="user-name ">Huck4bee</div></div>            </div>
+            <div class="post-main">
+                Any chance you could filter the friend messages, such as X  and Y are now friends?            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-12-24T02:03:09+01:00">24. December 2013 02:03</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name ">GameFreakBoy</div></div> <time datetime="2013-12-24T02:05:59+01:00">24. December 2013 02:05</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">GameFreakBoy</div></div>            </div>
+            <div class="post-main">
+                Just added it.<br />
+Try it out. :D            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2015-07-18T11:51:45+02:00">18. July 2015 11:51</time>                                <div class="user-info"><div class="user-name ">DJ-Cas</div></div>            </div>
+            <div class="post-main">
+                Can you please add blocking of BFH items in BF4 feed?            </div>
+        </div>
+        <script src="../scripts/t.js"></script></body></html>

@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Replace COOP - Better Battlelog Forums #67411</title>
+    <link rel="stylesheet" href="../stylesheets/page.css" type="text/css">
+<script src="../scripts/p.js"></script>
+</head>
+<body class="forums-post left-side"><h2>Replace COOP - Better Battlelog Forums #67411</h2><a href="sitemap.html">Sitemap</a>        <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-12-07T13:44:36+01:00">07. December 2012 13:44</time>                    <div class="post-edited">Post edited 8                        x times, last by <div class="user-info"><div class="user-name plugin">dapil</div><div class="user-role">Plugin Developer</div></div> <time datetime="2013-01-15T14:50:44+01:00">15. January 2013 14:50</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">GosuSan</div></div>            </div>
+            <div class="post-main">
+                Hi guys,<br />
+<br />
+here is my first Plugin. Since i never touched the COOP mode after i had all the weapons from there,<br />
+I thought of creating a plugin that replaces COOP with somethin else, e.g. my favourite servers.<br />
+<br />
+<code>* Changelog<br />
+*  v1.4: RELEASE<br />
+*	code cleanup<br />
+*	added &quot;History&quot; as an option<br />
+*  v1.3: RELEASE<br />
+*	some small code improvements<br />
+*	to be more extendable<br />
+*   v1.2: RELEASE<br />
+*	added czech language support<br />
+*	(thanks to dapil - getbblog.com)<br />
+*   v1.1: RELEASE<br />
+*	added french language support<br />
+*	(thanks to Amkhatar - getbblog.com)<br />
+*   v1.0: RELEASE<br />
+*	some code-cleanup, bug fixes<br />
+*   v0.2: BETA<br />
+*	added leaderboard options<br />
+*   v0.1: ALPHA<br />
+*	main features implemented</code><br />
+<br />
+<code>Features<br />
+- replace COOP with FAVOURITES<br />
+- replace COOP with FRIENDS<br />
+- replace COOP with LEADERBOARD (GLOBAL)<br />
+- replace COOP with LEADERBOARD (FRIENDS)<br />
+- supported languages so far: english, german, french, czech</code><br />
+<br />
+<br />
+<br />
+Link to the Addon: <div class="inline post-url">http://bblog.ind3x.de/v3/CoopTo.js</div><br />
+<br />
+Screenshots: <br />
+Options:<br />
+<div class="inline post-url">http://bblog.ind3x.de/v3/images/CoopTo/options.png</div><br />
+Before:<br />
+<div class="inline post-url">http://bblog.ind3x.de/v3/images/CoopTo/coop.png</div><br />
+After:<br />
+<div class="inline post-url">http://bblog.ind3x.de/v3/images/CoopTo/favourites_friends.png</div><br />
+<div class="inline post-url">http://bblog.ind3x.de/v3/images/CoopTo/leaderboards.png</div>            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-12-07T14:37:05+01:00">07. December 2012 14:37</time>                                <div class="user-info"><div class="user-name themes">Amkhatar</div><div class="user-role">Theme Developer</div></div>            </div>
+            <div class="post-main">
+                Good job<br />
+<br />
+Here is french translations<br />
+<br />
+<code>&quot;lang.name&quot; : &quot;Remplacer COOP ...&quot;,<br />
+&quot;lang.fav&quot; : &quot;Serveurs favoris&quot;,<br />
+&quot;lang.friends&quot; : &quot;Amis&quot;,<br />
+&quot;lang.leader&quot; : &quot;Classements g&eacute;n&eacute;raux&quot;,<br />
+&quot;lang.fleader&quot; : &quot;Classements amis&quot;,</code><br />
+<br />
+An improvement :<br />
+- replace checkbox system by radio button system to avoid warning message            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-12-07T14:41:27+01:00">07. December 2012 14:41</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name ">GosuSan</div></div> <time datetime="2012-12-07T14:56:40+01:00">07. December 2012 14:56</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">GosuSan</div></div>            </div>
+            <div class="post-main">
+                Thanks for the french localisation!<br />
+<br />
+I wanted to use radio buttons, but this is not explained in the example.js from bblog3.<br />
+I don&#039;t really know how to realise this, but i will look into it.<br />
+<br />
+EDIT: <br />
+@Amkhatar:<br />
+You forgot some parts of the translation, i added them anyway, could you check if they are correct?<br />
+<br />
+Thanks in Advance!            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-12-07T16:18:41+01:00">07. December 2012 16:18</time>                                <div class="user-info"><div class="user-name plugin">dapil</div><div class="user-role">Plugin Developer</div></div>            </div>
+            <div class="post-main">
+                Here you have a czech translation!<br />
+//czech language strings<br />
+<br />
+&quot;cs&quot; : {<br />
+			&quot;lang.name&quot; : &quot;Nahradit KOOP ...&quot;,<br />
+			<br />
+			&quot;lang.fav&quot; : &quot;Obl&amp;iacute;ben&amp;eacute; servery&quot;,<br />
+			&quot;lang.friends&quot; : &quot;P&amp;#345;&amp;aacute;tel&amp;eacute;&quot;,<br />
+			&quot;lang.leader&quot; : &quot;&amp;#381;eb&amp;#345;&amp;iacute;&amp;#269;ky (glob&amp;aacute;ln&amp;iacute;)&quot;,<br />
+			&quot;lang.fleader&quot; : &quot;&amp;#381;eb&amp;#345;&amp;iacute;&amp;#269;ky (p&amp;#345;&amp;aacute;tel&amp;eacute;)&quot;,<br />
+			<br />
+			&quot;option.fav&quot; : &quot;obl&amp;iacute;ben&amp;yacute;mi servery&quot;,<br />
+			&quot;option.friends&quot; : &quot;p&amp;#345;&amp;aacute;teli&quot;,<br />
+			&quot;option.leader&quot; : &quot;glob&amp;aacute;ln&amp;iacute;mi &amp;#382;eb&amp;#345;&amp;iacute;&amp;#269;ky&quot;,<br />
+			&quot;option.fleader&quot; : &quot;&amp;#382;eb&amp;#345;&amp;iacute;&amp;#269;ky p&amp;#345;&amp;aacute;tel&quot;<br />
+		},            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-12-07T16:22:25+01:00">07. December 2012 16:22</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name help">xXJumpyXx</div><div class="user-role">Helping Hand</div></div> <time datetime="2012-12-07T16:27:07+01:00">07. December 2012 16:27</time></div>
+                                                    <div class="user-info"><div class="user-name help">xXJumpyXx</div><div class="user-role">Helping Hand</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">dapil wrote:</div>Here you have a czech translation!</blockquote>Is it just me or is that just a bunch of random letters and numbers?<br />
+<br />
+This is what it looks like for me: -PICTURE REMOVED, NO NEED FOR IT-            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-12-07T16:24:48+01:00">07. December 2012 16:24</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">GosuSan</div></div>            </div>
+            <div class="post-main">
+                I think thats ok, these are HTML codes for special characters.<br />
+I will implement and test them, but the translation seems legit.<br />
+<br />
+Thank you very much dapil!            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-12-07T16:26:10+01:00">07. December 2012 16:26</time>                                <div class="user-info"><div class="user-name help">xXJumpyXx</div><div class="user-role">Helping Hand</div></div>            </div>
+            <div class="post-main">
+                Ah, okay then.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-12-07T16:27:31+01:00">07. December 2012 16:27</time>                                <div class="user-info"><div class="user-name plugin">dapil</div><div class="user-role">Plugin Developer</div></div>            </div>
+            <div class="post-main">
+                It&#039;s OK, without these HTML entities, BBlog will replace them with question marks or random symbols.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-12-07T16:30:51+01:00">07. December 2012 16:30</time>                    <div class="post-edited">Post edited 2                        x times, last by <div class="user-info"><div class="user-name ">GosuSan</div></div> <time datetime="2012-12-08T22:00:47+01:00">08. December 2012 22:00</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">GosuSan</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">xXJumpyXx wrote:</div>Is it just me or is that just a bunch of random letters and numbers?</blockquote><br />
+<br />
+If you are still interested, it looks like this:<br />
+<br />
+<div class="inline post-url">http://bblog.ind3x.de/v3/images/CoopTo/czech.png</div>            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-12-07T17:57:58+01:00">07. December 2012 17:57</time>                                <div class="user-info"><div class="user-name plugin">dapil</div><div class="user-role">Plugin Developer</div></div>            </div>
+            <div class="post-main">
+                The name of plugin (Replace COOP ...) is not showing translated.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-12-07T18:16:50+01:00">07. December 2012 18:16</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">GosuSan</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">dapil wrote:</div>The name of plugin (Replace COOP ...) is not showing translated.</blockquote><br />
+<br />
+Jep, i have recognized this too, but the title is stored in this part:<br />
+<br />
+<code>// plugin name<br />
+name : &quot;replace COOP ...&quot;,</code><br />
+<br />
+And is not part of the language section.<br />
+So no translation here.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-12-07T18:23:52+01:00">07. December 2012 18:23</time>                                <div class="user-info"><div class="user-name ">I_like_Chocolate</div></div>            </div>
+            <div class="post-main">
+                hey guys i need really help. now i am trying to insrall this plugins for ca. 30mins and i dont check this <div class="tag tag-b">*grrrrr*</div>  can anyone of you make a picture tutorial or something i would really prechiate that.<br />
+<br />
+and sorry for bad english i do my best <div class="tag tag-u">i am from germany</div>            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-12-07T18:31:31+01:00">07. December 2012 18:31</time>                    <div class="post-edited">Post edited 4                        x times, last by <div class="user-info"><div class="user-name ">GosuSan</div></div> <time datetime="2012-12-10T12:42:02+01:00">10. December 2012 12:42</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">GosuSan</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">twm-killerkeks wrote:</div>hey guys i need really help. now i am trying to insrall this plugins for ca. 30mins and i dont check this <div class="tag tag-b">*grrrrr*</div>  can anyone of you make a picture tutorial or something i would really prechiate that.<br />
+<br />
+and sorry for bad english i do my best <div class="tag tag-u">i am from germany</div></blockquote><br />
+<br />
+<div class="inline post-url">http://bblog.ind3x.de/v3/images/CoopTo/installation1.png</div><br />
+<br />
+1. Click<br />
+2. Click<br />
+3. insert the URL from the first post.<br />
+4. Enter<br />
+5. F5<br />
+<br />
+Gr&uuml;&szlig;e aus Rheinland Pfalz Kumpel :)            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-12-07T18:36:39+01:00">07. December 2012 18:36</time>                                <div class="user-info"><div class="user-name ">I_like_Chocolate</div></div>            </div>
+            <div class="post-main">
+                jau danke ebenfalls aus M-V<br />
+but i speak english for the rules :P<br />
+i do that but i dont got a window that i can change what in the coop field is.<br />
+so i activate it pressed F5 yeah<br />
+i try it again            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-12-07T18:44:19+01:00">07. December 2012 18:44</time>                    <div class="post-edited">Post edited 2                        x times, last by <div class="user-info"><div class="user-name ">GosuSan</div></div> <time datetime="2012-12-10T12:42:10+01:00">10. December 2012 12:42</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">GosuSan</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">twm-killerkeks wrote:</div>jau danke ebenfalls aus M-V<br />
+but i speak english for the rules :P<br />
+i do that but i dont got a window that i can change what in the coop field is.<br />
+so i activate it pressed F5 yeah<br />
+i try it again</blockquote><br />
+<br />
+To choose what replaces COOP you use the new bblog menu entry:<br />
+<br />
+<div class="inline post-url">http://bblog.ind3x.de/v3/images/CoopTo/installation2.png</div><br />
+<br />
+If there is no new menu entry be sure you have the newest version of bblog installed.<br />
+Feel free to ask again if there are any further problems.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-12-07T18:52:27+01:00">07. December 2012 18:52</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name ">I_like_Chocolate</div></div> <time datetime="2012-12-07T18:54:28+01:00">07. December 2012 18:54</time></div>
+                                                    <div class="user-info"><div class="user-name ">I_like_Chocolate</div></div>            </div>
+            <div class="post-main">
+                i have installed it<br />
+when anyone teach me how i can copie picturefiles in here<br />
+i can show it xD<br />
+but on my screen/bblog isnt the field with that change coop... (...bla bla bla ^^) so i cannot pick another field :/<br />
+<br />
+Edit: find it out--&gt; <div class="inline post-url">Unbenannt.png</div>            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-12-07T19:21:21+01:00">07. December 2012 19:21</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name ">GosuSan</div></div> <time datetime="2012-12-07T19:23:28+01:00">07. December 2012 19:23</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">GosuSan</div></div>            </div>
+            <div class="post-main">
+                What bblog version do you use?<br />
+This plugin will only work with Better Battlelog 3.0.0 or higher!            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-12-07T19:29:03+01:00">07. December 2012 19:29</time>                                <div class="user-info"><div class="user-name ">I_like_Chocolate</div></div>            </div>
+            <div class="post-main">
+                i use 3.1.3            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-12-07T19:33:11+01:00">07. December 2012 19:33</time>                                <div class="user-info"><div class="user-name ">I_like_Chocolate</div></div>            </div>
+            <div class="post-main">
+                do i am doing it wrong or what do you mean other people can help too ^^            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-12-07T19:33:22+01:00">07. December 2012 19:33</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Maybe use some seconds after a page refresh before you open the bblog options?<br />
+Possible reason is that the plugin file is not loaded when you open the bblog options.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-12-07T19:46:00+01:00">07. December 2012 19:46</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name ">I_like_Chocolate</div></div> <time datetime="2012-12-07T19:47:46+01:00">07. December 2012 19:47</time></div>
+                                                    <div class="user-info"><div class="user-name ">I_like_Chocolate</div></div>            </div>
+            <div class="post-main">
+                <div class="inline post-url">aljsdui.png</div><br />
+<br />
+<br />
+i really dont know :|            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-12-07T20:04:43+01:00">07. December 2012 20:04</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name ">I_like_Chocolate</div></div> <time datetime="2012-12-07T20:06:06+01:00">07. December 2012 20:06</time></div>
+                                                    <div class="user-info"><div class="user-name ">I_like_Chocolate</div></div>            </div>
+            <div class="post-main">
+                i am still waiting but in the time where the problem isnt clear i wouldn&#039;t use it<br />
+i am really sorry because i finds its really fantastic idea ..<br />
+when anyone knows the problem plese write me a PM or somthing.<br />
+i am looking still in this thread maybe anyone knows ^^<br />
+or is it possible that you can make other link to use, but i have really no minds in this so i don&#039;t know ^^            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-12-07T20:22:21+01:00">07. December 2012 20:22</time>                                <div class="user-info"><div class="user-name themes">Amkhatar</div><div class="user-role">Theme Developer</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">GosuSan wrote:</div><br />
+@Amkhatar:<br />
+You forgot some parts of the translation, i added them anyway, could you check if they are correct?<br />
+Thanks in Advance!</blockquote><br />
+<br />
+<br />
+Right, sorry...<br />
+<br />
+here it is right translation<br />
+(in this case we don&#039;t use standard translation of &quot;with&quot; in french)<br />
+<br />
+<code>&quot;option.fav&quot; : &quot;par Serveurs favoris&quot;,<br />
+&quot;option.friends&quot; : &quot;par Amis&quot;,<br />
+&quot;option.leader&quot; : &quot;par Classements g&amp;eacute;n&amp;eacute;raux&quot;,<br />
+&quot;option.fleader&quot; : &quot;par Classements amis&quot;</code>            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-12-07T20:54:21+01:00">07. December 2012 20:54</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">GosuSan</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">Amkhatar wrote:</div><br />
+Right, sorry...<br />
+<br />
+here it is right translation<br />
+(in this case we don&#039;t use standard translation of &quot;with&quot; in french)<br />
+<br />
+<code>&quot;option.fav&quot; : &quot;par Serveurs favoris&quot;,<br />
+&quot;option.friends&quot; : &quot;par Amis&quot;,<br />
+&quot;option.leader&quot; : &quot;par Classements g&amp;eacute;n&amp;eacute;raux&quot;,<br />
+&quot;option.fleader&quot; : &quot;par Classements amis&quot;</code></blockquote><br />
+<br />
+Hey no problem, i am really happy that this plugin is now already translated in 3 languages,<br />
+i did not expect this :)<br />
+<br />
+And thanks for the correction, i just had some french in school, <br />
+but i was never actually good at it. *g*<br />
+<br />
+I will add this in a few minutes!            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-12-07T21:33:58+01:00">07. December 2012 21:33</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name plugin">dapil</div><div class="user-role">Plugin Developer</div></div> <time datetime="2012-12-08T08:36:03+01:00">08. December 2012 08:36</time></div>
+                                                    <div class="user-info"><div class="user-name plugin">dapil</div><div class="user-role">Plugin Developer</div></div>            </div>
+            <div class="post-main">
+                I think it would better if the name will be only &quot;Replace COOP&quot; without three dots. It will look better with translated text.<br />
+<br />
+New version of translation reflecting the fact, that the title is not translated:<br />
+//czech language strings<br />
+<br />
+&quot;cs&quot; : {<br />
+&quot;lang.name&quot; : &quot;Nahradit KOOP ...&quot;,<br />
+<br />
+&quot;lang.fav&quot; : &quot;Obl&amp;iacute;ben&amp;eacute; servery&quot;,<br />
+&quot;lang.friends&quot; : &quot;P&amp;#345;&amp;aacute;tel&amp;eacute;&quot;,<br />
+&quot;lang.leader&quot; : &quot;&amp;#381;eb&amp;#345;&amp;iacute;&amp;#269;ky (glob&amp;aacute;ln&amp;iacute;)&quot;,<br />
+&quot;lang.fleader&quot; : &quot;&amp;#381;eb&amp;#345;&amp;iacute;&amp;#269;ky (p&amp;#345;&amp;aacute;tel&amp;eacute;)&quot;,<br />
+<br />
+&quot;option.fav&quot; : &quot;Nahradit obl&amp;iacute;ben&amp;yacute;mi servery&quot;,<br />
+&quot;option.friends&quot; : &quot;Nahradit p&amp;#345;&amp;aacute;teli&quot;,<br />
+&quot;option.leader&quot; : &quot;Nahradit glob&amp;aacute;ln&amp;iacute;mi &amp;#382;eb&amp;#345;&amp;iacute;&amp;#269;ky&quot;,<br />
+&quot;option.fleader&quot; : &quot;Nahradit &amp;#382;eb&amp;#345;&amp;iacute;&amp;#269;ky p&amp;#345;&amp;aacute;tel&quot;<br />
+},            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-12-07T22:16:45+01:00">07. December 2012 22:16</time>                                <div class="user-info"><div class="user-name ">I_like_Chocolate</div></div>            </div>
+            <div class="post-main">
+                <div class="tag tag-b"><div class="tag tag-u">i have found the Solution!</div></div><br />
+<br />
+<div class="inline post-url">Unbenannt.png</div><br />
+<br />
+<br />
+<br />
+here my anti-scriptvirus-plugin blocked the script what activate your plugin :/<br />
+sorry for all i have found the mistakes!<br />
+all who have this plugin too should check &quot;Not-Scripts&quot; for not activated scripts!            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-12-08T10:29:52+01:00">08. December 2012 10:29</time>                    <div class="post-edited">Post edited 2                        x times, last by <div class="user-info"><div class="user-name ">GosuSan</div></div> <time datetime="2012-12-08T11:18:05+01:00">08. December 2012 11:18</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">GosuSan</div></div>            </div>
+            <div class="post-main">
+                @dapil:<br />
+Yes, I removed the dots and this part of the translation:<br />
+<br />
+<code>&quot;lang.name&quot; : &quot;replace COOP ...&quot;,</code><br />
+<br />
+Thanks for the hint, it is cleaner now.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-12-08T17:07:37+01:00">08. December 2012 17:07</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">GosuSan</div></div>            </div>
+            <div class="post-main">
+                If anyone of you has more ideas for replacements of the COOP-button, just let me know.<br />
+I don&#039;t really need more features, but if you have more ideas i will try to do the changes.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-12-08T23:01:38+01:00">08. December 2012 23:01</time>                                <div class="user-info"><div class="user-name plugin">dapil</div><div class="user-role">Plugin Developer</div></div>            </div>
+            <div class="post-main">
+                Updated Czech translation:<br />
+<br />
+//czech language strings<br />
+<br />
+&quot;cs&quot; : {<br />
+&quot;lang.fav&quot; : &quot;Obl&amp;iacute;ben&amp;eacute; servery&quot;,<br />
+&quot;lang.hist&quot; : &quot;Historie&quot;,<br />
+&quot;lang.friends&quot; : &quot;P&amp;#345;&amp;aacute;tel&amp;eacute;&quot;,<br />
+&quot;lang.leader&quot; : &quot;&amp;#381;eb&amp;#345;&amp;iacute;&amp;#269;ky (glob&amp;aacute;ln&amp;iacute;)&quot;,<br />
+&quot;lang.fleader&quot; : &quot;&amp;#381;eb&amp;#345;&amp;iacute;&amp;#269;ky (p&amp;#345;&amp;aacute;tel&amp;eacute;)&quot;,<br />
+<br />
+&quot;option.fav&quot; : &quot;Nahradit obl&amp;iacute;ben&amp;yacute;mi servery&quot;,<br />
+&quot;option.hist&quot; : &quot;Nahradit histori&amp;iacute;&quot;,<br />
+&quot;option.friends&quot; : &quot;Nahradit p&amp;#345;&amp;aacute;teli&quot;,<br />
+&quot;option.leader&quot; : &quot;Nahradit glob&amp;aacute;ln&amp;iacute;mi &amp;#382;eb&amp;#345;&amp;iacute;&amp;#269;ky&quot;,<br />
+&quot;option.fleader&quot; : &quot;Nahradit &amp;#382;eb&amp;#345;&amp;iacute;&amp;#269;ky p&amp;#345;&amp;aacute;tel&quot;<br />
+},            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-12-08T23:04:17+01:00">08. December 2012 23:04</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">GosuSan</div></div>            </div>
+            <div class="post-main">
+                And thanks for this too :)            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-12-09T09:55:28+01:00">09. December 2012 09:55</time>                                <div class="user-info"><div class="user-name ">I_like_Chocolate</div></div>            </div>
+            <div class="post-main">
+                maybe you can script the button that you come over here:<br />
+<br />
+<div class="inline post-url">http://battlelog.battlefield.com/bf3/platoon/2832655391300702826/listmembers/</div><br />
+<br />
+so you can check if a dice emplyer is playing like stalking dice xD<br />
+thats my idea            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-12-10T16:43:15+01:00">10. December 2012 16:43</time>                                <div class="user-info"><div class="user-name plugin">dapil</div><div class="user-role">Plugin Developer</div></div>            </div>
+            <div class="post-main">
+                Because forum now supports special characters, here is new version of translation:<br />
+<br />
+//czech language strings<br />
+<br />
+&quot;cs&quot; : {<br />
+&quot;lang.fav&quot; : &quot;Obl&iacute;ben&eacute; servery&quot;,<br />
+&quot;lang.hist&quot; : &quot;Historie&quot;,<br />
+&quot;lang.friends&quot; : &quot;Př&aacute;tel&eacute;&quot;,<br />
+&quot;lang.leader&quot; : &quot;Žebř&iacute;čky (glob&aacute;ln&iacute;)&quot;,<br />
+&quot;lang.fleader&quot; : &quot;Žebř&iacute;čky (př&aacute;tel&eacute;)&quot;,<br />
+<br />
+&quot;option.fav&quot; : &quot;Nahradit obl&iacute;ben&yacute;mi servery&quot;,<br />
+&quot;option.hist&quot; : &quot;Nahradit histori&iacute;&quot;,<br />
+&quot;option.friends&quot; : &quot;Nahradit př&aacute;teli&quot;,<br />
+&quot;option.leader&quot; : &quot;Nahradit glob&aacute;ln&iacute;mi žebř&iacute;čky&quot;,<br />
+&quot;option.fleader&quot; : &quot;Nahradit žebř&iacute;čky př&aacute;tel&quot;<br />
+},<br />
+<br />
+<blockquote><div class="user">BrainFooLong wrote:</div>@dapil<br />
+<br />
+No need to special encode the characters here or in the plugin file.<br />
+Use native chars to prevent encoding errors in the plugin and the board.</blockquote>            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-12-10T17:01:21+01:00">10. December 2012 17:01</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">GosuSan</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">dapil wrote:</div>Because forum now supports special characters, here is new version of translation:<br />
+<br />
+//czech language strings<br />
+<br />
+&quot;cs&quot; : {<br />
+&quot;lang.fav&quot; : &quot;Obl&iacute;ben&eacute; servery&quot;,<br />
+&quot;lang.hist&quot; : &quot;Historie&quot;,<br />
+&quot;lang.friends&quot; : &quot;Př&aacute;tel&eacute;&quot;,<br />
+&quot;lang.leader&quot; : &quot;Žebř&iacute;čky (glob&aacute;ln&iacute;)&quot;,<br />
+&quot;lang.fleader&quot; : &quot;Žebř&iacute;čky (př&aacute;tel&eacute;)&quot;,<br />
+<br />
+&quot;option.fav&quot; : &quot;Nahradit obl&iacute;ben&yacute;mi servery&quot;,<br />
+&quot;option.hist&quot; : &quot;Nahradit histori&iacute;&quot;,<br />
+&quot;option.friends&quot; : &quot;Nahradit př&aacute;teli&quot;,<br />
+&quot;option.leader&quot; : &quot;Nahradit glob&aacute;ln&iacute;mi žebř&iacute;čky&quot;,<br />
+&quot;option.fleader&quot; : &quot;Nahradit žebř&iacute;čky př&aacute;tel&quot;<br />
+},<br />
+</blockquote><br />
+<br />
+Updated!            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-12-10T23:12:19+01:00">10. December 2012 23:12</time>                    <div class="post-edited">Post edited 2                        x times, last by <div class="user-info"><div class="user-name themes">Amkhatar</div><div class="user-role">Theme Developer</div></div> <time datetime="2012-12-10T23:59:47+01:00">10. December 2012 23:59</time></div>
+                                                    <div class="user-info"><div class="user-name themes">Amkhatar</div><div class="user-role">Theme Developer</div></div>            </div>
+            <div class="post-main">
+                Here it is the last &quot;prettier&quot; version for french<br />
+<br />
+<br />
+<code>		//french language strings<br />
+		&quot;fr&quot; : {<br />
+			&quot;lang.fav&quot; : &quot;Serveurs favoris&quot;,<br />
+			&quot;lang.hist&quot; : &quot;Historique&quot;,<br />
+			&quot;lang.friends&quot; : &quot;Amis&quot;,<br />
+			&quot;lang.leader&quot; : &quot;Classements g&eacute;n&eacute;raux&quot;,<br />
+			&quot;lang.fleader&quot; : &quot;Classements amis&quot;,<br />
+			<br />
+			&quot;option.fav&quot; : &quot;Remplacer par Serveurs favoris&quot;,<br />
+			&quot;option.hist&quot; : &quot;Remplacer par Historique&quot;,<br />
+			&quot;option.friends&quot; : &quot;Remplacer par Amis&quot;,<br />
+			&quot;option.leader&quot; : &quot;Remplacer par Classements g&eacute;n&eacute;raux&quot;,<br />
+			&quot;option.fleader&quot; : &quot;Remplacer par Classements amis&quot;</code>            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-12-12T02:52:08+01:00">12. December 2012 02:52</time>                    <div class="post-edited">Post edited 2                        x times, last by <div class="user-info"><div class="user-name ">GreatApo</div></div> <time datetime="2012-12-12T02:52:54+01:00">12. December 2012 02:52</time></div>
+                                                    <div class="user-info"><div class="user-name ">GreatApo</div></div>            </div>
+            <div class="post-main">
+                Greek Translation<br />
+<br />
+<code>		//greek language strings<br />
+		&quot;gr&quot; : {<br />
+			&quot;lang.fav&quot; : &quot;&alpha;&gamma;&alpha;&pi;&eta;&mu;έ&nu;&alpha;&quot;,<br />
+			&quot;lang.hist&quot; : &quot;&pi;&alpha;&rho;&epsilon;&lambda;&theta;ό&nu;&quot;,<br />
+			&quot;lang.friends&quot; : &quot;&phi;ί&lambda;&omicron;&iota;&quot;,<br />
+			&quot;lang.leader&quot; : &quot;&kappa;&alpha;&tau;ά&tau;&alpha;&xi;&eta; (&pi;&alpha;&gamma;&kappa;ό&sigma;&mu;&iota;&alpha;)&quot;,<br />
+			&quot;lang.fleader&quot; : &quot;&kappa;&alpha;&tau;ά&tau;&alpha;&xi;&eta; (&phi;ί&lambda;&omicron;&iota;)&quot;,<br />
+			<br />
+			&quot;option.fav&quot; : &quot;&mu;&epsilon; &tau;&alpha; &alpha;&gamma;&alpha;&pi;&eta;&mu;έ&nu;&alpha;&quot;,<br />
+			&quot;option.hist&quot; : &quot;&mu;&epsilon; &tau;&omicron; &pi;&alpha;&rho;&epsilon;&lambda;&theta;ό&nu;&quot;,<br />
+			&quot;option.friends&quot; : &quot;&mu;&epsilon; &tau;&omicron;&upsilon;&sigmaf; &phi;ί&lambda;&omicron;&upsilon;&sigmaf;&quot;,<br />
+			&quot;option.leader&quot; : &quot;&mu;&epsilon; &tau;&eta;&nu; &kappa;&alpha;&tau;ά&tau;&alpha;&xi;&eta; (&pi;&alpha;&gamma;&kappa;ό&sigma;&mu;&iota;&alpha;)&quot;,<br />
+			&quot;option.fleader&quot; : &quot;&mu;&epsilon; &tau;&eta;&nu; &kappa;&alpha;&tau;ά&tau;&alpha;&xi;&eta; (&phi;ί&lambda;&omicron;&iota;)&quot;<br />
+		}</code>            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-01-06T15:22:14+01:00">06. January 2013 15:22</time>                                <div class="user-info"><div class="user-name plugin">dapil</div><div class="user-role">Plugin Developer</div></div>            </div>
+            <div class="post-main">
+                New version of Czech translation:<br />
+<code>//czech language strings<br />
+<br />
+&quot;cs&quot; : {<br />
+&quot;plugin.name&quot; : &quot;Nahradit KOOP...&quot;<br />
+<br />
+&quot;lang.fav&quot; : &quot;Obl&iacute;ben&eacute; servery&quot;,<br />
+&quot;lang.hist&quot; : &quot;Historie&quot;,<br />
+&quot;lang.friends&quot; : &quot;Př&aacute;tel&eacute;&quot;,<br />
+&quot;lang.leader&quot; : &quot;Žebř&iacute;čky (glob&aacute;ln&iacute;)&quot;,<br />
+&quot;lang.fleader&quot; : &quot;Žebř&iacute;čky (př&aacute;tel&eacute;)&quot;,<br />
+<br />
+&quot;option.fav&quot; : &quot;...obl&iacute;ben&yacute;mi servery&quot;,<br />
+&quot;option.hist&quot; : &quot;...histori&iacute;&quot;,<br />
+&quot;option.friends&quot; : &quot;...př&aacute;teli&quot;,<br />
+&quot;option.leader&quot; : &quot;...glob&aacute;ln&iacute;mi žebř&iacute;čky&quot;,<br />
+&quot;option.fleader&quot; : &quot;...žebř&iacute;čky př&aacute;tel&quot;<br />
+},</code>            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-01-06T19:44:21+01:00">06. January 2013 19:44</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name themes">Amkhatar</div><div class="user-role">Theme Developer</div></div> <time datetime="2013-01-06T19:44:34+01:00">06. January 2013 19:44</time></div>
+                                                    <div class="user-info"><div class="user-name themes">Amkhatar</div><div class="user-role">Theme Developer</div></div>            </div>
+            <div class="post-main">
+                Updated for french...Please see my previous post            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-04-14T17:46:44+02:00">14. April 2013 17:46</time>                                <div class="user-info"><div class="user-name mod">Meaurk</div><div class="user-role">Global Moderator</div></div>            </div>
+            <div class="post-main">
+                You need to update the URL, it isn&#039;t working anymore! ;)            </div>
+        </div>
+        <script src="../scripts/t.js"></script></body></html>

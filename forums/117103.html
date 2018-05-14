@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Getting player list and score from a server - Better Battlelog Forums #117103</title>
+    <link rel="stylesheet" href="../stylesheets/page.css" type="text/css">
+<script src="../scripts/p.js"></script>
+</head>
+<body class="forums-post left-side"><h2>Getting player list and score from a server - Better Battlelog Forums #117103</h2><a href="sitemap.html">Sitemap</a>        <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2014-04-16T08:48:40+02:00">16. April 2014 08:48</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name ">HoPi</div></div> <time datetime="2014-04-16T08:53:20+02:00">16. April 2014 08:53</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">HoPi</div></div>            </div>
+            <div class="post-main">
+                Hi there,<br />
+<br />
+I&#039;m currently working on a plugin that extends the information you see in the server browser. Often I find a server that perfectly matches my filter criterias (e.g. slots for 4 friends and me, favorite game mode, nice map, good server size) - just to realise upon map change that we joined a mixed mode server that makes us play TDM on Locker, bah.<br />
+<br />
+What I got so far: when selecting a server, my plugin shows the next map (I know that this gets incorrect when the server has votemap enabled), using the following request to get the server data:<br />
+<br />
+<code>$.ajax({<br />
+	headers: {<br />
+		&#039;X-AjaxNavigation&#039;: 1<br />
+	},<br />
+	url: &#039;http://battlelog.battlefield.com/bf4/servers/show/pc/6a47de60-0874-4d98-83e3-de8d1d2fe2f1/BiG-HC-RANKED-24-7-RUSH/&#039;,<br />
+	success:function( r ) {<br />
+		// map information in r.context.server.maps<br />
+		var mapObj = r.context.server.maps,<br />
+			nextMap = mapObj.maps&#91; mapObj.nextMapIndex &#93;.map;<br />
+<br />
+		alert( &#039;Next map is &#039; + nextMap );<br />
+	}<br />
+});</code><br />
+<br />
+btw: is there any object I can access to transform the internal map names to recognizable ones, like &quot;MP_Journey&quot; -&gt; &quot;Golmud Railway&quot;?<br />
+<br />
+Now, I want to get the player list, like the live scoreboard does. However, even if I enable logging of requests in Chrome, I don&#039;t see any queries that indicate an update to the live scoreboard. The player list in the response object is outdated and lists players that don&#039;t even play on the server.<br />
+<br />
+Any suggestions?            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-04-16T09:42:19+02:00">16. April 2014 09:42</time>                    <div class="post-edited">Post edited 3                        x times, last by <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div> <time datetime="2014-04-16T09:43:34+02:00">16. April 2014 09:43</time></div>
+                                                    <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Some hints<br />
+<br />
+* Use BBLog handler to get JSON from battlelog<br />
+<code>BBLog.handle(&quot;json.from.battlelog&quot;, {url : &#039;/bf4/servers/show/pc/6a47de60-0874-4d98-83e3-de8d1d2fe2f1/BiG-HC-RANKED-24-7-RUSH/&#039;, callback : function(data){// code here});</code><br />
+<br />
+* Search in console.log(S.translations) if you find some translations that fit your need, eg: WARSAW_ID_RP_LEVELNAME_MULTIPLAYER.<br />
+<br />
+* Player list - Is requested by the installed webplugin in a special way - As far as i know there some plugins here that already fetch the server playerlists, check out the plugins            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2014-04-16T10:51:23+02:00">16. April 2014 10:51</time>                    <div class="post-edited">Post edited 2                        x times, last by <div class="user-info"><div class="user-name ">HoPi</div></div> <time datetime="2014-04-16T11:22:26+02:00">16. April 2014 11:22</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">HoPi</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">BrainFooLong wrote:</div>* Use BBLog handler to get JSON from battlelog<br />
+<code>BBLog.handle(&quot;json.from.battlelog&quot;, {url : &#039;/bf4/servers/show/pc/6a47de60-0874-4d98-83e3-de8d1d2fe2f1/BiG-HC-RANKED-24-7-RUSH/&#039;, callback : function(data){// code here});</code></blockquote><br />
+What&#039;s the difference?<br />
+<br />
+<blockquote><div class="user">BrainFooLong wrote:</div>* Search in console.log(S.translations) if you find some translations that fit your need, eg: WARSAW_ID_RP_LEVELNAME_MULTIPLAYER.</blockquote><br />
+<br />
+Gives me the following data:<br />
+<code>WARSAW_ID_M_SP_LEVELNAME_AIRFIELD =&gt; SINGAPORE<br />
+WARSAW_ID_M_SP_LEVELNAME_DAM =&gt; TASHGAR<br />
+WARSAW_ID_M_SP_LEVELNAME_NAVAL =&gt; SOUTH CHINA SEA<br />
+WARSAW_ID_M_SP_LEVELNAME_PRISON =&gt; KUNLUN MOUNTAINS<br />
+WARSAW_ID_M_SP_LEVELNAME_PROLOGUE =&gt; BAKU<br />
+WARSAW_ID_M_SP_LEVELNAME_SHANGHAI =&gt; SHANGHAI<br />
+WARSAW_ID_M_SP_LEVELNAME_SUEZ =&gt; SUEZ<br />
+WARSAW_ID_RP_LEVELNAME_MULTIPLAYER_ABANDONED =&gt; Zavod 311<br />
+WARSAW_ID_RP_LEVELNAME_MULTIPLAYER_DAMAGE =&gt; Lancang Dam<br />
+WARSAW_ID_RP_LEVELNAME_MULTIPLAYER_DISH =&gt; Rogue Transmission<br />
+WARSAW_ID_RP_LEVELNAME_MULTIPLAYER_FLOODED =&gt; Flood Zone<br />
+WARSAW_ID_RP_LEVELNAME_MULTIPLAYER_JOURNEY =&gt; Golmud Railway<br />
+WARSAW_ID_RP_LEVELNAME_MULTIPLAYER_NAVAL =&gt; Paracel Storm<br />
+WARSAW_ID_RP_LEVELNAME_MULTIPLAYER_PRISON =&gt; Operation Locker<br />
+WARSAW_ID_RP_LEVELNAME_MULTIPLAYER_RESORT =&gt; Hainan Resort<br />
+WARSAW_ID_RP_LEVELNAME_MULTIPLAYER_SIEGE =&gt; Siege of Shanghai<br />
+WARSAW_ID_RP_LEVELNAME_MULTIPLAYER_TREMORS =&gt; Dawnbreaker<br />
+WARSAW_ID_RP_XP0_LEVELNAME_MULTIPLAYER_CASPIAN =&gt; Caspian Border 2014<br />
+WARSAW_ID_RP_XP0_LEVELNAME_MULTIPLAYER_FIRESTORM =&gt; Firestorm 2014<br />
+WARSAW_ID_RP_XP0_LEVELNAME_MULTIPLAYER_METRO =&gt; Operation Metro 2014<br />
+WARSAW_ID_RP_XP0_LEVELNAME_MULTIPLAYER_OMAN =&gt; Gulf of Oman 2014<br />
+WARSAW_ID_RP_XP2_LEVEL_LEVELNAME_XP2_001 =&gt; Lost Islands<br />
+WARSAW_ID_RP_XP2_LEVEL_LEVELNAME_XP2_002 =&gt; Nansha Strike<br />
+WARSAW_ID_RP_XP2_LEVEL_LEVELNAME_XP2_003 =&gt; Wave Breaker<br />
+WARSAW_ID_RP_XP2_LEVEL_LEVELNAME_XP2_004 =&gt; Operation Mortar<br />
+WARSAW_ID_XP1_LEVEL_LEVELNAME_XP1_001 =&gt; SILK ROAD<br />
+WARSAW_ID_XP1_LEVEL_LEVELNAME_XP1_002 =&gt; ALTAI RANGE<br />
+WARSAW_ID_XP1_LEVEL_LEVELNAME_XP1_003 =&gt; GUILIN PEAKS<br />
+WARSAW_ID_XP1_LEVEL_LEVELNAME_XP1_004 =&gt; DRAGON PASS<br />
+BF3_ID_RP_LEVELNAME_MULTIPLAYER_CANALS =&gt; Noshahr Canals<br />
+BF3_ID_RP_LEVELNAME_MULTIPLAYER_EARTHQUAKE =&gt; Epicenter<br />
+BF3_ID_RP_LEVELNAME_MULTIPLAYER_FINANCIAL =&gt; Markaz Monolith<br />
+BF3_ID_RP_LEVELNAME_MULTIPLAYER_PARLIAMENT =&gt; Azadi Palace<br />
+BF3_ID_RP_LEVELNAME_MULTIPLAYER_RUBBLE =&gt; Talah Market<br />
+BF3_ID_RP_LEVELNAME_MULTIPLAYER_XP5_001 =&gt; Operation Riverside<br />
+BF3_ID_RP_LEVELNAME_MULTIPLAYER_XP5_002 =&gt; Nebandan Flats<br />
+BF3_ID_RP_LEVELNAME_MULTIPLAYER_XP5_003 =&gt; Kiasar Railroad<br />
+BF3_ID_RP_LEVELNAME_MULTIPLAYER_XP5_004 =&gt; Sabalan Pipeline</code><br />
+I don&#039;t like that the China Rising maps are uppercased and that the keys differ to much (some have XP1 or 2 in their key, some use numbers, some underscores), it just seems inconsistent.<br />
+<br />
+I just found another way, what about this one? Is it reliable?<br />
+<code>console.log( gamedatawarsaw.function_warsawgameserver().maps&#91; 2 &#93; );<br />
+-&gt;<br />
+Object<br />
+{<br />
+	gameExpansion: 0<br />
+	gameModes: Array&#91;8&#93;<br />
+	id: &quot;MP_Prison&quot;<br />
+	label: &quot;Operation Locker&quot;<br />
+	platforms: Array&#91;5&#93;<br />
+}</code><br />
+<br />
+<blockquote><div class="user">BrainFooLong wrote:</div>* Player list - Is requested by the installed webplugin in a special way - As far as i know there some plugins here that already fetch the server playerlists, check out the plugins</blockquote><br />
+Thanks, will take a look.<br />
+<br />
+//edit<br />
+I couldn&#039;t find any plugin that accesses the player list :( any further suggestion? The player list I can obtain via bf4stats.com includes 1000 players from the past, I can&#039;t seem to find which players are currently active (beside some non-reliable date comparisons).            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-04-16T12:51:56+02:00">16. April 2014 12:51</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                <blockquote>What&#039;s the difference?</blockquote><br />
+It&#039;s cross browser tested.<br />
+It&#039;s future battlelog update stable (if they change something that break it, i will fix it fastly with an update)<br />
+It&#039;s internally cached when you call the same url multiple times, you can disable the cache with the optional flag &quot;cache : false&quot; in the  params.<br />
+<br />
+<blockquote>Gives me the following data:</blockquote><br />
+Well, was just a tip. If you don&#039;t can use it, you must search another way or map it for yourself.<br />
+The way you mentioned looks ok, you need to find the best solution for your needs.<br />
+<br />
+<blockquote>PlayerList</blockquote><br />
+Well, don&#039;t have an idea currently. In the past it was able with an simple request in battlelog, seems like this way doesn&#039;t exist anymore. Maybe there something hidden in the &quot;gamedatawarsaw&quot; that you&#039;ve already found.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2016-01-10T17:55:04+01:00">10. January 2016 17:55</time>                                <div class="user-info"><div class="user-name plugin">I-MrFixIt-I</div><div class="user-role">Plugin Developer</div></div>            </div>
+            <div class="post-main">
+                Sry guys for the bump, but who knows. Maybe someone later reading this want it to know ;)<br />
+You can get the playerlist, the score and also the currently joining player from this url:<br />
+<div class="inline post-url">http://keeper.battlelog.com/snapshot/17f9d784-62bd-461e-92b0-0e1528f83e91</div><br />
+<br />
+Just change the guid at the end for your server and you will have your data there :)<br />
+<br />
+Some more info:<br />
+- If there is no &quot;deathmatch&quot; element in the snapshot element, then the round is not started (due to not enough players or just because the round is restarting).<br />
+- If you look into snapshot &gt; teamInfo you see five elements.<br />
+First one is for the currently joining people. And all others are the playing teams. So mostly only the second and third element is filled. (4th and 5th) is only filled if there are 4 teams on the server (like in squad deathmatch).<br />
+The faction element give you the ID of the team. 0 =&gt; US, 1=&gt; RU, 2 =&gt; CN<br />
+<br />
+This should be everything you may need to know :)            </div>
+        </div>
+        <script src="../scripts/t.js"></script></body></html>

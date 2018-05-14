@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Selecting Names In Array - Better Battlelog Forums #111816</title>
+    <link rel="stylesheet" href="../stylesheets/page.css" type="text/css">
+<script src="../scripts/p.js"></script>
+</head>
+<body class="forums-post left-side"><h2>Selecting Names In Array - Better Battlelog Forums #111816</h2><a href="sitemap.html">Sitemap</a>        <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-11-29T01:06:31+01:00">29. November 2013 01:06</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">GameFreakBoy</div></div>            </div>
+            <div class="post-main">
+                I have: <code>var isPlatoonMember = &#91;&quot;Your&quot;, &quot;Names&quot;, &quot;Here&quot;&#93;;<br />
+var posterName = $(&quot;.forum-threadview-post-poster .forum-threadview-post-poster-name&quot;).html();<br />
+if($.inArray(posterName, isPlatoonMember) &gt; -1){ /* Do Stuff */ }</code><br />
+This works to see if any of the posters are on the page, but it will just apply the function inside the if statement to everyone. Is there a way to select only the people who has a name that matches one listed in the array?            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-11-29T07:25:20+01:00">29. November 2013 07:25</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                First of all, this code always get the first name of the first post.<br />
+Why?<br />
+<br />
+1. You select all forum post elements.<br />
+2. .html() just output the first of the matched items (http://api.jquery.com/html/)<br />
+<br />
+That should do the job.<br />
+<code>var isPlatoonMember = &#91;&quot;Your&quot;, &quot;Names&quot;, &quot;Here&quot;&#93;; <br />
+<br />
+$(&quot;.forum-threadview-post-poster .forum-threadview-post-poster-name&quot;).each(function(){<br />
+    var posterName = $(this).text();<br />
+    if($.inArray(posterName, isPlatoonMember) &gt; -1){ /* Do Stuff */ }<br />
+});</code>            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-11-29T17:43:39+01:00">29. November 2013 17:43</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">GameFreakBoy</div></div>            </div>
+            <div class="post-main">
+                Sort of. Now it will perform the action once to everybody for every match it finds. So if 3 people were found on the page. It would append 3 times to everyone.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-11-29T18:37:29+01:00">29. November 2013 18:37</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div> <time datetime="2013-11-29T18:38:52+01:00">29. November 2013 18:38</time></div>
+                                                    <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Well, than you must look at your selector what it select and make true that it doesn&#039;t happen when it&#039;s already happened.<br />
+<br />
+But maybe it&#039;s just the &quot; /* Do Stuff */&quot; code that is wrong.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-11-30T01:15:36+01:00">30. November 2013 01:15</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name ">GameFreakBoy</div></div> <time datetime="2013-11-30T01:16:07+01:00">30. November 2013 01:16</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">GameFreakBoy</div></div>            </div>
+            <div class="post-main">
+                I found this solution while looking for alternative setups. This is one that I found, and it works perfectly. :)<br />
+<code>var isPlatoonMember = &#91;&quot;Your&quot;, &quot;Names&quot;, &quot;Here&quot;&#93;;<br />
+var posterName = $.map(isPlatoonMember,function (item){<br />
+	return &quot;.forum-threadview-post-poster .forum-threadview-post-poster-name&#91;href*=&quot; + item + &quot;&#93;&quot;}).join(&quot;,&quot;);<br />
+$(posterName).parent().children(&quot;.forum-threadview-post-tags&quot;).append(topLevel);}</code>            </div>
+        </div>
+        <script src="../scripts/t.js"></script></body></html>

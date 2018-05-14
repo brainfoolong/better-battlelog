@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Theme and Plugin Preparations for BF4 - Better Battlelog Forums #108455</title>
+    <link rel="stylesheet" href="../stylesheets/page.css" type="text/css">
+<script src="../scripts/p.js"></script>
+</head>
+<body class="forums-post left-side"><h2>Theme and Plugin Preparations for BF4 - Better Battlelog Forums #108455</h2><a href="sitemap.html">Sitemap</a>        <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-09-24T16:03:58+02:00">24. September 2013 16:03</time>                    <div class="post-edited">Post edited 5                        x times, last by <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div> <time datetime="2013-10-22T11:34:38+02:00">22. October 2013 11:34</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Hi all Theme and Plugin Developers!<br />
+<br />
+BF4 is coming out soon and next week all get a closer look into the beta also.<br />
+<br />
+Also BBLog will be available for BF4 Battlelog in the beta, maybe.<br />
+<br />
+So, to make sure that all user&#039;s have the best experience with BBLog it is required to prepare and &quot;rethink&quot; your themes or plugins. Please consider this tipps and do some optimization if required, for your theme or plugin to be optimally prepared for the new BF4 battlelog with BBLog.<br />
+<br />
+<div class="tag tag-b">Theme Tipps:</div><br />
+If you have developed a theme for the current battlelog, it will probably destroy the battlelog in BF4.<br />
+So make sure that you use specific section selectors for each battlelog section.<br />
+For example you can add new css rules for BF3 only with just using the Html-ID selector as the root element. This code just apply in the bf3 section of the battlelog.<br />
+<code>#base-bf3-html .someotherclass {background:black;}</code><br />
+<div class="inline font-size-50">Official BBLog Themes are already splitted for the different Battlelog Sections.</div><br />
+<br />
+<div class="tag tag-b">Plugin Tipps:</div><br />
+If you have developed a plugin for the current battlelog, it will probably destroy the battlelog in BF4.<br />
+So, make sure that your code only change things in the BF3/MOH:W section and leave the BF4 untouched until the plugin have specially been developed for the new section.<br />
+It&#039;s simple to made this, just use the code snippet to seperate code for the sections<br />
+<code>if(BBLog.cache(&quot;mode&quot;) == &quot;bf3&quot;){<br />
+// only in bf3 section<br />
+}<br />
+if(BBLog.cache(&quot;mode&quot;) == &quot;bf4&quot;){<br />
+// only in bf4 section<br />
+}</code><br />
+<br />
+Please spread this to known developers to prepare us all for BF4.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-10-22T11:18:46+02:00">22. October 2013 11:18</time>                                <div class="user-info"><div class="user-name ">Pazuzu-II</div></div>            </div>
+            <div class="post-main">
+                cool! thx for info.            </div>
+        </div>
+        <script src="../scripts/t.js"></script></body></html>

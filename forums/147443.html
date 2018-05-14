@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Click Event on scoreboard headers - Better Battlelog Forums #147443</title>
+    <link rel="stylesheet" href="../stylesheets/page.css" type="text/css">
+<script src="../scripts/p.js"></script>
+</head>
+<body class="forums-post left-side"><h2>Click Event on scoreboard headers - Better Battlelog Forums #147443</h2><a href="sitemap.html">Sitemap</a>        <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2016-01-06T20:03:36+01:00">06. January 2016 20:03</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name plugin">I-MrFixIt-I</div><div class="user-role">Plugin Developer</div></div>            </div>
+            <div class="post-main">
+                Hello together.<br />
+At first, I&#039;m very new to javascript and jquery at all and it&#039;s my first time using bblog as a dev.<br />
+<br />
+I want to define a click event on every row on the scoreboard table, but I don&#039;t know at which part of the plugin I have to define this part of the code.<br />
+If I put it in init function the click event wouldn&#039;t raise always, because I maybe haven&#039;t loaded the page from a serverpage with scoreboard.<br />
+And if I define it in domchange the function gets called multiple times (3-6 times).<br />
+<br />
+Here the code I&#039;m currently using:<br />
+<code>domchange : function(instance){<br />
+    $(&quot;#server-players-list table thead th&quot;).click(function() {<br />
+		var rowIndex = $(this).index();<br />
+		alert(&quot;Index of row: &quot; + rowIndex);<br />
+	});<br />
+}</code><br />
+<br />
+I would really appreciate your help :)<br />
+Thx in advance.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2016-01-06T22:28:59+01:00">06. January 2016 22:28</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Domchange is the right place, but you need to do some checks.<br />
+First check if you are on the right page, using window.location.href.match for example.<br />
+Secondly, you should prefix your click event by using that for example <code>$(&quot;xyz&quot;).on(&quot;click.myprefix&quot;)</code>.<br />
+At third, unbind any of your previously attached click events everytime the domchange triggers, that prevent you from multiple bindings.<br />
+<br />
+All in all could be something like this<br />
+<code>domchange : function(instance){ <br />
+	if(window.location.href.match(/correct\/page\/url/)){<br />
+		$(&quot;#server-players-list table thead th&quot;).off(&quot;.myprefix&quot;).on(&quot;click.myprefix&quot;, function() { <br />
+			var rowIndex = $(this).index(); <br />
+			alert(&quot;Index of row: &quot; + rowIndex); <br />
+		}); <br />
+	}<br />
+}</code>            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2016-01-07T00:05:33+01:00">07. January 2016 00:05</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name plugin">I-MrFixIt-I</div><div class="user-role">Plugin Developer</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">BrainFooLong wrote:</div>Domchange is the right place, but you need to do some checks.<br />
+First check if you are on the right page, using window.location.href.match for example.<br />
+Secondly, you should prefix your click event by using that for example <code>$(&quot;xyz&quot;).on(&quot;click.myprefix&quot;)</code>.<br />
+At third, unbind any of your previously attached click events everytime the domchange triggers, that prevent you from multiple bindings.<br />
+<br />
+All in all could be something like this<br />
+<code>domchange : function(instance){ <br />
+	if(window.location.href.match(/correct\/page\/url/)){<br />
+		$(&quot;#server-players-list table thead th&quot;).off(&quot;.myprefix&quot;).on(&quot;click.myprefix&quot;, function() { <br />
+			var rowIndex = $(this).index(); <br />
+			alert(&quot;Index of row: &quot; + rowIndex); <br />
+		}); <br />
+	}<br />
+}</code></blockquote><br />
+<br />
+thx man :), working great.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2016-01-07T16:55:55+01:00">07. January 2016 16:55</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name plugin">I-MrFixIt-I</div><div class="user-role">Plugin Developer</div></div>            </div>
+            <div class="post-main">
+                So, now I would like to have something like a domchange event on a special element.<br />
+On stackoverflow I found this: <div class="inline post-url">http://stackoverflow.com/questions/2844565/is-there-a-jquery-dom-change-listener/11546242#11546242</div><br />
+And it told me, that I should use &quot;DOM4 Mutation Observers&quot;. Also it said that only modern browsers are supporting this.<br />
+So I have a short question, can I use this for bblog?<br />
+Anyone maybe have a better approach for the &quot;domchagne&quot; event?            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2016-01-07T19:20:43+01:00">07. January 2016 19:20</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                <code>var mutationHandler = function(mutations){<br />
+	// onchange code<br />
+};<br />
+var observer = null;<br />
+if(typeof WebKitMutationObserver != &quot;undefined&quot;){<br />
+	observer = new WebKitMutationObserver(mutationHandler);<br />
+}else if(typeof MutationObserver != &quot;undefined&quot;){<br />
+	observer = new MutationObserver(mutationHandler);<br />
+}<br />
+observer.observe(document.body, { childList: true , subtree : true});</code><br />
+<br />
+That is save to use, bblog uses the same technique for the domchange of the whole body.            </div>
+        </div>
+        <script src="../scripts/t.js"></script></body></html>

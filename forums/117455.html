@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>doesn't work after reload / F5 - Better Battlelog Forums #117455</title>
+    <link rel="stylesheet" href="../stylesheets/page.css" type="text/css">
+<script src="../scripts/p.js"></script>
+</head>
+<body class="forums-post left-side"><h2>doesn&#039;t work after reload / F5 - Better Battlelog Forums #117455</h2><a href="sitemap.html">Sitemap</a>        <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2014-04-27T17:32:04+02:00">27. April 2014 17:32</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">l-SPY-I</div></div>            </div>
+            <div class="post-main">
+                Crome Version 34.0.1847.131 m<br />
+BBLog 4.2.1<br />
+<br />
+When I reloaded the page Battlelog, the plugin is off.<br />
+After restart crome, the plugin works again.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-04-28T07:04:31+02:00">28. April 2014 07:04</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Hm... Cannot confirm this.<br />
+Anyone else have that problem?            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-04-28T22:33:25+02:00">28. April 2014 22:33</time>                    <div class="post-edited">Post edited 4                        x times, last by <div class="user-info"><div class="user-name plugin">dapil</div><div class="user-role">Plugin Developer</div></div> <time datetime="2014-04-28T23:05:01+02:00">28. April 2014 23:05</time></div>
+                                                    <div class="user-info"><div class="user-name plugin">dapil</div><div class="user-role">Plugin Developer</div></div>            </div>
+            <div class="post-main">
+                I can confirm this too, it was OK after a normal refresh, but when I used Ctrl+F5 (force refresh) the same thing happened.<br />
+<br />
+EDIT: Now even after a normal refresh.<br />
+<br />
+EDIT2: The code in inject.js executes, I will research further.<br />
+<br />
+EDIT3: bblog.js does not execute, but the script tag is being added to the head tag.<br />
+<br />
+EDIT4: It&#039;s caused by BBLog.initIVC being over 50 (something is probably taking longer than it should, maybe some overloaded servers?)            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-04-29T07:03:49+02:00">29. April 2014 07:03</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Ok, that could be the thing. Seems like sometimes something is loaded delayed.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-04-30T09:48:37+02:00">30. April 2014 09:48</time>                                <div class="user-info"><div class="user-name ">sahafiec</div></div>            </div>
+            <div class="post-main">
+                same problem here, plugin doesn&#039;t start even after reboot.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-04-30T10:12:49+02:00">30. April 2014 10:12</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Please try the dev version - It&#039;s a bug in the current 4.1.2<br />
+<div class="inline post-url">http://getbblog.com/en/board/topic/117499/1/DEV-Version-BBLog-4-1-2-1-out-now</div>            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2014-05-03T15:09:47+02:00">03. May 2014 15:09</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">l-SPY-I</div></div>            </div>
+            <div class="post-main">
+                Now works it all.<br />
+<br />
+Great Job, keep it up.            </div>
+        </div>
+        <script src="../scripts/t.js"></script></body></html>

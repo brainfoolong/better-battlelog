@@ -1,0 +1,232 @@
+/* latin */
+@font-face {
+    font-family: 'Exo';
+    font-style: normal;
+    font-weight: 100;
+    src: local('Exo Thin'), local('Exo-Thin'), url("../fonts/Exo-Thin.ttf") ;
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* latin */
+@font-face {
+    font-family: 'Exo';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Exo Regular'), local('Exo-Regular'), url("../fonts/Exo-Regular.ttf") ;
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* latin */
+@font-face {
+    font-family: 'Exo';
+    font-style: normal;
+    font-weight: 900;
+    src: local('Exo Black'), local('Exo-Black'), url("../fonts/Exo-Black.ttf") ;
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Exo', sans-serif;
+    text-align: center;
+    background: #171616;
+    color: white;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+body.left-side {
+    padding: 30px;
+    text-align: left;
+}
+
+a, a:hover, a:active, a:visited {
+    color: white
+}
+
+.clear {
+    clear: both;
+}
+
+.page {
+    margin: 0 auto;
+    max-width: 900px;
+    min-width: 600px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 100px;
+}
+
+img {
+    width: 100%;
+}
+
+.light {
+    font-weight: 100;
+}
+
+.grey {
+    color: #a5a5a5;
+}
+
+.orange {
+    color: #F55701;
+    text-shadow: #7a2c01 0 0 10px;
+}
+
+.bold {
+    font-weight: 900;
+}
+
+.header {
+    position: relative;
+    height: 100px;
+    overflow: visible;
+    margin-bottom: 50px;
+}
+
+.spacer {
+    padding-bottom: 40px;
+}
+
+h2 {
+    font-size: 300%;
+}
+
+.default {
+    font-size: 120%;
+}
+
+.team {
+    padding-bottom: 50px;
+    text-align: left;
+    display: table;
+}
+
+.team .image {
+    display: table-cell;
+    width: 30%;
+    vertical-align: middle;
+    border: 7px white solid;
+}
+
+.team .image img {
+    display: block;
+}
+
+.team .image.padding {
+    padding: 2%;
+}
+
+.team .empty {
+    display: table-cell;
+    width: 5%;
+}
+
+.team .text {
+    display: table-cell;
+    width: 45%;
+    padding-left: 10%;
+    vertical-align: middle;
+}
+
+.team .quote {
+    margin-top: 10px;
+    position: relative;
+}
+
+.team .quote small {
+    position: absolute;
+    width: 50px;
+    white-space: nowrap;
+    left: -38px;
+    top: 30px;
+    transform: rotate(-90deg);
+    text-transform: uppercase;
+    color: #a5a5a5;
+    font-size: 80%;
+}
+
+h3 {
+    font-size: 300%;
+    font-weight: 100;
+    padding: 0;
+    margin: 0;
+}
+
+h4 {
+    font-weight: 900;
+    padding: 0;
+    margin: 0;
+    color: #F55701;
+    position: relative;
+    top: -3px;
+    text-shadow: #7a2c01 0 0 10px;
+}
+
+.floatbox {
+    float: left;
+    width: 44%;
+    padding: 3%;
+}
+
+.screenshot {
+    font-size: 90%;
+    float: left;
+    width: 29%;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 40px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.screenshot img {
+    outline: 7px solid white;
+    position: relative;
+    top: 10px;
+}
+
+img.border {
+    border: 7px solid white;
+}
+
+body.forums-post .forums-post-single {
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    margin-bottom: 10px;
+    border-left: 5px solid #333333;
+}
+
+body.forums-post .forums-post-single.topic-starter {
+    border-left: 5px solid #F55701;
+}
+
+body.forums-post .post-head {
+    font-size: 80%;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #333333;
+    margin-bottom: 10px;
+    color: #999999;
+    display: flex;
+}
+
+body.forums-post .post-head > * {
+    flex: 1;
+    padding: 10px;
+    padding-top: 0;
+}
+
+body.forums-post blockquote {
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    margin: 0;
+}
+
+body.forums-post code {
+    padding: 10px;
+    display: block;
+    white-space: nowrap;
+    overflow: auto;
+    background: rgba(255, 255, 255, 0.05);
+}

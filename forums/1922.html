@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exchanging "online" and "in-game" colours - Better Battlelog Forums #1922</title>
+    <link rel="stylesheet" href="../stylesheets/page.css" type="text/css">
+<script src="../scripts/p.js"></script>
+</head>
+<body class="forums-post left-side"><h2>Exchanging &quot;online&quot; and &quot;in-game&quot; colours - Better Battlelog Forums #1922</h2><a href="sitemap.html">Sitemap</a>        <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-08-07T23:57:36+02:00">07. August 2012 23:57</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">celte17</div></div>            </div>
+            <div class="post-main">
+                Hello !<br />
+<br />
+As I use Steam every day, it&#039;s a bit confusing when I go on Battlelog and see that &quot;online&quot; and &quot;in-game&quot; status colours are opposite of Steam...<br />
+<br />
+It would be nice if there was a plugin or a option in BBLOG that allow us to exchange this two colours in Battlelog.<br />
+<br />
+In Steam, blue is &quot;online&quot; and green is &quot;in-game&quot;.<br />
+<div class="inline post-url">battlelog_colours.png</div><br />
+In Battlelog, blue is &quot;in-game&quot; and green is &quot;online&quot;.<br />
+<div class="inline post-url">steam_colours.png</div><br />
+I hope you understand what I am saying and that is possible to do. Thank you !            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-08-08T01:37:15+02:00">08. August 2012 01:37</time>                                <div class="user-info"><div class="user-name ">GameFreakBoy</div></div>            </div>
+            <div class="post-main">
+                Or you could make it so you can designate any color from a palette.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-08-08T02:33:43+02:00">08. August 2012 02:33</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">celte17</div></div>            </div>
+            <div class="post-main">
+                Yeah, you&#039;re right GameFreakBoy. That would be fine and very useful. I really hope it is possible !            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-08-08T02:47:52+02:00">08. August 2012 02:47</time>                                <div class="user-info"><div class="user-name ">chuzuki</div></div>            </div>
+            <div class="post-main">
+                Should be no problem with some CSS.<br />
+<br />
+<code>.base-avatar-container.base-avatar-size-small .base-avatar-status-overlay-online {<br />
+background-position: -26px 0;<br />
+}<br />
+.base-avatar-container.base-avatar-size-small .base-avatar-status-overlay-playing {<br />
+background-position: 0 0;<br />
+}</code><br />
+<br />
+To change the colors, change the &quot;background-position&quot; value to the x,y pixels from this image.<br />
+<br />
+<div class="inline post-url">http://battlelog-cdn.battlefield.com/public/base/shared/avatar_overlay_small.png?v=6863b</div><br />
+<br />
+More specifically, &quot;background-position: -26px 0&quot; is green and &quot;background-position: 0px 0&quot; is blue.<br />
+<br />
+<div class="tag tag-b">Edit:</div> I spoke too soon, but I found more info.<br />
+<br />
+I didn&#039;t test this because I&#039;m happy with Steam&#039;s blue/green, but I&#039;d imagine if you wanted any color you could save the image, change the colors to what you want, then reupload or (maybe) just store it locally and point &quot;background: url()&quot; to your new image.<br />
+<br />
+<code>.base-avatar-container.base-avatar-size-small .base-avatar-status-overlay {<br />
+background: url(http://battlelog-cdn.battlefield.com/public/base/shared/avatar_overlay_small.png?v=6863b) 0 0 no-repeat;<br />
+}</code>            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-08-08T07:21:45+02:00">08. August 2012 07:21</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Not a thing for BBLog Main features. Moved to Custom Themes.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-08-08T10:15:42+02:00">08. August 2012 10:15</time>                                <div class="user-info"><div class="user-name mod">ORFK</div><div class="user-role">Global Moderator</div></div>            </div>
+            <div class="post-main">
+                and please dont forget: Battlelog ist not Steam.<br />
+So its not needed to have everywhere the same colors.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-08-08T10:59:48+02:00">08. August 2012 10:59</time>                                <div class="user-info"><div class="user-name ">chuzuki</div></div>            </div>
+            <div class="post-main">
+                No it&#039;s not Steam, but when you&#039;ve seen a particular color scheme for years, the exact opposite can be confusing.<br />
+<br />
+In case anyone still cares, I found all the div classes and changed the values to Steam colors:<br />
+<br />
+<code>.base-avatar-container.base-avatar-size-small .base-avatar-status-overlay-online {<br />
+background-position: 0 0;<br />
+}<br />
+.base-avatar-container.base-avatar-size-small .base-avatar-status-overlay-playing {<br />
+background-position: -26px 0;<br />
+}<br />
+<br />
+.base-avatar-container.base-avatar-size-medium a.base-avatar-status-overlay-online {<br />
+background-position: 0px 0px;<br />
+}<br />
+.base-avatar-container.base-avatar-size-medium a.base-avatar-status-overlay-online:hover {<br />
+background-position: 0px -36px;<br />
+}<br />
+<br />
+.base-avatar-container.base-avatar-size-medium a.base-avatar-status-overlay-playing {<br />
+background-position: -36px 0px;<br />
+}<br />
+.base-avatar-container.base-avatar-size-medium a.base-avatar-status-overlay-playing:hover {<br />
+background-position: -36px -36px;<br />
+}<br />
+<br />
+.base-avatar-container.base-avatar-size-large a.base-avatar-status-overlay-online:hover {<br />
+background-position: 0px -60px;<br />
+}<br />
+.base-avatar-container.base-avatar-size-large .base-avatar-status-overlay-online {<br />
+background-position: 0px 0;<br />
+}<br />
+<br />
+.base-avatar-container.base-avatar-size-large a.base-avatar-status-overlay-playing:hover {<br />
+background-position: -60px -60px;<br />
+}<br />
+.base-avatar-container.base-avatar-size-large .base-avatar-status-overlay-playing {<br />
+background-position: -60px 0;<br />
+}<br />
+<br />
+.base-avatar-container.base-avatar-size-supersize2 .base-avatar-status-overlay-online {<br />
+background-position: 0px 0;<br />
+}<br />
+.base-avatar-container.base-avatar-size-supersize2 .base-avatar-status-overlay-playing {<br />
+background-position: -320px 0;<br />
+}</code>            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-08-08T12:06:44+02:00">08. August 2012 12:06</time>                                <div class="user-info"><div class="user-name mod">ORFK</div><div class="user-role">Global Moderator</div></div>            </div>
+            <div class="post-main">
+                In UK, Japan, and 57 other Countries of worldwide 221 Countries do you driving on the left side.<br />
+<blockquote><div class="user">chuzuki wrote:</div>the exact opposite can be confusing.</blockquote><br />
+<br />
+And who cares about it? Nobody! They are driving on the left, we are driving on the right. Same Thinks, exact opposite.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-08-08T14:17:37+02:00">08. August 2012 14:17</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">celte17</div></div>            </div>
+            <div class="post-main">
+                Hello.<br />
+<br />
+Thanks chuzuki for writing this part of code ! But just a last question... How do you include this to battlelog now ?  :) And thanks brain for moving the topic. <br />
+<br />
+And ORFK, yeah battlelog is not steam, but you see, it was just for the comfort that I requested this feature. Here, we can change some things by writing parts of code. In the real life, we can&#039;t order people drive on the right side if they drive on the left side. It&#039;s a bit different and not comparable... Of course, this is my way of seeing.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-08-08T14:25:29+02:00">08. August 2012 14:25</time>                                <div class="user-info"><div class="user-name ">chuzuki</div></div>            </div>
+            <div class="post-main">
+                <blockquote>How do you include this to battlelog now ?</blockquote><br />
+Firefox: <div class="inline post-url">http://www.reddit.com/r/battlefield3/comments/xva4j/swapping_battlelogs_online_and_playing_colors_to/c5pwtch</div><br />
+Chrome: <div class="inline post-url">http://www.reddit.com/r/battlefield3/comments/xva4j/swapping_battlelogs_online_and_playing_colors_to/c5px0f0</div><br />
+<br />
+<blockquote>They are driving on the left, we are driving on the right.</blockquote><br />
+<br />
+And when you drive in a country that drives on a different side than you&#039;re used to, it can also be confusing.<br />
+<br />
+<blockquote>And who cares about it?</blockquote><br />
+<br />
+Clearly OP cared enough to ask, and I cared enough to investigate a solution. If you don&#039;t care why are you in this thread in the first place?            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-08-08T14:55:38+02:00">08. August 2012 14:55</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">celte17</div></div>            </div>
+            <div class="post-main">
+                It works fine in Firefox ! Thank you very much chuzuki for this solution ! ;)            </div>
+        </div>
+        <script src="../scripts/t.js"></script></body></html>

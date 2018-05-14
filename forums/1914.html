@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Idea: When hovering over Medal, display Ribbon info box. - Better Battlelog Forums #1914</title>
+    <link rel="stylesheet" href="../stylesheets/page.css" type="text/css">
+<script src="../scripts/p.js"></script>
+</head>
+<body class="forums-post left-side"><h2>Idea: When hovering over Medal, display Ribbon info box. - Better Battlelog Forums #1914</h2><a href="sitemap.html">Sitemap</a>        <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-08-01T07:59:40+02:00">01. August 2012 07:59</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">slayzakattack</div></div>            </div>
+            <div class="post-main">
+                A simple idea.<br />
+<br />
+When browsing medals and ribbons, it would be nifty if the ribbon information popped up as well as the Medal info.<br />
+<br />
+Less mouse movement in awards tab = more efficient browsing.<br />
+<br />
+That is all.<br />
+<br />
+Thank you.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-08-01T16:41:55+02:00">01. August 2012 16:41</time>                                <div class="user-info"><div class="user-name help">xXJumpyXx</div><div class="user-role">Helping Hand</div></div>            </div>
+            <div class="post-main">
+                I like this idea. It&#039;s a really small feature but it does help quite a bit.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-08-02T11:31:22+02:00">02. August 2012 11:31</time>                                <div class="user-info"><div class="user-name mod">ORFK</div><div class="user-role">Global Moderator</div></div>            </div>
+            <div class="post-main">
+                i like it too =)            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-08-02T17:54:22+02:00">02. August 2012 17:54</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">slayzakattack</div></div>            </div>
+            <div class="post-main">
+                Awesome! Does this mean we may see this feature soon?            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-08-02T20:27:55+02:00">02. August 2012 20:27</time>                                <div class="user-info"><div class="user-name mod">ORFK</div><div class="user-role">Global Moderator</div></div>            </div>
+            <div class="post-main">
+                maybe, we will see what brain thinks about it.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-08-02T20:35:21+02:00">02. August 2012 20:35</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">slayzakattack</div></div>            </div>
+            <div class="post-main">
+                Well regardless of the outcome, better battlelog has been a great addon to my battlefield experience. Thanks, Brian!            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-08-09T19:22:24+02:00">09. August 2012 19:22</time>                                <div class="user-info"><div class="user-name ">chuzuki</div></div>            </div>
+            <div class="post-main">
+                I liked the idea so I put together a User JS to do it. This just pulls the info directly from the ribbons and appends to the medals.  The reverse is possible too, and of course the formatting can be changed, but as a proof of concept and/or starting point this works well.<br />
+<br />
+<code>var readyStateCheckInterval = setInterval(function() {<br />
+    if (document.readyState === &quot;complete&quot;) {<br />
+        init();<br />
+        clearInterval(readyStateCheckInterval);<br />
+    }<br />
+}, 10);<br />
+<br />
+function init() {<br />
+    var medals = document.getElementsByClassName(&quot;profile-stats-awards-progression-item-medal&quot;);<br />
+    var ribbons = document.getElementsByClassName(&quot;profile-stats-awards-progression-item-ribbon&quot;);<br />
+    for (var i = 0; i &quot; + ribbonInfo);<br />
+                break;<br />
+            }<br />
+        }<br />
+    }<br />
+};</code>            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-08-09T19:25:18+02:00">09. August 2012 19:25</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">slayzakattack</div></div>            </div>
+            <div class="post-main">
+                Awesome! Great Job.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-08-09T19:32:37+02:00">09. August 2012 19:32</time>                                <div class="user-info"><div class="user-name mod">Meaurk</div><div class="user-role">Global Moderator</div></div>            </div>
+            <div class="post-main">
+                I&#039;d say make a plugin of it. :)            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-08-09T20:10:47+02:00">09. August 2012 20:10</time>                                <div class="user-info"><div class="user-name ">chuzuki</div></div>            </div>
+            <div class="post-main">
+                Turns out you can use that exact code for a BBlog plugin, no changes necessary afaik.  If you know where I could host the file, I&#039;ll make one and put it up. Otherwise, feel free to do whatever you want with the code.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-08-09T21:47:21+02:00">09. August 2012 21:47</time>                                <div class="user-info"><div class="user-name mod">Meaurk</div><div class="user-role">Global Moderator</div></div>            </div>
+            <div class="post-main">
+                Oh man, I love the Dropbox feature! :)<br />
+<br />
+Here&#039;s the link: <div class="inline post-url">https://dl.dropbox.com/u/97057514/HoverInfoBox.js</div><br />
+<br />
+<br />
+<div class="tag tag-b">EDIT: Moved to the plugin section.</div>            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-08-12T03:16:15+02:00">12. August 2012 03:16</time>                                <div class="user-info"><div class="user-name mod">Nano</div><div class="user-role">Global Moderator</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">chuzuki wrote:</div>Turns out you can use that exact code for a BBlog plugin, no changes necessary afaik.  If you know where I could host the file, I&#039;ll make one and put it up. Otherwise, feel free to do whatever you want with the code.</blockquote><br />
+<br />
+<div class="inline post-url">https://github.com/</div> or <div class="inline post-url">http://code.google.com/</div>            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-08-21T21:37:34+02:00">21. August 2012 21:37</time>                                <div class="user-info"><div class="user-name ">No_Other_xD</div></div>            </div>
+            <div class="post-main">
+                how i install this ? =( sorry for my noob question            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-08-21T22:29:15+02:00">21. August 2012 22:29</time>                                <div class="user-info"><div class="user-name ">Firewalker95</div></div>            </div>
+            <div class="post-main">
+                Open BB-Log menu -&gt; Plugins -&gt; Add own Plugin -&gt; And theire you insert the plugin url (in this case: &quot;https://dl.dropbox.com/u/97057514/HoverInfoBox.js&quot;)            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-08-21T22:41:23+02:00">21. August 2012 22:41</time>                                <div class="user-info"><div class="user-name ">No_Other_xD</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">Firewalker95 wrote:</div>Open BB-Log menu -&gt; Plugins -&gt; Add own Plugin -&gt; And theire you insert the plugin url (in this case: &quot;https://dl.dropbox.com/u/97057514/HoverInfoBox.js&quot;)</blockquote><br />
+<br />
+thanks :D            </div>
+        </div>
+        <script src="../scripts/t.js"></script></body></html>

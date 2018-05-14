@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Average Server Rank Plugin? - Better Battlelog Forums #119805</title>
+    <link rel="stylesheet" href="../stylesheets/page.css" type="text/css">
+<script src="../scripts/p.js"></script>
+</head>
+<body class="forums-post left-side"><h2>Average Server Rank Plugin? - Better Battlelog Forums #119805</h2><a href="sitemap.html">Sitemap</a>        <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2014-06-03T23:44:56+02:00">03. June 2014 23:44</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">YoHoJo</div></div>            </div>
+            <div class="post-main">
+                Is there currently a working plugin which shows the average rank of each team on a selected server?<br />
+Added this: <div class="inline post-url">https://github.com/NikkiLoveGod/Nooblook</div> but I believe it&#039;s out dated?<br />
+Thanks!            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-07-14T07:58:08+02:00">14. July 2014 07:58</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                For BF4 this doesn&#039;t work because there isn&#039;t a playerlist anymore on the serverbrowser page, which was the base for the calculation. Make this working this requires some extra requests for each selected server and that&#039;s one of the things that we try to avoid.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-10-19T18:14:23+02:00">19. October 2014 18:14</time>                                <div class="user-info"><div class="user-name ">Johntron</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">BrainFooLong wrote:</div>For BF4 this doesn&#039;t work because there isn&#039;t a playerlist anymore on the serverbrowser page, which was the base for the calculation. Make this working this requires some extra requests for each selected server and that&#039;s one of the things that we try to avoid.</blockquote><br />
+<br />
+No player list, but now they have a REST endpoint to get server info. It is an additional request, but regardless I&#039;ve updated the code to make it work. You can install with this URL: <div class="inline post-url">https://cdn.rawgit.com/johntron/Nooblook/master/nooblook.js</div><br />
+<br />
+Note: Requires a recent version of Chrome (may work in other browsers).            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-10-20T12:12:31+02:00">20. October 2014 12:12</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name themes">juress</div><div class="user-role">Theme Developer</div></div> <time datetime="2014-10-20T12:12:52+02:00">20. October 2014 12:12</time></div>
+                                                    <div class="user-info"><div class="user-name themes">juress</div><div class="user-role">Theme Developer</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">Johntron wrote:</div><blockquote><div class="user">BrainFooLong wrote:</div>For BF4 this doesn&#039;t work because there isn&#039;t a playerlist anymore on the serverbrowser page, which was the base for the calculation. Make this working this requires some extra requests for each selected server and that&#039;s one of the things that we try to avoid.</blockquote><br />
+<br />
+No player list, but now they have a REST endpoint to get server info. It is an additional request, but regardless I&#039;ve updated the code to make it work. You can install with this URL: <div class="inline post-url">https://cdn.rawgit.com/johntron/Nooblook/master/nooblook.js</div><br />
+<br />
+Note: Requires a recent version of Chrome (may work in other browsers).</blockquote><br />
+<br />
+Tried it, it periodically (1sec) adds another rating under the first one, so after a couple of seconds you get this: <br />
+<div class="inline post-url">thing.png</div>            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-10-21T03:11:41+02:00">21. October 2014 03:11</time>                                <div class="user-info"><div class="user-name ">Johntron</div></div>            </div>
+            <div class="post-main">
+                Wups, sorry about that. It&#039;s fixed now.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-10-21T11:32:34+02:00">21. October 2014 11:32</time>                                <div class="user-info"><div class="user-name themes">juress</div><div class="user-role">Theme Developer</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">Johntron wrote:</div>Wups, sorry about that. It&#039;s fixed now.</blockquote><br />
+Not for me... still the same thing happening.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-10-30T00:53:59+01:00">30. October 2014 00:53</time>                                <div class="user-info"><div class="user-name ">Johntron</div></div>            </div>
+            <div class="post-main">
+                If mine works and yours doesn&#039;t, here&#039;s the only things I can come up with:<br />
+Different browsers - I&#039;m using the latest version of Chrome.<br />
+Browser cache - Try refreshing while holding down shift.<br />
+BBlog cache - I&#039;m not aware of one, but I don&#039;t know much about bblog. Try deleting and adding the plugin again.<br />
+CDN delay - Maybe rawgit.com took a really long time to update. Try refreshing cache.<br />
+<br />
+Sorry, wish I could help more, but don&#039;t really have enough info.            </div>
+        </div>
+        <script src="../scripts/t.js"></script></body></html>

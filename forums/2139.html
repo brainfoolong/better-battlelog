@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[request] Hide MOH:W - Better Battlelog Forums #2139</title>
+    <link rel="stylesheet" href="../stylesheets/page.css" type="text/css">
+<script src="../scripts/p.js"></script>
+</head>
+<body class="forums-post left-side"><h2>[request] Hide MOH:W - Better Battlelog Forums #2139</h2><a href="sitemap.html">Sitemap</a>        <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-11-04T21:47:51+01:00">04. November 2012 21:47</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name ">sanistik</div></div> <time datetime="2012-11-23T00:43:38+01:00">23. November 2012 00:43</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">sanistik</div></div>            </div>
+            <div class="post-main">
+                How to disable MOH:W at the Battle Feed ???<br />
+<br />
+<div class="tag tag-b">I can&#039;t do it. - Yes, you can.</div><br />
+<br />
+Let everyone do it who can.<br />
+I can&#039;t do that for the life of me.<br />
+<br />
+<br />
+edited for a better understanding ;)<br />
+cheers            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-11-04T23:36:11+01:00">04. November 2012 23:36</time>                                <div class="user-info"><div class="user-name mod">Jos&eacute; Ortega</div><div class="user-role">Global Moderator</div></div>            </div>
+            <div class="post-main">
+                I&#039;m sorry, what?            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-11-04T23:49:45+01:00">04. November 2012 23:49</time>                                <div class="user-info"><div class="user-name themes">Amkhatar</div><div class="user-role">Theme Developer</div></div>            </div>
+            <div class="post-main">
+                I think he just would like to have an option to hide all shared MOHW messages in the feed ?!            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-11-05T00:00:27+01:00">05. November 2012 00:00</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">sanistik</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">Amkhatar wrote:</div>I think he just would like to have an option to hide all shared MOHW messages in the feed ?!</blockquote><br />
+<br />
+That&#039;s right!<br />
+<br />
+thx            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-11-05T01:08:59+01:00">05. November 2012 01:08</time>                                <div class="user-info"><div class="user-name ">digitalcassette</div></div>            </div>
+            <div class="post-main">
+                here&#039;s a bit of jquery i was working on to accomplish this.<br />
+<br />
+$(&quot;.feed-single-item .award-item&quot;).each(section){ if(section.html().contains(&quot;/mohw/&quot;}){ section.hide() }};<br />
+<br />
+I haven&#039;t gotten it working yet (I&#039;m not on my dev environment but noticed this came up in bblog list)            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-11-07T01:40:23+01:00">07. November 2012 01:40</time>                                <div class="user-info"><div class="user-name ">digitalcassette</div></div>            </div>
+            <div class="post-main">
+                OK here you go<br />
+<br />
+<div class="inline post-url">https://raw.github.com/TonyAshworth/bblog-mohw-filter/master/bblog-mohw-filter-v1.js</div><br />
+<br />
+that version right there will filter out in the current BBLog<br />
+<br />
+here&#039;s a version that should be compatible with V3 of BBLog<br />
+<br />
+<div class="inline post-url">https://raw.github.com/TonyAshworth/bblog-mohw-filter/master/bblog-mohw-filter-v2.js</div><br />
+<br />
+tested this and it should be language Independent.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-11-07T10:06:21+01:00">07. November 2012 10:06</time>                                <div class="user-info"><div class="user-name mod">ORFK</div><div class="user-role">Global Moderator</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">digitalcassette wrote:</div>here&#039;s a version that should be compatible with V3 of BBLog<br />
+<div class="inline post-url">https://raw.github.com/TonyAshworth/bblog-mohw-filter/master/bblog-mohw-filter-v2.js</div></blockquote><br />
+working well, but there are some posts/feeds wich are not hidden.<br />
+<br />
+<div class="inline post-url">mohw.jpg</div><br />
+<br />
+i didn&#039;t tested the other version.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-11-07T14:07:15+01:00">07. November 2012 14:07</time>                                <div class="user-info"><div class="user-name ">digitalcassette</div></div>            </div>
+            <div class="post-main">
+                Thank you ORFK!<br />
+<br />
+The problem is I was relying on the images (and the static image path for MOHW).<br />
+<br />
+Now it actually looks at the game id now (common-game-4096-1).            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-11-07T14:55:19+01:00">07. November 2012 14:55</time>                                <div class="user-info"><div class="user-name mod">ORFK</div><div class="user-role">Global Moderator</div></div>            </div>
+            <div class="post-main">
+                jep, now its working fine, i like it =)            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-11-21T22:03:49+01:00">21. November 2012 22:03</time>                    <div class="post-edited">Post edited 2                        x times, last by <div class="user-info"><div class="user-name ">sanistik</div></div> <time datetime="2012-11-21T22:55:51+01:00">21. November 2012 22:55</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">sanistik</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">digitalcassette wrote:</div>OK here you go<br />
+<br />
+<div class="inline post-url">https://raw.github.com/TonyAshworth/bblog-mohw-filter/master/bblog-mohw-filter-v1.js</div><br />
+<br />
+that version right there will filter out in the current BBLog<br />
+<br />
+here&#039;s a version that should be compatible with V3 of BBLog<br />
+<br />
+<div class="inline post-url">https://raw.github.com/TonyAshworth/bblog-mohw-filter/master/bblog-mohw-filter-v2.js</div><br />
+<br />
+tested this and it should be language Independent.</blockquote><br />
+<br />
+<br />
+awesome, well done!   <br />
+most of the feeds has gone <br />
+<br />
+thank you            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-11-23T09:27:45+01:00">23. November 2012 09:27</time>                                <div class="user-info"><div class="user-name mod">ORFK</div><div class="user-role">Global Moderator</div></div>            </div>
+            <div class="post-main">
+                not working atm... what happens?            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-11-27T13:24:02+01:00">27. November 2012 13:24</time>                                <div class="user-info"><div class="user-name ">digitalcassette</div></div>            </div>
+            <div class="post-main">
+                looking into it right now            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-11-27T13:25:57+01:00">27. November 2012 13:25</time>                                <div class="user-info"><div class="user-name ">digitalcassette</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">ORFK wrote:</div>not working atm... what happens?</blockquote><br />
+<br />
+lol well... it looks like bblog upgraded to 3.0.0 :)<br />
+<br />
+So you need to use the v2 of the script i posted a while ago (luckily I was prepared for this)<br />
+<br />
+<div class="inline post-url">https://raw.github.com/TonyAshworth/bblog-mohw-filter/master/bblog-mohw-filter-v2.js</div> &lt;&lt; there&#039;s the link! cheers! (just tested and it worked on the first try)            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-11-27T13:47:40+01:00">27. November 2012 13:47</time>                    <div class="post-edited">Post edited 2                        x times, last by <div class="user-info"><div class="user-name mod">ORFK</div><div class="user-role">Global Moderator</div></div> <time datetime="2012-11-27T13:50:24+01:00">27. November 2012 13:50</time></div>
+                                                    <div class="user-info"><div class="user-name mod">ORFK</div><div class="user-role">Global Moderator</div></div>            </div>
+            <div class="post-main">
+                i had 3.0.0 already before you, so i already used the V2 script ;-)<br />
+and yes, i have still V2 in my plugin list...<br />
+<br />
+-edit:- now it looks it would work, okey thx.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-11-28T15:43:20+01:00">28. November 2012 15:43</time>                                <div class="user-info"><div class="user-name ">digitalcassette</div></div>            </div>
+            <div class="post-main">
+                lol sorry orfk, when i saw this i didn&#039;t have v2 loaded yet. i loaded it and it worked.<br />
+<br />
+i wonder why it didn&#039;t work for a few days.<br />
+<br />
+thanks for the notice though. :)            </div>
+        </div>
+        <script src="../scripts/t.js"></script></body></html>

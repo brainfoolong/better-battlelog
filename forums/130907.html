@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Removed Inline Image Support - Update: Fixed - Better Battlelog Forums #130907</title>
+    <link rel="stylesheet" href="../stylesheets/page.css" type="text/css">
+<script src="../scripts/p.js"></script>
+</head>
+<body class="forums-post left-side"><h2>Removed Inline Image Support - Update: Fixed - Better Battlelog Forums #130907</h2><a href="sitemap.html">Sitemap</a>        <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2014-11-28T10:25:42+01:00">28. November 2014 10:25</time>                    <div class="post-edited">Post edited 11                        x times, last by <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div> <time datetime="2014-12-07T14:17:35+01:00">07. December 2014 14:17</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Hi all!<br />
+<br />
+<div class="tag tag-u">Update 07.12.2014</div><br />
+This issue is now fixed on getbblog.com and in the BBLog addon. It still exist a security hole in your browser but in BBLog or on getbblog.com you are safe.<br />
+<div class="tag tag-b">Firefox Notes</div>: Here we must pre-cache the image file to make sure that it&#039;s safe. That means that in general all counter (user/pageviews) services not work properly.<br />
+<br />
+Original Message:<br />
+<br />
+Unfortunately i decided to temporarily remove inline image support from the BBLog addon and from the getbblog.com homepage for external images.<br />
+<br />
+Reason is because i found out today that this could be a big security hole.<br />
+More information here: <div class="tag tag-u">Browser Auth Pishing Attack with embedded images</div> -&gt; <div class="inline post-url">http://bfldev.com/auth-pishing</div><br />
+<br />
+Inline Images in the addon are deactivated until this issue is fixed or fixable.<br />
+Inline Images on getbblog.com - Only allowed for getbblog.com attachments, not for external images.<br />
+<br />
+This only affect Inline Images, not Inline Youtube Videos.<br />
+<br />
+Spread the word about that.<br />
+<br />
+Greetz Roland            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-11-28T19:24:36+01:00">28. November 2014 19:24</time>                                <div class="user-info"><div class="user-name ">zeharti</div></div>            </div>
+            <div class="post-main">
+                But for instance, it is possible to add exceptions or &quot;white list&quot; to this code....like trusted sources such as imgur,puu.sh etc....<br />
+<br />
+1.making sure that url starts and ends with specific text <br />
+2.and then implementing a script which actually checks that the url is an &quot;image file&quot;            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2014-11-28T19:30:44+01:00">28. November 2014 19:30</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div> <time datetime="2014-11-28T19:31:25+01:00">28. November 2014 19:31</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Sure, it&#039;s possible. But i don&#039;t actually integrate a white list.<br />
+A script that checks for correct images could only be done by server side and we don&#039;t have the capacity to do create such service.<br />
+<br />
+I&#039;ll follow the discussion about that bug and if nothing happens from browser side, i&#039;ll consider other ways.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-11-28T19:38:59+01:00">28. November 2014 19:38</time>                    <div class="post-edited">Post edited 4                        x times, last by <div class="user-info"><div class="user-name ">zeharti</div></div> <time datetime="2014-11-28T19:50:11+01:00">28. November 2014 19:50</time></div>
+                                                    <div class="user-info"><div class="user-name ">zeharti</div></div>            </div>
+            <div class="post-main">
+                any technical reason for white list thing...cause in my opinion that seems best fix until we find a solid solution..<br />
+<br />
+i&#039;m not pro in js right now but isn&#039;t this simple algorithm  possible on client side..<br />
+<br />
+<code>1.URL found<br />
+<br />
+2. if URL match(http://imgur.....OR <div class="inline post-url">http://puu.sh</div>)<br />
+<br />
+         if type match==(jpg,png,gif)<br />
+               create elements and embed<br />
+         else<br />
+               do not embed<br />
+<br />
+3.else<br />
+break;</code><br />
+<br />
+Again just an idea....could be improved..Happy to be a part of development            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2014-11-28T20:14:24+01:00">28. November 2014 20:14</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                No technical reason, i just don&#039;t want to make a &quot;white list&quot; because this creates a &quot;two class feature&quot;.<br />
+I just want to have a fully functional feature. Allowing just a bunch of hosters is not that what i want to do.<br />
+<br />
+The check for a valid file extension also doesn&#039;t help because a correct looking image link could also be manipulated.<br />
+<br />
+Anyway, thx for suggestions.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-11-28T20:22:03+01:00">28. November 2014 20:22</time>                                <div class="user-info"><div class="user-name ">zeharti</div></div>            </div>
+            <div class="post-main">
+                mmhmmm.....Well I respect your personal policy...Hope this gets fixed soon.<br />
+:)            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-12-03T18:36:33+01:00">03. December 2014 18:36</time>                                <div class="user-info"><div class="user-name ">AS-HowlinWolf-PL</div></div>            </div>
+            <div class="post-main">
+                hope it&#039;s going to be back soon as well            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-12-06T15:15:58+01:00">06. December 2014 15:15</time>                                <div class="user-info"><div class="user-name ">a6addon</div></div>            </div>
+            <div class="post-main">
+                <div class="tag tag-b">Please quickly fixed,</div> <br />
+<br />
+this being the reason why 60% of users take advantage of this tool and as the lead designer of two platoons. with endless hours working on the presentation with one blow away..<br />
+<br />
+Fact who wants anything from the browser to system is vulnerable is always gaps but if you blow on it of course 5445990 people with a down during which to know profiles of users and platoon to link ruins... <br />
+<br />
+makes understanding... <br />
+<br />
+alternative are in demand or offers befor the ship goes down :(            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-12-06T15:47:36+01:00">06. December 2014 15:47</time>                                <div class="user-info"><div class="user-name ">zeharti</div></div>            </div>
+            <div class="post-main">
+                I advised BFL to let users enable the feature at their own risk..like those who are aware these things(Phishing and all)..<br />
+<br />
+Rest is upon BFL...what he comes up with..            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2014-12-06T16:16:44+01:00">06. December 2014 16:16</time>                    <div class="post-edited">Post edited 2                        x times, last by <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div> <time datetime="2014-12-06T16:18:28+01:00">06. December 2014 16:18</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                I understand all your opinions and all your suggestions.<br />
+<br />
+I decided to re-enable Google Chrome and Opera right now., because they have no problems with the security issue.<br />
+For all chrome/opera users it should work within the next 24 hours.<br />
+You can force the update by opening this page<br />
+<div class="inline post-url">http://getbblog.com/plugins/bblog-hotfix.js</div><br />
+press CTRL + F5 and than use battlelog as always.<br />
+<br />
+For all Firefox users, sorry, i cannot currently enable that feature because it&#039;s not fixed right now, but i&#039;ll think about another temporarily fix for you.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2014-12-06T17:11:38+01:00">06. December 2014 17:11</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Well, good news for all of you.<br />
+<br />
+Inline Images should now work, securely and for every browser.<br />
+Maybe it takes up to 24 hours to work for you.<br />
+You can force the update by opening this page<br />
+<div class="inline post-url">http://getbblog.com/plugins/bblog-hotfix.js</div><br />
+press CTRL + F5 and than use battlelog as always.<br />
+<br />
+The technique behind is now that getbblog.com caches the image and than return it back to you if it is safe to use.<br />
+Hopefully our server can handle that.<br />
+<br />
+However, the bug still exists in your browser but it&#039;s now safe inside of BBLog addon and on getbblog.com.<br />
+<br />
+Greetz Roland            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-12-06T18:04:39+01:00">06. December 2014 18:04</time>                                <div class="user-info"><div class="user-name ">zeharti</div></div>            </div>
+            <div class="post-main">
+                Really appreciate it ...bud            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-12-07T13:02:29+01:00">07. December 2014 13:02</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name ">FlareFPS</div></div> <time datetime="2014-12-07T13:03:02+01:00">07. December 2014 13:03</time></div>
+                                                    <div class="user-info"><div class="user-name ">FlareFPS</div></div>            </div>
+            <div class="post-main">
+                There are issues with certain characters in URLs from FlagCounter.<br />
+<br />
+BBlog loads this URL <br />
+<code>http://getbblog.com/image-loader.php?<br />
+file=http%3A%2F%2Fs11.flagcounter.com%2Fcount%2FcEMj%2Fbg_F4F4F4%2Ftxt_000000%2Fborder_F4F4F4%2Fcolumns_3%2Fmaxflags_9%2Fviewers_Flares%2BVisitors%2Flabels_0%2Fpageviews_1%2Fflags_0.png</code><br />
+<br />
+instead of<br />
+<br />
+<code>http://s11.flagcounter.com/count/cEMj/bg_F4F4F4/txt_000000/border_F4F4F4/columns_3/maxflags_9/viewers_Flares+Visitors/labels_0/pageviews_1/flags_0.png</code><br />
+<br />
+which causes the Image to be broken and not recognized by Flagcounter<br />
+<br />
+pls fix <br />
+Thanks in advance <br />
+-Flare            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2014-12-07T14:10:58+01:00">07. December 2014 14:10</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div> <time datetime="2014-12-07T14:11:36+01:00">07. December 2014 14:11</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Flagcounters and any other counter service not working properly with the current fix.<br />
+Reason is simply that BBLog does cache and pre-download the image to make sure it&#039;s safe.<br />
+So, the counter will never be counted up. For flagcounter it seems that they also have some other checks that make it impossible to work with our special fix.<br />
+<br />
+It&#039;s not fixable until the browser developers fix the security hole. Than we can remove our temporarily cache.<br />
+I&#039;ll see if i can make an exception for chrome/opera to directly show the image because they are not affected by that issue.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-12-07T16:30:07+01:00">07. December 2014 16:30</time>                                <div class="user-info"><div class="user-name ">FlareFPS</div></div>            </div>
+            <div class="post-main">
+                That would be great, most of the people I know use Chrome aswell...            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-12-09T21:10:58+01:00">09. December 2014 21:10</time>                                <div class="user-info"><div class="user-name ">a6addon</div></div>            </div>
+            <div class="post-main">
+                <div class="tag tag-b">Thank you :))</div> <br />
+<br />
+<br />
+for fixed and reaktivation, am satisfied when it comes in whenever a browser of the three, <br />
+has saved my day.<br />
+<br />
+thx            </div>
+        </div>
+        <script src="../scripts/t.js"></script></body></html>

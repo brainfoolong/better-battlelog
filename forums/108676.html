@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BBLog Icon in Left Bottom Corner - Better Battlelog Forums #108676</title>
+    <link rel="stylesheet" href="../stylesheets/page.css" type="text/css">
+<script src="../scripts/p.js"></script>
+</head>
+<body class="forums-post left-side"><h2>BBLog Icon in Left Bottom Corner - Better Battlelog Forums #108676</h2><a href="sitemap.html">Sitemap</a>        <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-09-30T19:47:13+02:00">30. September 2013 19:47</time>                    <div class="post-edited">Post edited 3                        x times, last by <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div> <time datetime="2013-10-01T10:14:41+02:00">01. October 2013 10:14</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Hi all!<br />
+<br />
+A Battlelog Update in the last few hours has moved the BBLog icon in the bottom left corner of the screen.<br />
+<br />
+Will be fixed soon.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-09-30T20:38:41+02:00">30. September 2013 20:38</time>                                <div class="user-info"><div class="user-name ">CrappyToast</div></div>            </div>
+            <div class="post-main">
+                Help me please i cannot dowloat the thing :((((            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-09-30T21:58:57+02:00">30. September 2013 21:58</time>                    <div class="post-edited">Post edited 2                        x times, last by <div class="user-info"><div class="user-name ">Lugresky</div></div> <time datetime="2013-09-30T22:03:28+02:00">30. September 2013 22:03</time></div>
+                                                    <div class="user-info"><div class="user-name ">Lugresky</div></div>            </div>
+            <div class="post-main">
+                Just<br />
+<br />
+..\resources\better-battlelog\data\shared\bblog.js<br />
+<br />
+LINE 387<br />
+<code>var e = $(&quot;#base-header section.community-bar .grid-container&quot;).first();</code><br />
+change to<br />
+<code>var e = $(&quot;#base-header section#community-bar .grid-container&quot;).first();</code><br />
+<br />
+Tested on Firefox.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-09-30T22:13:05+02:00">30. September 2013 22:13</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div> <time datetime="2013-10-01T09:49:46+02:00">01. October 2013 09:49</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">Lugresky wrote:</div>Just<br />
+<br />
+..\resources\better-battlelog\data\shared\bblog.js<br />
+<br />
+LINE 387<br />
+<code>var e = $(&quot;#base-header section.community-bar .grid-container&quot;).first();</code><br />
+change to<br />
+<code>var e = $(&quot;#base-header section#community-bar .grid-container&quot;).first();</code><br />
+<br />
+Tested on Firefox.</blockquote><br />
+<br />
+I know the fix, thx :)            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-10-01T09:49:53+02:00">01. October 2013 09:49</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Fix is out now.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-10-05T22:23:48+02:00">05. October 2013 22:23</time>                                <div class="user-info"><div class="user-name ">Brady_The</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">BrainFooLong wrote:</div>Fix is out now.</blockquote><br />
+Is it possible that the bug is back or still existing in Firefox (24.0)? It&#039;s fine in Chrome, but the icon is completely missing on BF4BL and back in said corner on BF3BL (in Firefox). Does anyone else has these problems or is it just me (I know that I am a special case.)?            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-10-06T10:43:47+02:00">06. October 2013 10:43</time>                                <div class="user-info"><div class="user-name mod">Meaurk</div><div class="user-role">Global Moderator</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">Brady_The wrote:</div><blockquote><div class="user">BrainFooLong wrote:</div>Fix is out now.</blockquote><br />
+Is it possible that the bug is back or still existing in Firefox (24.0)? It&#039;s fine in Chrome, but the icon is completely missing on BF4BL and back in said corner on BF3BL (in Firefox). Does anyone else has these problems or is it just me (I know that I am a special case.)?</blockquote><br />
+<br />
+I think that you&#039;re a special case, I&#039;ve tested both Chrome and Firefox. A clean re-installation should solve the problem I think. :-)            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-10-06T20:35:52+02:00">06. October 2013 20:35</time>                    <div class="post-edited">Post edited 4                        x times, last by <div class="user-info"><div class="user-name ">Brady_The</div></div> <time datetime="2013-10-06T20:38:26+02:00">06. October 2013 20:38</time></div>
+                                                    <div class="user-info"><div class="user-name ">Brady_The</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">Meaurk wrote:</div><blockquote><div class="user">Brady_The wrote:</div><blockquote><div class="user">BrainFooLong wrote:</div>Fix is out now.</blockquote><br />
+Is it possible that the bug is back or still existing in Firefox (24.0)? It&#039;s fine in Chrome, but the icon is completely missing on BF4BL and back in said corner on BF3BL (in Firefox). Does anyone else has these problems or is it just me (I know that I am a special case.)?</blockquote><br />
+<br />
+I think that you&#039;re a special case, I&#039;ve tested both Chrome and Firefox. A clean re-installation should solve the problem I think. :-)</blockquote><br />
+Okay, that was really strange. I checked the Add-Ons and noticed that I had installed the version <div class="tag tag-b">3.6.3</div> (at least it showed me that version number). I cross-checked with the website and here the newest version is <div class="tag tag-b">3.6.2</div>. I &quot;down graded&quot; and now everything works fine.<br />
+<br />
+<div class="spoiler-button"><span>Secret message hidden behind a totally unremarkable button</span></div><div class="spoiler">Seems that I am indeed special. Just not special in a good way.</div>            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-10-07T07:18:53+02:00">07. October 2013 07:18</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div> <time datetime="2013-10-07T07:20:02+02:00">07. October 2013 07:20</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Lol?<br />
+<br />
+3.6.3 version was never developed? Neither internally nor planned.<br />
+Are you sure that you don&#039;t have been hacked? :)            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-10-07T17:24:59+02:00">07. October 2013 17:24</time>                                <div class="user-info"><div class="user-name ">Brady_The</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">BrainFooLong wrote:</div>Lol?<br />
+<br />
+3.6.3 version was never developed? Neither internally nor planned.<br />
+Are you sure that you don&#039;t have been hacked? :)</blockquote><br />
+That&#039;s exactly the reason why I think that I am special. Lol. I should have made a screenshot.            </div>
+        </div>
+        <script src="../scripts/t.js"></script></body></html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Trying to get AJAX working in BBLog plugin - Better Battlelog Forums #55901</title>
+    <link rel="stylesheet" href="../stylesheets/page.css" type="text/css">
+<script src="../scripts/p.js"></script>
+</head>
+<body class="forums-post left-side"><h2>Trying to get AJAX working in BBLog plugin - Better Battlelog Forums #55901</h2><a href="sitemap.html">Sitemap</a>        <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-11-27T15:31:47+01:00">27. November 2012 15:31</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name ">Weyland</div></div> <time datetime="2012-11-27T15:32:44+01:00">27. November 2012 15:32</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">Weyland</div></div>            </div>
+            <div class="post-main">
+                Like the title said, I&#039;m trying to get a AJAX call to work in BBLog.<br />
+<br />
+I am unable to get this working. I tried $.getJSON and $.ajax but both seem to fail returning any information. Is there a, special, way to get this to work in BBLog? What call should I use?<br />
+<br />
+Kudo&#039;s to the person to point me in the right direction.<br />
+<br />
+This is the code:<br />
+<code>        var request = $.ajax({<br />
+            cache: false,<br />
+            url: &quot;http://p0mp.com/bblog3/teamspeak/feed.php&quot;,<br />
+            dataType: &#039;json&#039;,<br />
+        });<br />
+<br />
+        request.done(function(data) {<br />
+            for(var i in data) {<br />
+                var playerdata = data&#91;i&#93;;<br />
+                var player =<br />
+                {<br />
+                    id: playerdata.id,<br />
+                    name: playerdata.name,<br />
+                    channel: playerdata.channel,<br />
+                }<br />
+                instance.playerList.push(player);<br />
+            }<br />
+        });</code><br />
+<br />
+Thanks!            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-11-27T15:44:51+01:00">27. November 2012 15:44</time>                    <div class="post-edited">Post edited 2                        x times, last by <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div> <time datetime="2012-11-27T15:56:38+01:00">27. November 2012 15:56</time></div>
+                                                    <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Ajax is Cross-Domain protected, as defined in the Same Origin Policy.<br />
+You&#039;ll never can make it working, except with JSON, as you do.<br />
+<br />
+But you probably use it wrong.<br />
+<br />
+Your PHP Script must return following things<br />
+<br />
+1. Content-type: application/json or application/x-javascript<br />
+2. A callback of the data must be triggered, the name is in the $_GET[&quot;jsoncallback&quot;] variable.<br />
+<br />
+Example JS:<br />
+<code>$.getJSON(&quot;myurl.php&quot;, function(data){<br />
+    console.log(data);<br />
+});</code><br />
+<br />
+Example PHP for myurl.php:<br />
+<code>&lt;?<br />
+header(&quot;content-type: application/x-javascript&quot;);<br />
+echo $_GET&#91;&quot;jsoncallback&quot;&#93;.&quot;(&quot;.json_encode(array(&quot;foo&quot;, &quot;bar&quot;).&quot;)&quot;;<br />
+?&gt;</code>            </div>
+        </div>
+        <script src="../scripts/t.js"></script></body></html>

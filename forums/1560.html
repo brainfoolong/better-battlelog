@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fixed #base-mainheader Position - Better Battlelog Forums #1560</title>
+    <link rel="stylesheet" href="../stylesheets/page.css" type="text/css">
+<script src="../scripts/p.js"></script>
+</head>
+<body class="forums-post left-side"><h2>Fixed #base-mainheader Position - Better Battlelog Forums #1560</h2><a href="sitemap.html">Sitemap</a>        <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-03-23T15:13:15+01:00">23. March 2012 15:13</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name">Guest</div></div>            </div>
+            <div class="post-main">
+                hey,<br />
+i added some line of code to fix the position of the #base-mainheader<br />
+<br />
+#####################<br />
+<br />
+var mainheader = $(&quot;#base-mainheader-container&quot;);<br />
+		var submainheader = $(&quot;#base-submainheader&quot;);<br />
+		var content = $(&quot;#content&quot;);<br />
+		<br />
+		if(mainheader.size()){<br />
+			mainheader.css(&quot;position&quot;, &quot;fixed&quot;);<br />
+		}<br />
+		if(submainheader.size()){<br />
+			submainheader.css(&quot;top&quot;,&quot;36px&quot;);<br />
+		}<br />
+		if(content.size()){<br />
+			content.css(&quot;top&quot;,&quot;36px&quot;);<br />
+		}<br />
+<br />
+####################################            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-03-24T14:55:21+01:00">24. March 2012 14:55</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Hi!<br />
+<br />
+I show this feature some people and we came to the conclusion that its more annoying than it helps.<br />
+But thanks for the request.<br />
+<br />
+Greetz            </div>
+        </div>
+        <script src="../scripts/t.js"></script></body></html>

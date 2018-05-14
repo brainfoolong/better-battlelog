@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Desktop Notification plugin for chat messages - Better Battlelog Forums #127797</title>
+    <link rel="stylesheet" href="../stylesheets/page.css" type="text/css">
+<script src="../scripts/p.js"></script>
+</head>
+<body class="forums-post left-side"><h2>Desktop Notification plugin for chat messages - Better Battlelog Forums #127797</h2><a href="sitemap.html">Sitemap</a>        <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2014-09-28T01:21:56+02:00">28. September 2014 01:21</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name ">PitaJ</div></div> <time datetime="2014-09-28T01:22:31+02:00">28. September 2014 01:22</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">PitaJ</div></div>            </div>
+            <div class="post-main">
+                Hi! I&#039;d like people to try out this plugin I made which uses the HTML5 Notifications API to display received chat messages as notifications. <br />
+<br />
+One bug which I haven&#039;t been able to fix yet is that the first message in the history will be displayed when the chat window is opened or the page is opened with an open chat window.<br />
+<br />
+<div class="spoiler-button"><span>Code</span></div><div class="spoiler"><code>var notifiedWithinLast30 = false;<br />
+<br />
+BBLog.handle(&quot;add.plugin&quot;, {<br />
+<br />
+  id: &quot;notify-chat&quot;,<br />
+<br />
+  name: &quot;Chat Desktop Notifications&quot;,<br />
+<br />
+  init: function(instance) {<br />
+    // Let&#039;s check if the browser supports notifications<br />
+    if (!(&quot;Notification&quot; in window)) {<br />
+      console.log(&quot;This browser does not support desktop notification&quot;);<br />
+    }<br />
+<br />
+    else if(!Notification.permission) {<br />
+      Notification.requestPermission(function(perm){ notification.permission = perm; });<br />
+    }<br />
+<br />
+    // Let&#039;s check if the user is okay to get some notification<br />
+    if (Notification.permission === &quot;granted&quot; || Notification.permission !== &quot;denied&quot;) {<br />
+<br />
+      // If it&#039;s okay let&#039;s create a notification<br />
+      comcenter.chatmessage._render = comcenter.chatmessage.render;<br />
+      comcenter.chatmessage.render = function(o,b,kwargs){<br />
+<br />
+        var html = comcenter.chatmessage._render(o,b,kwargs);<br />
+        console.log(html);<br />
+<br />
+        var $html = $(html);<br />
+        var obj = {<br />
+          author: $html.attr(&quot;author&quot;),<br />
+          ts: $html.attr(&quot;ts&quot;),<br />
+          content: $html.find(&quot;.comcenter-chat-message-content&quot;).text(),<br />
+          name: $(&quot;.name&quot;).text().replace(/&#91;\n\r\s&#93;/g, &quot;&quot;),<br />
+          timestamp: $html.find(&quot;.comcenter-chat-timestamp&quot;).text().replace(/&#91;\n\r\s&#93;/g, &quot;&quot;)<br />
+        }<br />
+<br />
+        if(obj.content &amp;&amp; instance.storage(&quot;lastNotified&quot;) &lt; obj.ts &amp;&amp; !notifiedWithinLast30 &amp;&amp; obj.author !== obj.name){<br />
+<br />
+          var notif = new Notification(obj.author, {<br />
+            body: obj.content,<br />
+            icon: &quot;http://getbblog.com/img/banners/450x450.jpg&quot;<br />
+          });<br />
+<br />
+          instance.storage(&quot;lastNotifed&quot;, obj.ts);<br />
+<br />
+          notifiedWithinLast30 = true;<br />
+<br />
+          setTimeout(function(){ notifiedWithinLast30 = false; }, 30000);<br />
+<br />
+        }<br />
+<br />
+        return html;<br />
+      }<br />
+<br />
+      console.log(&quot;notify set up&quot;);<br />
+<br />
+    }<br />
+<br />
+    // At last, if the user already denied any notification, and you<br />
+    // want to be respectful there is no need to bother them any more.<br />
+  }<br />
+<br />
+});</code></div>            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-09-29T01:35:37+02:00">29. September 2014 01:35</time>                                <div class="user-info"><div class="user-name mod">ORFK</div><div class="user-role">Global Moderator</div></div>            </div>
+            <div class="post-main">
+                what should we do with this code? can we eat it?<br />
+have i to print it and stick it to my desktop screen?            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2014-09-29T02:02:20+02:00">29. September 2014 02:02</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">PitaJ</div></div>            </div>
+            <div class="post-main">
+                You can copy it into the plugin editor and run it yourself for testing purposes. It still has bugs. That&#039;s why I didn&#039;t publish it.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-09-29T07:09:04+02:00">29. September 2014 07:09</time>                    <div class="post-edited">Post edited 2                        x times, last by <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div> <time datetime="2014-09-29T07:10:42+02:00">29. September 2014 07:10</time></div>
+                                                    <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">ORFK wrote:</div>what should we do with this code? can we eat it?<br />
+have i to print it and stick it to my desktop screen?</blockquote><br />
+It&#039;s posted in the custom plugins section, also he call it a &quot;plugin&quot;. <br />
+So, it&#039;s obviously a BBLog plugin and you don&#039;t need to be rude.<br />
+<br />
+Btw to the topic - Nice idea, never thought about that way.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-09-29T20:52:53+02:00">29. September 2014 20:52</time>                                <div class="user-info"><div class="user-name mod">ORFK</div><div class="user-role">Global Moderator</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">BrainFooLong wrote:</div>So, it&#039;s obviously a BBLog plugin and you don&#039;t need to be rude.</blockquote><br />
+nobody is rude. it was a question which can be asked by everybody.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-10-18T00:22:45+02:00">18. October 2014 00:22</time>                                <div class="user-info"><div class="user-name ">Bluscream</div></div>            </div>
+            <div class="post-main">
+                I uploaded the source to my dropbox for easy install and use<br />
+<div class="inline post-url">https://dl.dropboxusercontent.com/u/33225956/BBLog/plugins/notify_chat/notify_chat.js</div>            </div>
+        </div>
+        <script src="../scripts/t.js"></script></body></html>

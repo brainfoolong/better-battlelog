@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Addon not loading after restarting browser - Better Battlelog Forums #1387</title>
+    <link rel="stylesheet" href="../stylesheets/page.css" type="text/css">
+<script src="../scripts/p.js"></script>
+</head>
+<body class="forums-post left-side"><h2>Addon not loading after restarting browser - Better Battlelog Forums #1387</h2><a href="sitemap.html">Sitemap</a>        <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-01-08T20:15:23+01:00">08. January 2012 20:15</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name">Guest</div></div>            </div>
+            <div class="post-main">
+                My Browser is: Firefox<br />
+My Browser Version is: 9.0.1<br />
+My BBLog Addon Version is: 0.97<br />
+<br />
+AS in the subject the browser addon is not loading after a browser restart in Firefox. I have to reinstall to get it to load again.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-01-08T20:16:03+01:00">08. January 2012 20:16</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name">Guest</div></div>            </div>
+            <div class="post-main">
+                As in the subject the browser addon is not loading after a browser restart in Firefox. I have to reinstall to get it to load again.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-01-09T09:05:24+01:00">09. January 2012 09:05</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Please enable the Webconsole (CTRL + SHIFT + K) on battlelog, deselect left upper NET and CSS buttons and let JS and Web enabled.<br />
+Reload the battlelog page where bblog is not working and post me the messages you see in the console.<br />
+If there to many messages please search only for &quot;errors&quot; with just the &quot;JS&quot; Button enabled.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-01-09T10:14:03+01:00">09. January 2012 10:14</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name">Guest</div></div>            </div>
+            <div class="post-main">
+                This is all that comes up in the console after a page reload. I can go into the addons page and disable then reenable the app and it will work, just not after a browser restart.<br />
+<br />
+<br />
+[09:11] Surface logging enabled @ <div class="inline post-url">http://battlelog-cdn.battlefield.com/public/generated/en_US/bundle_base_index_3507823582.js?v=3173239:10</div><br />
+[09:11] Duplicate Surface: A Surface with id base-dropdown-menu-your-platoons_2832655241030089097 was rendered more than once, old state will be overwritten @ <div class="inline post-url">http://battlelog-cdn.battlefield.com/public/generated/en_US/bundle_base_index_3507823582.js?v=3173239:10</div><br />
+[09:11] Duplicate Surface: A Surface with id base-dropdown-menu-your-platoons_2832655391416225787 was rendered more than once, old state will be overwritten @ <div class="inline post-url">http://battlelog-cdn.battlefield.com/public/generated/en_US/bundle_base_index_3507823582.js?v=3173239:10</div><br />
+[09:11] Duplicate Surface: A Surface with id base-dropdown-menu-your-platoons_2832655391363730411 was rendered more than once, old state will be overwritten @ <div class="inline post-url">http://battlelog-cdn.battlefield.com/public/generated/en_US/bundle_base_index_3507823582.js?v=3173239:10</div><br />
+[09:11] Duplicate Surface: A Surface with id base-dropdown-menu-your-platoons was rendered more than once, old state will be overwritten @ <div class="inline post-url">http://battlelog-cdn.battlefield.com/public/generated/en_US/bundle_base_index_3507823582.js?v=3173239:10</div><br />
+[09:11] Duplicate Surface: A Surface with id base-dropdown-menu-your-invited-platoons was rendered more than once, old state will be overwritten @ <div class="inline post-url">http://battlelog-cdn.battlefield.com/public/generated/en_US/bundle_base_index_3507823582.js?v=3173239:10</div>            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-01-09T10:46:19+01:00">09. January 2012 10:46</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Hm, its very confusing. There no errors at all in this messages.<br />
+Are this messages appears when bblog not works (also no bblog icon visible)?<br />
+I think it must be any error in the messages when it not works, when no error is visible its unlikely the addon the have an error.<br />
+One thing you could try is the other firefox console (CTRL + SHIFT + J) in the tab &quot;errors&quot; and keep watch&#039;in for any message when you reload the page and bblog not works.<br />
+You are the only one that report that kind of problem at the moment :-(            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-01-09T10:47:53+01:00">09. January 2012 10:47</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                In additon: What other addons you have installed? Possibly there is a conflict between a other addon.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-01-09T15:03:06+01:00">09. January 2012 15:03</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name">Guest</div></div>            </div>
+            <div class="post-main">
+                Looks as though it was an addon conflict. I disabled all my addons then enable them one by one. This was the one that caused ypur addon not to load.<br />
+<br />
+Tab Mix Plus<br />
+<br />
+<div class="inline post-url">https://addons.mozilla.org/en-US/firefox/addon/tab-mix-plus/?src=search</div>            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-01-09T16:35:45+01:00">09. January 2012 16:35</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Oh my god. That addon have so much settings.<br />
+Could you export your Tab Mix Settings and send it to me (see Navi -&gt; Contact) via email?<br />
+I could not reproduce the bug with default enabled tab mix settings.<br />
+Greetz            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-01-09T19:38:34+01:00">09. January 2012 19:38</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name">Guest</div></div>            </div>
+            <div class="post-main">
+                Ok, thanks. Email and settings file sent.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-01-12T15:15:55+01:00">12. January 2012 15:15</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name">Guest</div></div>            </div>
+            <div class="post-main">
+                Hi,<br />
+<br />
+Seems to be working fine now after the last update.<br />
+<br />
+Thanks            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-01-12T16:04:13+01:00">12. January 2012 16:04</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Very cool.<br />
+Thanks for report.            </div>
+        </div>
+        <script src="../scripts/t.js"></script></body></html>

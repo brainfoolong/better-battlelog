@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tips on plugin that checks servers "difficulty" - Better Battlelog Forums #92669</title>
+    <link rel="stylesheet" href="../stylesheets/page.css" type="text/css">
+<script src="../scripts/p.js"></script>
+</head>
+<body class="forums-post left-side"><h2>Tips on plugin that checks servers &quot;difficulty&quot; - Better Battlelog Forums #92669</h2><a href="sitemap.html">Sitemap</a>        <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-04-01T11:18:52+02:00">01. April 2013 11:18</time>                    <div class="post-edited">Post edited 2                        x times, last by <div class="user-info"><div class="user-name ">NLG</div></div> <time datetime="2015-04-10T18:38:34+02:00">10. April 2015 18:38</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">NLG</div></div>            </div>
+            <div class="post-main">
+                Hi guys,<br />
+<br />
+I just found out about better battlelog and got really exited, this thing is so cool along with bf3stats.com! <br />
+<br />
+Anyways, I&#039;m a noob, and I often end up in servers that are way over my head and I wanted a way to see if a server would be too difficult for me - or just perfect. <br />
+<br />
+I took a glimpse of your plugins thingy and got off with something like this: <br />
+<div class="inline post-url">http://i.imgur.com/GLd9FGP.png</div><br />
+EDIT: Swtiched the dropbox link to imgur link.<br />
+<br />
+It simply gets the average and mean rank of that server&#039;s players and assigns a color to that level on certain ranges.<br />
+<br />
+Its really pre-alpha with just moments of developing so far, so I&#039;m not releasing it yet. I want to have a talk how one should do what I have done. So here&#039;s what it currently does step by step:<br />
+1. On domchange if we have a playerlist on the right open and it&#039;s different than the last one<br />
+2. Fetch all the players playing on said server using Battlelog&#039;s own REST api<br />
+3. Loop through each and every player - do a request for each of them and their rank and store it<br />
+4. Sum them up and get the average and mean levels for that server, and assign a color to them based on your level.<br />
+<br />
+What troubles me, is the huge amount of requests per server - 65 normal requests on 65 people maps - it&#039;s insane. At first I wanted to use BF3stats.com API and fetch all the users at once, but it didnt seem to return any information on player&#039;s ranks what so ever.<br />
+<br />
+So - how should I go about making this thing better, properly and good enough so I can release it - if there&#039;s any interest on that? And what is a good way to assess the difficulty of the server? The rank based average seems to be kinda... lacking perhaps? Oh - and is there a better plugin that does something similiar to this already?<br />
+<br />
+EDIT: So its been ages, I&#039;ve totally forgotten about this and Johntron did some fixes to get this working on BF4 and I just merged them in. The github repo is here <div class="inline post-url">https://github.com/NikkiLoveGod/Nooblook</div> and if you want to use this plugin you can use the following url in BBLog:  <div class="inline post-url">https://cdn.rawgit.com/NikkiLoveGod/Nooblook/master/nooblook.js</div><br />
+<br />
+Just click on some server on server browser and it should try to load the the difficulty. It&#039;s a little buggy with the loading icons and what nots, so click away and see what happens.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-04-01T12:28:32+02:00">01. April 2013 12:28</time>                                <div class="user-info"><div class="user-name mod">Meaurk</div><div class="user-role">Global Moderator</div></div>            </div>
+            <div class="post-main">
+                <blockquote>So - how should I go about making this thing better, properly and good enough so I can release it - if there&#039;s any interest on that?</blockquote><br />
+The concept of your plugin is actually great! I look forward to see it released. And I think there will be plenty of people using it.<br />
+<br />
+<blockquote>Oh - and is there a better plugin that does something similiar to this already?</blockquote><br />
+No, there isn&#039;t one.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-04-01T15:26:02+02:00">01. April 2013 15:26</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                The fastest way is:<br />
+<br />
+1. Only load for selected server.<br />
+2. Load via b3stats.com api with one requests for a server. You can give a list of players (playerlist at API) and receive the ranks and points.<br />
+<br />
+All other ways are not recommended and produce a very huge amount of requests to the battlelog server. This make battlelog slower for the user that fire the requests and also make battlelog slower for everyone if much people use it at the same time.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-04-02T02:05:24+02:00">02. April 2013 02:05</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name ">NLG</div></div> <time datetime="2013-04-02T02:07:55+02:00">02. April 2013 02:07</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">NLG</div></div>            </div>
+            <div class="post-main">
+                Hey all!<br />
+<br />
+Thanks for the tips - I thought I looked into the BF3stats api and saw no ranking there, but like you said, there it was. So I changed the plugin to now fetch the data from BF3stats which comes with two downsides <br />
+<br />
+1st. It&#039;s actually a bit slower than the Battlelog REST api itself, even when you can reduce 60 requests to just one request. <br />
+2nd. BF3stats are not the most accurate one, they are missing quite a lot of players from their databases and updating said users on a realtime app like this would just simply take too long. So now the listing isn&#039;t giving completely accurate stats, but hey, it works.<br />
+<br />
+So currently if a realm&#039;s Average rank is over 20 levels lower than you, it shows it as gray, and if it&#039;s less than that lower than you, it&#039;s green, and from there on every 10 levels it gets closer to red, until its over 40 levels higher and its completely red.<br />
+<br />
+Here&#039;s a screenshot from current version:<br />
+<div class="inline post-url">http://i.imgur.com/eLNfHAe.png</div><br />
+<br />
+You can find the plugin here <div class="inline post-url">https://github.com/NikkiLoveGod/Nooblook</div> - feel free to fork it, give tips, add suggestions and what not - i&#039;m still a beginner programmer so I might be way off with things :) Oh - and it&#039;s pretty much straight from the over - no testing, so you USE IT WITH YOUR OWN CAUTION!<br />
+<br />
+Oh, and as for the future - I&#039;ll develop it if there&#039;s any interest in it, and possibly a button to make it &quot;topdog&quot; mode so it wont compare your level to others, just categorize servers according to levels, so you wont see just gray servers if you are rank 145 :P            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-04-02T08:54:55+02:00">02. April 2013 08:54</time>                                <div class="user-info"><div class="user-name mod">ORFK</div><div class="user-role">Global Moderator</div></div>            </div>
+            <div class="post-main">
+                what i doesn&#039;t understand, why do you not caluclate with the SKILL Level?<br />
+The Skill said more about the games quality than the rank.<br />
+you can push your rank on a flagrun server till Colonel 100 and being a fullnoob in 1:1 fights.<br />
+so i would prefer if you would check the average skill level on the server and compare it with yours.<br />
+would make mor sense, i hope.<br />
+<br />
+optionally for the feature you could build in a choose function, so the user could have the possibility what should be compared. rank, skill, K/D, time played... all data are available form bf3stats, so this could all be compared.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-04-02T09:24:59+02:00">02. April 2013 09:24</time>                                <div class="user-info"><div class="user-name themes">juress</div><div class="user-role">Theme Developer</div></div>            </div>
+            <div class="post-main">
+                Yup, skill would definitely be better than rank.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-04-02T10:54:57+02:00">02. April 2013 10:54</time>                                <div class="user-info"><div class="user-name ">I_like_Chocolate</div></div>            </div>
+            <div class="post-main">
+                very cool plugin but with the skill level it would make more sense            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-04-02T10:59:21+02:00">02. April 2013 10:59</time>                                <div class="user-info"><div class="user-name ">I_like_Chocolate</div></div>            </div>
+            <div class="post-main">
+                i don&#039;t get how to install it or which link i should take 0.o<br />
+the site is new for me.. i.. really  don&#039;T get it :/            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-04-02T11:04:50+02:00">02. April 2013 11:04</time>                                <div class="user-info"><div class="user-name ">Brady_The</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">twm-killerkeks wrote:</div>i don&#039;t get how to install it or which link i should take 0.o<br />
+the site is new for me.. i.. really  don&#039;T get it :/</blockquote><br />
+I would go with this link: <div class="inline post-url">https://raw.github.com/NikkiLoveGod/Nooblook/master/nooblook.js</div>            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-04-02T11:15:50+02:00">02. April 2013 11:15</time>                                <div class="user-info"><div class="user-name ">I_like_Chocolate</div></div>            </div>
+            <div class="post-main">
+                i took this link now<br />
+it does not work i show with pics<br />
+<br />
+<div class="inline post-url">plugin in.png</div><br />
+i have the link that you gave me<br />
+<br />
+<div class="inline post-url">allowed.png</div><br />
+i allowed github in my anti javascript plugin of chrome<br />
+<br />
+<div class="inline post-url">not shown.png</div><br />
+it isn&#039;t shown<br />
+<br />
+don&#039;t know why            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-04-02T12:23:14+02:00">02. April 2013 12:23</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">NLG</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">ORFK wrote:</div>what i doesn&#039;t understand, why do you not caluclate with the SKILL Level?<br />
+The Skill said more about the games quality than the rank.</blockquote><br />
+<br />
+I&#039;m not familiar with the BF3stats skill level. How does it determine your skill, and is it accurate - or is it more accurate than rank?<br />
+<br />
+<blockquote><div class="user">ORFK wrote:</div>optionally for the feature you could build in a choose function, so the user could have the possibility what should be compared. rank, skill, K/D, time played... all data are available form bf3stats, so this could all be compared.</blockquote><br />
+<br />
+This is a good suggestion and I&#039;ll take into consideration. One problem though - If I put up config flags, they show up as checkboxes and not as radio boxes (or dropdown). This means that you can select more than one, and for this plugin it doesn&#039;t work.<br />
+<br />
+<blockquote>it isn&#039;t shown</blockquote><br />
+<br />
+In your picture all of your servers are empty - There needs to be people in there playing for it to scan them, and then calculate the average rank. If you still have trouble, let me know - possibly with a chrome developer tools screenshot :)<br />
+<br />
+<blockquote>I would go with this link: <div class="inline post-url">https://raw.github.com/NikkiLoveGod/Nooblook/master/nooblook.js</div></blockquote><br />
+<br />
+Yup. This -unless github isn&#039;t hot on hotlinking, in which case I should host it somewhere else, or you can host it your self.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-04-02T12:51:55+02:00">02. April 2013 12:51</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name mod">ORFK</div><div class="user-role">Global Moderator</div></div> <time datetime="2013-04-02T12:53:48+02:00">02. April 2013 12:53</time></div>
+                                                    <div class="user-info"><div class="user-name mod">ORFK</div><div class="user-role">Global Moderator</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">NLG wrote:</div>I&#039;m not familiar with the BF3stats skill level. How does it determine your skill, and is it accurate - or is it more accurate than rank?</blockquote><br />
+first, its not a BF3stats Skill level, its a Battlefield / Battlelog skill level.<br />
+Don&#039;t know how often you had checked your profile, but that includes the Skill Level.<br />
+<br />
+The Skill Level is calculated with how many higher ranked/skilled or how many lower ranked/skilled you had killed or had killed you. F.e. if you kill somebody with an higher rank and higher skill level, your skill level will grow up more, than the skill level of the same person (with higher level) if he would killed you. if you loose a fight with a lower ranked player your skill loose more points than you would loose a fight with an higher ranked player.<br />
+<br />
+<blockquote>If I put up config flags, they show up as checkboxes and not as radio boxes (or dropdown). This means that you can select more than one, and for this plugin it doesn&#039;t work.</blockquote><br />
+well than make it workable ;-) it can be compared if you have selected more than one option, the point is only that your plugin have to know how to calculate this. i&#039;m sure there will be a good system.<br />
+<br />
+for me it would be enough if it would compare the skill level, because that sais more/less something about the fight level of your enemies. as i said. Rank is only rank. can be bushed. not the best way ^^            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-04-02T13:02:50+02:00">02. April 2013 13:02</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">NLG</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">ORFK wrote:</div> me it would be enough if it would compare the skill level, because that sais more/less something about the fight level of your enemies. as i said. Rank is only rank. can be bushed. not the best way ^^</blockquote><br />
+<br />
+I agree with you on the skill level - never noticed that it&#039;s a battlelog thing. I&#039;ll change it around tonight at some point :) I&#039;ll also see if I can make a selector thing there!            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-04-02T13:19:29+02:00">02. April 2013 13:19</time>                                <div class="user-info"><div class="user-name ">I_like_Chocolate</div></div>            </div>
+            <div class="post-main">
+                oh man i am so dumb xD<br />
+in the morning there are less players in europe, thx my mistake :D            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-04-02T21:15:22+02:00">02. April 2013 21:15</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">NLG</div></div>            </div>
+            <div class="post-main">
+                Okay guys, I&#039;m now looking into switching the levels into skill based comparison - the problem being I have no idea how to compare skill levels. Ranks are easy - If you&#039;re 50 levels over me, you&#039;ve played a ton more than I have and therefore its highly likely that you are way over my head - so red etc. <br />
+<br />
+How would I figure out what skill level is easy and what is hard? Whats the range or ratio and so on?            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-04-02T21:20:51+02:00">02. April 2013 21:20</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name themes">juress</div><div class="user-role">Theme Developer</div></div> <time datetime="2013-04-02T21:21:10+02:00">02. April 2013 21:21</time></div>
+                                                    <div class="user-info"><div class="user-name themes">juress</div><div class="user-role">Theme Developer</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">NLG wrote:</div>Okay guys, I&#039;m now looking into switching the levels into skill based comparison - the problem being I have no idea how to compare skill levels. Ranks are easy - If you&#039;re 50 levels over me, you&#039;ve played a ton more than I have and therefore its highly likely that you are way over my head - so red etc. <br />
+<br />
+How would I figure out what skill level is easy and what is hard? Whats the range or ratio and so on? </blockquote><br />
+Under 200 = noob<br />
+200-400 = low level player<br />
+400-600 = medium level player<br />
+600-800 = skilled player<br />
+800-1000 = highly skilled player <br />
+1000+ = &uuml;ber pwner super mega skilled player to the max            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-04-02T21:27:59+02:00">02. April 2013 21:27</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">NLG</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">juress wrote:</div><br />
+Under 200 = noob<br />
+200-400 = low level player<br />
+400-600 = medium level player<br />
+600-800 = skilled player<br />
+800-1000 = highly skilled player <br />
+1000+ = &uuml;ber pwner super mega skilled player to the max</blockquote><br />
+<br />
+How do you come to this conclusion? And how do I compare say a skill level of 450 to 500 - how big is the difference? Or would you say that a 500 skill level player will have hard time against 600 skill level player, or what do you think the &quot;treshold&quot; is?<br />
+<br />
+What my aim is - I am a 450 skill lvl player, I need to know what skill level is easy for me - or green, and what is very hard - or red.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-04-02T21:41:23+02:00">02. April 2013 21:41</time>                                <div class="user-info"><div class="user-name themes">juress</div><div class="user-role">Theme Developer</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">NLG wrote:</div><br />
+How do you come to this conclusion? </blockquote><br />
+Own experience.<br />
+<br />
+<blockquote><div class="user">NLG wrote:</div>And how do I compare say a skill level of 450 to 500 - how big is the difference?</blockquote><br />
+Not so big, thats why i gave you the range of 200 for each level...<br />
+<br />
+<blockquote><div class="user">NLG wrote:</div>Or would you say that a 500 skill level player will have hard time against 600 skill level player, or what do you think the &quot;treshold&quot; is?</blockquote><br />
+500 to 600 is a mild progress, not a hard challange. So it&#039;s still in the range of the difficulty level.<br />
+<br />
+<blockquote><div class="user">NLG wrote:</div>What my aim is - I am a 450 skill lvl player, I need to know what skill level is easy for me - or green, and what is very hard - or red. </blockquote><br />
+For player with 450 skill it would be like so:<br />
+<br />
+0 - super easy<br />
+100 - very easy<br />
+200 - easy<br />
+300 - calm &quot;no-stress&quot; game<br />
+400 - normal game (400-500)<br />
+and the same you can apply for the higher numbers<br />
+<br />
+I guess you can start by adding skill level of players on each side and divide it by the number of players on that side. That would give you 2 numbers you could compare to each other. If there is a big difference between the two numbers (teams) you have a big chance there is a base rape going on on the server or just badly stacked up teams.<br />
+Then you can also compare those two numbers to your skill and find out what the gap is. If it&#039;s smaller than 100 skill, it&#039;s the same level of difficulty. <br />
+<br />
+All of this is ofcourse very simple and probably not gonna show the difficulty of the game at all, since there are other factors to consider like:<br />
+<br />
+- team play: more ppl from one clan or simply friends on TS cooperating which gives them considerable advantage<br />
+- the difference between 2 highly skilled players + 14 low to med level players and 16 med to high level players<br />
+<br />
+It&#039;s up to you what kind of detail you put into the skill level range, but to be honest - 100 diference is (for me) considered little to no advancement in skill of the player.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-04-02T22:06:12+02:00">02. April 2013 22:06</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">NLG</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">juress wrote:</div><br />
+For player with 450 skill it would be like so:<br />
+<br />
+0 - super easy<br />
+100 - very easy<br />
+200 - easy<br />
+300 - calm &quot;no-stress&quot; game<br />
+400 - normal game (400-500)<br />
+and the same you can apply for the higher numbers<br />
+</blockquote><br />
+<br />
+Thank you, this was really helpful! Would you consider this to work on higher levels as well - say if I were a 800 skill lvl player - would 600 skill still be easy? For now, I&#039;m going to run with this and go with somewhere between 100 and 200 levels per &quot;jump&quot;.<br />
+<br />
+<blockquote><div class="user">juress wrote:</div><br />
+I guess you can start by adding skill level of players on each side and divide it by the number of players on that side. That would give you 2 numbers you could compare to each other. If there is a big difference between the two numbers (teams) you have a big chance there is a base rape going on on the server or just badly stacked up teams.<br />
+</blockquote><br />
+<br />
+This was actually incredibly good suggestion and worth doing! There could be an icon that indicates &quot;possibly uneven teams&quot;, but I&#039;m gonna leave that to the backburner since if I add anymore info, I&#039;m going to run out of space and I need to start doing some UI design to make it work :) Also taking this plugin this route might change its meaning more to a server inspector type of thing (which might not be a bad idea at all!) but lets try this out first. Simple needs and simple solutions! <br />
+<br />
+<blockquote><div class="user">juress wrote:</div><br />
+Then you can also compare those two numbers to your skill and find out what the gap is. If it&#039;s smaller than 100 skill, it&#039;s the same level of difficulty. <br />
+</blockquote><br />
+<br />
+While it could give you some extra info on what team you should join to what advantage, I think it would be more of an information clutter to display both of the teams levels there<br />
+<br />
+<blockquote><div class="user">juress wrote:</div><br />
+All of this is ofcourse very simple and probably not gonna show the difficulty of the game at all, since there are other factors to consider like:<br />
+<br />
+- team play: more ppl from one clan or simply friends on TS cooperating which gives them considerable advantage<br />
+- the difference between 2 highly skilled players + 14 low to med level players and 16 med to high level players<br />
+</blockquote><br />
+<br />
+While I dont agree on the &quot;difficulty of the game at all&quot;, since I believe this type of indicator is atleast a DECENT indicator when you&#039;re a beginner, but I agree that there is way more to this than just skill, rank or measly stats. I dont mean to make this &quot;the definitive server inspector&quot; - just a tad bit more insight on the server you&#039;re about to join :)            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-04-02T23:34:57+02:00">02. April 2013 23:34</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name trans">Dendari</div><div class="user-role">Translator</div></div> <time datetime="2013-04-02T23:56:06+02:00">02. April 2013 23:56</time></div>
+                                                    <div class="user-info"><div class="user-name trans">Dendari</div><div class="user-role">Translator</div></div>            </div>
+            <div class="post-main">
+                TBH, I&#039;m not sure how skill is a better indicator than the player level.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-04-03T00:01:46+02:00">03. April 2013 00:01</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">NLG</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">Dendari wrote:</div>TBH, I&#039;m not sure how skill is a better indication than the player level.</blockquote><br />
+TBH - I&#039;m starting to think that aswell - I finished making the transition from Rank to Skill and when I go through the serverlist, there are one or two skill lvl 600 servers, couple 500, loads 400 and some 300 and one 200 (generalising). There are simply too many 400&#039;s players around for the average (or even the median) to move from that, and yet I feel that there is a noticable difference in servers. <br />
+<br />
+Solution 1. If the average skill is actually a good indicator of server difficulty (which empirical testing will tell), reduce the 100 lvl range to more minute, like 30 and tweak how it compares it to your skill to get a feel of &quot;difficulty&quot;.<br />
+<br />
+This is not to say that Rank would be any better - just that It had more diversity, and with lack of testing I can&#039;t say if it was a good indicator either<br />
+<br />
+Solution 2. Think of another way to compare peoples skill - Time played? In my case there&#039;s about 400 hours  /played difference between skill of 450 and 720 and that is a huge difference. Maybe a combination of sorts that takes something else into consideration, like the team balance or something? (And yes, I recognize that Skill lvl is a combination of things - in a much higher detail that I can comfortably calculate). <br />
+<br />
+Or.. maybe Juress was right and the general feeling of &quot;how difficult this server is&quot; is not based on the server&#039;s players individual skill - even if averaged, but rather a factor of something(s) else completely. <br />
+<br />
+Ideas and discussion!            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-04-03T00:10:56+02:00">03. April 2013 00:10</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">NLG</div></div>            </div>
+            <div class="post-main">
+                I pushed the switch from rank to skill to github - <div class="inline post-url">https://github.com/NikkiLoveGod/Nooblook/</div> <br />
+<br />
+Skill version and latest: <br />
+<div class="inline post-url">https://raw.github.com/NikkiLoveGod/Nooblook/master/nooblook.js</div><br />
+<br />
+Rank version (old and with a bug in getting the correct indicator color on higher levels): <br />
+<div class="inline post-url">https://raw.github.com/NikkiLoveGod/Nooblook/688baf8e78805299e2f2a67cc671d3f18c9c338b/nooblook.js</div>            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-04-03T01:27:13+02:00">03. April 2013 01:27</time>                                <div class="user-info"><div class="user-name mod">ORFK</div><div class="user-role">Global Moderator</div></div>            </div>
+            <div class="post-main">
+                did&#039;t found in your topic but what does the numbers mean?<br />
+i mean, you have once a number and than another one in &quot;(&quot; and &quot;)&quot; (dont know the english name and dont want to search). can you please explane (again) these datas?<br />
+<br />
+otherwise the plugin works well for me.. but i still cant test the &quot;red&quot; bars because no server have higher skilled player Oo.. and i&#039;m wondering because i know i&#039;m not the best Oo            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-04-03T01:37:19+02:00">03. April 2013 01:37</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">NLG</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">ORFK wrote:</div>did&#039;t found in your topic but what does the numbers mean?</blockquote><br />
+<br />
+The numbers are average skill level of that server, (all players skill levels summed up, and divided by the number of players) and the one in parenthesis is the &quot;average median&quot; skill level of that server (all players skill levels are ordered from the lowest to highest, and then taken the one in the middle - or in case of even number, the average of the two in the middle).<br />
+<br />
+Now I  had a pretty good suggestion from a friend - the average skill and average rank are all a bit hazy, but what one MIGHT be interested is &quot;According to skill level, I am better than 37% of the people on this server&quot;. Maybe we can get a good indicator with using that knowledge and the average level. It might get hazy if we start combining all of these to a make our own &quot;how well you&#039;ll fare -score&quot; but maybe we can work something out!            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-04-03T08:36:17+02:00">03. April 2013 08:36</time>                                <div class="user-info"><div class="user-name mod">ORFK</div><div class="user-role">Global Moderator</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">NLG wrote:</div>The numbers are average skill level of that server, (all players skill levels summed up, and divided by the number of players) and the one in parenthesis is the &quot;average median&quot; skill level of that server (all players skill levels are ordered from the lowest to highest, and then taken the one in the middle - or in case of even number, the average of the two in the middle).</blockquote><br />
+<br />
+thx, i know how to calculate the average of something ;-) and i think this system is ok, but the secound in these &quot;parenthesis&quot; are absolutely useless. i would take them out, they just confusing and not really understandable.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-04-03T09:07:43+02:00">03. April 2013 09:07</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name themes">juress</div><div class="user-role">Theme Developer</div></div> <time datetime="2013-04-03T09:11:32+02:00">03. April 2013 09:11</time></div>
+                                                    <div class="user-info"><div class="user-name themes">juress</div><div class="user-role">Theme Developer</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">NLG wrote:</div><blockquote><div class="user">Dendari wrote:</div>TBH, I&#039;m not sure how skill is a better indication than the player level.</blockquote><br />
+TBH - I&#039;m starting to think that aswell - I finished making the transition from Rank to Skill and when I go through the serverlist, there are one or two skill lvl 600 servers, couple 500, loads 400 and some 300 and one 200 (generalising). There are simply too many 400&#039;s players around for the average (or even the median) to move from that, and yet I feel that there is a noticable difference in servers. </blockquote><br />
+See, but you can already work with these numbers.<br />
+It&#039;s clearly showing, that the 200 skill server is for noobs and you would have a relaxing game there, as opposeed to the 600 skill one, where obviously are playing some mid to high or even high skill level players, which would be a challange for you.<br />
+<br />
+<div class="tag tag-b">The challange for you here, is to find the perfect formula, that creates your final result. That is - the &quot;gap&quot; between skill level of you and players on the server.</div><br />
+<br />
+- The base rape thing i suggested - you don&#039;t need to show that information directly on every server you get in server browser. There is still a lot of room in the server detail collumb once you click on one in the browser.<br />
+<br />
+<div class="inline post-url">http://i.imgur.com/rb1r3hO.png</div><br />
+<br />
+Now here is an example of extended information about the server, by Battlelog plus (which sadly isn&#039;t in development anymore and I&#039;m using it for this feature alone.)<br />
+You can see it creates average ranks and score on both sides which gives you some kind of idea what server are you joining. Combined with ticket difference, you can offten clearly see, that this is a game of base rape and you shouldn&#039;t join since the server doesen&#039;t have any form of protection against that.<br />
+<br />
+Now with your plugin, you could do the same, but choose skill, or KD, or SPM to determine what kind of a game you&#039;re looking at. Now I have to tell you - both KD and SPM can be boosted by playing metro 64 noob toob only so I wouldn&#039;t use those, or maybe in combination with some other stat.<br />
+<br />
+Just for your information: skill value is being used by DICE for matchmaking, so there is already some level of reliability. Skill level rises if you kill a player with higher skill and lowers if you are killed by player with lower skill. + there is probably some spm and kd included there.<br />
+<br />
+<blockquote><div class="user">NLG wrote:</div><br />
+&quot;According to skill level, I am better than 37% of the people on this server&quot;.  </blockquote><br />
+That is a very good idea.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-04-03T12:32:43+02:00">03. April 2013 12:32</time>                                <div class="user-info"><div class="user-name ">Kelnoc</div></div>            </div>
+            <div class="post-main">
+                Hi,<br />
+<br />
+i really love this plugin so far =)<br />
+<br />
+Now, i have a suggestion and a bug. The plugin works fine for the server-browser but not in the history or favoritelist. Is it possible to make this happen?<br />
+<br />
+As for the bug: when you click on two server shortly after each other and the first isn&#039;t done yet, the data of both servers is shown in the second. <br />
+<br />
+<div class="inline post-url">http://img194.imageshack.us/img194/662/bugls.png</div>            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-04-03T23:19:50+02:00">03. April 2013 23:19</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">NLG</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">ORFK wrote:</div>thx, i know how to calculate the average of something ;-) and i think this system is ok, but the secound in these &quot;parenthesis&quot; are absolutely useless. i would take them out, they just confusing and not really understandable.</blockquote><br />
+<br />
+I was watching khanacademy.org on averages a while ago, and there I heard that in some places they call different things &quot;the average&quot;. In this case I&#039;m calling the arithmetic mean (yup, I wikipedia&#039;d that ;D) &quot;the average&quot; and wanted to clear it up!<br />
+<br />
+But if I understood correctly, that if the average and the median skill levels differs by a largish gap, there&#039;s a bigger variety of skill levels there - a wider range, meaning that the indicator might be as accurate in this case :P            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-04-03T23:42:22+02:00">03. April 2013 23:42</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name ">NLG</div></div> <time datetime="2013-04-03T23:43:06+02:00">03. April 2013 23:43</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">NLG</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">juress wrote:</div>See, but you can already work with these numbers.<br />
+<br />
+<div class="tag tag-b">The challange for you here, is to find the perfect formula, that creates your final result. That is - the &quot;gap&quot; between skill level of you and players on the server.</div><br />
+</blockquote><br />
+<br />
+I kinda agree. Then it means that a 400 lvl server represents a &quot;low&quot; server, 500 is a &quot;medium&quot; server and 600 is a high server. Meaning that a skill lvl 800 player will not find 600 lvl server as relaxing as one might think and thus meaning this is kinda inaccurate way to describe it. Although - it&#039;s a decent start never the less! Maybe the right way is to provide this data along other data so show a general feel for the server at a glimpse.<br />
+<br />
+<blockquote><div class="user">juress wrote:</div><br />
+- The base rape thing i suggested - you don&#039;t need to show that information directly on every server you get in server browser. There is still a lot of room in the server detail collumb once you click on one in the browser.<br />
+</blockquote><br />
+<br />
+That is true aswell, but I find my self largely ignoring the whole right column as it is and I&#039;m hoping to make the plugin &quot;detail at a glimpse&quot; type of thing. <br />
+<br />
+<blockquote><div class="user">juress wrote:</div><br />
+You can see it creates average ranks and score on both sides which gives you some kind of idea what server are you joining. <br />
+</blockquote><br />
+<br />
+I like the way they have displayed the info, I just might follow up on this<br />
+<br />
+<div class="tag tag-b">What if I were to ditch the CQ AK B2K icons, and replace them with icons of my own? No one is actually using those are they?</div><br />
+<br />
+What I mean by this, instead of the premium and close quarter small icons, you would get fe. babyface icon on a noob server, skull on a pro server, some icon if there&#039;s a high skill gap between teams and so on for different things. Not making it too cluttered ofcourse, and then possibly displaying additional detail in the right column?<br />
+<br />
+<blockquote><div class="user">juress wrote:</div><br />
+Just for your information: skill value is being used by DICE for matchmaking, so there is already some level of reliability. Skill level rises if you kill a player with higher skill and lowers if you are killed by player with lower skill. + there is probably some spm and kd included there.<br />
+</blockquote><br />
+<br />
+From what I gather, there&#039;s no spm included - its just the killing and dying to stronger or lesser player. What troubles me, is that your skill level fluctuates INSANELY - meaning that its really volatile and fluctuates on different things. In my game, it gave me -80 points when i was dying in the 600 level server with kd ~0.8 and gave me ~150 points when I was playing in the 300 lvl server with kd ~1.5<br />
+<br />
+<br />
+<br />
+<blockquote><div class="user">juress wrote:</div><blockquote><div class="user">NLG wrote:</div><br />
+&quot;According to skill level, I am better than 37% of the people on this server&quot;.  </blockquote><br />
+That is a very good idea.</blockquote><br />
+<br />
+I also like this, but it feels that this leaves out the info on &quot;Okay I&#039;m better, but by what margin?&quot;. Well, maybe it&#039;s fine with the avg level comparison.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-04-04T00:00:12+02:00">04. April 2013 00:00</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">NLG</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">Kelnoc wrote:</div> The plugin works fine for the server-browser but not in the history or favoritelist. Is it possible to make this happen?</blockquote><br />
+<br />
+I&#039;m glad you like it! :)<br />
+<br />
+The plugin works in both of those situations, but the way it&#039;s done, it requires the players list to be open. In history and favorites tab of server browser, the playerlist in the right is not automatically opened so you have to press &quot;Show all players&quot; and then it will automatically load the average skill for the server. I guess I should automate this aswell :)<br />
+<br />
+But where it really doesn&#039;t work - in the detailed server view where you can see each players individual rank etc and I&#039;ll make this work somewhere in the future.<br />
+<br />
+<blockquote><div class="user">Kelnoc wrote:</div><br />
+As for the bug: when you click on two server shortly after each other and the first isn&#039;t done yet, the data of both servers is shown in the second. <br />
+</blockquote><br />
+<br />
+I came across this one too, but didn&#039;t figure out what caused it, thanks!            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-04-06T15:31:07+02:00">06. April 2013 15:31</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">NLG</div></div>            </div>
+            <div class="post-main">
+                Guys, any idea how I can get the team specific list of players through bf3 api, or battlelog dom? So far I haven&#039;t been able to pick any info :S Seems like I have to return to use battlelogs own API and do specific searches on servers and people. O            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-04-06T16:33:56+02:00">06. April 2013 16:33</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                The only way is actually the live update view on server detail page. Maybe you find some techniques there.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-04-06T17:49:41+02:00">06. April 2013 17:49</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name ">GameFreakBoy</div></div> <time datetime="2013-04-06T18:04:47+02:00">06. April 2013 18:04</time></div>
+                                                    <div class="user-info"><div class="user-name ">GameFreakBoy</div></div>            </div>
+            <div class="post-main">
+                I&#039;m pretty sure this wasn&#039;t mentioned yet, at least I hope it wasn&#039;t, but don&#039;t forget about accuracy and head shot kill ratio. I find that this makes for a difficult opponent, and, if at all possible, have it only check the history of the last 30 days or so as they could have had REALLY bad aim when they first started out. <br />
+<br />
+Outliers could also be tossed out completely as long as there are only one or two of them. The average could be thrown off and wouldn&#039;t really make a difference in 64 player servers, but odds are that there will always be quite a few in each skill level.<br />
+<br />
+Edit: also, it will not work for me. I&#039;m using firefox; will that mess with anything?            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-04-06T18:25:38+02:00">06. April 2013 18:25</time>                                <div class="user-info"><div class="user-name ">bullet-magnet45</div></div>            </div>
+            <div class="post-main">
+                In order to decide what algorithm you need to accurately describe the aggregate skill level of players on a server, you really need to know how the skill level is calculated.  Then you can decide if you want to use the average, the medium, the coefficient of variation or what.  Is the skill level calculated as the difference beteween the skill level (or is it rank?) of the two players involved in a death or is it a ratio or what?            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-04-06T20:31:04+02:00">06. April 2013 20:31</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name ">NLG</div></div> <time datetime="2013-04-06T20:31:18+02:00">06. April 2013 20:31</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">NLG</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">GameFreakBoy wrote:</div>I&#039;m pretty sure this wasn&#039;t mentioned yet, at least I hope it wasn&#039;t, but don&#039;t forget about accuracy and head shot kill ratio. I find that this makes for a difficult opponent, and, if at all possible, have it only check the history of the last 30 days or so as they could have had REALLY bad aim when they first started out. <br />
+</blockquote><br />
+<br />
+This is also a decent idea, but I dont think using it alone would be beneficial. Maybe in a separate &quot;extra info&quot; box or an alert icon &quot;Your accuracy is low compared to the servers average&quot; or something. <br />
+<br />
+What comes to the 30 days, BBlog does an accuracy history graph on each player in their profilepage and I think it comes from BF3stats, but I have found no way to access data on a particular time frame. Please direct me to the right direction if someone knows :)<br />
+<br />
+<blockquote><div class="user">GameFreakBoy wrote:</div><br />
+Outliers could also be tossed out completely as long as there are only one or two of them. The average could be thrown off and wouldn&#039;t really make a difference in 64 player servers, but odds are that there will always be quite a few in each skill level.<br />
+</blockquote><br />
+<br />
+I think that&#039;s what the Median value (the one in parenthesis) of skill brings in. It sort of tosses the outliers off the equation. <br />
+<br />
+<blockquote><div class="user">GameFreakBoy wrote:</div><br />
+Edit: also, it will not work for me. I&#039;m using firefox; will that mess with anything?</blockquote><br />
+<br />
+It&#039;s working for me on Firefox. Make sure you have restarted your browser, are checking on a server that has players, and the playerlist in the right column is open - displaying the player names.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-04-06T20:39:42+02:00">06. April 2013 20:39</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name ">NLG</div></div> <time datetime="2013-04-06T20:40:03+02:00">06. April 2013 20:40</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">NLG</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">bullet-magnet45 wrote:</div>In order to decide what algorithm you need to accurately describe the aggregate skill level of players on a server, you really need to know how the skill level is calculated.  Then you can decide if you want to use the average, the medium, the coefficient of variation or what.  Is the skill level calculated as the difference beteween the skill level (or is it rank?) of the two players involved in a death or is it a ratio or what? </blockquote><br />
+<br />
+It&#039;s just as you guessed, here&#039;s what DICE had to say about skill level a while back in a forum pin. Sadly the post is not available anymore.<br />
+<br />
+<blockquote><div class="user">DICE wrote:</div><br />
+&bull; You gain/loose SL based on every confrontation with another player<br />
+&bull; Killing a highly skilled enemy gives you more points than killing someone less skilled<br />
+&bull; Points are not transferred from a player to another, they are simply added/subtracted based on the encounter and the SL of both parts (thus, after an encounter, one part may go up 50 points while the other loses only 20)<br />
+&bull; The SL is used for matchmaking<br />
+</blockquote><br />
+<br />
+Basically, It&#039;s an arbitrary value that fluctuates immensely, but so far the best we&#039;ve got. <br />
+<br />
+So far what&#039;s on my mind:<br />
+- Skill level works as an indicator of general difficulty, but getting the right brackets (or gaps) between &quot;easy&quot; and &quot;hard&quot; is challenging.<br />
+- Just using skill average as a sole indicator is lacking in terms of &quot;how enjoyable will my experience be&quot;. It does not factor in team imbalance, outliers in skill (those 50 - 3 dudes that just owns the place and sucks out the joy, especially in Air Supremacy),            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-04-06T23:46:49+02:00">06. April 2013 23:46</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">NLG</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">BrainFooLong wrote:</div>The only way is actually the live update view on server detail page. Maybe you find some techniques there.</blockquote><br />
+<br />
+I downloaded the Battlelog Plus addon (which like juress said, isn&#039;t developed anymore) and it seems that it is using batleloggers.com API. It also seems that Battleloggers is down from public, but somehow that is able to fetch and separate players into different teams. It is also able to duplicate the server inspector&#039;s live update thing into its own window which baffles me - It would be nice to know how it&#039;s done.<br />
+<br />
+I tried to poke around the plugin and see what it&#039;s doing, but its pretty advanced and I couldn&#039;t really reverse engineer it how it works just from the source. (Not to mention that I dont have any API keys to either battlelogplus api nor the battlelogger api). <br />
+<br />
+So, if you have any tips - they&#039;re welcomed :P            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-05-05T10:43:43+02:00">05. May 2013 10:43</time>                                <div class="user-info"><div class="user-name ">Eb0</div></div>            </div>
+            <div class="post-main">
+                This plugin looks really great !<br />
+<br />
+But sometimes, it&#039;s not able to determine the server difficulty. <br />
+It seems that there is an error while fetching players from bf3stats.<br />
+<br />
+Do you guys have the same issue?            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-05-28T03:22:28+02:00">28. May 2013 03:22</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name ">NLG</div></div> <time datetime="2013-05-28T03:26:28+02:00">28. May 2013 03:26</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">NLG</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">Eb0 wrote:</div>This plugin looks really great !<br />
+<br />
+But sometimes, it&#039;s not able to determine the server difficulty. <br />
+It seems that there is an error while fetching players from bf3stats.<br />
+<br />
+Do you guys have the same issue?</blockquote><br />
+<br />
+It seems there&#039;s some big updates going on in battlelog. I haven&#039;t been playing in a while and for that reason haven&#039;t seen the updates. So, it seems that they have changed the way the BL has been built and it broke the compatibility on both of my plugins, The nooblook and the assignmentinfo thing.<br />
+<br />
+I&#039;ll wait a while and see what comes of the new battlelog and then update the plugins. I don&#039;t really fancy the new look my self :(<br />
+<br />
+EDIT:<br />
+Oh, and all these plugins are in github (links in here somewhere :D) so feel free to fork and fix bugs if you wish to spend some time fooling around and make pull requests :)            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-07-04T00:59:27+02:00">04. July 2013 00:59</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name ">Johntron</div></div> <time datetime="2013-07-04T01:08:49+02:00">04. July 2013 01:08</time></div>
+                                                    <div class="user-info"><div class="user-name ">Johntron</div></div>            </div>
+            <div class="post-main">
+                I just fixed a problem I was having and sent you a pull request on Github. I&#039;m not sure if others were getting errors with the plugin, but my change fixed my issue.<br />
+<br />
+Oh, and here&#039;s the URL to my fixed plugin in case anyone wants to use it until the change is merged: <div class="inline post-url">https://github.com/johntron/Nooblook/blob/master/nooblook.js</div>            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-07-23T22:32:11+02:00">23. July 2013 22:32</time>                    <div class="post-edited">Post edited 2                        x times, last by <div class="user-info"><div class="user-name ">Pytal92</div></div> <time datetime="2013-07-23T23:41:27+02:00">23. July 2013 23:41</time></div>
+                                                    <div class="user-info"><div class="user-name ">Pytal92</div></div>            </div>
+            <div class="post-main">
+                I would love to use your plugin, but it doesn&#039;t work with Chrome or Firefox.<br />
+<br />
+I entered the link to the latest version of your plugin in the dedicated form, but it won&#039;t show up in my server browser. <br />
+<br />
+Is this plugin still useable?<br />
+<br />
+Thank you in advance! :)<br />
+<br />
+edit: I implemented Johntron&#039;s script and it works. Thanks!<br />
+<br />
+edit2: Every server is shown as easy, because of my skill: 964. XD            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-09-07T14:48:18+02:00">07. September 2013 14:48</time>                                <div class="user-info"><div class="user-name ">kataklism</div></div>            </div>
+            <div class="post-main">
+                i don&#039;t have any idea how this work,seriously,i don&#039;t even know where to start,and it&#039;s not a figure of speech.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-06-04T01:23:59+02:00">04. June 2014 01:23</time>                                <div class="user-info"><div class="user-name ">gunandbomb</div></div>            </div>
+            <div class="post-main">
+                Does this work for BF4?            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-10-19T17:32:56+02:00">19. October 2014 17:32</time>                                <div class="user-info"><div class="user-name ">Johntron</div></div>            </div>
+            <div class="post-main">
+                I just updated the code to work with latest version of bf4. You can install with this URL: <div class="inline post-url">https://cdn.rawgit.com/johntron/Nooblook/master/nooblook.js</div><br />
+<br />
+Note: there are probably bugs (e.g. when a server has no players). Feel free to fix them :)            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2015-02-27T14:44:47+01:00">27. February 2015 14:44</time>                                <div class="user-info"><div class="user-name ">SgtSixpack</div></div>            </div>
+            <div class="post-main">
+                How do I install this plugin?            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2015-04-03T06:37:23+02:00">03. April 2015 06:37</time>                                <div class="user-info"><div class="user-name ">Tauthe</div></div>            </div>
+            <div class="post-main">
+                An update for BFH would be great!!            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2015-04-03T06:53:16+02:00">03. April 2015 06:53</time>                                <div class="user-info"><div class="user-name cmanager">DaniluK4000</div><div class="user-role">Community Manager</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">Tauthe wrote:</div>An update for BFH would be great!!</blockquote><br />
+<br />
+If you speak about BBL BFH Battlelog Update, so what you want to will be add in future version? Any ideas? I think 4.8,0 give really great support for BFH            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2015-04-03T19:43:53+02:00">03. April 2015 19:43</time>                                <div class="user-info"><div class="user-name ">Tauthe</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">DaniluK4000 wrote:</div><blockquote><div class="user">Tauthe wrote:</div>An update for BFH would be great!!</blockquote><br />
+<br />
+If you speak about BBL BFH Battlelog Update, so what you want to will be add in future version? Any ideas? I think 4.8,0 give really great support for BFH</blockquote><br />
+<br />
+I mean an update of this plugin for battlefield hardline            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2015-04-10T18:31:40+02:00">10. April 2015 18:31</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">NLG</div></div>            </div>
+            <div class="post-main">
+                Good lord it has been ages. So someone approached me that my plugin was not working, and then I found out that I totally forgot not only about this plugin, but that Johntron had made a pull request that does some fixing for BF4.<br />
+<br />
+So I merged his fixes to the project, and it should at least run in the BF4 battlelog, but it seems to be a bit buggy - the &quot;loading&quot; gif seems a bit random, so you kinda have to just select a server and wait out if it loads it :P<br />
+<br />
+This could use a little love - hook it up for BF Hardline and so on, but I&#039;m not playing BF3 anymore, didnt even get BF4 so I don&#039;t think I&#039;ll be able to - at least for now. I&#039;m kinda interested in the Hardline, but we&#039;ll see about that...<br />
+<br />
+But yea - you can use the following url to get this working: <div class="inline post-url">https://cdn.rawgit.com/NikkiLoveGod/Nooblook/master/nooblook.js</div> <br />
+<br />
+(You could use the Johntron&#039;s link as well - I didn&#039;t do any additional fixes yet.)            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2015-04-30T00:30:32+02:00">30. April 2015 00:30</time>                                <div class="user-info"><div class="user-name ">Tealdragon204</div></div>            </div>
+            <div class="post-main">
+                Skill level doesn&#039;t really tell you the skill of a player. It is very erratic. Many players on the Battlelog forums won&#039;t judge other people because of this fact<br />
+I&#039;d say K/D, Accuracy, KPM and SPM, but that would be much more complex            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2015-05-11T17:09:19+02:00">11. May 2015 17:09</time>                    <div class="post-edited">Post edited 3                        x times, last by <div class="user-info"><div class="user-name ">FLYeRNeT</div></div> <time datetime="2015-05-12T16:53:39+02:00">12. May 2015 16:53</time></div>
+                                                    <div class="user-info"><div class="user-name ">FLYeRNeT</div></div>            </div>
+            <div class="post-main">
+                Hello, :D<br />
+<br />
+I&#039;m very interested by your plugin, but it seems not to work with BBLog 4.8.0 and BF4 :(<br />
+<br />
+I tried these two scripts :<br />
+<div class="inline post-url">https://cdn.rawgit.com/johntron/Nooblook/master/nooblook.js</div><br />
+<div class="inline post-url">https://cdn.rawgit.com/NikkiLoveGod/Nooblook/master/nooblook.js</div><br />
+<br />
+None of them are working for me...<br />
+Could you help me please ?<br />
+<br />
+Thanks per advance for your answer<br />
+<br />
+PS : I use some scripts for other functionnalities and they work, not this one.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2015-06-05T22:21:16+02:00">05. June 2015 22:21</time>                                <div class="user-info"><div class="user-name ">FLYeRNeT</div></div>            </div>
+            <div class="post-main">
+                <div class="tag tag-b">Does this plugin works for someone ?</div><br />
+<br />
+<br />
+With BF4 and BBLog 4.8.0...            </div>
+        </div>
+        <script src="../scripts/t.js"></script></body></html>

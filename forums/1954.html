@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dataminer searched! - Better Battlelog Forums #1954</title>
+    <link rel="stylesheet" href="../stylesheets/page.css" type="text/css">
+<script src="../scripts/p.js"></script>
+</head>
+<body class="forums-post left-side"><h2>Dataminer searched! - Better Battlelog Forums #1954</h2><a href="sitemap.html">Sitemap</a>        <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-08-20T11:04:29+02:00">20. August 2012 11:04</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Hi all BBLOG Fans out there!<br />
+<br />
+I need your help to find out some things on Battlelog.<br />
+As all of you know, we integrate in the future new custom made assignments.<br />
+For that i must understand and know all internally used parameters and saved values for a battlereport. <br />
+<br />
+So much data is available for a report but most of them are not used or not shown in battlelog.<br />
+To see all the available data for a report do the following:<br />
+1. Open Network Console in your browser (in my example press f12 in google chrome)<br />
+2. Enable only XHR Requests (in my example at the button the tab &quot;XHR&quot; enabled)<br />
+3. Open a battlereport in battlelog.<br />
+4. Open the fetched entry for with url &quot;loadplayerreport&quot;.<br />
+5. Open up the data in the &quot;Preview&quot; tab on the right side. <br />
+6. As you could see on my screenshot there are many keys/values.<br />
+<br />
+<div class="inline post-url">report.jpg</div><br />
+<br />
+I need to know what all of this keys/values means.<br />
+I have created a Google Docs Spreadsheet where everyone can enter new keys and their descriptions.<br />
+<div class="inline post-url">https://docs.google.com/spreadsheet/ccc?key=0AhdUpiSlz1gXdC16bXIybkhhREFLV2dncTRUY1ZqZGc</div>            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-08-20T15:43:58+02:00">20. August 2012 15:43</time>                                <div class="user-info"><div class="user-name mod">Nano</div><div class="user-role">Global Moderator</div></div>            </div>
+            <div class="post-main">
+                I&#039;ll update this sheet (updates with blue background is mine).<br />
+<br />
+<br />
+Edit: For Firefox users, use <div class="tag tag-b">https://addons.mozilla.org/firefox/addon/firebug/</div> (Network &gt; XHR)            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-08-20T16:02:38+02:00">20. August 2012 16:02</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Ok. Please everytime add the information if the score is per report or total sum for a player.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-08-21T00:44:14+02:00">21. August 2012 00:44</time>                                <div class="user-info"><div class="user-name ">caramelPig</div></div>            </div>
+            <div class="post-main">
+                OK, i found out a lot over the API description and some forum discussions on bf3stats.com which will be too much to post here in detail. But i will try to shorten the bunch of informations so we can get further to the actual problem: understanding the data given in the playerreport-object for implementing custom assignments.<br />
+<br />
+First of all, it seems that the sig-coder-API for displaying signature graphics from bf3stats is polling the same EA database as battlelog does. I have also found a lot of the keys from the battlereport within the API-response from bf3stats. So i think this would be a great point to start our search, because the guys from bf3stats have already formed the keys from the raw output into some human readable stuff which i think may help a lot. <br />
+I would even say that we/you (i will take the we further on ;))  could maybe play a bit with the whole API to get more familiar with all the data provided.<br />
+<br />
+Check out their API description on: <div class="inline post-url">http://bf3stats.com/api</div><br />
+They also provide a tester like a demo on the bottom of the page. The really interesting about that are the filters you can set. <br />
+<br />
+(sry, i may sound confusing, but i am getting more and more to the solution as i am writing this post and find more and more stuff which may help)<br />
+<br />
+OK, so here is what i did: <br />
+First i tried the following opts in the API tester: <br />
+DataGroup: player <div class="tag tag-i">//i know, this are overall stats, not battlereports</div> <br />
+output: lines <div class="tag tag-i">//for better reading now, later the json output will be more useful, i assume ;)</div><br />
+Platform: PC <div class="tag tag-i">//cause i am playing on PC :P</div><br />
+opt: clear,keys,raw <div class="tag tag-i">//check out the description above the tester for details</div><br />
+player: caramelPig <div class="tag tag-i">//feel free to use your own :D</div><br />
+<br />
+then i clicked on <div class="tag tag-i">display results</div>, <div class="tag tag-i">get response</div> is just opening another window<br />
+<br />
+*tadaaaaa* what you can see then is pretty much the same what you can find  in the playerreport object. Sure, there is a lot more in the API stats (cause they hold a lot more info), but i found almost every key within the API response using the browser search function (yes, i am lazy :P)<br />
+<br />
+example playerreport:<br />
+<code>c___sfw_g=417<br />
+c___shw_g=34</code><br />
+example API:<br />
+<code>stat.c___sfw_g=886376<br />
+stat.c___shw_g=71840</code><br />
+<br />
+OK, so far, so good. The next thing i did was to switch the opts from clear,keys,raw to clear,keys,assignments and that was a direct hit! Just do it for yourself and you will see what i mean: The cryptic keys are listed with a certain amount of criterias, even a text-form description and they reference to the raw output keys you have seen in the request before!<br />
+<br />
+<code>stats.assignments.xpma09.xpma09.count=&#039;stat.xpma09_00&#039;<br />
+stats.assignments.xpma09.xpma09.date=&#039;stat.xpma09_01&#039;<br />
+stats.assignments.xpma09.xpma09.active=true<br />
+stats.assignments.xpma09.xpma09.criteria&#91;0&#93;.curr=&#039;stat.c_xpma09___ca_g&#039;<br />
+stats.assignments.xpma09.xpma09.criteria&#91;0&#93;.needed=10<br />
+stats.assignments.xpma09.xpma09.criteria&#91;0&#93;.nname=&#039;Arm 10 MCOMs&#039;<br />
+stats.assignments.xpma09.xpma09.criteria&#91;1&#93;.curr=&#039;stat.c_xpma09___ccp_g&#039;<br />
+stats.assignments.xpma09.xpma09.criteria&#91;1&#93;.needed=10<br />
+stats.assignments.xpma09.xpma09.criteria&#91;1&#93;.nname=&#039;Capture 10 flags&#039;<br />
+stats.assignments.xpma09.xpma09.criteria&#91;2&#93;.curr=&#039;stat.c_xpma09_xp11__so_g&#039;<br />
+stats.assignments.xpma09.xpma09.criteria&#91;2&#93;.needed=7200<br />
+stats.assignments.xpma09.xpma09.criteria&#91;2&#93;.nname=&#039;Play 2 hours on Karkand&#039;</code><br />
+<br />
+Sure, there is still a lot more to find out (like the meanings of _g or _g_a, how to query a certain battle, and so on, and so on), but i think this is the first step to the planned feature :P<br />
+<br />
+During my &#039;sherlock-holmes-session&#039; this evening i stumbled upon some more possibilities that may help further (maybe even to leave this bf3stats API alone and go the way to EA directly) but also some restrictions or other problems in the API (like updates only every 20min, written in PHP-how to fix that??? or something like that) which i have to check first a bit deeper. Also i am tired as hell atm and will go to bed now. <br />
+You have to excuse if my english is not the best or if i have some typos somewhere... almost sleeping...<br />
+<br />
+Nevertheless i hope i could have helped you with the novel above. Maybe you are just shaking your head about my noobishness, cause you use most of this stuff already in your plugin. But I think it should keep you busy till tomorrow, if only by reading all this poorly structured stuff :D<br />
+<br />
+ah, and you may want to check this forum-posts and urls regarding the bf3stats API:<br />
+<div class="inline post-url">http://forum.p-stats.com/threads/981-BF3Stats-API-Class-A-simple-PHP-Framework-for-your-own-projects-WIP</div><br />
+<div class="inline post-url">http://forum.p-stats.com/threads/610-Sig-coding-Collection-of-useful-functions</div><br />
+<div class="inline post-url">https://github.com/Grezvany13/BF3Stats-API-Class</div><br />
+<br />
+so... hf and good night<br />
+obey!            </div>
+        </div>
+        <script src="../scripts/t.js"></script></body></html>

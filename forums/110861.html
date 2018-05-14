@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[BF4][v0.6][01.05.2014] Loadout Sets - Better Battlelog Forums #110861</title>
+    <link rel="stylesheet" href="../stylesheets/page.css" type="text/css">
+<script src="../scripts/p.js"></script>
+</head>
+<body class="forums-post left-side"><h2>[BF4][v0.6][01.05.2014] Loadout Sets - Better Battlelog Forums #110861</h2><a href="sitemap.html">Sitemap</a>        <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-11-09T20:50:10+01:00">09. November 2013 20:50</time>                    <div class="post-edited">Post edited 17                        x times, last by <div class="user-info"><div class="user-name ">poisonblx</div></div> <time datetime="2014-02-06T02:52:16+01:00">06. February 2014 02:52</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">poisonblx</div></div>            </div>
+            <div class="post-main">
+                Save and load entire sets of equipment! Spare yourself the embarrassment of walking into a sprawling battlefield with the equipment you lived and died by in the cloistered halls of a prison. Most importantly, give yourself and your team those all too valuable moments at the start of a new round that were once wasted on tediously picking through your equipment to suit the challenges you&#039;re facing next!<br />
+<br />
+<div class="post-image-prepared inline">Toys</div><br />
+<br />
+<div class="spoiler-button"><span>Plans/Ideas/To Do:</span></div><div class="spoiler">Future Needs:<br />
+- Translations ** Due to awesome people, this is in great shape.<br />
+- Variable number of loadout sets<br />
+- Add in sets for vehicles<br />
+- ?<br />
+<br />
+Future Wants:<br />
+- Per-map triggered auto-selection<br />
+- Export/Import of loadouts<br />
+- Dice to include this function natively! :P</div><br />
+Link: <div class="inline post-url">http://poisonbl.freeshell.org/bf4/bblog_loadout_sets.js</div><br />
+Github: <div class="inline post-url">https://github.com/poisonbl/bblog-loadout-sets</div><br />
+<br />
+<div class="tag tag-b">Updated:</div> 05-Jan-2014<br />
+<div class="spoiler-button"><span>Changelog</span></div><div class="spoiler">05-Jan-2014:<br />
+  - Fixed to match changes in BattleLog&#039;s loadoutModel data structure<br />
+  - Fixed the failure to refresh issue<br />
+  - Assorted other code-side cleanup<br />
+  - Changed to only update weapons and equipment for infantry kits, vehicles aren&#039;t touched.<br />
+<br />
+15-Nov-2013: (and before)<br />
+  - Added a &quot;Descriptions&quot; button for loadout sections where applicable<br />
+  - Added a sets menu to the &quot;Playing Battlefield&quot; bar alongside Loadout/Servers/Battlescreen (at the bottom)<br />
+  - Added &quot;Randomize&quot; button and associated toggle option<br />
+  - Cleanup and redesign of the sets configuration interface (thanks to Amkhatar for the tip) *(x2 so far)<br />
+</div><br />
+<br />
+<div class="spoiler-button"><span>Translations</span></div><div class="spoiler"> <br />
+8-Dec-2013:  Updated &quot;cs&quot; translation.<br />
+<br />
+14-Nov-2013:  button.togglelocked also unused, feature it applied to is native to battlelog now! I&#039;ll do some proper cleaning later.<br />
+ <br />
+13-Nov-2013:  option.togglelocked isn&#039;t currently used and button.text was renamed to button.sets<br />
+Added:<br />
+<code>      &quot;button.descriptions&quot; : &quot;Descriptions&quot;</code><br />
+<br />
+ <br />
+11-Nov-2013: Added:<br />
+<code>      &quot;button.rename&quot; : &quot;Rename&quot;,<br />
+      &quot;button.random&quot; : &quot;Random&quot;,<br />
+      &quot;button.togglelocked&quot; : &quot;Toggle Locked&quot;,<br />
+      &quot;option.togglelocked&quot; : &quot;Show &#039;Toggle Locked&#039; button?&quot;,<br />
+      &quot;option.randombutton&quot; : &quot;Show &#039;Randomize&#039; button?&quot;</code> <br />
+ <br />
+As they stand:<br />
+<code>  translations : {<br />
+    &quot;en&quot; : {<br />
+      &quot;plugin.name&quot; : &quot;Loadout Sets&quot;,<br />
+      &quot;button.sets&quot; : &quot;Sets&quot;,<br />
+      &quot;button.save&quot; : &quot;Store&quot;,<br />
+      &quot;button.load&quot; : &quot;Use&quot;,<br />
+      &quot;button.clear&quot; : &quot;Clear&quot;,<br />
+      &quot;prompt.setname&quot; : &quot;Loadout Name: &quot;,<br />
+      &quot;set.basename&quot; : &quot;Loadout&quot;,<br />
+      &quot;button.rename&quot; : &quot;Rename&quot;,<br />
+      &quot;button.random&quot; : &quot;Random&quot;,<br />
+      &quot;button.togglelocked&quot; : &quot;Toggle Locked&quot;,<br />
+      &quot;option.togglelocked&quot; : &quot;Show &#039;Toggle Locked&#039; button?&quot;,<br />
+      &quot;option.randombutton&quot; : &quot;Show &#039;Randomize&#039; button?&quot;,<br />
+      &quot;button.descriptions&quot; : &quot;Descriptions&quot;<br />
+    },<br />
+    &quot;ru&quot; : {<br />
+      &quot;plugin.name&quot; : &quot;Наборы экипировки&quot;,<br />
+      &quot;button.sets&quot; : &quot;Наборы&quot;,<br />
+      &quot;button.save&quot; : &quot;Сохранить&quot;,<br />
+      &quot;button.load&quot; : &quot;Использовать&quot;,<br />
+      &quot;button.clear&quot; : &quot;Очистить&quot;,<br />
+      &quot;prompt.setname&quot; : &quot;Имя экипировки: &quot;,<br />
+      &quot;set.basename&quot; : &quot;Экипировка&quot;,<br />
+      &quot;button.rename&quot; : &quot;Переименовать&quot;,<br />
+      &quot;button.random&quot; : &quot;Случайно&quot;,<br />
+      &quot;button.togglelocked&quot; : &quot;Заблокировать&quot;,<br />
+      &quot;option.togglelocked&quot; : &quot;Отображать кнопку блокировки?&quot;,<br />
+      &quot;option.randombutton&quot; : &#039;Отображать кнопку &quot;Случайно&quot;&#039;,<br />
+      &quot;button.descriptions&quot; : &quot;Описания&quot;<br />
+    },<br />
+    &quot;fr&quot; : {<br />
+      &quot;plugin.name&quot; : &quot;Jeux d&#039;&eacute;quipement&quot;,<br />
+      &quot;button.sets&quot; : &quot;Jeux&quot;,<br />
+      &quot;button.save&quot; : &quot;Stocker&quot;,<br />
+      &quot;button.load&quot; : &quot;Utiliser&quot;,<br />
+      &quot;button.clear&quot; : &quot;Vider&quot;,<br />
+      &quot;prompt.setname&quot; : &quot;Nom du jeu d&#039;&eacute;quipement &quot;,<br />
+      &quot;set.basename&quot; : &quot;&Eacute;quipement&quot;,<br />
+      &quot;button.rename&quot; : &quot;Renommer&quot;,<br />
+      &quot;button.random&quot; : &quot;Al&eacute;atoire&quot;,<br />
+      &quot;button.togglelocked&quot; : &quot;Am&eacute;liorations/D&eacute;bloqu&eacute;es&quot;,<br />
+      &quot;option.togglelocked&quot; : &quot;Affiche le bouton Am&eacute;liorations/D&eacute;bloqu&eacute;es&quot;,<br />
+      &quot;option.randombutton&quot; : &quot;Afficher le bouton Al&eacute;atoire&quot;,<br />
+      &quot;button.descriptions&quot; : &quot;Descriptions&quot;<br />
+    },<br />
+    &quot;cs&quot; : {<br />
+      &quot;plugin.name&quot; : &quot;Sady vybaven&iacute;&quot;,<br />
+      &quot;button.sets&quot; : &quot;Sady&quot;,<br />
+      &quot;button.save&quot; : &quot;Uložit&quot;,<br />
+      &quot;button.load&quot; : &quot;Použ&iacute;t&quot;,<br />
+      &quot;button.clear&quot; : &quot;Vyčistit&quot;,<br />
+      &quot;prompt.setname&quot; : &quot;N&aacute;zev v&yacute;bavy: &quot;,<br />
+      &quot;set.basename&quot; : &quot;V&yacute;bava&quot;,<br />
+      &quot;button.rename&quot; : &quot;Přejmenovat&quot;,<br />
+      &quot;button.random&quot; : &quot;N&aacute;hodně&quot;,<br />
+      &quot;option.randombutton&quot; : &quot;Uk&aacute;zat tlač&iacute;tko &#039;N&aacute;hodně&#039;?&quot;,<br />
+      &quot;button.descriptions&quot; : &quot;Popisy&quot;<br />
+    },<br />
+    &quot;de&quot; : {<br />
+      &quot;plugin.name&quot; : &quot;Ausr&amp;uuml;stungen&quot;,<br />
+      &quot;button.sets&quot; : &quot;S&amp;auml;tze&quot;,<br />
+      &quot;button.save&quot; : &quot;Speichern&quot;,<br />
+      &quot;button.load&quot; : &quot;Ausr&amp;uuml;sten&quot;,<br />
+      &quot;button.clear&quot; : &quot;Zur&amp;uuml;cksetzen&quot;,<br />
+      &quot;prompt.setname&quot; : &quot;Name der Ausr&amp;uuml;stung: &quot;,<br />
+      &quot;set.basename&quot; : &quot;Ausr&amp;uuml;stung&quot;,<br />
+      &quot;button.rename&quot; : &quot;Umbenennen&quot;,<br />
+      &quot;button.random&quot; : &quot;Zufallsausr&amp;uuml;stung&quot;,<br />
+      &quot;button.togglelocked&quot; : &quot;Gesperrt umschalten&quot;,<br />
+      &quot;option.togglelocked&quot; : &quot;Button &#039;Gesperrt umschalten&#039; anzeigen?&quot;,<br />
+      &quot;option.randombutton&quot; : &quot;Button &#039;Zufallsausr&amp;uuml;stung&#039; anzeigen?&quot;,<br />
+      &quot;button.descriptions&quot; : &quot;Descriptions&quot;<br />
+    }<br />
+  },</code></div>            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-11-10T11:00:26+01:00">10. November 2013 11:00</time>                    <div class="post-edited">Post edited 3                        x times, last by <div class="user-info"><div class="user-name ">Brady_The</div></div> <time datetime="2013-11-10T11:09:21+01:00">10. November 2013 11:09</time></div>
+                                                    <div class="user-info"><div class="user-name ">Brady_The</div></div>            </div>
+            <div class="post-main">
+                Looks neat. I always missed a function to swap fast between different load-outs without dozens of clicks.<br />
+<br />
+<div class="spoiler-button"><span>German translation</span></div><div class="spoiler"><br />
+<code>    <br />
+    &quot;de&quot; : {<br />
+      &quot;plugin.name&quot; : &quot;Ausr&amp;uuml;stungen&quot;,<br />
+      &quot;button.text&quot; : &quot;S&amp;auml;tze&quot;,<br />
+      &quot;button.save&quot; : &quot;Speichern&quot;,<br />
+      &quot;button.load&quot; : &quot;Ausr&amp;uuml;sten&quot;,<br />
+      &quot;button.clear&quot; : &quot;Zur&amp;uuml;cksetzen&quot;,<br />
+      &quot;prompt.setname&quot; : &quot;Name der Ausr&amp;uuml;stung: &quot;,<br />
+      &quot;set.basename&quot; : &quot;Ausr&amp;uuml;stung&quot;<br />
+    }</code></div>            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-11-10T12:18:46+01:00">10. November 2013 12:18</time>                                <div class="user-info"><div class="user-name ">Wutzmann</div></div>            </div>
+            <div class="post-main">
+                Nice feature!<br />
+<br />
+Thanks            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-11-10T16:19:52+01:00">10. November 2013 16:19</time>                    <div class="post-edited">Post edited 4                        x times, last by <div class="user-info"><div class="user-name themes">Amkhatar</div><div class="user-role">Theme Developer</div></div> <time datetime="2013-11-13T00:43:55+01:00">13. November 2013 00:43</time></div>
+                                                    <div class="user-info"><div class="user-name themes">Amkhatar</div><div class="user-role">Theme Developer</div></div>            </div>
+            <div class="post-main">
+                Awesome, thanks<br />
+<br />
+<div class="spoiler-button"><span>French translations</span></div><div class="spoiler"> <br />
+ &quot;fr&quot; : {<br />
+      &quot;plugin.name&quot; : &quot;Jeux d&#039;&eacute;quipement&quot;,<br />
+      &quot;button.text&quot; : &quot;Jeux&quot;,<br />
+      &quot;button.save&quot; : &quot;Stocker&quot;,<br />
+      &quot;button.load&quot; : &quot;Utiliser&quot;,<br />
+      &quot;button.clear&quot; : &quot;Vider&quot;,<br />
+      &quot;prompt.setname&quot; : &quot;Nom du jeu d&#039;&eacute;quipement &quot;,<br />
+      &quot;set.basename&quot; : &quot;&Eacute;quipement&quot;,<br />
+      &quot;button.rename&quot; : &quot;Renommer&quot;,<br />
+      &quot;button.random&quot; : &quot;Al&eacute;atoire&quot;,<br />
+      &quot;button.togglelocked&quot; : &quot;Am&eacute;liorations/D&eacute;bloqu&eacute;es&quot;,<br />
+      &quot;option.togglelocked&quot; : &quot;Affiche le bouton Am&eacute;liorations/D&eacute;bloqu&eacute;es&quot;,<br />
+      &quot;option.randombutton&quot; : &quot;Afficher le bouton Al&eacute;atoire&quot;<br />
+    }<br />
+</div><br />
+<br />
+I think it will be a good idea to add vehicles sets and separate them of infantry classes !<br />
+<br />
+In addition i think the loadout popup is not very handy to use in game<br />
+I made a layout i think more usable<br />
+<div class="inline post-url">https://dl.dropboxusercontent.com/u/66402/BF4/loadouts-layout.gif</div><br />
+<div class="inline post-url">https://dl.dropboxusercontent.com/u/66402/BF4/loadouts-layout-edit.gif</div>            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-11-10T18:42:00+01:00">10. November 2013 18:42</time>                                <div class="user-info"><div class="user-name plugin">dapil</div><div class="user-role">Plugin Developer</div></div>            </div>
+            <div class="post-main">
+                <div class="spoiler-button"><span>Czech translation</span></div><div class="spoiler"><br />
+   &quot;en&quot; : {<br />
+      &quot;plugin.name&quot; : &quot;Sady vybaven&iacute;&quot;,<br />
+      &quot;button.text&quot; : &quot;Sady&quot;,<br />
+      &quot;button.save&quot; : &quot;Uložit&quot;,<br />
+      &quot;button.load&quot; : &quot;Použ&iacute;t&quot;,<br />
+      &quot;button.clear&quot; : &quot;Clear&quot;,<br />
+      &quot;prompt.setname&quot; : &quot;N&aacute;zev v&yacute;bavy: &quot;,<br />
+      &quot;set.basename&quot; : &quot;V&yacute;bava&quot;<br />
+   }<br />
+</div>            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-11-10T18:48:29+01:00">10. November 2013 18:48</time>                                <div class="user-info"><div class="user-name help">ThePredatoR</div><div class="user-role">Helping Hand</div></div>            </div>
+            <div class="post-main">
+                Russian translation<br />
+<br />
+<div class="spoiler-button"><span>Rus</span></div><div class="spoiler">&quot;ru&quot; : {<br />
+      &quot;plugin.name&quot; : &quot;Наборы экипировки&quot;,<br />
+      &quot;button.text&quot; : &quot;Наборы&quot;,<br />
+      &quot;button.save&quot; : &quot;Сохранить&quot;,<br />
+      &quot;button.load&quot; : &quot;Использовать&quot;,<br />
+      &quot;button.clear&quot; : &quot;Очистить&quot;,<br />
+      &quot;prompt.setname&quot; : &quot;Имя экипировки: &quot;,<br />
+      &quot;set.basename&quot; : &quot;Экипировка&quot;<br />
+    }<br />
+</div>            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-11-12T03:37:06+01:00">12. November 2013 03:37</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">poisonblx</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">Amkhatar wrote:</div>Awesome, thanks<br />
+<br />
+<div class="spoiler-button"><span>French translations</span></div><div class="spoiler"> <br />
+ &quot;fr&quot; : {<br />
+      &quot;plugin.name&quot; : &quot;Jeux d&#039;&eacute;quipement&quot;,<br />
+      &quot;button.text&quot; : &quot;Jeux&quot;,<br />
+      &quot;button.save&quot; : &quot;Stocker&quot;,<br />
+      &quot;button.load&quot; : &quot;Utiliser&quot;,<br />
+      &quot;button.clear&quot; : &quot;Vider&quot;,<br />
+      &quot;prompt.setname&quot; : &quot;Nom du jeu d&#039;&eacute;quipement &quot;,<br />
+      &quot;set.basename&quot; : &quot;&Eacute;quipement&quot;<br />
+    }<br />
+</div><br />
+<br />
+I think it will be a good idea to add vehicles sets and separate them of infantry classes !</blockquote><br />
+<br />
+The vehicles separate from kits I should be able to do fairly easily... but the kit-side separation ran into a huge wall when I realized weapon <div class="tag tag-b">attachments</div> are global to the weapon in the way it&#039;s stored... I understand why from the data structure side, but it&#039;s still incredibly eye-twitch inducing.<br />
+<br />
+<blockquote><div class="user">Amkhatar wrote:</div>In addition i think the loadout popup is not very handy to use in game<br />
+I made a layout i think more usable<br />
+&lt;awesome pics here&gt;<br />
+</blockquote><br />
+<br />
+That... is <div class="tag tag-u">exactly</div> what it needed, I think! It wasn&#039;t even particularly handy to use out of game, I just hadn&#039;t magically come up with any good ideas on where to put all that mess. I can code just fine, but make me design something visual from scratch and I blank about half the time.<br />
+<br />
+Integrated that, the translations (while adding a couple more things to translate, sorry!), and an option for both <div class="tag tag-i">toggle locked</div> and <div class="tag tag-i">randomize</div> buttons. I need to track down a &#039;reset plugin data&#039; trick... at the very least for my own testing purposes. I <div class="tag tag-b">may</div> have pushed a release with a <div class="tag tag-i">tiny</div> bug in the default set names... <div class="tag tag-i">*whistles innocently*</div>            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-11-12T04:25:30+01:00">12. November 2013 04:25</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name ">Brady_The</div></div> <time datetime="2013-11-12T04:39:36+01:00">12. November 2013 04:39</time></div>
+                                                    <div class="user-info"><div class="user-name ">Brady_The</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">poisonblx wrote:</div><br />
+11-Nov-2013: Added<code>      &quot;button.rename&quot; : &quot;Rename&quot;,<br />
+      &quot;button.random&quot; : &quot;Random&quot;,<br />
+      &quot;button.togglelocked&quot; : &quot;Toggle Locked&quot;,<br />
+      &quot;option.togglelocked&quot; : &quot;Show &#039;Toggle Locked&#039; button?&quot;,<br />
+      &quot;option.randombutton&quot; : &quot;Show &#039;Randomize&#039; button?&quot;</code><br />
+</blockquote><br />
+There we go:<br />
+<div class="spoiler-button"><span>German translation</span></div><div class="spoiler"><br />
+<code>    <br />
+    &quot;de&quot; : {<br />
+      &quot;plugin.name&quot; : &quot;Ausr&amp;uuml;stungen&quot;,<br />
+      &quot;button.text&quot; : &quot;S&amp;auml;tze&quot;,<br />
+      &quot;button.save&quot; : &quot;Speichern&quot;,<br />
+      &quot;button.load&quot; : &quot;Ausr&amp;uuml;sten&quot;,<br />
+      &quot;button.clear&quot; : &quot;Zur&amp;uuml;cksetzen&quot;,<br />
+      &quot;prompt.setname&quot; : &quot;Name der Ausr&amp;uuml;stung: &quot;,<br />
+      &quot;set.basename&quot; : &quot;Ausr&amp;uuml;stung&quot;<br />
+      &quot;button.rename&quot; : &quot;Umbenennen&quot;,<br />
+      &quot;button.random&quot; : &quot;Zufallsausr&amp;uuml;stung erstellen&quot;,<br />
+      &quot;button.togglelocked&quot; : &quot;Gesperrtes Zubeh&amp;ouml;r umschalten&quot;,<br />
+      &quot;option.togglelocked&quot; : &quot;Button &#039;Gesperrtes Zubeh&amp;ouml;r&#039; anzeigen?&quot;,<br />
+      &quot;option.randombutton&quot; : &quot;Button &#039;Zufallsausr&amp;uuml;stung erstellen&#039; anzeigen?&quot;<br />
+    }</code></div>            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-11-12T06:52:45+01:00">12. November 2013 06:52</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name ">Obski</div></div> <time datetime="2013-11-12T07:03:02+01:00">12. November 2013 07:03</time></div>
+                                                    <div class="user-info"><div class="user-name ">Obski</div></div>            </div>
+            <div class="post-main">
+                Is it possible to install this plugin on chrome now that BBLog&#039;s installed through the chrome web store?<br />
+<br />
+Edit: nevermind            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-11-12T07:01:45+01:00">12. November 2013 07:01</time>                    <div class="post-edited">Post edited 5                        x times, last by <div class="user-info"><div class="user-name ">Brady_The</div></div> <time datetime="2013-11-12T07:06:08+01:00">12. November 2013 07:06</time></div>
+                                                    <div class="user-info"><div class="user-name ">Brady_The</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">Brady_The wrote:</div><br />
+There we go:<br />
+<div class="spoiler-button"><span>German translation</span></div><div class="spoiler"><br />
+<code>    <br />
+    &quot;de&quot; : {<br />
+      &quot;plugin.name&quot; : &quot;Ausr&amp;uuml;stungen&quot;,<br />
+      &quot;button.text&quot; : &quot;S&amp;auml;tze&quot;,<br />
+      &quot;button.save&quot; : &quot;Speichern&quot;,<br />
+      &quot;button.load&quot; : &quot;Ausr&amp;uuml;sten&quot;,<br />
+      &quot;button.clear&quot; : &quot;Zur&amp;uuml;cksetzen&quot;,<br />
+      &quot;prompt.setname&quot; : &quot;Name der Ausr&amp;uuml;stung: &quot;,<br />
+      &quot;set.basename&quot; : &quot;Ausr&amp;uuml;stung&quot;<br />
+      &quot;button.rename&quot; : &quot;Umbenennen&quot;,<br />
+      &quot;button.random&quot; : &quot;Zufallsausr&amp;uuml;stung&quot;,<br />
+      &quot;button.togglelocked&quot; : &quot;Gesperrt umschalten&quot;,<br />
+      &quot;option.togglelocked&quot; : &quot;Button &#039;Gesperrt umschalten&#039; anzeigen?&quot;,<br />
+      &quot;option.randombutton&quot; : &quot;Button &#039;Zufallsausr&amp;uuml;stung&#039; anzeigen?&quot;<br />
+    }</code></div></blockquote><br />
+Welp, as I already thought are button.random and button.togglelocked too big due to the German expressions. I adjusted button.random (see spoiler), but I do have to think about button.togglelocked.<br />
+<br />
+<div class="tag tag-i">Edit: I adjusted button.togglelocked as well. It&#039;s not perfect, but smaller.</div><br />
+<br />
+<blockquote><div class="user">Obski wrote:</div>Is it possible to install this plugin on chrome now that BBLog&#039;s installed through the chrome web store?</blockquote><br />
+Yes. Nothing really changed. The installation file is just hosted on chrome.google.com instead getbblog.com.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-11-13T00:13:28+01:00">13. November 2013 00:13</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name themes">Amkhatar</div><div class="user-role">Theme Developer</div></div> <time datetime="2013-11-13T00:49:40+01:00">13. November 2013 00:49</time></div>
+                                                    <div class="user-info"><div class="user-name themes">Amkhatar</div><div class="user-role">Theme Developer</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">poisonblx wrote:</div><br />
+Integrated that, the translations (while adding a couple more things to translate, sorry!), and an option for both <div class="tag tag-i">toggle locked</div> and <div class="tag tag-i">randomize</div> buttons. I need to track down a &#039;reset plugin data&#039; trick... at the very least for my own testing purposes.</blockquote><br />
+Happy I inspired you with my artwork...if I should add something a margin-right: 4px for buttons will be fine ;)<br />
+No problem for translations...I updated my first post.<br />
+<div class="inline font-size-50">I didn&#039;t translated &quot;toggle..&quot; because i don&#039;t see what it is and it seems it doesn&#039;t work as &quot;sets&quot; button ?!</div><br />
+<br />
+Edit: thx Brady, understood and translated<br />
+<br />
+Poisonblx : The set button don&#039;t show submenu on my chrome ? bug or just me ?<br />
+<br />
+idea for the toogle button,2 button state ?!<br />
+- All loadout<br />
+- Unlocked loadout<br />
+maybe useless ?!<br />
+<br />
+good job again !            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-11-13T00:29:03+01:00">13. November 2013 00:29</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name ">Brady_The</div></div> <time datetime="2013-11-13T00:29:18+01:00">13. November 2013 00:29</time></div>
+                                                    <div class="user-info"><div class="user-name ">Brady_The</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">Amkhatar wrote:</div>I didn&#039;t translated &quot;toggle..&quot; because i don&#039;t see what it is and it seems it doesn&#039;t work as &quot;sets&quot; button ?!</blockquote><br />
+It does toggle locked gun attachments. You have to activate it in the options first. :-)<br />
+<br />
+<div class="spoiler-button"><span>Screenshots</span></div><div class="spoiler"><div class="post-image-prepared inline">Toggle Locked: No</div><br />
+<div class="post-image-prepared inline">Toggle Locked: Yes</div><br />
+</div>            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-11-13T00:55:04+01:00">13. November 2013 00:55</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name ">poisonblx</div></div> <time datetime="2013-11-13T00:57:31+01:00">13. November 2013 00:57</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">poisonblx</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">Amkhatar wrote:</div><blockquote><div class="user">poisonblx wrote:</div><br />
+Integrated that, the translations (while adding a couple more things to translate, sorry!), and an option for both <div class="tag tag-i">toggle locked</div> and <div class="tag tag-i">randomize</div> buttons. I need to track down a &#039;reset plugin data&#039; trick... at the very least for my own testing purposes.</blockquote><br />
+Happy I inspired you with my artwork...if I should add something a margin-right: 4px for buttons will be fine ;)<br />
+No problem for translations...I updated my first post.<br />
+<div class="inline font-size-50">I didn&#039;t translated &quot;toggle..&quot; because i don&#039;t see what it is and it seems it doesn&#039;t work as &quot;sets&quot; button ?!</div><br />
+<br />
+Edit: thx Brady, understood and translated<br />
+<br />
+Poisonblx : The set button don&#039;t show submenu on my chrome ? bug or just me ?<br />
+<br />
+idea for the toogle button,2 button state ?!<br />
+- All loadout<br />
+- Unlocked loadout<br />
+maybe useless ?!<br />
+<br />
+good job again !</blockquote><br />
+<br />
+Yep, Brady nailed it on the explanation of what that button is... and yep! That&#039;s a bug! Think I squished it... I&#039;m contemplating a better approach to show/hide of locked items. Maybe as little as just &quot;Show Locked&quot; and &quot;Hide Locked&quot; for it.<br />
+<br />
+Edit:<br />
+I&#039;m also contemplating (strongly) adding the loadout set buttons to the battlescreen page... so I don&#039;t even have to drop out of it to switch.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-11-13T04:02:49+01:00">13. November 2013 04:02</time>                    <div class="post-edited">Post edited 3                        x times, last by <div class="user-info"><div class="user-name themes">Amkhatar</div><div class="user-role">Theme Developer</div></div> <time datetime="2013-11-13T04:04:41+01:00">13. November 2013 04:04</time></div>
+                                                    <div class="user-info"><div class="user-name themes">Amkhatar</div><div class="user-role">Theme Developer</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">poisonblx wrote:</div> I&#039;m contemplating a better approach to show/hide of locked items. Maybe as little as just &quot;Show Locked&quot; and &quot;Hide Locked&quot; for it.<br />
+<br />
+Edit:<br />
+I&#039;m also contemplating (strongly) adding the loadout set buttons to the battlescreen page... so I don&#039;t even have to drop out of it to switch.</blockquote><br />
+<br />
+For me the toggle button is not fit to be at this current place (useless, crowded, not the same level of importance as SAVE or RESET button).<br />
+<br />
+ IMHO, it could be next to the compare button for weapons<br />
+<div class="spoiler-button"><span>screenshots</span></div><div class="spoiler"> <div class="inline post-url">https://dl.dropboxusercontent.com/u/66402/BF4/loadouts-layout-2-toggle-off-weapons.gif</div> <br />
+<div class="inline post-url">https://dl.dropboxusercontent.com/u/66402/BF4/loadouts-layout-2-toggle-on-weapons.gif</div></div><br />
+<br />
+and for accessories<br />
+You could add it at the same place<br />
+<div class="spoiler-button"><span>screenshots</span></div><div class="spoiler"> <div class="inline post-url">https://dl.dropboxusercontent.com/u/66402/BF4/loadouts-layout-2-toggle-off-accessories.gif</div><br />
+<div class="inline post-url">https://dl.dropboxusercontent.com/u/66402/BF4/loadouts-layout-2-toggle-on-accessories.gif</div></div><br />
+<br />
+Bonus : You can add an another button &quot;Descriptions&quot; which show/hide all descriptions at the same time<br />
+<div class="spoiler-button"><span>screenshots</span></div><div class="spoiler"> <div class="inline post-url">https://dl.dropboxusercontent.com/u/66402/BF4/loadouts-layout-2-desc-off-accessories.gif</div><br />
+<div class="inline post-url">https://dl.dropboxusercontent.com/u/66402/BF4/loadouts-layout-2-desc-on-accessories.gif</div></div><br />
+<br />
+Extra-Bonus : A fixed div for buttons...very useful !<br />
+<div class="spoiler-button"><span>screenshot</span></div><div class="spoiler"> <div class="inline post-url">https://dl.dropboxusercontent.com/u/66402/BF4/loadouts-layout2-fixed.gif</div></div>            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-11-13T07:26:17+01:00">13. November 2013 07:26</time>                    <div class="post-edited">Post edited 3                        x times, last by <div class="user-info"><div class="user-name ">Brady_The</div></div> <time datetime="2013-11-13T07:26:59+01:00">13. November 2013 07:26</time></div>
+                                                    <div class="user-info"><div class="user-name ">Brady_The</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">Amkhatar wrote:</div>IMHO, it could be next to the compare button for weapons<br />
+[...]<br />
+and for accessories<br />
+[...]<br />
+Bonus<br />
+[...]<br />
+Extra-Bonus : A fixed div for buttons...very useful !</blockquote><br />
+Awesome ideas. Especially the position of the toggle button. I am really not satisfied with the short, butchered German translation (due to resulting length of button). Lol            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-11-13T08:38:11+01:00">13. November 2013 08:38</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name ">poisonblx</div></div> <time datetime="2013-11-13T08:50:30+01:00">13. November 2013 08:50</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">poisonblx</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">Amkhatar wrote:</div>For me the toggle button is not fit to be at this current place (useless, crowded, not the same level of importance as SAVE or RESET button).<br />
+<br />
+ IMHO, it could be next to the compare button for weapons<br />
+<div class="spoiler-button"><span>screenshots</span></div><div class="spoiler"> <div class="inline post-url">https://dl.dropboxusercontent.com/u/66402/BF4/loadouts-layout-2-toggle-off-weapons.gif</div> <br />
+<div class="inline post-url">https://dl.dropboxusercontent.com/u/66402/BF4/loadouts-layout-2-toggle-on-weapons.gif</div></div></blockquote><br />
+<br />
+Done, except for the visual indicator (the dark grey wants to overrun the white hilite on me, I&#039;ll fight with it later).<br />
+EDIT: Well, it occured to me that there&#039;s a builtin &#039;draw attention&#039; class, even though it&#039;s not as pretty as the white. Kicks it orange like the &quot;Save&quot; button.<br />
+<br />
+<blockquote><div class="user">Amkhatar wrote:</div>and for accessories<br />
+You could add it at the same place<br />
+<div class="spoiler-button"><span>screenshots</span></div><div class="spoiler"> <div class="inline post-url">https://dl.dropboxusercontent.com/u/66402/BF4/loadouts-layout-2-toggle-off-accessories.gif</div><br />
+<div class="inline post-url">https://dl.dropboxusercontent.com/u/66402/BF4/loadouts-layout-2-toggle-on-accessories.gif</div></div></blockquote><br />
+<br />
+Done.<br />
+<br />
+<blockquote><div class="user">Amkhatar wrote:</div>Bonus : You can add an another button &quot;Descriptions&quot; which show/hide all descriptions at the same time<br />
+<div class="spoiler-button"><span>screenshots</span></div><div class="spoiler"> <div class="inline post-url">https://dl.dropboxusercontent.com/u/66402/BF4/loadouts-layout-2-desc-off-accessories.gif</div><br />
+<div class="inline post-url">https://dl.dropboxusercontent.com/u/66402/BF4/loadouts-layout-2-desc-on-accessories.gif</div></div></blockquote><br />
+<br />
+Done!<br />
+<br />
+<blockquote><div class="user">Amkhatar wrote:</div>Extra-Bonus : A fixed div for buttons...very useful !<br />
+<div class="spoiler-button"><span>screenshot</span></div><div class="spoiler"> <div class="inline post-url">https://dl.dropboxusercontent.com/u/66402/BF4/loadouts-layout2-fixed.gif</div></div></blockquote><br />
+<br />
+And done. It&#039;ll be a bit before I push it out, I need to actually, properly, test it. And I&#039;m tempted to get my quick button on the &quot;loadout/servers/battlescreen&quot; bar working too.<br />
+<br />
+<br />
+<blockquote><div class="user">Brady_The wrote:</div><blockquote><div class="user">Amkhatar wrote:</div>IMHO, it could be next to the compare button for weapons<br />
+[...]<br />
+and for accessories<br />
+[...]<br />
+Bonus<br />
+[...]<br />
+Extra-Bonus : A fixed div for buttons...very useful !</blockquote><br />
+Awesome ideas. Especially the position of the toggle button. I am really not satisfied with the short, butchered German translation (due to resulting length of button). Lol</blockquote><br />
+<br />
+Well, on the downside to that, the layout leans strongly towards fixed width buttons on that bar, though I might be able to butcher an auto-resize together if needed.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-11-13T18:02:11+01:00">13. November 2013 18:02</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name ">Brady_The</div></div> <time datetime="2013-11-13T18:02:20+01:00">13. November 2013 18:02</time></div>
+                                                    <div class="user-info"><div class="user-name ">Brady_The</div></div>            </div>
+            <div class="post-main">
+                Looks like poisonbl.freeshell.org is down? Is it coming back? Otherwise you could switch to <div class="inline post-url">https://www.dropbox.com</div> , reliable service with a high uptime.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-11-13T18:48:27+01:00">13. November 2013 18:48</time>                                <div class="user-info"><div class="user-name ">Hydroskull</div></div>            </div>
+            <div class="post-main">
+                The resized loadout names and re-located &quot;Toggle Locked&quot; button are much better, and the &quot;Descriptions&quot; tab works fabulously. Good work, sir.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-11-13T19:44:59+01:00">13. November 2013 19:44</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name ">poisonblx</div></div> <time datetime="2013-11-13T19:46:08+01:00">13. November 2013 19:46</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">poisonblx</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">Brady_The wrote:</div>Looks like poisonbl.freeshell.org is down? Is it coming back? Otherwise you could switch to <div class="inline post-url">https://www.dropbox.com</div> , reliable service with a high uptime.</blockquote><br />
+<br />
+Yeah... that was a hiccup that shouldn&#039;t happen again. I changed membership level on freeshell there. Rediculous uptime when I&#039;m not being migrated between servers because I gave &#039;em more money.<br />
+<br />
+<blockquote><div class="user">Hydroskull wrote:</div>The resized loadout names and re-located &quot;Toggle Locked&quot; button are much better, and the &quot;Descriptions&quot; tab works fabulously. Good work, sir.</blockquote><br />
+<br />
+You&#039;re playing with the Dev version, aren&#039;t ya?            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-11-13T20:44:44+01:00">13. November 2013 20:44</time>                    <div class="post-edited">Post edited 2                        x times, last by <div class="user-info"><div class="user-name ">Hydroskull</div></div> <time datetime="2013-11-13T20:48:23+01:00">13. November 2013 20:48</time></div>
+                                                    <div class="user-info"><div class="user-name ">Hydroskull</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">poisonblx wrote:</div>You&#039;re playing with the Dev version, aren&#039;t ya?</blockquote><br />
+<br />
+...maybe.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-11-14T00:06:07+01:00">14. November 2013 00:06</time>                                <div class="user-info"><div class="user-name mod">ORFK</div><div class="user-role">Global Moderator</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">Hydroskull wrote:</div><blockquote><div class="user">poisonblx wrote:</div>You&#039;re playing with the Dev version, aren&#039;t ya?</blockquote><br />
+...maybe.<br />
+</blockquote><br />
+<br />
+if you dont know that, you shoudn&#039;t handle with PC, macs and Software.<br />
+latest running version is 3.8.1 - latest published beta/dev version is 3.8.1.0            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-11-14T00:11:23+01:00">14. November 2013 00:11</time>                    <div class="post-edited">Post edited 3                        x times, last by <div class="user-info"><div class="user-name ">poisonblx</div></div> <time datetime="2013-11-15T00:18:25+01:00">15. November 2013 00:18</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">poisonblx</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">ORFK wrote:</div>if you dont know that, you shoudn&#039;t handle with PC, macs and Software.<br />
+latest running version is 3.8.1 - latest published beta/dev version is 3.8.1.0</blockquote><br />
+<br />
+I was referring to the dev variant of my plugin rather than BBLog itself, and he was being sarcastic in the uncertainty there, since I&#039;d warned him away from it on one hand, while tempting him with features and cleanup on the other.<br />
+<br />
+EDIT: And, more importantly, new toys! Updated and should be working well. <br />
+<br />
+<div class="spoiler-button"><span>Toys!</span></div><div class="spoiler"><div class="post-image-prepared inline">Toys</div></div><br />
+<br />
+EDIT (2): And, of course, now Battlelog updates and breaks my toys :P ... I&#039;ll get the &quot;descriptions&quot; button back working, but now they have a built-in &quot;Hide Locked&quot; button that works much better than anything I was going to put together for the job :P<br />
+<br />
+EDIT (3): Descriptions button back working, ram install (yay Ebay, my 4gb will soon be 8gb), game update, and dinner (big, tasty, burrito) to go before I get back to checking that everything else is in working order with this now... but I&#039;ll get there.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-11-15T05:45:51+01:00">15. November 2013 05:45</time>                                <div class="user-info"><div class="user-name ">Brady_The</div></div>            </div>
+            <div class="post-main">
+                I am not sure if it was there from the beginning or not, but I just noticed the little Sets button in the game manager. That&#039;s awesome and really comes in handy.<br />
+<div class="inline post-url">setsbutton.png</div>            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-11-15T17:57:53+01:00">15. November 2013 17:57</time>                                <div class="user-info"><div class="user-name help">ThePredatoR</div><div class="user-role">Helping Hand</div></div>            </div>
+            <div class="post-main">
+                RU translation update<br />
+<br />
+<div class="spoiler-button"><span>spoiler</span></div><div class="spoiler">&quot;ru&quot; : {<br />
+      &quot;plugin.name&quot; : &quot;Наборы экипировки&quot;,<br />
+      &quot;button.sets&quot; : &quot;Наборы&quot;,<br />
+      &quot;button.save&quot; : &quot;Сохранить&quot;,<br />
+      &quot;button.load&quot; : &quot;Использовать&quot;,<br />
+      &quot;button.clear&quot; : &quot;Очистить&quot;,<br />
+      &quot;prompt.setname&quot; : &quot;Имя экипировки: &quot;,<br />
+      &quot;set.basename&quot; : &quot;Экипировка&quot;,<br />
+      &quot;button.rename&quot; : &quot;Переименовать&quot;,<br />
+      &quot;button.random&quot; : &quot;Случайно&quot;,<br />
+      &quot;button.togglelocked&quot; : &quot;Заблокировать&quot;,<br />
+      &quot;option.togglelocked&quot; : &quot;Отображать кнопку блокировки?&quot;,<br />
+      &quot;option.randombutton&quot; : &quot;Отображать кнопку &quot;Случайно&quot;&quot;,<br />
+      &quot;button.descriptions&quot; : &quot;Описания&quot;</div>            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-11-16T05:37:50+01:00">16. November 2013 05:37</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name ">Hydroskull</div></div> <time datetime="2013-11-16T05:40:33+01:00">16. November 2013 05:40</time></div>
+                                                    <div class="user-info"><div class="user-name ">Hydroskull</div></div>            </div>
+            <div class="post-main">
+                Is anyone else noticing the &quot;Sets&quot; button on the server bar flash while the server loads? I don&#039;t know if I was imagining things, or if it is acting funny.<br />
+<br />
+Update: It happened for a second server. The blinking is not in any kind of regular pattern, but rather at seemingly random times.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-11-16T05:41:20+01:00">16. November 2013 05:41</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name ">poisonblx</div></div> <time datetime="2013-11-16T05:47:16+01:00">16. November 2013 05:47</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">poisonblx</div></div>            </div>
+            <div class="post-main">
+                Yeah, there&#039;s a little bit of a stutter in the way it rebuilds that bar during a game load, and destroys the elements that&#039;re there when it does it, sets button included. The visual stutter you *see* is the fact that it doesn&#039;t get back around to re-creating the button for a moment after it&#039;s done re-doing things battlelog-side, giving the redraw lag there. Same general reason the loadout page changes take a moment after pageload to actually materialize too.<br />
+<br />
+Edit: Also, updated for a touch of cleanup, RU translation update, and a slight change in the animations used on the various moving parts.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-11-23T14:25:27+01:00">23. November 2013 14:25</time>                                <div class="user-info"><div class="user-name plugin">dapil</div><div class="user-role">Plugin Developer</div></div>            </div>
+            <div class="post-main">
+                <div class="inline post-url">http://www.reddit.com/r/battlefield_4/comments/1r8xim/since_you_guys_seem_to_appreciate_the_previous/cdkt86h</div>            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-11-24T02:11:13+01:00">24. November 2013 02:11</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">poisonblx</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">dapil wrote:</div>http://www.reddit.com/r/battlefield_4/comments/1r8xim/since_you_guys_seem_to_appreciate_the_previous/cdkt86h</blockquote><br />
+<br />
+That. That is friggin awesome. Couldn&#039;t have asked for anything better. Now, of course, if any of the features they add in related to it are lacking something... I&#039;ll likely go adding toys back in. But... also, randomly, wow. Apparently the EA, BF, etc forums aren&#039;t the place to get DICE attention to the little things... reddit is! (and with some spectacularly clear, complete, and detailed responses too. Definitely appears to draw out the best from the playerbase tone-wise too, compared to the whine-fest of the forums...)            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-12-07T21:44:11+01:00">07. December 2013 21:44</time>                                <div class="user-info"><div class="user-name ">Dark-Ethereal</div></div>            </div>
+            <div class="post-main">
+                I am having difficulty with this plugin.<br />
+On both Chrome and Firefox, I cannot find the &quot;sets&quot; button, but the joining bar shows a &quot;sets&quot; button along with the multiple loadouts buttons.<br />
+<br />
+Pressing the buttons doesn&#039;t seem to do anything, so to me at least, this plugin is completely non-functional.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-12-07T23:58:30+01:00">07. December 2013 23:58</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">poisonblx</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">Dark-Ethereal wrote:</div>I am having difficulty with this plugin.<br />
+On both Chrome and Firefox, I cannot find the &quot;sets&quot; button, but the joining bar shows a &quot;sets&quot; button along with the multiple loadouts buttons.<br />
+<br />
+Pressing the buttons doesn&#039;t seem to do anything, so to me at least, this plugin is completely non-functional.</blockquote><br />
+<br />
+Well, until something&#039;s stored for a given set on the list it doesn&#039;t actually change anything in your loadout (I did this so accidentally clicking an unconfigured set doesn&#039;t cludge up your current loadout). That you get at least that much tells me the plugin&#039;s actually loading and running at least. When you pull up the Loadout page it should have the four sets listed below the breadcrumbs and &quot;Reset/Save&quot; buttons, and the &quot;Sets&quot; button should appear to the left of &quot;Reset&quot; (and Randomize to the left of that if it&#039;s enabled). <br />
+<br />
+<div class="post-image-prepared inline">Example</div><br />
+<br />
+Firstly, does the &quot;Loadout Sets&quot; configuration section show up in the BBLog config page properly (should just include &quot;Show &#039;Randomize&#039; button?&quot; as a configuration option)?<br />
+<br />
+Secondly, what other plugins do you have enabled?<br />
+<br />
+I just tested on Chrome and it doesn&#039;t appear anything&#039;s changed on battlelog&#039;s end to break it recently. I&#039;ll pull up FF and make sure there too...            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-12-08T10:01:20+01:00">08. December 2013 10:01</time>                                <div class="user-info"><div class="user-name plugin">dapil</div><div class="user-role">Plugin Developer</div></div>            </div>
+            <div class="post-main">
+                Czech translation update:<div class="spoiler-button"><span>Translation</span></div><div class="spoiler">    &quot;cs&quot; : {<br />
+      &quot;plugin.name&quot; : &quot;Sady vybaven&iacute;&quot;,<br />
+      &quot;button.sets&quot; : &quot;Sady&quot;,<br />
+      &quot;button.save&quot; : &quot;Uložit&quot;,<br />
+      &quot;button.load&quot; : &quot;Použ&iacute;t&quot;,<br />
+      &quot;button.clear&quot; : &quot;Vyčistit&quot;,<br />
+      &quot;prompt.setname&quot; : &quot;N&aacute;zev v&yacute;bavy: &quot;,<br />
+      &quot;set.basename&quot; : &quot;V&yacute;bava&quot;,<br />
+      &quot;button.rename&quot; : &quot;Přejmenovat&quot;,<br />
+      &quot;button.random&quot; : &quot;N&aacute;hodně&quot;,<br />
+      &quot;option.randombutton&quot; : &quot;Uk&aacute;zat tlač&iacute;tko &#039;N&aacute;hodně&#039;?&quot;,<br />
+      &quot;button.descriptions&quot; : &quot;Popisy&quot;<br />
+    },</div>            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-12-09T00:23:48+01:00">09. December 2013 00:23</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">poisonblx</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">dapil wrote:</div>Czech translation update:<div class="spoiler-button"><span>Translation</span></div><div class="spoiler">    &quot;cs&quot; : {<br />
+      &quot;plugin.name&quot; : &quot;Sady vybaven&iacute;&quot;,<br />
+      &quot;button.sets&quot; : &quot;Sady&quot;,<br />
+      &quot;button.save&quot; : &quot;Uložit&quot;,<br />
+      &quot;button.load&quot; : &quot;Použ&iacute;t&quot;,<br />
+      &quot;button.clear&quot; : &quot;Vyčistit&quot;,<br />
+      &quot;prompt.setname&quot; : &quot;N&aacute;zev v&yacute;bavy: &quot;,<br />
+      &quot;set.basename&quot; : &quot;V&yacute;bava&quot;,<br />
+      &quot;button.rename&quot; : &quot;Přejmenovat&quot;,<br />
+      &quot;button.random&quot; : &quot;N&aacute;hodně&quot;,<br />
+      &quot;option.randombutton&quot; : &quot;Uk&aacute;zat tlač&iacute;tko &#039;N&aacute;hodně&#039;?&quot;,<br />
+      &quot;button.descriptions&quot; : &quot;Popisy&quot;<br />
+    },</div></blockquote><br />
+<br />
+Updated! Thanks!            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-12-09T05:31:50+01:00">09. December 2013 05:31</time>                                <div class="user-info"><div class="user-name ">Johntron</div></div>            </div>
+            <div class="post-main">
+                <blockquote>Link: <div class="inline post-url">http://poisonbl.freeshell.org/bf4/bblog_loadout_sets.js</div></blockquote><br />
+<br />
+Can you put this on Github? I&#039;d love to fork it and play around.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-12-09T06:49:01+01:00">09. December 2013 06:49</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">poisonblx</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">Johntron wrote:</div>Can you put this on Github? I&#039;d love to fork it and play around.</blockquote><br />
+<br />
+Ask and ye shall receive!<br />
+<br />
+<div class="inline post-url">https://github.com/poisonbl/bblog-loadout-sets</div>            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-12-13T15:15:53+01:00">13. December 2013 15:15</time>                                <div class="user-info"><div class="user-name ">Dark-Ethereal</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">poisonblx wrote:</div><br />
+<br />
+Well, until something&#039;s stored for a given set on the list it doesn&#039;t actually change anything in your loadout (I did this so accidentally clicking an unconfigured set doesn&#039;t cludge up your current loadout). That you get at least that much tells me the plugin&#039;s actually loading and running at least. When you pull up the Loadout page it should have the four sets listed below the breadcrumbs and &quot;Reset/Save&quot; buttons, and the &quot;Sets&quot; button should appear to the left of &quot;Reset&quot; (and Randomize to the left of that if it&#039;s enabled). <br />
+<br />
+<div class="post-image-prepared inline">Example</div><br />
+<br />
+Firstly, does the &quot;Loadout Sets&quot; configuration section show up in the BBLog config page properly (should just include &quot;Show &#039;Randomize&#039; button?&quot; as a configuration option)?<br />
+<br />
+Secondly, what other plugins do you have enabled?<br />
+<br />
+I just tested on Chrome and it doesn&#039;t appear anything&#039;s changed on battlelog&#039;s end to break it recently. I&#039;ll pull up FF and make sure there too...</blockquote><br />
+<br />
+I do see the randomize sets option in BBLog settings, but if I tick it there is no visible effect in the loadout page.<br />
+The plugin does seem to be running, but not showing anything to do with the loadout page at all.<br />
+I am on chrome, but I have tried it with opera as well (I think it was opera, might have been FF), but no dice!<br />
+<br />
+Other BBLog Plugins: Copy Emblem (working)<br />
+Other Chrome plugins: LastPass, SmoothScroll, Autopager, Adblock Plus, Avast, and other things that shouldnt affect it at all.<br />
+<br />
+On a final note, I used to use notscript javascript blocker whitelisting thing, but I removed it because I decided it was more hassle than help. I have used javascript blockers on most of my web browsers at some point but currently don&#039;t have any that are whitelisting.<br />
+I have a suspicion however that there may be some javascript elements on certain pages that still arn&#039;t working. I know that I used to be unable to use mega.co.nz even with everything enabled (I think the design has changed now though, and it seems to work now).            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-12-15T03:31:54+01:00">15. December 2013 03:31</time>                                <div class="user-info"><div class="user-name ">Hydroskull</div></div>            </div>
+            <div class="post-main">
+                I&#039;m not sure if anyone else is having this issue, but when I click the loadout name, nothing changes. Open the weapon, and it is what should have shown up. Go back to loadout, and everything has changed. When you click on the name, it does what it should, but doesn&#039;t show you until you force a refresh.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-12-15T15:58:33+01:00">15. December 2013 15:58</time>                                <div class="user-info"><div class="user-name ">rech0</div></div>            </div>
+            <div class="post-main">
+                Same for me            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2013-12-15T20:38:09+01:00">15. December 2013 20:38</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name ">poisonblx</div></div> <time datetime="2013-12-16T19:45:51+01:00">16. December 2013 19:45</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">poisonblx</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">Hydroskull wrote:</div>I&#039;m not sure if anyone else is having this issue, but when I click the loadout name, nothing changes. Open the weapon, and it is what should have shown up. Go back to loadout, and everything has changed. When you click on the name, it does what it should, but doesn&#039;t show you until you force a refresh.</blockquote><br />
+<br />
+Hrm. Looks like some changes to Battlelog on the backend causing it. Prodding it now.<br />
+<br />
+--<br />
+<br />
+Still haven&#039;t found a fix for this, it looks like my code&#039;s actually tripping over a bug in Battlelog itself, rather than just doing something wrong, but I&#039;m a bit puzzled by how to work around it at the moment to get it back working. I&#039;ll pull open the battlelog backend code this evening to see if I can sort out another route. I&#039;ll likely end up implementing separate weapon vs vehicle loadouts too, if I have to take the approach that comes to mind.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-12-17T02:50:59+01:00">17. December 2013 02:50</time>                                <div class="user-info"><div class="user-name ">Dark-Ethereal</div></div>            </div>
+            <div class="post-main">
+                IDK what changed recently, but now it all works! Horay!            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2013-12-18T13:44:37+01:00">18. December 2013 13:44</time>                                <div class="user-info"><div class="user-name">Guest</div></div>            </div>
+            <div class="post-main">
+                I still have the updating bug: when I click on the Set button, nothing changes (not even with an F5), but if I click on one of the classes and go back everything gets correctly updated.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-01-08T14:47:25+01:00">08. January 2014 14:47</time>                                <div class="user-info"><div class="user-name ">KempasUK</div></div>            </div>
+            <div class="post-main">
+                Hi there,<br />
+<br />
+I may have missed this but can these sets be activated in game? I&#039;ve set all my loadout sets up in Battlelog no problem, but how do I / can I activate them in game? <br />
+<br />
+K            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2014-01-08T14:57:50+01:00">08. January 2014 14:57</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">poisonblx</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">KempasUK wrote:</div>Hi there,<br />
+<br />
+I may have missed this but can these sets be activated in game? I&#039;ve set all my loadout sets up in Battlelog no problem, but how do I / can I activate them in game? <br />
+<br />
+K</blockquote><br />
+<br />
+Sadly, since I can&#039;t prod the game-side code like I can the browser-side javascript, Battlelog&#039;s the only place I can make these toys available. I heard rumor of DICE actually working on something similar, which would hopefully be available in game, as well as hopefully storing the saved sets server side (right now it&#039;s local to a given browser, so it doesn&#039;t carry between your desktop and laptop, for example), but it may be a while before that&#039;s properly released.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-01-08T15:47:02+01:00">08. January 2014 15:47</time>                                <div class="user-info"><div class="user-name ">KempasUK</div></div>            </div>
+            <div class="post-main">
+                Ah, well it&#039;s an awesome idea. I hope DICE thinks to include it (although they&#039;ll probably wait for BF5). <br />
+<br />
+Sorry for my ignorance, but cheers for realising a fine concept!            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2014-02-06T02:59:01+01:00">06. February 2014 02:59</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name ">poisonblx</div></div> <time datetime="2014-02-06T05:05:27+01:00">06. February 2014 05:05</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">poisonblx</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">Gliptal wrote:</div>I still have the updating bug: when I click on the Set button, nothing changes (not even with an F5), but if I click on one of the classes and go back everything gets correctly updated.</blockquote><br />
+<br />
+Ages late here, but finally tracked down the issue with this and fixed it, as well as a few other little tweaks and updates (like, say, making it work again <div class="tag tag-i">at all</div> with some of the changes in battlelog&#039;s code).<br />
+<br />
+EDIT: I should note, any existing saved sets are lost (sorry!) in this update, though the names will stick around. With as long as it&#039;s likely been since it all worked properly last, though, I hope nothing too much is damaged by that little stumble.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-02-14T16:35:13+01:00">14. February 2014 16:35</time>                                <div class="user-info"><div class="user-name ">RicoSchulz</div></div>            </div>
+            <div class="post-main">
+                Hi there !<br />
+<br />
+First i have to say thanks for your Work on that useful Plugin.it woks correct in the setup screen for each<br />
+class.<br />
+But if I start Bf4 on XboxOne by the Battlefield Gamelauncher (incl. in bblog) and activate the Livescoring<br />
+, ill get some different Results each Time I refresh the serverbrowser.hope you got an Idea!<br />
+<br />
+-here are some screenshots<br />
+<br />
+1. i think , this is the one that works correct<br />
+<br />
+<code>http://i60.tinypic.com/1j6bep.jpg</code><br />
+<br />
+2. this is what happens after refreshing<br />
+<br />
+<code>http://i62.tinypic.com/24dr62q.jpg</code><br />
+<br />
+ it would not disturbing me so much , if one of them did work.But they dont.<br />
+ If i click one of the four icons,nothing changes.<br />
+ <br />
+3. if i refresh the serverbrowser again i will get the 3rd different screen with the enabled plugins like each other try!<br />
+<br />
+<code>http://i62.tinypic.com/24dr62q.jpg</code><br />
+   <br />
+   hope you can fix it or help me otherwise.<br />
+   here is the list of my enabled plugins :<code>http://i61.tinypic.com/2dv743n.jpg</code><br />
+<br />
+   thanks for the help . . . .            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2014-02-15T06:11:30+01:00">15. February 2014 06:11</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">poisonblx</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">RicoSchulz wrote:</div>Hi there !<br />
+<br />
+First i have to say thanks for your Work on that useful Plugin.it woks correct in the setup screen for each<br />
+class.<br />
+But if I start Bf4 on XboxOne by the Battlefield Gamelauncher (incl. in bblog) and activate the Livescoring<br />
+, ill get some different Results each Time I refresh the serverbrowser.hope you got an Idea!<br />
+</blockquote><br />
+<br />
+While I&#039;m not sure what&#039;s breaking formatting there (i.e. kicking it horizontal -- I didn&#039;t even see that with all those plugins loaded in firefox on my end)... the simple fact that it doesn&#039;t work after the refresh appears to be caused by the fact that battlelog drops the background copy of the loadout that it holds if you&#039;ve hit the loadout page at least once. I&#039;m looking into how to force-load it when needed now, though I worry <div class="tag tag-i">that</div> approach might well break every time esn/dice change something on the back end.<br />
+<br />
+Thanks for the heads up on the oddity :)<br />
+<br />
+On an unrelated note, of those plugins, these appear to be bad links now:<br />
+<code>http://p0mp.com/bblog3/fix/plugin.js &lt;- error page<br />
+<div class="inline post-url">http://www.skillmonster.de/products/bblog/plugins/BiggerActivityStream.js</div> &lt;- 404<br />
+<div class="inline post-url">https://dl.dropboxusercontent.com/u/77103826/JS/MoreServerz.js</div> &lt;- error page</code><br />
+<br />
+And this link doesn&#039;t actually load the script itself:<br />
+<code>https://github.com/NikkiLoveGod/Assignmentinfo/blob/master/assignmentinfo.js &lt;- loads full github page</code><br />
+<br />
+But that isn&#039;t the source of the lack of functionality of the quick loadout button.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-03-06T01:17:04+01:00">06. March 2014 01:17</time>                                <div class="user-info"><div class="user-name trans">ArnoldLayne</div><div class="user-role">Translator</div></div>            </div>
+            <div class="post-main">
+                Portuguese language<br />
+<br />
+<code> &quot;pt&quot; : {<br />
+      &quot;plugin.name&quot; : &quot;Configura&ccedil;&atilde;o&quot;,<br />
+      &quot;button.sets&quot; : &quot;Kits&quot;,<br />
+      &quot;button.save&quot; : &quot;Salvar&quot;,<br />
+      &quot;button.load&quot; : &quot;Usar&quot;,<br />
+      &quot;button.clear&quot; : &quot;Limpar&quot;,<br />
+      &quot;prompt.setname&quot; : &quot;Nome do kit: &quot;,<br />
+      &quot;set.basename&quot; : &quot;Kits&quot;,<br />
+      &quot;button.rename&quot; : &quot;Renomear&quot;,<br />
+      &quot;button.random&quot; : &quot;Aleat&oacute;rio&quot;,<br />
+      &quot;button.togglelocked&quot; : &quot;Mudar Estado Bloqueado&quot;,<br />
+      &quot;option.togglelocked&quot; : &quot;Mostrar bot&atilde;o de bloqueio?&quot;,<br />
+      &quot;option.randombutton&quot; : &#039;Mostrar bot&atilde;o de aleat&oacute;rio&#039;,<br />
+      &quot;button.descriptions&quot; : &quot;Descri&ccedil;&atilde;o&quot;<br />
+    },</code>            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-04-09T15:55:52+02:00">09. April 2014 15:55</time>                                <div class="user-info"><div class="user-name ">D4rkBurn</div></div>            </div>
+            <div class="post-main">
+                I have found a bug:<br />
+first i saw<br />
+<div class="post-image-prepared inline">Bug(1)</div><br />
+later<br />
+<div class="post-image-prepared inline">Bug(2)</div><br />
+and then i noticed that everytime when i save a loadout in presets<br />
+<div class="post-image-prepared inline">Presets</div><br />
+it will be one line more<br />
+<div class="post-image-prepared inline">Bugggg</div><br />
+<br />
+Please fix that            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-04-09T16:10:49+02:00">09. April 2014 16:10</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name themes">Amkhatar</div><div class="user-role">Theme Developer</div></div> <time datetime="2014-04-09T16:11:44+02:00">09. April 2014 16:11</time></div>
+                                                    <div class="user-info"><div class="user-name themes">Amkhatar</div><div class="user-role">Theme Developer</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">D4rkBurn wrote:</div>I have found a bug:<br />
+Please fix that</blockquote><br />
+Poisonblx released a very useful plugin but is now outdated since the last battlelog update (yesterday).<br />
+<div class="inline post-url">http://battlelog.battlefield.com/bf4/en/news/view/battlefield-4-loadout-presets/</div><br />
+<br />
+The new battlelog version is not very handy maybe you, poisonblx, could adapt your plugin ?!<br />
+- save your loadouts<br />
+- modify a preset<br />
+- change presets roll over navigation to buttons...            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-04-09T16:11:48+02:00">09. April 2014 16:11</time>                                <div class="user-info"><div class="user-name ">D4rkBurn</div></div>            </div>
+            <div class="post-main">
+                ok            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-04-23T19:03:41+02:00">23. April 2014 19:03</time>                                <div class="user-info"><div class="user-name trans">ArnoldLayne</div><div class="user-role">Translator</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">Amkhatar wrote:</div><blockquote><div class="user">D4rkBurn wrote:</div>I have found a bug:<br />
+Please fix that</blockquote><br />
+Poisonblx released a very useful plugin but is now outdated since the last battlelog update (yesterday).<br />
+<div class="inline post-url">http://battlelog.battlefield.com/bf4/en/news/view/battlefield-4-loadout-presets/</div><br />
+<br />
+The new battlelog version is not very handy maybe you, poisonblx, could adapt your plugin ?!<br />
+- save your loadouts<br />
+- modify a preset<br />
+- change presets roll over navigation to buttons...</blockquote><br />
+<br />
+<br />
+A nice feature would be the ability to export the loadout too.And import..to share with friends.            </div>
+        </div>
+        <script src="../scripts/t.js"></script></body></html>

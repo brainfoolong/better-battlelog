@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chrome browser cache BBLog 4.1.1 - Better Battlelog Forums #116880</title>
+    <link rel="stylesheet" href="../stylesheets/page.css" type="text/css">
+<script src="../scripts/p.js"></script>
+</head>
+<body class="forums-post left-side"><h2>Chrome browser cache BBLog 4.1.1 - Better Battlelog Forums #116880</h2><a href="sitemap.html">Sitemap</a>        <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2014-04-09T18:07:14+02:00">09. April 2014 18:07</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">EJIekTpuK</div></div>            </div>
+            <div class="post-main">
+                After clearing the cache in the browser Chrome plugin BBLog disappears and has to be reinstalled.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-04-09T19:21:12+02:00">09. April 2014 19:21</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                That isn&#039;t a real bug. The storage engine that is used will be reseted on some specific history clear.<br />
+The time i&#039;ve created the addon there wasn&#039;t any other chance to save data permanently.<br />
+<br />
+That never was a problem for any user of BBLog. <br />
+Maybe i will change the storage engine in the future but don&#039;t expect that.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2014-04-09T19:37:09+02:00">09. April 2014 19:37</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name ">EJIekTpuK</div></div> <time datetime="2014-04-09T19:38:54+02:00">09. April 2014 19:38</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">EJIekTpuK</div></div>            </div>
+            <div class="post-main">
+                The problem is that the browser cache is increased in size. I have to clean it periodically. After cleaning bblog disappears in batllog. Use program for cleaning CCleaner.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-04-09T20:26:42+02:00">09. April 2014 20:26</time>                                <div class="user-info"><div class="user-name ">kurtextrem</div></div>            </div>
+            <div class="post-main">
+                Didn&#039;t have such problems, are you sure you&#039;re cleaning the cache? By the way, I&#039;m not completely familiar with the way BBLog stores stuff, does it need a synchron storage? If not, you could simply replace localStorage with chrome.storage.local.get (callback) / set. Implementing a sync feature (options sync for example) would be easy with that too.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2014-04-09T20:34:11+02:00">09. April 2014 20:34</time>                    <div class="post-edited">Post edited 2                        x times, last by <div class="user-info"><div class="user-name ">EJIekTpuK</div></div> <time datetime="2014-04-09T20:35:22+02:00">09. April 2014 20:35</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">EJIekTpuK</div></div>            </div>
+            <div class="post-main">
+                Yes, I&#039;m sure. After clearing the cache only expanding bblog disappears. On the other extensions is no problem.<br />
+<div class="post-image-prepared inline">image</div>            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-04-10T07:18:00+02:00">10. April 2014 07:18</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div> <time datetime="2014-04-10T07:18:11+02:00">10. April 2014 07:18</time></div>
+                                                    <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                @EJIekTpuK<br />
+What CCleaner does or not that i cannot confirm.<br />
+But as i said, the storage engine used in BBLog is maybe different to other, newer, addons.<br />
+Chrome before version 20 (and BBLog was firstly created for V16) doesn&#039;t had other methods to store data.<br />
+<br />
+@Kurtextrem<br />
+<br />
+Yes, i know the method to simple change the storage engine but the BIG problem is, it requires more permissions. So when i change it, BBLog will not work anymore for all chrome users, unless they accept the new permissions. The problem is, nobody will see a notifiy about it, so we will loose a lot of users.<br />
+<br />
+We all know the kind of people: <br />
+* Paranoid = WTF they changed permissions, delete the app<br />
+* Lazy = It not works anymore but i don&#039;t want to read or research why<br />
+* Fanboy = Sure sure, thx for the update<br />
+* Flamer = It not works, WTF have you done<br />
+* even more...            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-04-10T07:20:30+02:00">10. April 2014 07:20</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Workaround for you: Export BBLog settings before a cleanup -&gt; In the BBLog Options Menu on the left of Battlelog.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2014-04-10T10:22:49+02:00">10. April 2014 10:22</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">EJIekTpuK</div></div>            </div>
+            <div class="post-main">
+                During installation, a window pops up where you have to take permission. What&#039;s the problem? If you leave as is, I&#039;ll be forced to remove BBLog and will not use it. I guess I&#039;m not the only one.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2014-04-10T10:43:42+02:00">10. April 2014 10:43</time>                    <div class="post-edited">Post edited 2                        x times, last by <div class="user-info"><div class="user-name ">EJIekTpuK</div></div> <time datetime="2014-04-10T10:44:37+02:00">10. April 2014 10:44</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">EJIekTpuK</div></div>            </div>
+            <div class="post-main">
+                If you do not understand what I mean, then watch the video.<br />
+<div class="inline post-url">http://www.youtube.com/watch?v=bsR4aEvP9wo&amp;feature=youtu.be</div>            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-04-10T11:10:27+02:00">10. April 2014 11:10</time>                    <div class="post-edited">Post edited 2                        x times, last by <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div> <time datetime="2014-04-10T11:11:44+02:00">10. April 2014 11:11</time></div>
+                                                    <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">EJIekTpuK wrote:</div>During installation, a window pops up where you have to take permission. What&#039;s the problem? If you leave as is, I&#039;ll be forced to remove BBLog and will not use it. I guess I&#039;m not the only one.</blockquote><br />
+<br />
+I know what your problem is, never said anything against it.<br />
+<br />
+During Installation =&gt; Yes, Popup<br />
+During AutoUpdate for all existing peoples =&gt; No Popup, just disabled without warning<br />
+<br />
+If you think so to delete BBLog we cannot stop you from doing that.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2014-04-10T11:29:15+02:00">10. April 2014 11:29</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">EJIekTpuK</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">BrainFooLong wrote:</div><br />
+If you think so to delete BBLog we cannot stop you from doing that.</blockquote><br />
+<br />
+I do not want to stop me. I just wanted a constructive dialogue to find an acceptable solution. But apparently no one is interested.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-04-10T12:19:43+02:00">10. April 2014 12:19</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                The only solution you accept is a definitive fix.<br />
+That is not possible without loosing a lot of existing users because of the chrome permissions thingy.<br />
+I have mentioned a workaround for your special case.<br />
+You said you&#039;ll be forced to remove BBLog if we do not change it - I said we cannot stop you.<br />
+<br />
+A constructive dialog, without hate, bad words or something similar, isn&#039;t it?<br />
+But you sound a little bit frustrated, which i understand but cannot change currently.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-04-10T14:10:34+02:00">10. April 2014 14:10</time>                                <div class="user-info"><div class="user-name themes">juress</div><div class="user-role">Theme Developer</div></div>            </div>
+            <div class="post-main">
+                Just don&#039;t use CCleaner. Use the chrome integrated cleaning, I use it all the time and haven&#039;t had any problems.<br />
+CCleaner only messes up your system, like it did to me couple of times.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-04-10T17:18:14+02:00">10. April 2014 17:18</time>                                <div class="user-info"><div class="user-name ">kurtextrem</div></div>            </div>
+            <div class="post-main">
+                CCleaner actually cleans the cache better than chrome itself. I guess the problem you have is because of the CCleaner plus thing (I&#039;m not sure how it&#039;s called - those entries ending with *, it&#039;s a program which added them). Untick them and try it again, I&#039;m sure it doesn&#039;t delete BBLog (I&#039;m using the same and it isn&#039;t deleting it... Also you should try compact databases, it speeds chrome up.)            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2014-04-10T19:04:17+02:00">10. April 2014 19:04</time>                    <div class="post-edited">Post edited 2                        x times, last by <div class="user-info"><div class="user-name ">EJIekTpuK</div></div> <time datetime="2014-04-10T19:05:22+02:00">10. April 2014 19:05</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">EJIekTpuK</div></div>            </div>
+            <div class="post-main">
+                I found the reason. It is highlighted in red.<br />
+<br />
+<div class="inline post-url">http://f5.s.qip.ru/MgWBRxH6.png</div><br />
+<br />
+I think the problem is solved. Thank you all for participating.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-04-10T19:24:03+02:00">10. April 2014 19:24</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Great.            </div>
+        </div>
+        <script src="../scripts/t.js"></script></body></html>

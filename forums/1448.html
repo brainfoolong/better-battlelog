@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Show platoon members on servers - Better Battlelog Forums #1448</title>
+    <link rel="stylesheet" href="../stylesheets/page.css" type="text/css">
+<script src="../scripts/p.js"></script>
+</head>
+<body class="forums-post left-side"><h2>Show platoon members on servers - Better Battlelog Forums #1448</h2><a href="sitemap.html">Sitemap</a>        <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-02-02T02:50:21+01:00">02. February 2012 02:50</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name">Guest</div></div>            </div>
+            <div class="post-main">
+                Could you add this <div class="inline post-url">http://userscripts.org/scripts/show/116875</div> or maybe something similar to your script?            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-02-02T07:45:42+01:00">02. February 2012 07:45</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Looks good, i will see what i can do.<br />
+Greetz            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-02-12T19:20:09+01:00">12. February 2012 19:20</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Isn&#039;t possible without making many many requests. <br />
+This will slow down the browser and could have a server impact if it&#039;s heave used.<br />
+So, rejected. BBLog do nothing what can have a load impact for battlelog servers.<br />
+Greetz            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-02-12T22:53:56+01:00">12. February 2012 22:53</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name">Guest</div></div>            </div>
+            <div class="post-main">
+                well, what you mean with many requests?<br />
+<br />
+per server would only be one request<br />
+<div class="inline post-url">http://battlelog.battlefield.com/bf3/servers/show/3c4e0e2e-b1c7-420d-b045-32f2ccd88a04/?json=1</div><br />
+<br />
+Thats not more than battlelog is doing. Battlelog is sending a request for every click on a server in the list            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-02-12T23:37:31+01:00">12. February 2012 23:37</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Not true.<br />
+First its required to get all platoon members -&gt; Big request depends on platoon members.<br />
+Than you must get server informations of each platoon -&gt; Multiple with unique server ids.<br />
+So it could take up to 10 and more requests per platoon -&gt; multiple with different platoons in your list if you check all rapidly. So let us calculate with 3 platoons. In best case you have 10 or less requests, in worst case its more than 50 within a minute. <br />
+And than sum it up with over 7000+ bblog users from which 1000 uses this feature a lot.<br />
+Battlelog is calculated for all features they have built-in, but not with third-party features that firing a lot of requests in a short time.<br />
+I not want include features that requires much requests.<br />
+Greetz            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-02-12T23:48:09+01:00">12. February 2012 23:48</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name">Guest</div></div>            </div>
+            <div class="post-main">
+                oh.. wrong request^^<br />
+<br />
+was for the platoon server list            </div>
+        </div>
+        <script src="../scripts/t.js"></script></body></html>

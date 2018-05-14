@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Highlight friends in scoreboard - Better Battlelog Forums #115672</title>
+    <link rel="stylesheet" href="../stylesheets/page.css" type="text/css">
+<script src="../scripts/p.js"></script>
+</head>
+<body class="forums-post left-side"><h2>Highlight friends in scoreboard - Better Battlelog Forums #115672</h2><a href="sitemap.html">Sitemap</a>        <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2014-03-04T14:13:41+01:00">04. March 2014 14:13</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name ">HoPi</div></div> <time datetime="2014-03-04T15:33:49+01:00">04. March 2014 15:33</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">HoPi</div></div>            </div>
+            <div class="post-main">
+                Hi guys,<br />
+<br />
+I just wrote a small plugin that highlights your friends in the scoreboard of the full server details page. It&#039;s not particularly useful (although you can quickly see how your friends currently do on the server without searching through a scoreboard with 64 players), basically it&#039;s purpose is to get me started on bblog plugins :)<br />
+<br />
+Here we go:<br />
+<div class="inline post-url">https://dl.dropboxusercontent.com/u/607872/bf-emblems/HighlightFriendsInScoreboard.js</div><br />
+<br />
+Testing and feedback, especially from other plugin developers, is highly appreciated!            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-03-04T15:18:52+01:00">04. March 2014 15:18</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div> <time datetime="2014-03-04T15:19:15+01:00">04. March 2014 15:19</time></div>
+                                                    <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Pretty nice coded. Just one requirement.<br />
+Don&#039;t add variables to global scope via &quot;var plugin = {...&quot; outside of the plugin itself, this override any previous declaration in the page, and especially a word like this could be used by battlelog itself in the global scope.<br />
+Add it in the recommended way directly with the &quot;var plugin&quot;<br />
+<br />
+Like this<br />
+<br />
+<blockquote>BBLog.handle( &#039;add.plugin&#039;, {...} );</blockquote>            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2014-03-04T15:40:20+01:00">04. March 2014 15:40</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">HoPi</div></div>            </div>
+            <div class="post-main">
+                Whoops, you&#039;re right. I just did that for debugging purposes and forgot to change it, but it&#039;s fixed now. I also updated the link.<br />
+<br />
+I tried to clone the &quot;join&quot;-button from the comcenter to the scoreboard, but adding the element triggers the domchange event and makes my plugin run in an infinite loop. My first attempt was to set a boolean isWorking property in the plugin object, like this:<br />
+<br />
+<code>	name: &#039;Highlight friends in scoreboard&#039;,<br />
+<br />
+	isWorking: false,<br />
+<br />
+	/**<br />
+	 * @param instance<br />
+	 */<br />
+	domchange: function domchange( instance ) {<br />
+		if ( !instance.isWorking &amp;&amp; instance.hasScoreboardOnCurrentPage( instance ) &amp;&amp; instance.hasActivePlayers( instance ) )<br />
+			instance.highlightFriends( instance );<br />
+	},<br />
+...<br />
+	highlightFriends: function highlightFriends( instance ) {<br />
+		var friendList = Surface.C.comcenter.getFriendsListFromLs(),<br />
+			joinBtnList = $( &#039;button.join-friend&#039; ),<br />
+			l = friendList.length,<br />
+			f, $tr, $joinBtn, $divInteract, $clone;<br />
+<br />
+		instance.log( &#039;Checking &#039; + l + &#039; friends...&#039; );<br />
+<br />
+		instance.isWorking = true;<br />
+<br />
+		for ( var i = 0; i &lt; l; i++ ) {<br />
+			f = friendList&#91; i &#93;;<br />
+			$tr = $( &#039;tr&#91;data-userid=&#039; + f.userId + &#039;&#93;&#039; );<br />
+			if ( $tr.length &gt; 0 ) {<br />
+				instance.log( f.username + &#039; is playing on this server, highlighting...&#039; );<br />
+				$tr.find( &#039;td&#039; ).css( &#039;background-color&#039;, &#039;rgba( 0, 128, 0, 0.4 )&#039; );<br />
+<br />
+				// clone join button<br />
+			}<br />
+		}<br />
+<br />
+		instance.isWorking = false;<br />
+<br />
+	}</code><br />
+<br />
+Unfortunately, that didn&#039;t work. Whenever the domchange event ocurred, my isWorking property was reset to false. Any suggestions?            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-03-04T16:06:23+01:00">04. March 2014 16:06</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Yes, you reset it after you execute the code &quot;highlightFriends&quot;.<br />
+That means, after the highlight you start from scratch and your code runs again.<br />
+<br />
+Check of the join button already exist before you add it again.<br />
+Than the next domchange update don&#039;t disturb you.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2014-03-04T16:46:47+01:00">04. March 2014 16:46</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">HoPi</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">BrainFooLong wrote:</div>Yes, you reset it after you execute the code &quot;highlightFriends&quot;.</blockquote><br />
+Of course, the purpose is to make my plugins domchange function not do anything only while the loop is adding objects to the DOM. I thought my &quot;for&quot;-loop runs while a domchange event gets fired and my plugin starts over (parallel), triggering more domchange events.<br />
+<br />
+<blockquote>Check of the join button already exist before you add it again.<br />
+Than the next domchange update don&#039;t disturb you.</blockquote><br />
+Alternative approach, gonna try that :) thanks.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-03-04T17:56:13+01:00">04. March 2014 17:56</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                A few more tips.<br />
+<br />
+Don&#039;t use a lazy selector like $(&quot;tr&quot;), it matches first every &lt;tr&gt; in the dom which is slow.<br />
+Search a anchor before with a id, for example most of containers in battlelog have a ID. A ID is unique per HTML definiation, therefore the selector is much faster.<br />
+<br />
+Also you can avoid the problem with parellel runs of domchange with setting a class to a already processed &lt;tr&gt; and than check before you do something again if the class exists, if yes than skip the &lt;tr&gt;.<br />
+But in your case it doesn&#039;t matter, the complete run just require a few milliseconds at max, a domchange is only triggered 200 milleseconds after a change has done in the DOM.<br />
+<br />
+The plugin domchange is a BBLog handler that fires not on every domchange, it fires just 200ms after the last real domchange has been done. To avoid such problem with too much calls.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2014-03-04T20:28:02+01:00">04. March 2014 20:28</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">HoPi</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">BrainFooLong wrote:</div>Don&#039;t use a lazy selector like $(&quot;tr&quot;)</blockquote><br />
+Old habits die hard... I&#039;ll add that to my to-do list.<br />
+<br />
+<blockquote><div class="user">BrainFooLong wrote:</div>Also you can avoid the problem with parellel runs of domchange with setting a class to a already processed &lt;tr&gt;</blockquote><br />
+That&#039;s pretty elegant, I will definetely give it a try.<br />
+<br />
+<blockquote><div class="user">BrainFooLong wrote:</div>The plugin domchange is a BBLog handler that fires not on every domchange, it fires just 200ms after the last real domchange has been done. To avoid such problem with too much calls.</blockquote><br />
+Is there some sort of documentation for these things?<br />
+<br />
+Nonetheless: updated. When players joined while the scoreboard was active, my selector won&#039;t work because these new elements don&#039;t get the class which I&#039;m searching for.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-03-04T20:31:28+01:00">04. March 2014 20:31</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                <blockquote>Is there some sort of documentation for these things?</blockquote><br />
+No, but all can be readed in the source code of BBLog itself.<br />
+In this special case, i&#039;ll update the documentation of the example plugin.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-08-04T23:18:49+02:00">04. August 2014 23:18</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name ">SgtChrischi</div></div> <time datetime="2014-08-04T23:19:03+02:00">04. August 2014 23:19</time></div>
+                                                    <div class="user-info"><div class="user-name ">SgtChrischi</div></div>            </div>
+            <div class="post-main">
+                Hey there,<br />
+<br />
+your plugin isn&#039;t working anymore. When checking your link it says &quot;Not Found - The resource could not be found.&quot;<br />
+<br />
+Would be great if you can fix it, its a great plugin.<br />
+<br />
+Thanks,<br />
+SgtChrischi            </div>
+        </div>
+        <script src="../scripts/t.js"></script></body></html>

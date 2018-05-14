@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weapon/Vehicle/Award shortcut not working. - Better Battlelog Forums #1827</title>
+    <link rel="stylesheet" href="../stylesheets/page.css" type="text/css">
+<script src="../scripts/p.js"></script>
+</head>
+<body class="forums-post left-side"><h2>Weapon/Vehicle/Award shortcut not working. - Better Battlelog Forums #1827</h2><a href="sitemap.html">Sitemap</a>        <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-06-27T18:57:03+02:00">27. June 2012 18:57</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">N0WHERE15SAFE</div></div>            </div>
+            <div class="post-main">
+                Hi Admin, As the subject suggest, I think I found another bug which is the newly added weapon, vehicle and award shortcut, whenever I click on those, it will always transfer me to the battlelog homepage, even I copy the link address then paste it on a new tab, or try right click then open on a new tab, also not working. <br />
+<br />
+- BetterBattlelog version: 2.1.0<br />
+- Browser: Google Chrome 20 Beta-m<br />
+- Here is the link to the screenshot of what I&#039;m pointing at: <div class="inline post-url">http://img703.imageshack.us/img703/2250/33308697.jpg</div>            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-06-27T19:11:51+02:00">27. June 2012 19:11</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Please paste the link from one of the new buttons here to figure out what the problem is.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-06-27T20:17:11+02:00">27. June 2012 20:17</time>                                <div class="user-info"><div class="user-name mod">Jos&eacute; Ortega</div><div class="user-role">Global Moderator</div></div>            </div>
+            <div class="post-main">
+                Doesn&#039;t happen to me (Google Chrome 19+)            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-06-27T20:59:49+02:00">27. June 2012 20:59</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">N0WHERE15SAFE</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">brain wrote:</div>Please paste the link from one of the new buttons here to figure out what the problem is.</blockquote><br />
+<br />
+Weapons: <div class="inline post-url">http://battlelog.battlefield.com/bf3/user/setactivepersona/197222588/2/cem_ea_id/pc/</div><br />
+<br />
+Vehicles: <div class="inline post-url">http://battlelog.battlefield.com/bf3/user/setactivepersona/197222588/2/cem_ea_id/pc/</div><br />
+<br />
+Awards: <div class="inline post-url">http://battlelog.battlefield.com/bf3/user/setactivepersona/197222588/2/cem_ea_id/pc/</div><br />
+<br />
+By the way, I just notice that the link are all the same. And I just try it on my other browser - Firefox, and it is also same, the firefox version is 13.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-06-27T21:09:13+02:00">27. June 2012 21:09</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Ok. I found the problem.<br />
+You have multiple profiles right?<br />
+If yes, can you please do the following:<br />
+1. Press F12 on a any page where this links shown (when you have selected a soldier from your 2 profiles)<br />
+2. Goto &quot;Console&quot; Tab and enter $(&quot;.base-header-soldier&quot;).html()<br />
+in the console and press enter, than copy&amp;paste the result here as a &quot;code&quot; statement or attachment text file.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2012-06-27T22:26:56+02:00">27. June 2012 22:26</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">N0WHERE15SAFE</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">brain wrote:</div>Ok. I found the problem.<br />
+You have multiple profiles right?<br />
+If yes, can you please do the following:<br />
+1. Press F12 on a any page where this links shown (when you have selected a soldier from your 2 profiles)<br />
+2. Goto &quot;Console&quot; Tab and enter $(&quot;.base-header-soldier&quot;).html()<br />
+in the console and press enter, than copy&amp;paste the result here as a &quot;code&quot; statement or attachment text file.</blockquote><br />
+<br />
+Yup, and here is the result:<br />
+<div class="inline post-url">bblog_console.zip</div>            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-06-27T22:34:09+02:00">27. June 2012 22:34</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Ok good. <br />
+I send you tomorrow a version where the problem should be fixed, in this board via private message.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-06-27T23:56:57+02:00">27. June 2012 23:56</time>                                <div class="user-info"><div class="user-name ">Coleman</div></div>            </div>
+            <div class="post-main">
+                I&#039;m having this same issue in FireFox 13. I do have multiple soldiers, and also had a problem earlier with my Active solder defaulting to the wrong one.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-06-28T07:29:03+02:00">28. June 2012 07:29</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                <blockquote><div class="user">Coleman wrote:</div>and also had a problem earlier with my Active solder defaulting to the wrong one.</blockquote><br />
+This problem doesn&#039;t result from BBLog.<br />
+The other one - the new shortcuts - are a problem for every multi profile user.<br />
+Should be fixed in next update.            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2012-06-29T07:25:49+02:00">29. June 2012 07:25</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Ok. Fixed in next update.            </div>
+        </div>
+        <script src="../scripts/t.js"></script></body></html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Unable to save custom plugins - Better Battlelog Forums #128687</title>
+    <link rel="stylesheet" href="../stylesheets/page.css" type="text/css">
+<script src="../scripts/p.js"></script>
+</head>
+<body class="forums-post left-side"><h2>Unable to save custom plugins - Better Battlelog Forums #128687</h2><a href="sitemap.html">Sitemap</a>        <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2014-10-15T11:30:43+02:00">15. October 2014 11:30</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name ">zeharti</div></div> <time datetime="2014-10-15T11:35:40+02:00">15. October 2014 11:35</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">zeharti</div></div>            </div>
+            <div class="post-main">
+                Well ....No matter if your plugin works or not (or consider your domchange block is empty)....if it has  a unique id ...it should save after clicking Enable plugin...and load up in BBlog control panel after page refresh .....but it doesn&#039;t ...<br />
+<br />
+<br />
+After clicking Enable plugin it shows a green panel ...saying &quot;your plugin has been saved&quot; or something like that<br />
+<br />
+<br />
+But it doesn&#039;t show up in control panel..<br />
+<br />
+So anything I might be doing wrong or its a bug??<br />
+<br />
+I&#039;m using latest dev edition plugin<br />
+<br />
+Also..I&#039;m getting into plugin development and hope to be part of BBlog dev team ...Can I get access to full BBlog source code ....as I can go through it and won&#039;t need to start development from scratch..            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-10-15T11:48:49+02:00">15. October 2014 11:48</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                Plugins only show in bblog options sidebar if they have options (configFlags) to show.<br />
+That is a expected behaviour.            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2014-10-15T12:25:40+02:00">15. October 2014 12:25</time>                    <div class="post-edited">Post edited 1                        x times, last by <div class="user-info"><div class="user-name ">zeharti</div></div> <time datetime="2014-10-15T12:32:14+02:00">15. October 2014 12:32</time></div>
+                                    <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">zeharti</div></div>            </div>
+            <div class="post-main">
+                Well this is what I&#039;m tryin&#039; to make...<br />
+A &quot;go to page&quot; option in page navigator.<br />
+<br />
+Am I doing something wrong..<br />
+<br />
+<code>// initialize your plugin<br />
+BBLog.handle(&quot;add.plugin&quot;, {<br />
+<br />
+    /**<br />
+    * The unique, lowercase id of my plugin<br />
+    * Allowed chars: 0-9, a-z, -<br />
+    */<br />
+    id : &quot;zeharti&quot;,<br />
+<br />
+    /**<br />
+    * The name of my plugin, used to show config values in bblog options<br />
+    * Could also be translated with the translation key &quot;plugin.name&quot; (optional)<br />
+    *<br />
+    * @type String<br />
+    */<br />
+    name : &quot;Add page navigator&quot;,<br />
+<br />
+    <br />
+   <br />
+    configFlags : &#91;<br />
+        {&quot;key&quot; : &quot;Enabledemo&quot;, &quot;init&quot; : 1},<br />
+        <br />
+        <br />
+    &#93;,<br />
+<br />
+    <br />
+    init : function(instance){<br />
+        // some log to the console to show you how the things work<br />
+        console.log(<br />
+            &quot;plugin.&quot;+instance.id+&quot;.init&quot;,<br />
+            instance.t(&quot;my.option&quot;),<br />
+            instance.storage(&quot;foo.bar&quot;),<br />
+            instance.storage(&quot;my.option&quot;),<br />
+            instance.cache(&quot;cache.test&quot;),<br />
+            instance.storage(&quot;permanent.test&quot;)<br />
+        );<br />
+        // testdata<br />
+        instance.cache(&quot;cache.test&quot;, Math.random());<br />
+        instance.storage(&quot;permanent.test&quot;, Math.random());<br />
+    },<br />
+<br />
+    //This code is supposed to add a &quot;Go to Page&quot; input element and &quot;Go&quot; Button at the Page navigator section in Forums <br />
+    domchange : function(instance){<br />
+           var input=document.createElement(&quot;input&quot;);<br />
+    input.type=&quot;text&quot;;<br />
+    input.id=&quot;sad&quot;;<br />
+    <br />
+    var button=document.createElement(&quot;button&quot;);<br />
+	button.onclick=&quot;gotopage()&quot;<br />
+    var text=document.createTextNode(&quot;Go&quot;);<br />
+    button.appendChild(text);<br />
+    <br />
+    <br />
+    <br />
+    var a=document.createElement(&quot;a&quot;);<br />
+	a.id=&quot;mainlink&quot;<br />
+	var mainlink=document.getElementByClassName(&quot;&quot;).href;<br />
+	a.href=mainlink;<br />
+    <br />
+    var newdiv=document.createElement(&quot;div&quot;);<br />
+    newdiv.appendChild(input);<br />
+    newdiv.appendChild(button);<br />
+    newdiv.appendChild(a);<br />
+    <br />
+    var maindiv=document.getElementByClassName(&quot;pagination-pagination-right&quot;);<br />
+    maindiv&#91;1&#93;.appendChild(newdiv);<br />
+	<br />
+	function gotopage(){<br />
+	var input=document.getElementById(&quot;sad&quot;).value;<br />
+<br />
+    document.getElementById(&quot;mainlink&quot;).href+=input;<br />
+<br />
+    document.getElementById(&quot;mainlink&quot;).click();<br />
+	<br />
+	}<br />
+	<br />
+	<br />
+    },<br />
+<br />
+   <br />
+   <br />
+    storage : function(key, value){}<br />
+});</code>            </div>
+        </div>
+                <div class="forums-post-single ">
+            <div class="post-head">
+                <time datetime="2014-10-15T15:33:01+02:00">15. October 2014 15:33</time>                                <div class="user-info"><div class="user-name admin">BrainFooLong</div><div class="user-role">Administrator</div></div>            </div>
+            <div class="post-main">
+                I highly recommend to learn jQuery syntax.<br />
+BBLog and Battlelog is based on this JS framework.<br />
+<br />
+Than most of your questions will be solved.<br />
+<br />
+Best school for that<br />
+<div class="inline post-url">http://try.jquery.com/</div>            </div>
+        </div>
+                <div class="forums-post-single topic-starter">
+            <div class="post-head">
+                <time datetime="2014-10-15T16:09:42+02:00">15. October 2014 16:09</time>                <div class="starter">Topicstarter</div>                <div class="user-info"><div class="user-name ">zeharti</div></div>            </div>
+            <div class="post-main">
+                Ok,many Thanks!!            </div>
+        </div>
+        <script src="../scripts/t.js"></script></body></html>
