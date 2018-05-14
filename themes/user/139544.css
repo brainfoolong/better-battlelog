@@ -1,0 +1,1211 @@
+#comcenter-friends
+{
+	position: fixed;
+	right: 17px;
+	width: 321px;
+	opacity: 0.5;
+	top: 90%;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+	background-color: black;
+	transition: top 0.4s ease-in-out;
+}
+
+#comcenter-friends:hover
+{
+	opacity: 1;
+	top: 0;
+	right: 0px;
+	width: 338px;
+	border-top-right-radius: 0px;
+	border-top-left-radius: 0px;
+}
+
+#base-header .game-bar .inner-wrapper,
+#base-header .game-bar .dropdown-bar,
+#community-bar
+{
+	background-image: none;
+	background-color: rgba(7, 7, 7, 0.9);
+}
+
+#base-header,
+#unified-game-manager
+{
+	width: 100% !important;
+	z-index: 101;
+}
+
+.unified-game-manager ,
+#unified-game-manager .ugm-state .ugm-btn-group a.btn-clean.active
+{
+	background-image: none !important;
+	background-color: rgba(7, 7, 7, 0.9) !important;
+}
+
+.grid-container, .base-middle-content
+{
+	width: 990px !important;
+}
+
+.comcenter-settings,
+.activity-stream .activitystream-list .activitystream-item,
+table.table th,
+table.table td,
+#campaign table.menu td,
+#base-header .game-bar .inner-wrapper,
+#base-header .game-bar .main-nav .base-section-menu > li:first-child,
+#base-header .game-bar .main-nav .base-section-menu > li,
+.battlefeed .list .item + .item,
+.comment-main .comment-reply-item,
+#loadout .loadout-item-container table,
+.comcenter-notification,
+.popover footer
+{
+	border: 0px;
+}
+
+.get-bfh-tile, 
+#cookie-preferences,
+#battlelog-bf4-homepage,
+#app-promotion
+{
+	display: none;
+}
+
+.game-mode-image,
+#server-page-map-rotation
+{
+	margin-top: 20px !important;
+}
+
+#loadout #loadout-overview .loadout-item-expanded,
+.forum-start-border .common-box-title
+{
+	padding-top: 0px !important;
+}
+
+
+.submenu > ul > li
+{
+	padding-right: 0px !important;
+}
+
+#overview-info #overview-info-list li
+{
+	margin-top: 0px !important;
+	padding-bottom: 1px;
+	margin-right: 0px;
+}
+
+#overview-info #overview-info-list li.last
+{
+	padding-right: 2px !important;
+}
+
+body #base-container #user .profile-info .box.last .box-content
+{
+	padding-bottom: 3px !important;
+}
+
+#feed-container, 
+.box-content + .box-content, 
+.spacing-top, 
+.clubs-list .box-content, 
+.profile-editsoldier, 
+.box > header + table.table, .box > header + .spacing-top-tight,
+#serverbrowser-show .btn.join,
+#server-history,
+.play-now-menu > ul,
+.spacing-top-tight,
+.campaign-progress-list li,
+#main-loggedin-feed,
+.main-header .tiles .box,
+#friendrecommendation-main-container,
+.facebook-friendfinder,
+#box-survey,
+.row + .row, .row + .row-tight,
+.submenu > ul + ul,
+#weapon-statistics,
+.stat-details .box-content + .box,
+#vehicle-statistics,
+.box.category-vehicle-box,
+.category-vehicles-list li,
+#vehicle-details .box,
+#weapon-details-accessories,
+ul.weapon-accessories,
+.game-stats-content .profile-statistics-container,
+#loadout #loadout-overview .loadout-item-container,
+.box-list li,
+.battlepacks-list .opened,
+#overview-info .overview-info-box.small,
+#overview-completion,
+#stat-replay-discontinue-notice,
+#stat-replay-container,
+.row-tight + .row-tight,
+#clubs .presentation,
+#clubs #club-wall-messages,
+#clubs #memberbox-footer,
+#battlepacks-unopened-select,
+#battlereport-metadata,
+#battlereport-prizes,
+.playerreport-box > div,
+#emblem-edit-layers,
+#base-bf4-html .odcstore .friends-container,
+.base-middle-content > .row-tight + .row,
+.premium-index-section.premium-calendar-section,
+#community-mission .reward,
+#community-mission .time-left,
+#community-mission .progression,
+.overview-top-box .items-highlighted .top-item
+{
+	margin-top: 0px !important;
+}
+
+body #base-container #user .profile-info .box,
+.margin-small-bottom,
+body #base-container #user #soldiers .soldier,
+body #base-container #user #soldiers header,
+section .margin-bottom,
+nav.submenu,
+.play-now-menu > ul > li,
+#campaign table.menu,
+#campaign-progression,
+#campaign-assignments-list,
+.devblog-postlistsmall,
+#friendrecommendation-main-container,
+.comment-main .comment-body,
+#server-page-gamemode,
+#server-page-map-rotation table,
+#server-page-settings,
+#battlereports #battlereports-favorites,
+#stats-detailed > .row > [class*="span"] header,
+.table.table,
+.weapon-stats-box > header ~ .box-content,
+.vehicle-stats-box,
+#stats-kits .span8 > .box,
+#dogtags-body .dogtags-list .box,
+#loadout #items-select-menu .row-tight:first-of-type,
+#loadout #items-select-menu .row-tight + .row-tight,
+#loadout .loadout-item-container,
+#loadout .loadout-item-container.item-configurable header,
+.stat-box,
+.box-list#assignment-dependencies,
+.box-list#assignment-criterias,
+#awards-details .award-medal,
+.spacing-bottom,
+#overview-info .leaderboard-highlight,
+#overview-completion ul li,
+#overview-info,
+#stat-replay-container,
+#loadout #loadout-overview .row,
+#clubs .club-member-row,
+#clubs .club-info,
+#clubs .wallmessage,
+#battlepacks-unopened-select,
+#unopened-battlepacks header,
+.battlereport-eor,
+#battlereport-round-summary,
+#playerreport,
+#clubs .presentation,
+#bblog-emblem-buttons,
+#emblem-select,
+#emblem-edit-shapes .emblem-shapes-wrapper .emblem-shapes-header,
+#emblem-edit-layers .layer,
+.odcstore .product-container.battlepacks .battlepacks-graphic,
+.odcstore .product-container.kitshortcuts .kitshortcuts-graphic,
+.forum-start-border .common-box-title,
+.forum-start-border,
+#dogtags-equipped-box,
+#live-header,
+#missions-overview .details-info .span2,
+#missions-overview .details-info .span4,
+#notificationsInbox .line
+{
+	margin-bottom: 0px !important;
+}
+
+#campaign-assignments-list,
+.weapon-stats-list li,
+.stat-list-col.col6 > li,
+.kits-list li,
+.profile-stats-dogtags li,
+#loadout #items-select-menu .loadout-item-grid,
+#loadout .loadout-item-container table,
+#loadout #items-select-menu .items-select-item .item-select-configure,
+.stat-list-col.col5 > li,
+#clubs .stats .club-span1,
+.scrollable,
+.playerreport-box,
+#emblem-edit-shapes .emblem-shapes-wrapper .shape-wrapper,
+.forum-start-border .forum-start-forum-latest,
+.forum-start-border .forum-start-forum-posts
+{
+	margin: 0px;
+}
+
+.box > footer
+{
+	margin-top: 0px !important;
+	background-color: rgba(7, 7, 7, 0.5)  !important;
+}
+
+
+[class*="span"],
+.row,
+.row-tight,
+#loadout #grid-controls .btn + .btn,
+#loadout #grid-controls .box,
+#emblem-select .emblems-list li,
+.forum-start-border .forum-start-forum-topics,
+#community-mission .info,
+#community-mission .reward .description,
+#community-mission .time-left .time-left-counter,
+#community-mission .progression .progress-box
+{
+	margin-left: 0px !important;
+}
+
+
+.span4
+{
+	border-left: 0px solid;
+	border-color: rgba(7,7,7,0.8);
+	width: 338px !important;
+}
+
+.box > header h1
+{
+	line-height: 32px;
+	font-size: 19px;
+	font-family: Purista, sans-serif;
+	text-align:	center;
+	font-style: normal;
+	font-weight: 400;
+	color: #d5dde5;
+	text-transform: uppercase;
+	text-decoration: none;
+}
+
+body #base-container #user #soldiers .soldier-data-container.premium
+{
+	background-image: none;
+	border-bottom: 0px solid;
+	border-color: rgba(7,7,7,0.8);
+}
+
+/* Remove Yellow Premium Effect In The Background */
+#profile-edit-full-form .soldier-row.premium,
+.play-now-menu > ul > li.premium,
+body.premium .main-header .persona,
+body.premium #base-header .grid-container.premium-bg,
+body #base-container #user .profile-info.premium .box.username,
+.premium-glow:after, .premium-glow:before
+{
+	background-image: none;
+}
+
+section #favorites,
+#serverbrowser-show .box,
+#serverbrowser #servers,
+div .row .margin-top,
+.box > header + .box-content
+{
+	margin-top: 0px !important;
+}
+
+.sticky-scroll,
+.sticky-scroll.fixed
+{
+	position: fixed !important;
+    overflow: hidden;
+	padding-bottom: 5%;
+    height: 100%;
+	top: 0px !important;
+	right: 0px;
+	background-color: rgba(7, 7, 7, 0.9);
+}
+
+aside.span4.stat-details.sticky-scroll
+{
+    height: 100%;
+	padding-bottom: 5%;
+    overflow: auto;
+}
+
+#overview-info #overview-soldier .box-content
+{
+	height: 263px !important;
+}
+
+#overview-soldier box-content no-padding
+{
+	padding-bottom: 7px !important;
+}
+
+#campaign-progression li.box-content,
+#clubs .club-index .myclubs .box-content
+{
+	margin-right: 0px !important;
+}
+
+#campaign-progression li.box-content
+{
+	width: 191px !important;
+}
+
+#campaign-stats
+{
+	width: 335px !important;
+}
+
+#campaign-collectibles
+{
+	width: 334px !important;
+}
+
+#campaign-assignments-list li,
+body #base-container #user .profile-info .avatar-container,
+ul.weapon-accessories li
+{
+	margin: 0px;
+}
+
+#campaign-collectibles li.box-content
+{
+	width: 167px !important;
+	margin: 0px !important;
+}
+
+#campaign table.menu td.active .box-content,
+#campaign table.menu td.active footer
+{
+	color: #ffffff;
+	outline: 1px solid white;
+	box-shadow: 0 0 20px 2px #ffffff;
+	position: relative;
+	z-index: 1;
+}
+
+.progress-bar .progress-bar-inner.warning[style="width:100%"]
+{
+	background-color: #eba115;
+}
+
+.progress-bar.thickest .progress-bar-text
+{
+	text-shadow: 0 0 2px black;
+}
+
+#campaign-assignments-list li, body #base-container #user .profile-info .avatar-container
+{
+	width: 164px !important;;
+}
+
+.span4#campaign-assignments
+{
+	width: 328px !important;
+}
+
+.span4#campaign-score
+{
+	width: 341px !important;
+}
+
+.span4#campaign-leaderboard
+{
+	width: 321px !important;
+}
+
+.main-header .persona
+{
+	margin-bottom: 0px !important;
+	height: 240px;
+}
+
+.span9
+{
+	width: 990px !important;
+}
+
+.span3
+{
+	width: 247px !important;
+}
+
+.span8
+{
+	width: 652px !important;
+}
+
+.game-stats-content .span8
+{
+	width: 990px !important;
+}
+
+.span12
+{
+	width: 990px !important;
+}
+
+.row-tight .span4:last-child, .row-tight .span4.omega
+{
+	width: 662px !important;
+}
+
+.main-header .suggestions .suggestion
+{
+	width: 109px !important;
+	margin-right: 0px !important;
+}
+
+#main-header
+{
+	margin-bottom: -3px;
+}
+
+.weapon-stats-list li
+{
+	width: 165px !important;
+}
+
+#serverbrowser-filters .serverbrowser-refresh
+{
+	width: 37px !important;
+}
+
+body #base-container #user .profile-info .user-container
+{
+	  margin-left: 11px;
+}
+
+.row-tight .span4:first-child, .row-tight .span4.alpha
+{
+	width: 663px !important;
+	height: 354px;
+}
+
+#stats-detailed > .row > [class*="span"]
+{
+	width: 330px !important;
+	float:left;
+}
+
+ul.weapon-accessories li:nth-child(4n+1)
+{
+	width: 84px;
+}
+
+.stat-list-col.col6 > li,
+.stat-list-col.col6 > li:nth-child(6n+4), 
+.stat-list-col.col6 > li:nth-child(6n+5)
+{
+	width: 110px !important;
+}
+
+.kits-list li,
+.kits-list li:nth-child(4n+1)
+{
+	width: 165px;
+}
+
+.profile-stats-dogtags li,
+.profile-stats-dogtags li:nth-child(5n),
+.profile-stats-dogtags li:nth-child(5n+1)
+{
+	width: 141px;;
+}
+
+.profile-stats-dogtags li:nth-child(7n)
+{
+	width: 143px;;
+}
+
+#loadout #loadout-overview .item-configurable .loadout-item-info
+{
+	width: 211px;
+}
+
+#loadout #loadout-overview .loadout-item-container table
+{
+	width: 247px;
+}
+
+#loadout #loadout-menu-wpr
+{
+	margin-top: 16px;
+}
+
+#loadout .loadout-item-container table
+{
+	width: 247px;
+}
+
+#loadout .loadout-item-container .loadout-item-customize
+{
+	width: 20px;
+}
+
+#loadout .loadout-item-container.active.item-configurable .loadout-item-name-link
+{
+	width: 199px;
+}
+
+#loadout #items-select-menu .items-select-item .item-select-configure a
+{
+	width: 22px;
+}
+
+#loadout #items-select-menu .loadout-item-grid
+{
+	width: 247px;
+}
+
+.stat-list-col.col5 > li,
+.stat-list-col.col5 > li:nth-child(5n+4),
+.stat-list-col.col5 > li:nth-child(5n)
+{
+	width: 141px;
+}
+
+.stat-list-col.col5 > li:nth-child(7n)
+{
+	width: 144px;
+}
+
+#game-stats #overview-teamplay .box-content,
+.overview-small-list-box .box-content
+{
+	height: 65px;
+}
+
+#overview-info .overview-info-box.small .box-content
+{
+	height: 181px;
+}
+
+#stat-replay-discontinue-notice
+{
+	padding-top: 5px;
+	background-color: rgba(0, 0, 0, 0.6);
+	height: 20px;
+}
+
+#clubs .span8
+{
+	width: 654px !important;
+}
+
+#clubs .span8 > table
+{
+	width: 992px !important;
+}
+
+#clubs .stats .club-span1
+{
+	width: 218px;
+}
+
+#clubs .sync-width
+{
+	width: 338px;
+}
+
+.row-tight .span1-04:nth-child(4n)
+{
+	width: 199px;
+}
+
+#serverbrowser-filters .filter-col.filter-player-settings
+{
+	width: 397px;
+}
+
+.scroll-left, .scroll-right
+{
+	width: 46px;
+}
+
+.row-tight .span1-05:last-child, .row-tight .span1-05.omega
+{
+	width: 244px;
+}
+
+.playerreport-box header
+{
+	height: 24px;
+}
+
+.playerreport-box.large
+{
+	height: 231px;
+	width: 249px;
+}
+
+.playerreport-box.small:nth-child(7)
+{
+	  width: 126px;
+}
+
+.playerreport-box.medium > div
+{
+	height: 121px;
+}
+
+.battlereport-section-container
+{
+	margin-bottom: 0px !important;
+}
+
+#playerreport-awards
+{
+	width: 916px;
+}
+
+#playerreport-awards .arrow.sodaSlider-arrow-left
+{
+	width: 37px;
+}
+
+#playerreport-awards .arrow.sodaSlider-arrow-right
+{
+	width: 35px;
+}
+
+.row-tight .span1
+{
+	width: 168px;
+}
+
+.row-tight .span1:last-child, .row-tight span1.omega
+{
+	width: 158px;
+}
+
+.playerreport-box.full
+{
+	margin-top: 1px;
+}
+
+#battlereport-prizes > div
+{
+	background-color: rgba(0, 0, 0, 0.6);
+}
+
+#battlereport-teamstats .span6,
+#battlereport-squads .span6,
+.row > .span6
+{
+	width: 495px !important;
+}
+
+table.scoreboard tr.squadrow-fillup td
+{
+	border: 0px !important;
+	height: 47px;
+}
+
+#clubs .stats .club-span50:first-child
+{
+	width: 654px !important;
+}
+
+#clubs .stats .club-span50:last-child
+{
+	width: 654px !important;
+}
+
+#clubs .stats .club-span1 .box-content
+{
+	padding-bottom: 17px !important;
+}
+
+#emblem-select .emblems-list li,
+#emblem-select .emblems-list li a
+{
+	width: 124px;
+}
+
+.emblem-item.disabled
+{
+	width: 123px !important;
+}
+
+#emblem-edit .editor-row .editor-col
+{
+	margin-right: 15px;
+}
+
+.odcstore .product-container.battlepacks .box-content.pack-1
+{
+	width: 396px !important;
+}
+
+.forum-start-forum-topics
+{
+	width: 75px !important;
+}
+
+.forum-start-border .forum-start-forum:not(.forum-forumlist) .forum-start-forum-title
+{
+	width: 643px !important;
+}
+
+.common-box-title.forum-box-title .forum-start-forum-forum
+{
+	width: 683px !important;
+}
+
+.forum-start-info .forum-start-forum-forum
+{
+	width: 618px;
+}
+
+.forum-forumlist .forum-start-forum-title
+{
+	width: 602px;
+}
+
+.forum-start-forum
+{
+	height: 54px !important;
+}
+
+.forum-threadview-post
+{
+	border-spacing: 0;
+	margin-bottom: -1px;
+}
+
+.premium-index-section.premium-calendar-section
+{
+	width: 992px;
+}
+
+.new-premium-calendar-month
+{
+	width: 82px;
+}
+
+.missions-details
+{
+    position: relative;
+	left: 7px;
+}
+
+#missions-overview .details-info .span4
+{
+	width: 343px !important;
+}
+
+#missions-overview .missions-details .comments .writecomment #message
+{
+	width: 477px;
+}
+
+
+table.table td.no-separator
+{
+	border: 0px;
+}
+
+.app-promotion #comcenter-tab-friends-content,
+.app-promotion #comcenter-tab-search
+{
+	bottom: 41px;
+}
+
+#community-mission .info
+{
+	width: 749px;
+}
+
+#community-mission .reward .description
+{
+	width: 765px;
+}
+
+#community-mission .time-left .time-left-counter,
+#community-mission .progression .progress-box
+{
+	width: 733px;
+}
+
+.overview-top-box .items-highlighted .top-item
+{
+	height: 72px;
+}
+
+.overview-top-box .items-highlighted,
+.overview-top-box .items-highlighted .top-item
+{
+	width: 85px;
+}
+
+#overview-info .edit-link
+{
+	line-height: 32px;
+}
+
+aside.span4.stat-details.sticky-scroll
+{
+	top: 0px !important;
+}
+
+/**************************************** Version 2.0 ****************************************/
+
+#base-header
+{
+	height: 100%;
+	position: fixed;
+	padding-top: 100px;
+    background-color: black;
+}
+
+#base-container:before
+{
+	height: 40px;
+}
+
+#base-container
+{
+	right: 45px;
+}
+
+#top-tiles 
+{
+	top: 43px;
+	position: relative;
+}
+
+.main-header .suggestions .suggestion .progress-bar
+{
+	bottom: 1px;
+}
+
+.inner-wrapper > .grid-container
+{
+	width: auto;
+}
+
+#base-header-secondary-nav
+{
+	position: absolute;
+	top: -100px;
+}
+
+body.show-section-select #community-bar
+{
+	height: 100vh;
+	z-index: 999;
+	position: relative;
+	background-color: black;
+}
+
+body.show-section-select #community-bar .dropdown-bar
+{
+	z-index: 100;
+	height: 100%;
+	position: relative;
+	background-color: black;
+}
+
+#base-header,
+#base-header .game-bar .main-nav,
+#community-bar .dropdown-bar .grid-container,
+#community-bar .dropdown-bar .grid-container .row,
+#base-header .grid-container.premium-bg,
+#base-header .premium-bg.fade,
+#community-bar .dropdown-bar .grid-container .row > a,
+.game-bar > .grid-container,
+#base-header .grid-container,
+#base-header .game-bar .dropdown-bar .dropdown-menu,
+#base-header .game-bar .dropdown-bar .padder,
+.comcenter-notification-list,
+.popover-body,
+.battlereport-minicard,
+.soldierstats-box
+{
+	width: 250px !important;
+}
+
+#base-header .game-bar .dropdown-bar .padder
+{
+	padding-left: 16px !important;
+}
+
+#base-header .game-bar .dropdown-bar .padder > a
+{
+	margin-bottom: 10px;
+}
+
+.main-header .playbar
+{
+	margin-top: 0px;
+	margin-bottom: 0px;
+	position: relative;
+	top: -351px;
+}
+
+.main-header .playbar > a
+{
+	border: 0;
+	margin-bottom: 0px;
+	margin-right: -4px;
+	margin-left: 0px !important;
+	width: 330px;
+}
+
+body.show-section-select #base-container:before
+{
+	height: 40px !important;
+}
+
+#community-bar .dropdown-bar .grid-container .row > a:first-child
+{
+	margin-top: auto !important;
+}
+
+#community-bar .dropdown-bar .grid-container .row > a:last-child
+{
+	margin-bottom: auto !important;
+}
+
+#base-header .game-bar .main-nav .base-section-menu > li.soldier .header-soldier-rank
+{
+	top: 0px;
+    left: 180px;
+}
+
+#base-header .game-bar .dropdown-bar .soldierstats-box .rank .progress-bar
+{
+	width: 170px !important;
+}
+
+#base-header .game-bar .dropdown-bar .soldierstats-box header  .name,
+#base-header .game-bar .dropdown-bar .soldierstats-box header  .platform
+{
+	margin-left: 5%;
+}
+
+
+#base-header .game-bar .dropdown-bar .soldierstats-box .rank .experience
+{
+	margin-left: 12%;
+}
+
+#community-bar .dropdown-bar .grid-container .row > a
+{
+	position: relative;
+	margin-bottom: 5%;
+}
+
+#community-bar .battlelog-logo,
+#base-header .game-bar .dropdown-bar > .dropdown-content .recommended
+{
+	display: none !important;
+}
+
+#community-bar
+{
+	position: absolute;
+	left: 0px;
+	bottom: 100px;
+	z-index: 90;
+}
+
+.tools .popover .popover-body .header-profile-dropdown a
+{
+	left: 6px;
+}
+
+.tools
+{
+	position: fixed;
+	left: 10px;
+	top: 50px;
+	z-index: 9;
+	background-color: black;
+}
+
+#community-bar .outerarrow
+{
+	transform: rotate(180deg);
+}
+
+.base-game-selector .game-box.game-mohw .game-box-image
+{
+	margin-left: -160px;
+}
+
+#community-bar .user-tools
+{
+	position: absolute;
+	left: 100px;
+	top: 0;
+	right: auto;
+}
+
+.popover-body
+{
+	position: relative;
+	z-index: 90;
+	padding-right: 6px;
+    padding-left: 2px;
+    background-color: black;
+}
+
+#base-header-user-tools .tools .popover .popover-body
+{
+	left: 31px;
+}
+
+#receipt-container
+{
+	position: fixed;
+	z-index: 9999;
+	top: 0;
+	opacity: 1;
+	width: 100vw;
+}
+
+.notification-platoon-wrapper .platoon-badge-item, 
+.notification-platoon-wrapper .club-emblem
+{
+	right: -10px;
+}
+
+#base-header .game-bar .main-nav .base-section-menu > li
+{
+	width: 100%;
+}
+
+#base-header .game-bar .dropdown-bar .recommended-servers > article
+{
+	float: left;
+}
+
+.header-dropdown-active #base-header .game-bar .dropdown-bar
+{
+	box-shadow: none;
+}
+
+#bblog-icon
+{
+	bottom: 10% !important;
+	top: auto;
+}
+
+@media screen and (max-width: 1600px) {
+	
+	#base-header,
+	.tools
+	{
+		position: fixed;
+		opacity: 0.5;
+		left: -50px;
+		transition: left 0.4s ease-in-out;
+	}
+		
+	#base-header:hover,
+	.tools:hover
+	{
+		left: 0px;
+		opacity: 1;
+		background-color: black;
+	}
+	
+	.tools:hover
+	{
+		left: 10px;
+	}
+	
+	aside.span4.stat-details.sticky-scroll,
+	.sticky-scroll,
+	.sticky-scroll.fixed
+	{
+		right: -50px;
+		opacity: 0.5;
+		transition: right 0.4s ease-in-out;
+	}
+	
+	aside.span4.stat-details.sticky-scroll:hover,
+	.sticky-scroll:hover,
+	.sticky-scroll.fixed:hover
+	{
+		right: 0px;
+		opacity: 1;
+	}
+	
+	#comcenter-friends
+	{	
+		width: 221px;
+	}
+
+	#comcenter-friends:hover
+	{
+		width: 238px;
+	}
+}
+
+@media screen and (max-width: 1500px) {
+	
+	#base-header,
+	.tools
+	{
+		left: -190px;
+	}
+	
+	aside.span4.stat-details.sticky-scroll,
+	.sticky-scroll,
+	.sticky-scroll.fixed
+	{
+		right: -190px;
+	}
+		
+	#comcenter-friends
+	{	
+		width: 247px;
+	}
+
+	#comcenter-friends:hover
+	{
+		width: 247px;
+	}
+}
+
+@media screen and (max-width: 1261px) {
+	
+	#base-header-user-tools .tools .tools-item.comcenter-toggle
+	{
+		position: fixed;
+		right: 0;
+		bottom: 0;
+	}
+	
+	#comcenter-friends
+	{	
+		width: 237px;
+		height: 100%;
+		visibility: visible;
+		background: #131313;
+		
+	}
+		
+}
+
+@media screen and (min-width: 1261px) {
+	
+	html:not(.is-touch) body:not(.no-comcenter) #viewport
+	{
+		position: relative;
+		padding-right: 0px;	
+		left: 0;
+	}
+	
+	html:not(.is-touch) body:not(.no-comcenter) #geomap
+	{
+		right: 0;		
+	}
+	
+}

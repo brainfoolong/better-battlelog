@@ -1,0 +1,138 @@
+#base-background {
+    background: rgb(0, 0, 0) url("http://www.bf-blog.cz/wp-content/uploads/2011/11/bf3_-_back_to_karkand_-_strike_at_karkand_screenshots_-_nov_7th_-_3_tga_jpgcopy.jpg") repeat scroll 50% 50% !important;
+}
+#base-background::before {
+    background: rgb(0, 0, 0) url("http://www.bf-blog.cz/wp-content/uploads/2011/11/bf3_-_back_to_karkand_-_strike_at_karkand_screenshots_-_nov_7th_-_3_tga_jpgcopy.jpg") repeat scroll 50% 50% !important;
+    content: "";
+    margin: 0 auto;
+    filter: blur(5px);
+    display: block;
+    width: 1024px;
+    height: 100%;
+    position: relative;
+}
+#base-page {
+    background: rgba(255, 255, 255, 0.4) none repeat scroll 0% 0%;
+    padding: 10px;
+    width: 1024px;
+    border-right: 1px solid rgba(255, 255, 255, 0.15);
+    border-left: 1px solid rgba(255, 255, 255, 0.15);
+}
+.common-button-large p, .base-button-arrow-almost-gigantic, .common-button-medium p {
+    background: transparent none repeat scroll 0% 0%;
+    color: rgb(255, 153, 0);
+    text-shadow: 0px 0px;
+    border: 0px none;
+    font-family: Purista,sans-serif !important;
+    font-weight: 400 !important;
+}
+#comcenter-friends {
+    background: #25292C;
+}
+#community-bar {
+    background: rgba(21, 24, 26, 1);
+}
+#base-header .game-bar .inner-wrapper {
+    background: #0A0B0C;
+}
+
+#base-header .game-bar .main-nav .base-section-menu > li {
+    border-color: rgba(255,255,255,0.15) !important;
+}
+#base-header .game-bar .grid-container {
+    margin-top: -1px;
+    border-right: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.15) !important;
+    padding-right: 5px;
+}
+
+.common-button-large, .base-button-arrow-almost-gigantic, .common-button-medium {
+    background: rgba(72, 39, 8, 0.8) none repeat scroll 0% 0%;
+    border-radius: 2px !important;
+    box-sizing: border-box;
+    border: 1px solid transparent;
+}
+.common-button-large:hover, .base-button-arrow-almost-gigantic:hover, .common-button-medium:hover {
+    border: 1px solid rgb(248, 144, 0);
+    text-shadow: 0px 0px 0.5em rgba(255, 191, 101, 0.8);
+}
+.common-button-large:hover p, .base-button-arrow-almost-gigantic:hover, .common-button-medium:hover p {
+text-shadow: 0px 0px 0.5em rgba(255, 191, 101, 0.8) !important;
+}
+
+#base-bf3-body .base-middle {
+    background: transparent none repeat scroll 0% 0%;
+    box-shadow: 0px 0px;
+    width: auto;
+    margin: 0px auto;
+}
+.main-loggedin-middle .span8 {
+    width: 66%;
+}
+.main-loggedin-middle .span4 {
+    width: 321px;
+}
+.base-middle-content {
+    padding: 0px;
+    width: auto;
+}
+.main-loggedin-middle .box {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid transparent;
+    box-shadow: 0px 0px;
+    padding: 10px;
+    box-sizing: padding-box;
+}
+.battlepacks-list .battlebox ul .bp-item span {
+    padding: 3px;
+    box-sizing: padding-box;
+}
+
+#base-background::before {
+    filter: blur(20px);
+}
+.main-loggedin-middle .box {
+    padding: 10px;
+    box-sizing: padding-box;
+    color: transparent;
+}
+.main-loggedin-middle .box span {
+    color: #000;
+}
+.feed-story-heading {
+    color: #000;
+}
+.tabs-container {
+    background: rgba(236, 236, 236, 0.15);
+    border-bottom: 0px;
+}
+.base-button-arrow-almost-gigantic {
+    color: #FF9909;
+    text-shadow: 0px 0px;
+    font-weight: 400;
+    font-family: Purista;
+    font-size: 24px;
+}
+#serverguide-show-column {
+    background: rgba(255,255,255,0.1);
+    padding: 10px;
+    border-radius: 5px;
+}
+#selected-server-scoreboard h2, #serverinfo-more-info h2 {
+    color: #000;
+}
+#server-settings li {
+    color: #333;
+}
+#selected-server-settings #server-settings li {
+    border-bottom: 1px solid rgba(0,0,0,0.155);
+}
+#serverinfo-players-all-view {
+    margin-bottom: 0px;
+    background: #fff;
+    padding: 5px;
+    height: auto;
+    width: 100%;
+    box-sizing: border-box;
+    color: #222;
+}

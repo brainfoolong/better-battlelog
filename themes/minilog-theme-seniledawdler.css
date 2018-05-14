@@ -1,0 +1,1438 @@
+/* MINI-LOG
+ * version 1.4.7
+ * Better Battlelog theme
+ * developed by Vesa Antikainen (psn: seniledawdler)
+ * http://vesa.me
+ */
+
+
+
+/* ---- ~~General stuff ---- */
+
+.bblog-favThreads .entry .delete {
+    -webkit-border-radius: 50%;
+       -moz-border-radius: 50%;
+            border-radius: 50%;
+}
+
+
+/* ---- ~~Tabs ---- */
+
+.tabs-container {
+    padding-bottom: 0;
+}
+
+.tabs {
+    width: auto;
+    position: relative;
+    left: auto;
+    height: 37px;
+    border-left: 1px solid #DFDFDF;
+    border-right: 1px solid #DFDFDF;
+    margin: 3px 0 0 0;
+    float: left;
+    clear: none;
+}
+
+.tabs li a {
+    text-indent: -9999em;
+    width: 26px;
+    height: 36px;
+    line-height: 36px;
+    border-top: 1px solid #DFDFDF;
+}
+
+.tabs li.active a {
+    height: 36px;
+    border-top: 0;
+    font-weight: normal;
+    border-right-color: #6e6e6e;
+    border-bottom: 1px #8b8b8b solid;
+    border-top: 1px #8b8b8b solid;
+}
+
+.tabs li a .tab-icon {
+    margin-top: 11px;
+    margin: 11px 0 0 6px;
+    display: block;
+}
+
+.tabs li.active a .tab-icon {
+    margin-top: 11px;
+}
+
+.profile-venicestats-header-soldier {
+    height: 34px;
+    margin: 3px 0 0 0;
+    padding-right: 16px;
+}
+
+.profile-venicestats-header-soldier-info {
+    height: 34px;
+}
+
+
+
+/* ---- ~~Avatars ---- */
+
+.base-avatar-container.base-avatar-size-small .base-avatar-status-overlay-offline {
+    padding-right: 6px;
+    background: #dedede;
+    background: -moz-linear-gradient(top,  #dedede 0%, #bfbfbf 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#dedede), color-stop(100%,#bfbfbf));
+    background: -webkit-linear-gradient(top,  #dedede 0%,#bfbfbf 100%);
+    background: linear-gradient(top,  #dedede 0%,#bfbfbf 100%);
+}
+
+.base-avatar-container.base-avatar-size-large a.base-avatar-status-overlay-online,
+.base-avatar-container.base-avatar-size-medium a.base-avatar-status-overlay-online,
+.base-avatar-container.base-avatar-size-small a.base-avatar-status-overlay-online,
+.base-avatar-container.base-avatar-size-supersize2 .base-avatar-status-overlay-online,
+.base-avatar-container.base-avatar-size-small .base-avatar-status-overlay-online {
+    background: #adf781;
+    -webkit-animation: online-pulse 0.1s; /* Safari and Chrome */
+       -moz-animation: online-pulse 0.1s; /* Firefox */
+            animation: online-pulse 0.1s;
+    -webkit-animation: online-pulse 1s; /* Safari and Chrome */
+       -moz-animation: online-pulse 1s; /* Firefox */
+            animation: online-pulse 1s;
+    -webkit-animation-iteration-count: infinite;
+       -moz-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+       -moz-animation-direction: alternate;
+            animation-direction: alternate;
+    -webkit-animation-play-state: running;
+       -moz-animation-play-state: running;
+            animation-play-state: running;
+    -webkit-animation-timing-function: linear;
+       -moz-animation-timing-function: linear;
+            animation-timing-function: linear;
+    -webkit-box-shadow: inset 0 0 1em #4bad28;
+       -moz-box-shadow: inset 0 0 1em #4bad28;
+            box-shadow: inset 0 0 1em #4bad28;
+}
+
+@-webkit-keyframes online-pulse {
+    from {background: #adf781;}
+      to {background: #54c12d;}
+}
+
+@-moz-keyframes online-pulse {
+    from {background: #adf781;}
+      to {background: #54c12d;}
+}
+
+@keyframes online-pulse {
+    from {background: #adf781;}
+      to {background: #54c12d;}
+}
+
+.base-avatar-container.base-avatar-size-large a.base-avatar-status-overlay-playing,
+.base-avatar-container.base-avatar-size-medium a.base-avatar-status-overlay-playing,
+.base-avatar-container.base-avatar-size-small a.base-avatar-status-overlay-playing,
+.base-avatar-container.base-avatar-size-supersize2 .base-avatar-status-overlay-playing,
+.base-avatar-container.base-avatar-size-small .base-avatar-status-overlay-playing {
+    background: #a7ddfe;
+    background: -moz-linear-gradient(top,  #a7ddfe 0%, #29abf0 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a7ddfe), color-stop(100%,#29abf0));
+    background: -webkit-linear-gradient(top,  #a7ddfe 0%,#29abf0 100%);
+    background: linear-gradient(top,  #a7ddfe 0%,#29abf0 100%);
+    -webkit-animation: playing-pulse 0.1s; /* Safari and Chrome */
+       -moz-animation: playing-pulse 0.1s; /* Firefox */
+            animation: playing-pulse 0.1s;
+    -webkit-animation: playing-pulse 1s; /* Safari and Chrome */
+       -moz-animation: playing-pulse 1s; /* Firefox */
+            animation: playing-pulse 1s;
+    -webkit-animation-iteration-count: infinite;
+       -moz-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+       -moz-animation-direction: alternate;
+            animation-direction: alternate;
+    -webkit-animation-play-state: running;
+       -moz-animation-play-state: running;
+            animation-play-state: running;
+    -webkit-animation-timing-function: linear;
+       -moz-animation-timing-function: linear;
+            animation-timing-function: linear;
+    -webkit-box-shadow: inset 0 0 1em #29abf0;
+       -moz-box-shadow: inset 0 0 1em #29abf0;
+            box-shadow: inset 0 0 1em #29abf0;
+}
+
+@-webkit-keyframes playing-pulse {
+    from {background: #a7ddfe;}
+      to {background: #2cb6ff;}
+}
+
+@-moz-keyframes playing-pulse {
+    from {background: #a7ddfe;}
+      to {background: #2cb6ff;}
+}
+
+@keyframes playing-pulse {
+    from {background: #a7ddfe;}
+      to {background: #2cb6ff;}
+}
+
+.base-avatar-container.base-avatar-size-large .base-avatar-status-overlay.base-avatar-status-overlay-unknown,
+.base-avatar-container.base-avatar-size-medium .base-avatar-status-overlay.base-avatar-status-overlay-unknown,
+.base-avatar-container.base-avatar-size-small .base-avatar-status-overlay.base-avatar-status-overlay-unknown,
+.base-avatar-container.base-avatar-size-supersize2 .base-avatar-status-overlay-unknown,
+.base-avatar-container.base-avatar-size-small .base-avatar-status-overlay-unknown {
+    padding-right: 6px;
+    background: #f5f5f5;
+    background: -moz-linear-gradient(top,  #f5f5f5 0%, #ececec 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f5f5f5), color-stop(100%,#ececec));
+    background: -webkit-linear-gradient(top,  #f5f5f5 0%,#ececec 100%);
+    background: linear-gradient(top,  #f5f5f5 0%,#ececec 100%);
+}
+
+
+
+
+
+
+/* ---- ~~Profile ---- */
+
+.profile-venicestats-header-soldier-info-name {
+    padding: 0;
+    font-size: 1.1em;
+    line-height: 1em;
+}
+
+.profile-venicestats-header-soldier-info-type {
+    padding: 0;
+}
+
+.profile-venicestats-overview-highlight-servicestars-meter-fill {
+    background: #d3e3a6;
+    background: -moz-linear-gradient(top,  #d3e3a6 0%, #edf1e2 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d3e3a6), color-stop(100%,#edf1e2));
+    background: -webkit-linear-gradient(top,  #d3e3a6 0%,#edf1e2 100%);
+    background: linear-gradient(top,  #d3e3a6 0%,#edf1e2 100%);
+}
+
+#base-loggedin-friends-list-container.avatar-only ul li {
+    width: 32px;
+}
+
+.profile-gamereport-bar-column-head {
+    height: 14px;
+}
+
+.profile-gamereport-lost .profile-gamereport-bar-column-head {
+    height: 35px;
+}
+
+.profile-battlereports-favorite-item-bottom {
+    position: relative;
+}
+
+#profile-main-column {
+    margin-top: 0;
+}
+
+#profile-battlereports .dot {
+    height: 10px;
+    width: 10px;
+    background: #bbb;
+    margin-top: -7px;
+    line-height: 10px;
+    margin-left: -5px;
+    text-indent: -9999em;
+    -webkit-border-radius: 50%;
+       -moz-border-radius: 50%;
+            border-radius: 50%;
+}
+
+#profile-battlereports .profile-gamereport-bar-column.win .dot {
+    background: #ffc500;
+    -webkit-box-shadow: inset 0 0 7px #da8500;
+       -moz-box-shadow: inset 0 0 7px #da8500;
+            box-shadow: inset 0 0 7px #da8500;
+    -webkit-animation:pulse 0.1s; /* Safari and Chrome */
+       -moz-animation:pulse 0.1s; /* Firefox */
+            animation:pulse 0.1s;
+    -webkit-animation:pulse 1s; /* Safari and Chrome */
+       -moz-animation:pulse 1s; /* Firefox */
+            animation:pulse 1s;
+    -webkit-animation-iteration-count: infinite;
+       -moz-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+       -moz-animation-direction: alternate;
+            animation-direction: alternate;
+    -webkit-animation-play-state: running;
+       -moz-animation-play-state: running;
+            animation-play-state: running;
+    -webkit-animation-timing-function: linear;
+       -moz-animation-timing-function: linear;
+            animation-timing-function: linear;
+}
+
+@-webkit-keyframes pulse {
+    from {background:#ffc500;}
+      to {background:#ffe488;}
+}
+
+@-moz-keyframes pulse {
+    from {background:#ffc500;}
+      to {background:#ffe488;}
+}
+
+@keyframes pulse {
+    from {background:#ffc500;}
+      to {background:#ffe488;}
+}
+
+#profile-battlereports .profile-gamereport-bar-column.loss .dot {
+    background: #929292;
+    -webkit-box-shadow: inset 0 0 7px #555;
+       -moz-box-shadow: inset 0 0 7px #555;
+            box-shadow: inset 0 0 7px #555;
+}
+
+#profile-battlereports a:hover .dot {
+    opacity: 1;
+}
+
+#profile-battlereports .line {
+    background: #bbb;
+}
+
+body.bf3stats .histbuttons a,
+body.bf3stats #historygraph .swbtns a {
+    padding: 0.2em 0.5em;
+    border: 1px solid #ddd;
+    background: #ffffff;
+    background: -moz-linear-gradient(top,  #ffffff 0%, #efefef 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#efefef));
+    background: -webkit-linear-gradient(top,  #ffffff 0%,#efefef 100%);
+    background: linear-gradient(top,  #ffffff 0%,#efefef 100%);
+    -webkit-border-radius: 1em;
+       -moz-border-radius: 1em;
+            border-radius: 1em;
+    color: #555;
+}
+
+body.bf3stats .histbuttons a:hover,
+body.bf3stats #historygraph .swbtns a:hover {
+    -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+       -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    border-color: #bbb;
+}
+
+body.bf3stats .histbuttons a.active,
+body.bf3stats #historygraph .swbtns a.active {
+    background: #6b6b6b;
+    background: -moz-linear-gradient(top,  #6b6b6b 0%, #555555 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#6b6b6b), color-stop(100%,#555555));
+    background: -webkit-linear-gradient(top,  #6b6b6b 0%,#555555 100%);
+    background: linear-gradient(top,  #6b6b6b 0%,#555555 100%);
+    color: #fff;
+    text-decoration: none;
+    border-color: #444;
+}
+
+body.bf3stats .darr {
+    background-position: 100% 5px;
+}
+
+body.bf3stats .darr.pos {
+    background-position: 100% -29px;
+}
+
+body.bf3stats .darr.neg {
+    background-position: 100% -61px;
+}
+
+body.bf3stats .graphcont .legendx {
+    padding: 0.3em;
+    background-color: #fff;
+    -webkit-border-radius: 0.3em;
+       -moz-border-radius: 0.3em;
+            border-radius: 0.3em;
+    -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+       -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+body.bf3stats .graphcont .legend {
+    background-color: #fff;
+    -webkit-border-radius: 0 0 0.3em 0;
+       -moz-border-radius: 0 0 0.3em 0;
+            border-radius: 0 0 0.3em 0;
+    -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+       -moz-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    border-top: 1px #e5e5e5 solid;
+    border-left: 1px #b3b5b4 solid;
+    padding: 0.3em 0.5em;
+}
+
+body.bf3stats .graphcont .legend .infoitem {
+    float: left;
+    margin-right: 0.5em;
+}
+
+body.bf3stats .graphcont .legend .infoitem:last-of-type {
+    margin-right: 0;
+}
+
+body.bf3stats .graphcont .xline {
+    width: 0px;
+    background-color: transparent;
+    border-left: 1px dashed #666;
+}
+
+body.bf3stats #historygraph .swbtns a:first-of-type {
+    -webkit-border-radius: 1em 0 0 1em;
+       -moz-border-radius: 1em 0 0 1em;
+            border-radius: 1em 0 0 1em;
+    padding: 1px 4px 1px 6px;
+}
+
+body.bf3stats #historygraph .swbtns a:last-of-type {
+    -webkit-border-radius: 0 1em 1em 0;
+       -moz-border-radius: 0 1em 1em 0;
+            border-radius: 0 1em 1em 0;
+    padding: 1px 6px 1px 4px;
+}
+
+
+
+/* ---- ~~Friends list ---- */
+
+
+
+
+/* ---- ~~Weapons chart ---- */
+
+.profile-stats-type-container-filters {
+    top: 0;
+}
+
+.profile-stats-type-container-filters .common-selector {
+    border-right: 0;
+}
+
+.common-selector {
+    border-right: 0;
+    -webkit-border-radius: 1em;
+       -moz-border-radius: 1em;
+            border-radius: 1em;
+}
+
+.common-selector li:first-of-type,
+.common-selector li:first-of-type div {
+    -webkit-border-radius: 2em 0 0 2em;
+       -moz-border-radius: 2em 0 0 2em;
+            border-radius: 2em 0 0 2em;
+}
+
+.common-selector li:last-of-type,
+.common-selector li:last-of-type div {
+    -webkit-border-radius: 0 2em 2em 0;
+       -moz-border-radius: 0 2em 2em 0;
+            border-radius: 0 2em 2em 0;
+}
+
+.common-selector li:last-of-type {
+    border-right: 1px solid #D5D5D5;
+}
+
+.profile-stats-type-container td .item-container {
+    min-height: 60px;
+    padding-top: 15px;
+}
+
+.profile-stats-type-container td.item-servicestars .item-container,
+.profile-stats-type-container td.item-nextunlock .item-container {
+    padding-top: 0;
+}
+
+.profile-stats-type-container td .item-object {
+    padding-top: 11px;
+}
+
+.profile-stats-type-container table.common-table > tbody > tr > td.item-name a {
+    height: 60px;
+    display: block;
+}
+
+.profile-stats-type-container table.common-table > tbody > tr > td.item-name a > img {
+    height: 100%;
+    width: auto;
+    margin-top: 5px;
+}
+
+.profile-stats-type-container td.item-name p {
+    display: none;
+    position: absolute;
+    width: 130px;
+    bottom: 100%;
+    left: 103px;
+    margin-left: -50%;
+    background: #323232;
+    background: rgba(0, 0, 0, 0.8);
+    -webkit-border-radius: 4px;
+       -moz-border-radius: 4px;
+            border-radius: 4px;
+    color: white;
+    font-weight: normal;
+    padding: 4px 4px 5px 4px;
+    text-align: center;
+}
+
+.profile-stats-type-container table.common-table > tbody > tr > td.item-name a {
+    position: relative;
+}
+
+.profile-stats-type-container td.item-name a:hover p {
+    display: block;
+}
+
+.profile-stats-type-container td.item-name a:hover {
+    text-decoration: none;
+}
+
+.profile-stats-type-container td.item-name p img {
+    margin-bottom: -2px;
+}
+
+.profile-stats-type-container td.item-name p::after {
+    position: absolute;
+    display: block;
+    content: "";  
+    border-color: #323232 transparent transparent transparent;
+    border-style: solid;
+    border-width: 5px;
+    height: 0;
+    width: 0;
+    position: absolute;
+    bottom: -10px;
+    left: 65px;
+}
+
+.profile-stats-type-container td.item-servicestars .item-object {
+    padding-top: 0;
+}
+
+.profile-stats-type-item-servicestar-star {
+    margin-top: 10px;
+}
+
+.profile-stats-type-container td div.servicestars-multiple {
+    top: 17px;
+}
+
+.profile-stats-type-container td .item-extra {
+    top: 55px;
+}
+
+.profile-stats-type-container td.item-servicestars .item-extra {
+    top: 48px;
+}
+
+.profile-stats-type-container td.item-nextunlock .item-object {
+    padding-top: 0;
+}
+
+.profile-stats-type-container td.item-nextunlock .item-object .all-taken {
+    padding-top: 20px;
+}
+
+.profile-stats-type-container td.item-nextunlock .item-container .item-object a img {
+    top: -4px;
+    height: 35px;
+    width: auto;
+}
+
+.profile-stats-type-container td.item-nextunlock .item-extra {
+    top: 48px;
+}
+
+.profile-stats-type-container td .item-compare {
+    bottom: 23px;
+}
+
+.profile-stats-type-container td.item-servicestars .item-compare {
+    bottom: 15px;
+}
+
+.profile-stats-awards-progression-header-progress-bars {
+    margin-top: 3px;
+}
+
+.bf3stats-top {
+    margin-top: -19px;
+}
+
+.bblog-shots-position {
+    padding-top: 11px !important;
+}
+
+.profile-stats-type-container td div.bblog-shots,
+.profile-stats-type-container td div.bblog-shots div,
+.profile-stats-type-container td div.bblog-kills {
+    padding-top: 0;
+}
+
+#profile-stats-vehicle-statistics td div.bblog-kills {
+    padding-top: 15px;
+}
+
+.bblog-shots-position .bblog-shots .shots {
+    position: relative;
+    top: 15px;
+}
+
+.bblog-shots-position .bblog-shots .hs {
+    position: relative;
+    top: -47px;
+}
+
+
+
+/* ---- ~~Weapon page ---- */
+
+.bblog-weapon-container .damagemodel .venice-statsitem-box-item {
+    width: 160px;
+    float: none;
+}
+
+.bblog-weapon-container .damagemodel .venice-statsitem-bar-title,
+.bblog-weapon-container .damagemodel .venice-statsitem-bar-value {
+    width: 80px;
+    float: left;
+    line-height: 1em;
+}
+
+.bblog-weapon-container .row:nth-of-type(3) {
+    margin-bottom: 2em;
+}
+
+.venice-stats-info-description {
+    min-height: 130px;
+    width: auto;
+}
+
+.venice-stats-info-image {
+    width: 32%;
+    margin-left: 2%;
+    position: relative;
+    float: right;
+}
+
+.venice-stats-info-image img {
+    width: 100%;
+    height: auto;
+}
+
+.venice-stats-info-link {
+    height: auto;
+    line-height: 1em;
+}
+
+.bblog-weapon-container .torso {
+    top: 10px;
+}
+
+.bblog-weaponSwitch a {
+    width: 124px;
+    padding: 0 0.4em;
+    margin: 0.5em 0.5em 0 0;
+    border: 1px solid #ddd;
+    background: #ffffff;
+    background: -moz-linear-gradient(top,  #ffffff 0%, #efefef 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#efefef));
+    background: -webkit-linear-gradient(top,  #ffffff 0%,#efefef 100%);
+    background: linear-gradient(top,  #ffffff 0%,#efefef 100%);
+    text-align: center;
+    -webkit-border-radius: 1em;
+       -moz-border-radius: 1em;
+            border-radius: 1em;
+}
+
+.bblog-weaponSwitch a:hover {
+    background: #6b6b6b;
+    background: -moz-linear-gradient(top,  #6b6b6b 0%, #555555 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#6b6b6b), color-stop(100%,#555555));
+    background: -webkit-linear-gradient(top,  #6b6b6b 0%,#555555 100%);
+    background: linear-gradient(top,  #6b6b6b 0%,#555555 100%);
+    color: #fff;
+    text-decoration: none;
+    border-color: #444;
+}
+
+.bblog-weaponSwitch .title {
+    margin-top: 1em;
+}
+
+.bblog-weaponSwitch .hidden {
+    margin-bottom: 1em;
+}
+
+.common-percentbar-container,
+.common-percentbar-container div,
+.main-loggedin-rankbar-barmeter,
+.main-loggedin-rankbar-barmeter div,
+.common-statscompare-meter-thick,
+.common-statscompare-meter-thick div,
+.base-header-soldier-progressbar,
+.base-header-soldier-progressbar div {
+    -webkit-border-radius: 1em;
+       -moz-border-radius: 1em;
+            border-radius: 1em;
+}
+
+.profile-stats-unlock-progression-kit-progress .bars .common-percentbar-container {
+    padding-right: 2px;
+}
+
+.common-statscompare-meter-thick {
+    height: 4px;
+    bottom: -5px;
+}
+
+.common-statscompare-meter-thick .common-statscompare-meter-separator {
+    height: 6px;
+}
+
+.common-statscompare-meter-thick .common-statscompare-meter-negative,
+.common-statscompare-meter-thick .common-statscompare-meter-negative-line {
+    -webkit-border-radius: 1em 0 0 1em;
+       -moz-border-radius: 1em 0 0 1em;
+            border-radius: 1em 0 0 1em;
+}
+
+.common-statscompare-meter-thick .common-statscompare-meter-positive,
+.common-statscompare-meter-thick .common-statscompare-meter-positive-line {
+    -webkit-border-radius: 0 1em 1em 0;
+       -moz-border-radius: 0 1em 1em 0;
+            border-radius: 0 1em 1em 0;
+}
+
+.profile-stats-unlock-progression-kit-icon {
+    border-radius: 1em;
+}
+
+.statisticstable tr:hover {
+    background: #f5f5f5;
+}
+
+.statisticstable tr:hover td {
+    border-color: #e8e8e8;
+}
+
+#profile-stats-weapons-main-column .profile-stats-type-container-filters {
+    float: left;
+    position: relative;
+    top: auto;
+    right: auto;
+    clear: both;
+    padding-left: 0;
+}
+
+#profile-stats-weapons-statistics > .base-clear,
+#profile-stats-vehicle-statistics > .base-clear {
+    clear: none;
+}
+
+#profile-stats-weapons-main-column .bblog-textual-filter {
+    float: right;
+    line-height: 29px;
+    top: auto;
+}
+
+#profile-stats-weapons-main-column .bblog-textual-filter input {
+    width: 200px;
+    -webkit-border-radius: 1em;
+       -moz-border-radius: 1em;
+            border-radius: 1em;
+    border: 1px #b4b4b4 solid;
+    height: 27px;
+    padding: 0 0.8em;
+}
+
+#profile-stats-weapons-main-column #profile-stats-vehicle-statistics .bblog-textual-filter input {
+    width: 120px;
+}
+
+#profile-stats-weapons-main-column .bblog-textual-filter input:focus {
+    outline: none;
+}
+
+.profile-stats-secondary-column h1,
+.profile-stats-type-container h1,
+#dogtags-list h1 {
+    padding-bottom: 0.3em;
+}
+
+
+
+
+/* ---- ~~Leaderboards ---- */
+
+
+
+
+
+/* ---- ~~Battle reports ---- */
+
+.battlereport-topscores-column-avatar {
+    width: auto;
+    height: auto;
+    margin-right: 4px;
+}
+
+.battlereport-topscores-column-info {
+    width: 135px;
+    word-wrap: break-word;
+}
+
+.battlereport-topscores-column {
+    width: 188px;
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 7px;
+    float: none;
+}
+
+.battlereport-teamstats-list-row-top3 .battlereport-teamstats-user-info {
+    padding-top: 3px;
+}
+
+.battlereport-teamstats-list-row-top3 .battlereport-teamstats-user-personarank {
+    margin-top: 8px;
+}
+
+.battlereport-teamstats-list-row-top3.pos1 .battlereport-teamstats-pos-inner,
+.battlereport-teamstats-list-row-top3.pos2 .battlereport-teamstats-pos-inner,
+.battlereport-teamstats-list-row-top3.pos3 .battlereport-teamstats-pos-inner,
+.battlereport-teamstats-list-row-top3 .battlereport-teamstats-squad-box {
+    margin-top: -2px;
+}
+
+#battlereport-teamstats table .battlereport-teamstats-list-row-top3 td {
+    height: 41px;
+}
+
+.battlereport-teamstats-user-container .base-avatar-container {
+    top: 7px;
+}
+
+.battlereport-teamstats-list-row-top3 .battlereport-teamstats-user-container .base-avatar-container {
+    top: 5px;
+}
+
+.battlereport-teamstats-user-personarank {
+    margin-top: 7px;
+}
+
+.battlereport-teamscores-scores {
+    padding-top: 6px;
+    height: 36px;
+}
+
+.battlereport-teamscores-score {
+    line-height: 40px;
+    height: 36px;
+}
+
+.battlereport-teamscores-score .battlereport-teamscores-score-value {
+    height: 36px;
+}
+
+#battlereport-teamscores {
+    min-height: 48px;
+    height: auto;
+    overflow: hidden;
+    padding-top: 0;
+}
+
+.battlereport-teamscores-scores.big {
+    padding-top: 5px;
+}
+
+.battlereport-teamscores-score .battlereport-teamscores-score-avatar {
+    padding-bottom: 3px;
+}
+
+.battlereport-teamscores-score .battlereport-teamscores-score-msg,
+.battlereport-teamscores-score .battlereport-teamscores-score-msg p {
+    height: 36px;
+    line-height: 36px;
+}
+
+
+.battlereport-teamscores-score {
+    -webkit-border-radius: 0.23em 0 0 0.23em;
+       -moz-border-radius: 0.23em 0 0 0.23em;
+            border-radius: 0.23em 0 0 0.23em;
+}
+
+.battlereport-teamscores-score .battlereport-teamscores-score-msg,
+.battlereport-teamscores-score .battlereport-teamscores-score-avatar {
+    -webkit-border-radius: 0.5em 0 0 0.5em;
+       -moz-border-radius: 0.5em 0 0 0.5em;
+            border-radius: 0.5em 0 0 0.5em;
+}
+
+.battlereport-teamscores-score.last {
+    -webkit-border-radius: 0 0.23em 0.23em 0;
+       -moz-border-radius: 0 0.23em 0.23em 0;
+            border-radius: 0 0.23em 0.23em 0;
+}
+
+.battlereport-teamscores-score.last .battlereport-teamscores-score-msg,
+.battlereport-teamscores-score.last .battlereport-teamscores-score-avatar {
+    -webkit-border-radius: 0 0.5em 0.5em 0;
+       -moz-border-radius: 0 0.5em 0.5em 0;
+            border-radius: 0 0.5em 0.5em 0;
+}
+
+.battlereport-teamscores-score.myteam,
+.battlereport-teamscores-score.winner,
+.battlereport-teamscores-score.winner.myteam .battlereport-teamscores-score-msg {
+    -webkit-border-radius: 0;
+       -moz-border-radius: 0;
+            border-radius: 0;
+}
+
+.battlereport-header .base-clear {
+    clear: none;
+}
+
+.battlereport-header {
+    min-height: 35px;
+}
+
+.battlereport-header-info {
+    float: left;
+    clear: both;
+    padding: 0;
+    margin-top: 3px;
+    line-height: 1em;
+}
+
+#battlereport-actionbuttons {
+    margin-top: -4px;
+    margin-left: 5px;
+}
+
+.battlereport-header-info.grey {
+    clear: none;
+    margin-left: 1em;
+    border-left: 1px #353535 solid;
+    padding-left: 1em;
+}
+
+.bblog-report-buttons {
+    position: relative;
+    float: right;
+    margin-left: 6px;
+    margin-top: -3px;
+    top: auto;
+}
+
+.battlereport-topscores-column h3 {
+    margin-bottom: 0px;
+}
+
+#battlereport-personal-progressbar {
+    -webkit-border-radius: 1em;
+       -moz-border-radius: 1em;
+            border-radius: 1em;
+}
+
+#battlereport-personal-progressbar-oldxp {
+    -webkit-border-radius: 1em 0 0 1em;
+       -moz-border-radius: 1em 0 0 1em;
+            border-radius: 1em 0 0 1em;
+}
+
+#battlereport-personal-progressbar-newxp {
+    -webkit-border-radius: 0 1em 1em 0;
+       -moz-border-radius: 0 1em 1em 0;
+            border-radius: 0 1em 1em 0;
+}
+
+
+
+
+/* ---- ~~Live Scoreboard ---- */
+
+#serverguide-scoreboard td {
+    height: 36px;
+}
+
+#serverguide-scoreboard td.player-name .player-rank {
+    margin-top: 1px;
+}
+
+
+
+
+/* ---- ~~Server browser ---- */
+
+.tabs-container .base-big-title {
+    margin: 8px 1em 0 0;
+    line-height: 1em;
+}
+
+.serverguide-button-actions-wrapper {
+    top: 5px;
+    right: 30px;
+}
+
+.serverguide-joinnow-container-venice {
+    margin-right: 0;
+}
+
+.bblog_userradar_profile {
+    -webkit-border-radius: 2em;
+       -moz-border-radius: 2em;
+            border-radius: 2em;
+}
+
+#serverguide-middle .bblog_userradar_profile {
+    top: 14px;
+    right: 12px;
+}
+
+.serverguide-toggler {
+    -webkit-border-radius: 1em;
+       -moz-border-radius: 1em;
+            border-radius: 1em;
+}
+
+
+.serverguide-filtertoggle-contracted {
+    min-height: 51px;
+}
+
+#serverguide-apply-filters {
+    height: 44px;
+}
+
+.serverguide-header-refresh-button {
+    margin-right: 5px;
+}
+
+.serverguide-filtertoggle-expanded .serverguide-apply-filters {
+    height: 45px;
+}
+
+.serverguide-filtertoggle-contracted .bblog-server-filters {
+    top: 35px;
+    margin-right: 8px !important;
+}
+
+#serverguide-apply-filters .serverguide-apply-filter-button {
+    top: -3px;
+    position: relative;
+}
+
+.serverguide-show-playerrow span,
+.serverguide-show-headerrow span {
+    height: 26px;
+}
+
+.serverguide-show-player .common-playername-personaname,
+.serverguide-show-player .common-playername-personaname.solo {
+    line-height: 24px;
+}
+
+.bblog-server-filters .entry {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    margin-bottom: 1px;
+    -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+       -moz-box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+        -ms-box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+.bblog-server-filters .entry .delete {
+    top: 4px;
+}
+
+.bblog-server-filters .entry .text {
+    word-wrap: break-word;
+}
+
+
+
+/* ---- ~~Co-op page ---- */
+
+.coop-mission-info-header {
+    height: 200px;
+    background-position: center center;
+}
+
+.coop-mission-info-column {
+    min-height: 280px;
+}
+
+.coop-container .common-usertitle-user-info {
+    padding-top: 0;
+    margin-top: -6px;
+}
+
+.coop-container .common-usertitle-avatar {
+    width: 40px;
+    height: 34px;
+}
+
+.coop-container .common-usertitle-user-info .common-usertitle-user-info {
+    margin-top: -5px;
+}
+
+.coop-container .common-usertitle {
+    height: 36px;
+    padding-bottom: 15px;
+}
+
+.coop-container .base-box-push-four-column .base-box-push-column-box {
+    min-height: 59px;
+}
+
+.coop-head-stats-campaign-score {
+    height: 30px;
+    line-height: 35px;
+    padding-top: 14px;
+}
+
+.coop-head-stats-campaign-stars {
+    height: 32px;
+    padding-top: 22px;
+}
+
+#coop-head-stats-campaign-stars-count {
+    line-height: 19px;
+}
+
+.coop-mission-info-header-launch-wrapper .base-button-arrow-large-drop:hover {
+    text-indent: 11px;
+}
+
+
+
+/* ---- ~~Assignments ---- */
+
+.assignments-group .assignments_list .progress,
+#bblog-ass.assignments-group .assignment {
+    -webkit-border-radius: 0 0 0.4em 0.4em;
+       -moz-border-radius: 0 0 0.4em 0.4em;
+            border-radius: 0 0 0.4em 0.4em;
+}
+
+.assignments-group .assignments_list .progress_bar,
+#bblog-ass.assignments-group .assignment .loading {
+    -webkit-border-radius: 0 0 0.3em 0.3em;
+       -moz-border-radius: 0 0 0.3em 0.3em;
+            border-radius: 0 0 0.3em 0.3em;
+}
+
+.assignments_details .assignment_content ul li {
+    padding: 4px 7px;
+    margin-bottom: 1px;
+    height: auto;
+}
+
+.assignments_details .assignment_content ul li:first-of-type,
+.assignments_details .assignment_content .entry:first-of-type {
+    -webkit-border-top-right-radius: 0.5em;
+     -webkit-border-top-left-radius: 0.5em;
+       -moz-border-top-right-radius: 0.5em;
+        -moz-border-top-left-radius: 0.5em;
+            border-top-right-radius: 0.5em;
+             border-top-left-radius: 0.5em;
+}
+
+.assignments_details .assignment_content ul li:last-of-type,
+.assignments_details .assignment_content .entry:last-of-type {
+    -webkit-border-bottom-right-radius: 0.5em;
+     -webkit-border-bottom-left-radius: 0.5em;
+       -moz-border-bottom-right-radius: 0.5em;
+        -moz-border-bottom-left-radius: 0.5em;
+            border-bottom-right-radius: 0.5em;
+             border-bottom-left-radius: 0.5em;
+}
+
+.assignments_details .container p.assignment_desc {
+    margin-bottom: 0;
+}
+
+.assignments-container .assignments_details .assignment_critera {
+    top: 4px;
+}
+
+.assignments-container #assignments-progress li {
+    -webkit-border-radius: 0.4em;
+       -moz-border-radius: 0.4em;
+            border-radius: 0.4em;
+    background: #ececec;
+    padding: 0;
+    margin: 0 2px 4px 2px;
+}
+
+.assignments-container #assignments-progress li a {
+    -webkit-border-radius: 0.4em;
+       -moz-border-radius: 0.4em;
+            border-radius: 0.4em;
+}
+
+
+
+/* ---- ~~Dog Tags ---- */
+
+#dogtags-list .profile-stats-dogtags li {
+    width: 106px;
+    height: 59px;
+}
+
+#dogtags-list .profile-stats-dogtags li .profile-stats-dogtags-dogtag-image {
+    width: 100px;
+    height: 59px;
+}
+
+#dogtags-list .profile-stats-dogtags li img {
+    width: 100%;
+    height: auto;
+}
+
+
+
+/* ---- ~~Unlocks ---- */
+
+.profile-stats-venice-awards-body-award-padder,
+.profile-stats-venice-awards-body-completion-meter-wrapper,
+.profile-stats-venice-awards-body-completion-meter,
+.profile-stats-venice-awards-body-completion,
+.profile-stats-venice-awards-body-award,
+.profile-stats-venice-awards-body-separator {
+    height: 55px;
+}
+
+.profile-stats-venice-awards-body-completion,
+.profile-stats-venice-awards-body-award {
+    line-height: 55px;
+}
+
+.profile-stats-venice-awards-body-separator {
+    background-color: #E2E6D8;
+}
+
+.profile-stats-type-container table {
+    margin-bottom: 0;
+}
+
+#profile-stats-awards-upcoming-table .leaderboard-venice-specific-cell {
+    vertical-align: top;
+}
+
+.profile-stats-venice-awards-body-completion-value {
+    line-height: 62px;
+}
+
+.profile-stats-venice-awards-body-completion-meter {
+    background: #edf1e2;
+    background: -moz-linear-gradient(left,  #edf1e2 0%, #d3e3a6 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#edf1e2), color-stop(100%,#d3e3a6));
+    background: -webkit-linear-gradient(left,  #edf1e2 0%,#d3e3a6 100%);
+    background: linear-gradient(left,  #edf1e2 0%,#d3e3a6 100%);
+}
+
+
+
+/* ---- ~~Front page ---- */
+
+.feed-story img[src*="servicestar-43x43.png"] {
+    width: 37px;
+    height: 37px;
+    padding: 3px 2px 2px 2px;
+}
+
+
+
+#main-loggedin-header-puff-campaign .main-loggedin-header-puff-overlay {
+    -webkit-border-radius: 0 0.5em 0.5em 0;
+       -moz-border-radius: 0 0.5em 0.5em 0;
+            border-radius: 0 0.5em 0.5em 0;
+}
+
+.main-upcoming-unlock {
+    -webkit-border-radius: 0.2em;
+       -moz-border-radius: 0.2em;
+            border-radius: 0.2em;
+}
+
+#profile-edit-status-button {
+    -webkit-border-radius: 2em;
+       -moz-border-radius: 2em;
+            border-radius: 2em;
+}
+
+#feedback-popup-opener-tab {
+    -webkit-border-radius: 0 0.3em 0.3em 0;
+       -moz-border-radius: 0 0.3em 0.3em 0;
+            border-radius: 0 0.3em 0.3em 0;
+    -webkit-box-shadow: 0 0 10px #000;
+       -moz-box-shadow: 0 0 10px #000;
+            box-shadow: 0 0 10px #000;
+    padding-right: 2px;
+}
+
+.common-popup-close {
+    -webkit-border-radius: 2em;
+       -moz-border-radius: 2em;
+            border-radius: 2em;
+}
+
+.main-loggedin-header-puff-progress-counter{
+    -webkit-border-radius: 0.3em;
+       -moz-border-radius: 0.3em;
+            border-radius: 0.3em;
+}
+
+.main-topstory-comments .icon {
+    -webkit-border-radius: 0.3em 0 0 0.3em;
+       -moz-border-radius: 0.3em 0 0 0.3em;
+            border-radius: 0.3em 0 0 0.3em;
+}
+
+.profile-veteran-status {
+    padding: 0 4px;
+    border: 0px;
+    -webkit-border-radius: 1.5em;
+       -moz-border-radius: 1.5em;
+            border-radius: 1.5em;
+    -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+       -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+        -ms-box-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+            box-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+}
+
+#profile_secondary_mutual_friends_list .base-friends-username,
+#profile_secondary_mutual_friends_list .base-profile-link {
+    line-height: 13px !important; /* due to inline styles */
+}
+
+
+
+
+
+/* ---- ~~Platoon ---- */
+
+.feed-story-delete {
+    -webkit-border-radius: 2em;
+       -moz-border-radius: 2em;
+            border-radius: 2em;
+}
+
+
+
+/* ---- ~~Campaign page ---- */
+
+.campaign-launch-button {
+    z-index:  3;
+    position: relative;
+    margin-top: 35px;
+}
+
+.campaign-content-soldier {
+    right: 262px;
+    z-index: 2;
+    height: 400px;
+}
+
+#main-middle.campaign-middle .base-middle-content {
+    min-height: 330px;
+}
+
+
+
+
+/* ---- ~~Forum ---- */
+
+.forum-threadview-post-ea {
+    background: #FFF5DA;
+    border: 3px solid #f1d993;
+}
+
+.forum-threadview-separator {
+    border-top: 1px solid #DDD;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.forum-start-forum-has-official {
+    border-color: #f1d993;
+}
+
+.forum-threadview-post-quote {
+    margin-left: 5px;
+}
+
+
+
+/* ---- ~~News ---- */
+
+.comment-body {
+    border-bottom: 1px solid #DDD;
+}
+
+.devblog-view-content img {
+    max-width: 100%;
+}
+
+.devblog-index-iteminfo .devblog-index-iteminfo-textinfo {
+    line-height: 24px;
+}
+
+
+
+
+/* ---- ~~Pagination ---- */
+
+.pagination-type-prev,
+.pagination-type-prev .pagination-paginationbutton-border,
+.pagination-type-prev .pagination-paginationbutton-inner,
+.pagination-type-prev-disabled,
+.pagination-type-prev-disabled .pagination-paginationbutton-border,
+.pagination-type-prev-disabled .pagination-paginationbutton-inner {
+    -webkit-border-radius: 1em 0 0 1em;
+       -moz-border-radius: 1em 0 0 1em;
+            border-radius: 1em 0 0 1em;
+}
+
+.pagination-type-next,
+.pagination-type-next .pagination-paginationbutton-border,
+.pagination-type-next .pagination-paginationbutton-inner,
+.pagination-type-next-disabled,
+.pagination-type-next-disabled .pagination-paginationbutton-border,
+.pagination-type-next-disabled .pagination-paginationbutton-inner {
+    -webkit-border-radius: 0 1em 1em 0;
+       -moz-border-radius: 0 1em 1em 0;
+            border-radius: 0 1em 1em 0;
+}
+
+
+
+
+
+
+
+/* ---- ~~Com Center ---- */
+
+
+
+
+
+
+/* ---- ~~Footer ---- */

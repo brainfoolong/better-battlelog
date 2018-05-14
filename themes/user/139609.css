@@ -1,0 +1,533 @@
+﻿#viewport::before {
+    display: block;
+    content: "theme by DaniluK4000";
+    position: fixed;
+    width: auto;
+    z-index: 3;
+    text-transform: uppercase;
+    background: rgba(8, 13, 19, 0.7) none repeat scroll 0% 0%;
+    color: rgb(221, 221, 221);
+    font-size: 15px;
+    padding: 5px;
+    left: 27px;
+    transform: rotate(90deg);
+    top: 350px;
+    transform-origin: left top 0px;
+    font-family: Purista EA;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    color: #ddd;
+    opacity: 0.9;
+    height: 20px;
+    padding: 5px;
+    font-family: Segoe UI ,sans-serif;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.lang-ru #viewport::before {
+    content: "Тема разработана DaniluK4000";
+    font-family: Purista EA;
+    font-weight: 400;
+}
+#base-header .game-bar .inner-wrapper {
+    background-image: none;
+    background-color: #292C30;
+}
+#community-bar {
+    position: relative;
+    background: rgb(21, 23, 24) none repeat scroll 0% 0%;
+}
+@media only screen and (min-width:1920px){
+
+.alert.info {
+    text-shadow: 0px 0px 4px #5B4D30;
+    background: rgba(41, 44, 48, 0.5) none repeat scroll 0% 0%;
+    color: #FFF;
+    border: 1px solid #5E6165;
+    padding: 5px;
+    position: fixed;
+    z-index: 66555556;
+    width: 320px;
+    top: 17px;
+    height: auto;
+    border-radius: 2px;
+    box-sizing: border-box;
+    padding-left: 5px;
+    left: -2px;
+}
+
+}
+
+#base-background .video-container.show {
+    opacity: 1;
+    display: none;
+}
+#base-background {
+    text-align: center;
+    background: #84878E;
+}
+#base-container {
+    position: relative;
+    width: 992px;
+    margin: 0px auto;
+    padding: 0px;
+    background: #fff;
+    background: rgba(0,0,0,0.5);
+}
+.btn {
+    background: rgba(21, 23, 24, 0.5) !important;
+}
+.btn {
+    background: rgba(21, 23, 24, 0.5) !important;
+    border-radius: 2px !important;
+}
+.forum-start-container .forum-base-button-search {
+    border-radius: 0px !important;
+}
+.box-content {
+    background-color: rgba(41, 44, 48, 0.8);
+}
+.box > header {
+    background-color: rgba(7, 7, 7, 0.5);
+}
+.forum-start-border .common-box-title .forum-start-forum-headercell {
+    background: #292C30 none repeat scroll 0% 0%;
+    box-sizing: border-box;
+}
+.forum-start-forum-title {
+    background: rgba(41, 44, 48, 0.5) !important;
+}
+.forum-start-border .forum-start-forum-bodycell {
+    background: rgba(41, 44, 48, 0.5) !important;
+}
+.forum-start-border {
+    padding: 0px;
+    margin-bottom: 8px !important;
+    border-bottom: 1px solid #323335;
+    padding-bottom: 8px;
+}
+h1.primary, #base-container .content > section > header h1.wrappable, .forum-start-title h1, .forum-page-title h1, .missions-details .header h1.wrappable, .devblog .header h1, #battlereport > header h1, #base-container .content > section > header h1 {
+    background-color: #292C30;
+    color: #fff !important;
+}
+#base-container {
+    position: relative;
+    width: 992px;
+    margin: 0px auto;
+    padding: 10px;
+    background: rgba(41, 44, 48, 0.5) none repeat scroll 0% 0%;
+}
+#base-background {
+    text-align: center;
+    background: #84878E url("http://cs623218.vk.me/v623218386/34ae5/O3jlFMsrWTU.jpg") repeat scroll 0% 0%;
+}
+body.premium #base-header .grid-container.premium-bg {
+    background: none;
+}
+#bblog-sidebar {
+    z-index: 665555561;
+}
+.submenu > ul > li > a, .submenu > ul > li > span {
+    background: rgba(38, 41, 46, 0.81);
+}
+.submenu > ul > li > a:hover:not(span), .submenu > ul > li > a:active:not(span), .submenu > ul > li > span:hover:not(span), .submenu > ul > li > span:active:not(span) {
+    background: transparent linear-gradient(to bottom, rgba(38, 41, 46, 0.81) 0%, rgba(75, 75, 75, 0.5) 100%) repeat scroll 0% -1%;
+}
+.submenu > ul > li.active > a, .submenu > ul > li.active > span, .submenu > ul > li.active > a:hover, .submenu > ul > li.active > a:active {
+    background: rgba(255, 255, 255, 0.5) none repeat scroll 0% 0%;
+    box-shadow: 0px 0px 7px 2px rgba(255, 255, 255, 0.6);
+    border-radius: 2px;
+}
+.box > header {
+    background-color: rgba(29, 31, 38, 0.8);
+}
+#comcenter-friends {
+    background: #111517 !important;
+}
+#base-background {
+    background: #84878E url("http://dk4000.com/images/nightbackground.png") repeat scroll 0% 0%;
+    background-repeat: no-repeat;
+}
+.forum-start-border .common-box-title .forum-start-forum-headercell {
+    background: #26282D;
+}
+.forum-start-forum-title {
+    background: rgba(41, 44, 48, 0.7) !important;
+}
+.forum-start-border .forum-start-forum-bodycell {
+    background: rgba(41, 44, 48, 0.7) none repeat scroll 0% 0%;
+}
+footer#footer-wrapper {
+    background: rgba(41, 44, 48, 0.8) none repeat scroll 0% 0%;
+    width: 100%;
+    margin-left: -10px;
+    margin-top: 10px !important;
+    border-top: 1px solid #888;
+}
+#footer-highlighted .footer-box {
+    margin-left: 10px;
+}
+#footer-share {
+    right: 10px;
+}
+#footer-allrightsreserved {
+    padding-left: 5x;
+}
+#footer-links {
+    background: rgba(41, 44, 48, 0.8);
+    padding-left: 5px;
+    padding-bottom: 5px;
+}
+#footer-links {
+    background: rgba(41, 44, 48, 0.8) none repeat scroll 0% 0%;
+    padding-left: 5px;
+    padding-bottom: 10px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+#clubs .span4 {
+    width: 350px;
+}
+#clubs .sync-width {
+    width: 350px;
+}
+.emblembox .club-emblem {
+    width: 320px;
+    height: 320px;
+}
+#clubs .membersbox ul.new-row li.club-member {
+    margin-right: 15px;
+    width: 21.4%;
+}
+#clubs .span8 {
+    margin: 0px;
+    width: 642px;
+    padding-left: 15px;
+}
+#clubs .stats .club-span50:last-child {
+    margin-left: 1px;
+    width: 297px;
+}
+#clubs .stats .club-span1 {
+    width: 98.3px;
+}
+#clubs .wall-message-right {
+    float: left;
+    width: 510px;
+}
+#clubs .wall-post-comment-form textarea {
+    width: 510px;
+    max-width: 510px;
+    font-size: 12px;
+    margin-top: 10px;
+}
+#clubs .wall-likes .box-content {
+    background: #21262D;
+}
+.common-reportbutton-dropdown {
+    background: #5B595F;
+}
+.common-reportbutton-dropdown li > a {
+    color: rgb(255, 255, 255);
+}
+.common-reportbutton-dropdown {
+    background: rgba(44, 42, 47, 0.9) none repeat scroll 0% 0%;
+    border-color: #75727B;
+}
+textarea {
+    border-color: transparent;
+}
+.input:hover, input[type="text"]:hover, input[type="password"]:hover, input[type="email"]:hover, input[type="number"]:hover, input[type="search"]:hover, select:hover, textarea:hover, .battlefeed .list .item .feed-story-comments .feed-comment-form .feed-comment-form-textarea-wrap:hover, .input:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, input[type="number"]:focus, input[type="search"]:focus, select:focus, textarea:focus, .battlefeed .list .item .feed-story-comments .feed-comment-form .feed-comment-form-textarea-wrap:focus, .input:active, input[type="text"]:active, input[type="password"]:active, input[type="email"]:active, input[type="number"]:active, input[type="search"]:active, select:active, textarea:active, .battlefeed .list .item .feed-story-comments .feed-comment-form .feed-comment-form-textarea-wrap:active {
+    border-color: rgba(255, 255, 255, 0.51);
+}
+#base-header .game-bar .main-nav .base-section-menu > li:not(.nav-home) > a:hover, #base-header .game-bar .main-nav .base-section-menu > li.focused:not(.nav-home) > a {
+    color: #FFF;
+    background: #151718 none repeat scroll 0% 0%;
+}
+#base-header .game-bar .dropdown-bar {
+    background: #111517 none repeat scroll 0% 0%;
+    box-shadow: 0px 0px;
+}
+#base-header .grid-container {
+    position: relative;
+    width: 1012px;
+}
+
+
+
+.forum-start-border .forum-start-forum-bodycell {
+    background: rgba(41, 44, 48, 0.7) none repeat scroll 0% 0% !important;
+}
+.myclub .club-emblem {
+    width: 290px;
+    height: 290px;
+}
+.clubs-list .club-emblem {
+    width: 60px;
+    height: 60px;
+}
+#base-container .content > section > header h1.wrappable::before, .forum-start-title h1::before, .forum-page-title h1::before, .missions-details .header h1.wrappable::before, .devblog .header h1::before {
+    background: #292C30;
+}
+#profile-status-message.profile-your .message {
+    border-color: transparent;
+}
+#profile-status-message.profile-your:hover .message {
+    border-color: rgba(250, 246, 246, 0.6);
+}
+table.table > thead th, table.table > tfoot th {
+    background-color: #26282D;
+}
+
+#serverbrowser .servers-list tbody .server-row.active {
+    box-shadow: 0px 0px;
+}
+table.table > tbody > tr.active > td {
+    background-color: rgba(255, 255, 255, 0.5);
+    background-image: linear-gradient(to bottom, #D7D7D7 0%, rgba(215, 215, 215, 0) 50%);
+}
+
+.box > header {
+    background-color: rgba(38, 40, 45, 0.8);
+}
+#serverbrowser-recommended-servers .server > header {
+    background-color: rgba(36, 39, 45, 0.9);
+}
+.btn {
+    border-color: transparent;
+    box-sizing: border-box;
+    background-color: rgba(38, 40, 45, 0.8) !important;
+}
+.btn:hover:not([disabled]):not(.disabled), a.btn:hover:not([disabled]):not(.disabled) {
+    border-color: #333741;
+}
+#server-page-info {
+    margin-top: 10px;
+}
+.box-content {
+    background-color: rgba(13, 14, 23, 0.4);
+}
+table.scoreboard.table > thead tr {
+    background: transparent none repeat scroll 0% 0% !important;
+}
+.btn.btn-primary, a.btn.btn-primary {
+    border: 1px solid transparent;
+    box-sizing: border-box;
+}
+.btn.btn-primary:hover:not([disabled]):not(.disabled), a.btn.btn-primary:hover:not([disabled]):not(.disabled) {
+    border: 1px solid rgba(255, 191, 102, 0.5);
+}
+#base-background {
+    background-position: center;
+}
+#viewport::before {
+    font-family: Purista;
+    font-weight: 100;
+}
+.btn {
+    background-color: rgba(38, 40, 45, 0.8) !important;
+    border-width: 0.1px !important;
+}
+.btn:hover {
+    border-width: 1px !important;
+}
+.btn.btn-primary, a.btn.btn-primary {
+    background: rgba(72, 39, 8, 0.8) !important;
+}
+.advirticement img {
+    width: 100% !important;
+    box-sizing: border-box;
+    background: rgba(0,0,0,0.15) none repeat scroll 0% 0%;
+    padding: 1px;
+    border: 1px solid rgba(255,255,255,0.15) !important;
+}
+.btn {
+    box-sizing: border-box !important;
+}
+.common-reportbutton-dropdown li {
+    border-bottom: 0px;
+}
+table.scoreboard.table > thead > .tr-color-allied > th {
+    background-color: rgba(16, 81, 128, 0.8);
+}
+table.scoreboard.table > thead > .tr-color-enemy > th {
+    background-color: #680303;
+}
+#server-page-info .box section {
+    font-size: 15px;
+    padding: 15px 0px 0;
+}
+#server-page-info.row-tight .span1:first-child section {
+    padding: 15px 15px 0px 15px;
+}
+.alert.danger {
+    border: 1px solid #B74B19;
+    background: rgba(183, 75, 25, 0.1);
+}
+
+#unified-game-manager .ugm-state .ugm-btn-group .btn-close {
+    float: right !important;
+    margin: 15px 0px 0px 10px !important;
+    background: transparent url("../unifiedgamemanager/close.png") no-repeat scroll 0px 0px !important;
+    background-image: url("http://eaassets-a.akamaihd.net/bl-cdn/cdnprefix/bc1fe1f4ab312f7f1fddce23fe20b87c626af4db/public/unifiedgamemanager/close.png") !important;
+}
+#ugm-loading a.btn {
+    border-radius: 0px !important;
+    border-left: 1px solid rgba(0,0,0,0.15) !important;
+    background-color: rgba(0,0,0,0.3) !important;
+}
+#ugm-loading a.btn:first-child {
+    border: 0px !important;
+}
+
+#base-container {
+    background: rgba(41, 44, 48, 0.4) none repeat scroll 0% 0%;
+    border-left: 1px solid rgba(255,255,255,0.05);
+    border-right: 1px solid rgba(255,255,255,0.05);
+}
+#base-background {
+    background-image: url("http://cdn.battlefield.com/www.battlefield.com/sites/default/files/BF4_NightOps_Screenshot_03_LonelySoldier-web.jpg")
+}
+#footer-allrightsreserved {
+    padding: 5px;
+    margin-bottom: -10px;
+}
+.forum-threadview-post .forum-threadview-post-poster {
+    background: rgba(21, 23, 24, 0.5);
+}
+.forum-threadview-post .forum-threadview-post-content {
+    background: rgba(41, 44, 48, 0.4);
+}
+
+.lang-ru #server-page-info > .box.span1 header h1 {
+    font-size: 13px;
+}
+
+#base-background {
+    	background-image: url("http://irk-bf.ru/images/layer.png");
+}
+#base-container {
+    width: 991px;
+}
+
+#base-background::before {
+    background: #000;
+    content: "";
+    display: block;
+    height: 100%;
+    width: 1013px;
+    margin: 0 auto;
+    background-image: url("http://irk-bf.ru/images/layer.png");
+    background-position: center !important;
+	-webkit-filter: blur(5px);
+	-moz-filter: blur(5px);
+	-ms-filter: blur(5px);
+	-o-filter: blur(5px);
+	filter: blur(5px);
+}
+
+#base-header-secondary-nav {
+    border-right: 1px solid #353A3F !important;
+    margin-right: -1px;
+    padding-right: 5px;
+}
+
+footer > div:last-child {
+    margin-bottom: 30px;
+}
+.comcenter-chat-taskbar {
+    background: RGBA(33, 35, 38, 0.8);
+    border-top: 3px solid #292C30 !important;
+}
+.comcenter-chat-taskbar:last-child {
+    border-top-left-radius: 3px;
+}
+.comcenter-chat-taskbar:first-child {
+    border-top-right-radius: 3px;
+}
+#base-header .game-bar .main-nav .base-section-menu > li {
+    border-color: transparent !important;
+    margin-right: 1px;
+    background: rgba(0,0,0,0.5);
+}
+a.btn.btn-small, button.btn.btn-small {
+    border-color: transparent;
+}
+.btn.btn-primary, a.btn.btn-primary {
+    border: 1px solid transparent;
+}
+a.btn.btn-small:hover, button.btn.btn-small:hover {
+    border-color: #d5dde5 !important;
+}
+.btn {
+    transition: 0.3s !important;
+}
+div#base-background {background-image: url("https://pp.vk.me/c631524/v631524456/23db5/qZ3w7EO4PkU.jpg");} 
+
+#base-background::before { 
+background-image: url("https://pp.vk.me/c631524/v631524456/23db5/qZ3w7EO4PkU.jpg") !important; 
+} 
+
+section#community-bar { 
+background: transparent; 
+} 
+
+body.premium #base-header .grid-container { 
+padding: 0 10px !important; 
+box-sizing: border-box !important; 
+background: rgba(0,0,0,0.9) !important; 
+} 
+
+body.premium #base-header .grid-container.premium-bg > div:first-child, body.premium #base-header .grid-container.premium-bg > section:last-child { 
+margin: 0 10px; 
+} 
+body.premium #base-header .grid-container {
+    width: 1013px !important;
+}
+#base-header .game-bar .inner-wrapper { 
+border: 0px; 
+background: transparent; 
+} 
+
+#base-header .grid-container { 
+border: 0px; 
+background: rgba(16, 19, 21, 0.9); 
+} 
+
+#base-header-secondary-nav { 
+border-right: 0px !important; 
+}
+.btn.btn-primary:hover:not([disabled]):not(.disabled), a.btn.btn-primary:hover:not([disabled]):not(.disabled) {
+    border: 1px solid rgba(255, 191, 102, 0.5) !important;
+}
+input.forum-sidebar-search-form-input {
+    border-color: transparent !important;
+}
+#bottom-tiles > .tiles:first-child{
+    display: none;
+}
+#bottom-tiles > .tiles:nth-child(2){
+    height: 147px;
+}
+#bottom-tiles > .tiles:last-child > .premium{
+    display: none;
+}
+#bottom-tiles > .tiles:nth-child(2) > .challenges > .box{
+    position: relative;
+    top: -144px;
+    right: -336px;
+    width: 328px;
+}
+#bottom-tiles > .tiles:last-child > .battlepacks > .box{
+    position: relative;
+    right: -329px;
+}
+#clubs textarea {
+    width: calc(100% - 18px) !important;
+}
+body.show-section-select #community-bar .dropdown-bar {
+height: 160px !important;
+}
+#community-bar .dropdown-bar {
+background: transparent !important;
+}

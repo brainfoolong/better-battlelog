@@ -1,0 +1,36 @@
+/**
+* Example Theme that turns battlelog into a year 1995 theme
+* NOTE: Do not use external images, if you need an image than use data:uri
+* More details  here: https://getbblog.com/board/topic/1703/1/Rules-for-Themes
+*
+* @author BrainFooLong
+* @version 1.0
+* @url https://getbblog.com
+*/
+
+html body *{
+    font-family: courier new !important;
+    letter-spacing: -1px !important;
+    box-shadow:none !important;
+    text-shadow:none !important;
+}
+
+html body{
+    background-color: #333333;
+}
+
+html body #base-background{
+    display: none;
+}
+
+html body #content{
+    background: #444444;
+    outline:10px solid #444444;
+}
+
+html body #community-bar,
+html body #base-header .game-bar .inner-wrapper,
+html body #comcenter-friends{
+    background: #444444;
+    border:none;
+}

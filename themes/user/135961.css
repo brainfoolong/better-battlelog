@@ -1,0 +1,1479 @@
+/*
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+///////////// Hardfine Theme by T3RRORTOAST \\\\\\\\\\\\\\
+- http://battlelog.battlefield.com/bf4/user/T3RRORTOAST/ -
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+License: http://creativecommons.org/licenses/by-nc-nd/4.0/
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+*/
+
+@media screen and (max-width: 1650px) {
+    html {
+        overflow: scroll;
+    }
+    html:not(.is-touch) body:not(.no-comcenter) #comcenter-friends {
+        opacity: 0;
+        pointer-events: none;
+    }
+    html:not(.is-touch) body:not(.no-comcenter).show-comcenter #comcenter-friends {
+        opacity: 1;
+        pointer-events: all;
+    }
+    html:not(.is-touch) body:not(.no-comcenter) .comcenter-toggle {
+        display: block;
+        margin-right: -55px !important;
+        margin-top: -96px !important;
+    }
+    html:not(.is-touch) body:not(.no-comcenter) #comcenter-chats {
+        right: 10px !important;
+    }
+    html:not(.is-touch) body:not(.no-comcenter).show-comcenter #comcenter-chats {
+        right: 305px !important;
+    }
+    html:not(.is-touch) body:not(.no-comcenter) #unified-game-manager {
+        right: 0px !important;
+    }
+}
+
+@-moz-document url-prefix() {
+    #base-header .game-bar .dropdown-bar {
+        top: 59px;
+    }
+    #community-bar .dropdown-bar {
+        margin-top: 70px;
+        width: 275px;
+    }
+}
+
+::-webkit-input-placeholder {
+    color: #FFFFFF;
+}
+
+::-moz-placeholder {}
+
+:-ms-input-placeholder {
+    color: #FFFFFF;
+}
+
+input:-moz-placeholder {
+    color: #FFFFFF;
+}
+/* XXXXXXXXXXXXXXXX BBLOG CSS XXXXXXXXXXXXXXXX */
+
+#bblog-teamspeak {
+    left: 248px;
+    top: 2px;
+}
+
+#bblog-icon {
+    top: 0;
+    height: 153px;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABsAAACZCAYAAADerEGGAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpEOEVGNzUxMTg1MjgxMUUzQkQ3RkRFQTY3MDcyMzc2MCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpEOEVGNzUxMjg1MjgxMUUzQkQ3RkRFQTY3MDcyMzc2MCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkQ4RUY3NTBGODUyODExRTNCRDdGREVBNjcwNzIzNzYwIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkQ4RUY3NTEwODUyODExRTNCRDdGREVBNjcwNzIzNzYwIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+bCJV4wAAEb1JREFUeNrsW3mQFFWa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);
+}
+
+span.bblog-badge {
+    width: 75px;
+    height: 14px;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAAAOCAIAAADouXZiAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NTc3MiwgMjAxNC8wMS8xMy0xOTo0NDowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjgzRUY3RUIwQ0JFMTExRTQ5MkM3RjMwNjUwQTFDRjI2IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjgzRUY3RUIxQ0JFMTExRTQ5MkM3RjMwNjUwQTFDRjI2Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6ODNFRjdFQUVDQkUxMTFFNDkyQzdGMzA2NTBBMUNGMjYiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6ODNFRjdFQUZDQkUxMTFFNDkyQzdGMzA2NTBBMUNGMjYiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5oqq13AAACB0lEQVR42uxVMY9BQRB2iY6IikLnB1BJhEKIREJN3g9QSNBQ+wl0GiFRKIReVBIFnQL161EKtftiksnc7nLO3SWXiyk2s9+bmZ3Z/Waew/GS/yD7/f4iBNtut6vjtm1blgWcbJQgcGF7jkD46XSSwSkISaPRuGgyGo2UoyEcjbblclnJn8NCkRm+kYXP5xuPxwRls1msbrdb4h6PJ5PJbDabcDgM/8Ph4Pf7ZYUo43w+z+dz6IlEwuVyIQLhWCeTiRKEvFKpVKlUIhc+a7vdVioVmRKkUChgXa/XoVAISq/XKxaLXCGMl8tlPB7HdrFYxGKxDxnSHShXouN8McY3lKB0VIyhT6fTWzy6teXrICrRqnPQugqThb46jbzFaxjx3W73zY5QXv5LksvlsK5WK6zBYBDFDIdDaVCtVnUvp3wE1sEBI97pdJ7OD91FyvF4ZILdFz4adAVLo9EodGoEVJhOp2WFoCXISQpIa6iQSY+WSCaTOp7P5/Gp3W4/VyHcOZUHXfhodCZW6l7kEAgEoEQiEWk8GAxqtZpUPu+B3+hDo+8jfYjhqU9ddKY0tq+inOLUWYQxKPuQcIxBpQ8V1pELgxxBwZ8jNifQarXq9ToUjCuMZXTmbDZjm36/7/V6f+Z/qNjf/x8yjlmPII+/oXIKPxqk2Wxiix+D8cFvMeUlL/mb8i7AAJ2EjBo1lWH/AAAAAElFTkSuQmCC);
+    display: inline-block;
+}
+
+#bblog-sidebar {
+    background-color: #16181A;
+    width: 275px;
+}
+
+#bblog-sidebar-help {
+    left: 275px;
+    background-color: #16181A;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.bblog-switch {
+    border: 1px solid rgba(31, 31, 32, 1);
+}
+
+.bblog-switch.active {
+    background: #D66E29;
+    border: 1px solid rgba(214, 110, 41, 1);
+}
+
+#popup-bblog-option input[type='text'],
+#popup-bblog-option textarea {
+    border: 1px solid #282D33;
+    color: #FFFFFF;
+}
+
+#popup-bblog-option input,
+#popup-bblog-option textarea {
+    box-shadow: none;
+}
+
+.bblog-emblem-info,
+.keyboard-controls .keyboard-shortcut-info,
+#emblem-edit .delete-link,
+#emblem-edit .ugc-terms,
+#bblog-emblem-gallery .sorts .sort,
+#popup-bblog-option,
+#bblog-emblem-gallery,
+#bblog-emblem-buttons,
+#bblog-emblem-gallery .emblem-item,
+#bblog-emblem-gallery .layers {
+    color: #ffffff;
+}
+/* XXXXXXXXXXXXXXXX MAIN XXXXXXXXXXXXXXXX */
+
+#base-container {
+    margin-left: 305px;
+    top: -100px;
+}
+
+#base-background {
+    background: #343537;
+}
+
+#base-background .video-container.show {
+    display: none;
+}
+
+#unified-game-manager {
+    right: 305px !important;
+}
+
+#base-header-user-tools .tools .tools-item.comcenter-toggle {
+    margin-left: 0px;
+}
+/* XXXXXXXXXXXXXXXX NAVI BAR XXXXXXXXXXXXXXXX */
+
+.header-dropdown-active #base-header .game-bar .dropdown-bar {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    top: -334px;
+}
+
+#base-header {
+    height: 2000px;
+}
+
+#base-header .game-bar .main-nav .base-section-menu>li>div.feature-disabled,
+#base-header .game-bar .main-nav .base-section-menu>li>a {
+    position: static;
+}
+
+#base-header {
+    position: fixed;
+    top: 0;
+    right: inherit;
+    background: #16181a;
+    left: 0;
+    z-index: 1000;
+    width: 275px;
+}
+
+#base-header .grid-container {
+    position: relative;
+    width: 275px;
+}
+
+#base-header .game-bar .main-nav .base-section-menu {
+    display: table;
+}
+
+#base-header .game-bar .main-nav .base-section-menu>li {
+    border-right: none;
+    width: 275px;
+}
+
+#base-header .game-bar .main-nav .base-section-menu>li:first-child {
+    border-left: none;
+}
+
+#base-header .game-bar .main-nav .base-section-menu>li {
+    height: 56px;
+    background: #2b3134;
+    margin-top: 1px;
+    box-shadow: inset 0 1px 0 #3b4346;
+    cursor: pointer;
+    transition: background-color 0.2s ease 0s;
+    font-family: "Purista", Arial, Helvetica, sans-serif;
+}
+
+#base-header .game-bar .main-nav .base-section-menu>li>div.feature-disabled,
+#base-header .game-bar .main-nav .base-section-menu>li>a {
+    color: white;
+    font-size: 16px;
+}
+
+#base-header .game-bar .main-nav .base-section-menu>li:not(.nav-home)>a:hover,
+#base-header .game-bar .main-nav .base-section-menu>li:not(.nav-home).focused>a {
+    background: #353c40;
+    height: 50px;
+}
+
+#base-header .game-bar .main-nav .base-section-menu>li.active:not(.nav-home)>a,
+#base-header .game-bar .main-nav .base-section-menu>li.active:not(.nav-home)>a:hover,
+#base-header .game-bar .main-nav .base-section-menu>li.active:not(.nav-home).focused>a {
+    background: #1C1F21;
+    height: 57px;
+    font-family: "Purista", Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    transition: background-color 0.2s ease 0s;
+    box-shadow: none;
+    color: white;
+}
+
+#base-header-secondary-nav {
+    float: left;
+    background: #0F1112;
+    width: 275px;
+    height: 50px;
+}
+
+#base-header .game-bar .inner-wrapper {
+    border-top: none;
+    background: #16181A;
+}
+
+#community-bar .user-tools,
+#community-bar .battlelog-logo,
+#community-bar .game-logo {
+    position: relative;
+}
+
+#community-bar .battlelog-logo {
+    left: -14px;
+}
+
+body.premium #base-header .grid-container.premium-bg {
+    width: 275px;
+    background: transparent;
+}
+
+body #base-header .grid-container {
+    width: 275px;
+}
+
+#community-bar .pull-right {
+    margin-right: 73px;
+    margin-bottom: 10px;
+}
+
+#base-header-user-tools .tools .tools-item.pro .username {
+    display: none;
+}
+
+#base-header-user-tools .tools .tools-item:hover {
+    background: transparent;
+}
+
+#community-bar .game-logo .logo.game-bf4.premium {
+    margin-right: 65px;
+}
+
+#community-bar .game-logo .logo.game-bf4 {
+    margin-right: 12px;
+}
+
+#community-bar .outerarrow {
+    left: 167px;
+}
+
+#community-bar {
+    background: #16181A;
+}
+
+#base-header .game-bar .main-nav .base-section-menu>li.soldier .header-soldier-rank {
+    margin-left: -1px;
+    margin-top: 10px;
+}
+
+#base-header .game-bar .main-nav .base-section-menu>li>a {
+    padding-left: 80px;
+}
+
+#base-header-secondary-nav:after {
+    content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARMAAAAyCAIAAADwTKjIAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NDkxMSwgMjAxMy8xMC8yOS0xMTo0NzoxNiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDoxNzc0M0QxODlGMEIxMUUzQjNFQTk0MkQ0MDFGQTg3NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDoxNzc0M0QxOTlGMEIxMUUzQjNFQTk0MkQ0MDFGQTg3NyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjE3NzQzRDE2OUYwQjExRTNCM0VBOTQyRDQwMUZBODc3IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjE3NzQzRDE3OUYwQjExRTNCM0VBOTQyRDQwMUZBODc3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+P+1bHQAAFUdJREFUeNrsXAl4VEWe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);
+    background: #16181A;
+}
+
+#base-header .game-bar .main-nav .base-section-menu>li:nth-child(2),
+#base-header .game-bar .main-nav .base-section-menu>li.active:not(.nav-home):nth-child(2)>a,
+#base-header .game-bar .main-nav .base-section-menu>li:not(.nav-home):nth-child(2)>a:hover {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo4MjZDNzVBRTcxQTMxMUUzQkE0RkE0NDNEOEZEOEZDNCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo4MjZDNzVBRjcxQTMxMUUzQkE0RkE0NDNEOEZEOEZDNCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjgyNkM3NUFDNzFBMzExRTNCQTRGQTQ0M0Q4RkQ4RkM0IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjgyNkM3NUFENzFBMzExRTNCQTRGQTQ0M0Q4RkQ4RkM0Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+tKvJowAAAjVJREFUeNrsl00oRUEUx10lJaFY+dhKPoqtb+V5slG2ClHISqwI5StZWFhYWFHKirJRiteLZGGHEpLymXxsXuhRXP+pc+uY7rv3XF5ZcOrX3O6ZOfN/d2bOmWeYphnzmxYb88v2L8CrgGIwBfaAqbFNvgJPEdUmFFAKguZXewJXhG4rIE8SWzL5MAu8BBpAvE2/VDAIXlj/Hrf4hssxXAN+en4GvWAXVIAbECLfG7gFhyARjIJu8qnnoe8swQT7Ja+mu+1p4zuZr8nrEpTTwDvQRs/H2ufl1kzjpkEyi9PB+mR5EXBGg5SQNLBD73MiCFil9VZ2AjJZrBm2f0QCylgga9IM5p90WIYPame1mCF6n6HPZ5cH2qkdp/YIXDP/g8OmNVgMHnuB2mZJIqqjxBKIMEm6S2pZAo0Uw7JFaqskp0DZjcPpSHdYgsEIY1LoJF1L9oCyC5cEMsAmVes9Ah5dxpxTf5GAS0GGPKW+LSAJ5EZTwLlAgFqKKfBAdUG9i4vGEqhPGabzL6kVqi5sgSMqTAGbvVBCP2xdImCOOrcKBSjybTZkpU0y6pcI8GuJSEKBjYBnSSKyC2bQKTCpDkgEqLV/0wSEyTfmNRXzdKysUCiiWitW9cD33WLEy/E7KBKKCLHc4PtJObZYY0G6XPpan/oeLLNxI9G8kh2CPpBNe8Xqk0AT69YTjTuhdSnddLiUhjVfUHopNTz+NasFNcAH8jXfBtgH8+BAGtD4/2/45wV8CjAAOon/LBgGVLAAAAAASUVORK5CYII=);
+    background-repeat: no-repeat;
+    background-position: 15px 12px;
+}
+
+#base-header .game-bar .main-nav .base-section-menu>li:nth-child(3),
+#base-header .game-bar .main-nav .base-section-menu>li.active:not(.nav-home):nth-child(3)>a,
+#base-header .game-bar .main-nav .base-section-menu>li:not(.nav-home):nth-child(3)>a:hover {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo0RTFFQzc0RTcxQTUxMUUzQjBCRUE1NDk0MUNGNjI2QiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo0RTFFQzc0RjcxQTUxMUUzQjBCRUE1NDk0MUNGNjI2QiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjRFMUVDNzRDNzFBNTExRTNCMEJFQTU0OTQxQ0Y2MjZCIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjRFMUVDNzRENzFBNTExRTNCMEJFQTU0OTQxQ0Y2MjZCIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+br7BKAAAATtJREFUeNpi/P//P8NAAiaGAQajDsDmAH4gdgNiyYFygAYQ7wTia0B8EIjnAbEwzVwAygVY8NH/qOAIDnUUY1xp4Csa3xqIN9IzEW7DIuYHxOvoFQUgvPA/drCYmlFASMEsHI5oo5cDQLgehyNy6OUAEA7G4YgYejkAhN1wOCKIXg4AYRcg/o3FEe70cgAImwDxezQH/AJiPXo5AITFgPgCmiMeALE4vRwAw5vRHHEDiEXp6QBsjrgNxDxIuUeB1g4A4VVojlgJxBVQ9i0gFqG1A0C4HUc2/QjE8vRwAAh7YHHAVnKqY3KBDhYxLxy1K8HakFSsAcQ//uMG2+kRBelA/BCIm4H4MxZH7KC1A1iAWBDKjsbigF5aOwAdxyNZXodNDQuNW90LgRhkhxQQN2NTwDjaNxzxDgAIMADkAi39TMrScAAAAABJRU5ErkJggg==);
+    background-repeat: no-repeat;
+    background-position: 15px 12px;
+}
+
+#base-header .game-bar .main-nav .base-section-menu>li:nth-child(4),
+#base-header .game-bar .main-nav .base-section-menu>li.active:not(.nav-home):nth-child(4)>a,
+#base-header .game-bar .main-nav .base-section-menu>li:not(.nav-home):nth-child(4)>a:hover {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo3QjE4NjI5MjcxQkYxMUUzOEQxNEE3RjgyMTY5MEEwMSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo3QjE4NjI5MzcxQkYxMUUzOEQxNEE3RjgyMTY5MEEwMSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjdCMTg2MjkwNzFCRjExRTM4RDE0QTdGODIxNjkwQTAxIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjdCMTg2MjkxNzFCRjExRTM4RDE0QTdGODIxNjkwQTAxIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+MB1JMQAAAVhJREFUeNpi/P//P8NAAiaGAQajDhh1AAsZeiyB2AxKgzAzEB+H4lNQ+i+xhjESyIYSSBbBLGUjYOZfNMeA8FNyHfABiPnRxEAGngbiY0i+BTnMCupIayzmCADxR6w2gByAB3/4DwGlQGwPxOwE1IMwCxDbAHEREH+E6ufHpZ7YEBCEskkFIF/z4QuB0Ww46oBRBxDrgE4yzE6GZkH8gEChkgPEf6CFyXwiCiEYnvMfASrwqSXGsBAg/gY1bAUQsxJQvwiq9icQJxAyn1gfgYrWt1CDtwCxCBY1fEC8DqrmMxC7EmM2AwnBqg7ED6EWHAZiBSQ5KSDeBZV7DsTGxJpLigNAWAKIL0EtugHEakCsDMTnoWK3gViOFDNJdQAI8wDxXqSgfg5lHwNiIVLNI8cBIMyGlNj+Q+OekxyzGCnsmHQBMQ8Q55LSDCOlRTRaFI86YPg7ACDAAGINVAajD+khAAAAAElFTkSuQmCC);
+    background-repeat: no-repeat;
+    background-position: 15px 12px;
+}
+
+#base-header .game-bar .main-nav .base-section-menu>li:nth-child(5),
+#base-header .game-bar .main-nav .base-section-menu>li.active:not(.nav-home):nth-child(5)>a,
+#base-header .game-bar .main-nav .base-section-menu>li:not(.nav-home):nth-child(5)>a:hover {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NTc3MiwgMjAxNC8wMS8xMy0xOTo0NDowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NjA2RUYyMUFDQjFGMTFFNDhGMDZEMkIzRUU5QjQ0NEYiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NjA2RUYyMTlDQjFGMTFFNDhGMDZEMkIzRUU5QjQ0NEYiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjI1Q0RBMzUyNzFDMDExRTNBQ0UwQkFFQjYyNjUyNEFCIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjI1Q0RBMzUzNzFDMDExRTNBQ0UwQkFFQjYyNjUyNEFCIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+anqDhQAAATlJREFUeNpi/P//P8NAAiaGAQajDhhwB7CQoJbU1Mo4GgXD3wH5BYUMBw4cpL8Drl+/Drb82LHjdM0FKCAjPY1BgJ9/YBygqak5mgiHjwMYSWgP0KQoZiHDYKo6ePClgfr6BgZTMwswBrEpBbNnz4Gbh7XU/I8ETp8+/T8vv+D/169f/79+/fp/bFw8WIxccO3aNbAZIPMePnz438TUHMxGBigFkYmJCRiDABcXF4OgoCBFvgcVWIsWLgCzX716xSAmJgY2l6g0AAouOTlZuIMoAb19fQyZWTkMAf5++KMABvbvP/C/rq7+P7UBKHrRoxQlBL59+wau5W7fvs3Q2Eh5Ajxz5gxDXHwCnI+18kJ2zfLlK8AJBRmDQoMSMGvWbLhZIDY6AJWEA9o1YiG2yBytDUcdQCsAEGAA96Gaq2mShK8AAAAASUVORK5CYII=);
+    background-repeat: no-repeat;
+    background-position: 15px 12px;
+}
+
+#base-header .game-bar .main-nav .base-section-menu>li:not(.nav-home):nth-child(5)>a:hover,
+#base-header .game-bar .main-nav .base-section-menu>li:not(.nav-home).focused:nth-child(5)>a {
+    height: 51px;
+}
+
+#base-header .game-bar .main-nav .base-section-menu>li>div.feature-disabled,
+#base-header .game-bar .main-nav .base-section-menu>li>a {
+    padding-left: 60px;
+    padding-top: 5px;
+}
+
+#base-header .game-bar .dropdown-bar {
+    padding: 0;
+    position: relative;
+    color: #fff;
+    z-index: 0;
+    overflow: hidden;
+    background-color: #0a0e14;
+    opacity: 0;
+    top: -331px;
+    left: 275px;
+    width: 370px;
+    -webkit-transition: width 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    -moz-transition: width 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    -o-transition: width 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    transition: width 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    background-color: #16181A;
+}
+
+.header-dropdown-active #base-header .game-bar .dropdown-bar {
+    opacity: 1;
+    -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+#base-header .game-bar .dropdown-bar .soldierstats-pic-container,
+#base-header .game-bar .dropdown-bar .soldierstats-box {
+    display: none;
+}
+
+#base-header .game-bar .dropdown-bar>.dropdown-content {
+    margin-left: 25px;
+}
+
+#base-header .game-bar .dropdown-bar .dropdown-menu>a,
+#base-header .game-bar .dropdown-bar .dropdown-menu div {
+    margin-left: -30px;
+}
+
+#base-header .game-bar .dropdown-bar .dropdown-menu>a:hover {
+    width: 375px;
+}
+
+#base-header {
+    -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.alert {
+    width: 1175px;
+}
+
+#base-header-user-tools .tools .popover .popover-body li.profile:before {
+    content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARMAAAANCAIAAAAFYB2wAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo2QUVEQ0VDNTg1MzAxMUUzOENBMTkwOEY4RDk0NDRDOSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo2QUVEQ0VDNjg1MzAxMUUzOENBMTkwOEY4RDk0NDRDOSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjZBRURDRUMzODUzMDExRTM4Q0ExOTA4RjhEOTQ0NEM5IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjZBRURDRUM0ODUzMDExRTM4Q0ExOTA4RjhEOTQ0NEM5Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+lP/p4AAAAGBJREFUeNrs2LEJACAMRUF1CBH3H1I7O3t/J9wbIXBoUvuYRdJjzQgkciRyJHL0V3svQyBHCRt4yFH42sBDjsJPGjzkKNxt4CFH4UkAHnIUwoCHHIUk4CFHIQZ4bkeAAQAdfTHs90ingwAAAABJRU5ErkJggg==);
+}
+
+#base-header-user-tools .tools .popover {
+    width: 275px;
+    background: #0F1112;
+    margin-top: -15px;
+    left: 0;
+}
+
+#base-header-user-tools .tools .popover .popover-body li>a {
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+#base-header-user-tools .tools .tools-item:hover {
+    background: transparent;
+}
+
+#base-header-user-tools .tools .tools-item.popover-visible {
+    background: transparent;
+    z-index: 2;
+}
+
+#base-header .game-bar .main-nav .base-section-menu>li.soldier .header-soldier-rank {
+    margin-left: -1px;
+    margin-top: 10px;
+}
+
+#base-header .game-bar .main-nav .base-section-menu>li>a {
+    padding-left: 80px;
+}
+
+#community-bar .dropdown-bar a.game-bf4,
+#community-bar .dropdown-bar a.game-bf3 {
+    margin-left: 17px;
+    width: 274px;
+}
+
+#community-bar .dropdown-bar a.game-mohw {
+    margin-left: -24px;
+    width: 315px;
+}
+
+#community-bar .dropdown-bar {
+    background: transparent;
+    margin-top: 70px;
+    width: 275px;
+}
+
+#community-bar .dropdown-bar.tight a {
+    width: 275px;
+}
+
+#community-bar .dropdown-bar.tight .game-mohw {
+    width: 315px;
+}
+
+body.show-section-select #community-bar .dropdown-bar {
+    height: 655px;
+}
+
+#community-bar .user-tools,
+#community-bar .battlelog-logo,
+#community-bar .game-logo {
+    position: relative;
+}
+
+#community-bar .battlelog-logo {
+    left: -14px;
+}
+
+body.premium #base-header .grid-container.premium-bg {
+    width: 275px;
+    background: transparent;
+}
+
+body #base-header .grid-container {
+    width: 275px;
+}
+
+#community-bar .pull-right {
+    margin-right: 73px;
+    margin-bottom: 10px;
+}
+
+#base-header-user-tools .tools .tools-item.pro .username {
+    display: none;
+}
+
+#base-header-user-tools .tools .tools-item:hover {
+    background: transparent;
+}
+
+#community-bar .game-logo .logo.game-bf4.premium {
+    margin-right: 65px;
+}
+
+#community-bar .game-logo .logo.game-bf4 {
+    margin-right: 12px;
+}
+
+#community-bar .outerarrow {
+    left: 167px;
+}
+
+#community-bar {
+    background: #16181A;
+}
+
+#community-bar .battlelog-logo {
+    left: 85px;
+    top: -50px;
+}
+
+#community-bar .game-logo {
+    margin-top: 50px;
+    top: -4px;
+    left: -72px;
+}
+/* XXXXXXXXXXXXXXXX COMMCENTER (CHAT AND SIDEBAR) XXXXXXXXXXXXXXXX */
+
+#comcenter-loading {
+    background: rgb(22, 24, 26);
+}
+
+#comcenter-friends {
+    position: fixed;
+    right: 30px;
+    bottom: 0;
+    z-index: 90;
+    width: 275px;
+    font-family: "ProximaNova", Arial, Helvetica, sans-serif;
+    color: #FCFCFC;
+    height: 700px;
+    top: inherit;
+    background: rgb(22, 24, 26);
+}
+
+#comcenter-friends:before {
+    content: '"Hardfine" Theme by T3RRORTOAST';
+    background: #16181A;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 5px;
+    font-size: 17px;
+    font-family: "Frutiger", sans-serifa;
+    color: #FFFFFF;
+    border-radius: 5px;
+}
+
+#comcenter-friends:after {
+    content: 'Version: 1.0.8';
+    background: #16181A;
+    position: fixed;
+    top: 40px;
+    right: 10px;
+    padding: 5px;
+    font-size: 14px;
+    font-family: "Frutiger", sans-serif;
+    color: #D66E29;
+    border-radius: 5px;
+}
+
+.comcenter-chat-taskbar,
+#comcenter-chats .comcenter-chat-bottom-container .comcenter-chat-bottom {
+    color: #ccc;
+    background: rgb(22, 24, 26);
+}
+
+#comcenter-chats .comcenter-chat-content {
+    background-color: rgb(22, 24, 26);
+    border: 1px solid rgb(40, 45, 51);
+}
+
+#comcenter-chats .comcenter-chat-input,
+#comcenter-chats .chat-header,
+#comcenter-chats .comcenter-chat-offline {
+    background: rgb(22, 24, 26);
+}
+
+#comcenter-chats {
+    right: 305px !important;
+}
+
+#comcenter-chats .comcenter-chat-taskbar-button {
+    border: 1px solid rgb(40, 45, 51);
+}
+
+#comcenter-friends .jspContainer {
+    margin-top: 2px;
+}
+
+#friendlist-header {
+    background: #1c1f21;
+    height: 36px;
+    padding: 0 15px;
+    border-top: 1px solid #2c3134;
+    cursor: pointer;
+    transition: background 0.2s ease 0s;
+    margin-left: 0px;
+    font-family: "Purista", Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 35px;
+    text-transform: uppercase;
+    color: #607080;
+}
+/* XXXXXXXXXXXXXXXX MAINCONTENT XXXXXXXXXXXXXXXX */
+
+.box-content {
+    background-color: rgb(22, 24, 26);
+}
+
+.battlefeed .list .item .feed-story .feed-story-heading,
+.battlefeed .list .item span,
+.battlefeed .list .item ul,
+.battlefeed .list .item .feed-story-likes,
+#profile-status-message .profile-status-message-text,
+#profile-status-message-edit,
+#profile-status-message.profile-your .message #profile-status-message-area,
+#main-loggedin-feed .wallpost-body,
+#survey-content,
+.battlefeed .list .battlereport-feed-item .info-list li strong,
+.battlereport-feed-item .info-list li strong,
+.battlefeed .feed-comment-form,
+.battlefeed .feed-comment-text-not-clicked,
+.battlefeed .feed-comment-text-clicked,
+.activity-stream .activitystream-item .item-body > .user .description {
+    color: #FFFFFF;
+}
+
+#feed-container .base-profile-link,
+strong,
+b,
+.box-content a {
+    color: rgb(214, 110, 41);
+}
+
+.battlefeed .list .item .feed-story .feed-story-content .feed-story-infoarea .feed-story-creationDate,
+.battlefeed .list .item .feed-story .feed-story-content .feed-story-infoarea .feed-story-creationDate a,
+.battlefeed .list .item .feed-story .feed-story-content .feed-story-infoarea .feed-story-creationDate .devblog .devblog-post .battlelog-wordpress a,
+.devblog .devblog-post .battlelog-wordpress .battlefeed .list .item .feed-story .feed-story-content .feed-story-infoarea .feed-story-creationDate a,
+.battlefeed .list .item .feed-story .feed-story-content .feed-story-infoarea .feed-story-creationDate span,
+.battlefeed .list .item .feed-story-comments .feed-comments-item .feed-story-creationDate,
+.battlefeed .list .item .feed-story-comments .feed-comments-item .feed-story-creationDate span,
+.activity-stream .activitystream-item .item-body > .details .base-ago,
+.main-header .persona .progress > .experience,
+.main-header .persona .progress > .experience span {
+    color: #7A7B7C;
+}
+
+.battlefeed .list .battlereport-feed-item .info-list li,
+.battlereport-feed-item .info-list li {
+    background: rgb(214, 110, 41);
+}
+
+#profile-status-message.profile-your .message,
+#profile-status-message-edit {
+    border: 1px solid rgba(255, 146, 74, 1);
+    background-color: rgba(214, 110, 41, 1);
+}
+
+#profile-status-message.profile-your:hover .message {
+    border-color: rgb(255, 187, 142);
+}
+
+#profile-status-message-edit {
+    padding: 7px;
+}
+
+#profile-status-message .profile-status-message-date {
+    font-size: 12px;
+    color: #16181A;
+}
+
+.battlefeed .list .item .feed-story-comments .feed-comments-item .feed-comment-body {
+    color: #E0E0E0;
+}
+
+.feed-story-area-game {
+    background: #FFFFFF;
+    padding: 4px;
+    height: 14px;
+}
+
+.main-header .topstory .article > footer {
+    width: 101%;
+    background: rgb(22, 24, 26);
+}
+
+#base-ajax-loading {
+    top: -50px;
+    left: 19px;
+}
+
+.battlefeed .list .item .feed-story .feed-story-content .feed-story-area-comment-and-like {
+    background: #FFFFFF;
+}
+
+.battlefeed .list .item .feed-story-likes,
+.battlefeed .list .item .feed-story-comments .feed-comments-item {
+    background-color: rgba(18, 19, 21, 1);
+}
+
+.btn,
+a.btn,
+.devblog .devblog-post .battlelog-wordpress a.btn {
+    background: #16181A;
+}
+
+.btn.btn-inverse,
+a.btn.btn-inverse,
+.devblog .devblog-post .battlelog-wordpress a.btn.btn-inverse {
+    color: #7A7B7C;
+    background: rgba(22, 24, 26, 1);
+}
+
+.devblog .right-column .iteminfo,
+.survey .description,
+.survey table.scores {
+    color: #7A7B7C;
+}
+
+.input,
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=number],
+input[type=search],
+select,
+textarea,
+#profile-edit-full-form #profile-edit-forumsignature,
+#profile-edit-full-form #profile-edit-presentation,
+.forum-start-container .common-replyform-form-body,
+.forum-start-container .forum-sidebar-search-form-input,
+.battlefeed .list .item .feed-story-comments .feed-comment-form .feed-comment-form-textarea-wrap {
+    background: rgba(214, 110, 41, 1);
+    border: 1px solid #FF924A;
+    color: #ffffff;
+}
+
+.input:hover,
+input[type=text]:hover,
+input[type=password]:hover,
+input[type=email]:hover,
+input[type=number]:hover,
+input[type=search]:hover,
+select:hover,
+textarea:hover,
+#profile-edit-full-form #profile-edit-forumsignature:hover,
+#profile-edit-full-form #profile-edit-presentation:hover,
+.forum-start-container .common-replyform-form-body:hover,
+.forum-start-container .forum-sidebar-search-form-input:hover,
+.battlefeed .list .item .feed-story-comments .feed-comment-form .feed-comment-form-textarea-wrap:hover,
+.input:focus,
+input[type=text]:focus,
+input[type=password]:focus,
+input[type=email]:focus,
+input[type=number]:focus,
+input[type=search]:focus,
+select:focus,
+textarea:focus,
+#profile-edit-full-form #profile-edit-forumsignature:focus,
+#profile-edit-full-form #profile-edit-presentation:focus,
+.forum-start-container .common-replyform-form-body:focus,
+.forum-start-container .forum-sidebar-search-form-input:focus,
+.battlefeed .list .item .feed-story-comments .feed-comment-form .feed-comment-form-textarea-wrap:focus,
+.input:active,
+input[type=text]:active,
+input[type=password]:active,
+input[type=email]:active,
+input[type=number]:active,
+input[type=search]:active,
+select:active,
+textarea:active,
+#profile-edit-full-form #profile-edit-forumsignature:active,
+#profile-edit-full-form #profile-edit-presentation:active,
+.forum-start-container .common-replyform-form-body:active,
+.forum-start-container .forum-sidebar-search-form-input:active,
+.battlefeed .list .item .feed-story-comments .feed-comment-form .feed-comment-form-textarea-wrap:active {
+    border-color: rgb(255, 187, 142);
+}
+
+.survey .feedback textarea,
+.survey .feedback #profile-edit-full-form #profile-edit-forumsignature,
+#profile-edit-full-form .survey .feedback #profile-edit-forumsignature,
+.survey .feedback #profile-edit-full-form #profile-edit-presentation,
+#profile-edit-full-form .survey .feedback #profile-edit-presentation,
+.survey .feedback .forum-start-container .common-replyform-form-body,
+.forum-start-container .survey .feedback .common-replyform-form-body {
+    color: #ffffff;
+}
+
+.survey .feedback button {
+    float: right;
+    background: rgb(214, 110, 41);
+}
+
+a.box:not([disabled]):hover .box-content,
+a.box:not([disabled]):active .box-content {
+    background-color: rgba(22, 24, 26, 1);
+}
+
+h1.primary,
+#battlereport > header h1,
+#base-container .content > section > header h1,
+.forum-start-title h1,
+.forum-page-title h1,
+#forum-preview-post-area h1 {
+    background: rgb(214, 110, 41);
+    padding: 5px;
+    color: #FFFFFF;
+}
+
+.row .popover .popover-body li > a {
+    background-color: rgb(214, 110, 41);
+    color: #FFFFFF;
+    border-top: 1px solid rgb(214, 110, 41);
+}
+
+.row .popover .popover-body li:hover > a {
+    background-color: rgb(218, 122, 58);
+    color: #FFFFFF;
+}
+
+.common-reportbutton-dropdown li {
+    border-bottom: 1px solid #D66E29;
+}
+
+.common-reportbutton-dropdown {
+    background-color: rgb(214, 110, 41);
+    border: 1px solid #D66E29;
+}
+/* XXXXXXXXXXXXXXXX PROFIL-PAGE XXXXXXXXXXXXXXXX */
+
+.box-content.box-hover:hover {
+    background-color: rgba(22, 24, 26, 0.7);
+}
+
+body #base-container #user #soldiers .box-padding {
+    z-index: 3;
+    background: rgb(214, 110, 41);
+}
+
+body #base-container #user .profile-info .box.soldiers .allsoldiers {
+    width: 804px;
+    background: #D66E29;
+    margin-left: -15px;
+    padding-left: 10px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+a,
+time,
+body #base-container #user .profile-info .box.username,
+.location-information,
+body #base-container #user .box-content a,
+.wallpost-body,
+body #base-container #user .profile-overview .presentation,
+.devblog .devblog-post .battlelog-wordpress a,
+body #base-container #user .profile-info .box.userinfo .infotext,
+body #base-container #user .profile-stats-blaze-down,
+.feed-story-body p.feed-br-share-text {
+    color: #FFFFFF;
+}
+
+body #base-container #user .profile-info.premium .box.username {
+    color: #FFD500;
+}
+
+.battlefeed .list .item .feed-story .feed-story-content .feed-story-area-comment-and-like a,
+.battlefeed .list .item .feed-story .feed-story-content .feed-story-area-comment-and-like .devblog .devblog-post .battlelog-wordpress a,
+.devblog .devblog-post .battlelog-wordpress .battlefeed .list .item .feed-story .feed-story-content .feed-story-area-comment-and-like a {
+    color: #000000 !important;
+}
+
+.battlepacks-list .battlebox ul .feed-pack,
+.battlepacks-list .battlebox ul .bp-item {
+    background-color: rgba(43, 49, 52, 1);
+}
+
+.battlefeed .feed-story-body .bp-item .inventory-parent {
+    color: #FFFFFF !important;
+}
+/* XXXXXXXXXXXXXXXX PROFIL-SETTINGS XXXXXXXXXXXXXXXX */
+
+#profile-edit-full-form label,
+.profile-location-display,
+#profile-edit-full-form p {
+    color: #ffffff;
+}
+
+.input:focus,
+input[type=text]:focus,
+input[type=password]:focus,
+input[type=email]:focus,
+input[type=number]:focus,
+input[type=search]:focus,
+select:focus,
+textarea:focus,
+#profile-edit-full-form #profile-edit-forumsignature:focus,
+#profile-edit-full-form #profile-edit-presentation:focus,
+.forum-start-container .common-replyform-form-body:focus,
+.forum-start-container .forum-sidebar-search-form-input:focus,
+.battlefeed .list .item .feed-story-comments .feed-comment-form .feed-comment-form-textarea-wrap:focus,
+.input:active,
+input[type=text]:active,
+input[type=password]:active,
+input[type=email]:active,
+input[type=number]:active,
+input[type=search]:active,
+select:active,
+textarea:active,
+#profile-edit-full-form #profile-edit-forumsignature:active,
+#profile-edit-full-form #profile-edit-presentation:active,
+.forum-start-container .common-replyform-form-body:active,
+.forum-start-container .forum-sidebar-search-form-input:active,
+.battlefeed .list .item .feed-story-comments .feed-comment-form .feed-comment-form-textarea-wrap:active {
+    color: #FFFFFF;
+}
+
+#profile-edit-full-form #profile-edit-row-game-launch span,
+#profile-edit-full-form #profile-edit-row-privacy span,
+#profile-edit-full-form #profile-edit-row-sound-notification span,
+#profile-edit-full-form #profile-edit-row-local-settings span,
+#profile-edit-full-form .extra-info {
+    color: rgb(136, 136, 136);
+}
+
+.ui-select .options {
+    background-color: rgba(214, 110, 41, 1);
+    border: 1px solid #D66E29;
+    color: #FFFFFF;
+}
+
+.ui-select .options:hover {
+    background-color: rgba(218, 131, 73, 1);
+    border: 1px solid rgba(218, 131, 73, 1);
+    color: #FFFFFF;
+}
+
+.ui-select .dropdown li.selected {
+    color: #FFFFFF;
+    background-color: #AD5820;
+}
+
+.ui-select .dropdown li {
+    background: rgb(214, 110, 41);
+    color: white;
+}
+
+.ui-select .dropdown {
+    color: #FFFFFF;
+    border: 1px solid rgb(214, 110, 41);
+    background-color: #D66E29;
+}
+
+.ui-select.show-dropdown .options {
+    color: ;
+}
+
+.ui-select .options:hover,
+.ui-select.show-dropdown .options {
+    border-color: #D66E29;
+}
+
+#profile-edit-full-form #profile-edit-blocked-users .base-profile-link {
+    font-size: 12px;
+    font-weight: bold;
+    color: black;
+}
+
+td#profile-edit-soldier-name,
+#profile-edit-full-form .soldier-row,
+#profile-edit-full-form table.table tbody tr:last-child td,
+#profile-edit-full-form table.table tbody tr:last-child th,
+#profile-edit-full-form table.table tfoot tr:last-child td,
+#profile-edit-full-form table.table tfoot tr:last-child th {
+    background-color: #FFFFFF;
+}
+
+td#profile-edit-soldier-name a,
+td#profile-edit-soldier-name .devblog .devblog-post .battlelog-wordpress a,
+.devblog .devblog-post .battlelog-wordpress td#profile-edit-soldier-name a {
+    font-weight: bold;
+    color: black;
+}
+/* XXXXXXXXXXXXXXXX DIALOG XXXXXXXXXXXXXXXX */
+
+.popup-feedback-container h4,
+.dialog > section h2,
+body .battlepackdialog #battlepacks-open-popup h5,
+body .battlepackdialog #battlepacks-open-popup .item-description p {
+    color: #ffffff;
+}
+
+.dialog > footer {
+    background: rgb(26, 27, 28);
+}
+
+.dialog .dialog-body {
+    background: #1A1B1C;
+    color: #FFFFFF;
+}
+
+.dialog .popup-gameinvite-serverinfo .popup-gameinvite-serverinfo-firstrow {
+    color: #FFFFFF;
+    background: rgb(214, 110, 41);
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.dialog {
+    background: none;
+}
+/* XXXXXXXXXXXXXXXX SOLDIER-SETTINGS XXXXXXXXXXXXXXXX */
+
+#overview-info .overview-box,
+#overview-info .overview-soldier,
+#overview-completion ul li,
+.bfh-stats-content #stats-detailed td.name,
+.bfh-stats-content #stats-detailed .score {
+    background: rgba(22, 24, 26, 1);
+}
+
+#overview-completion ul li:hover {
+    background-color: rgba(31, 34, 37, 1);
+}
+
+#overview-info .overview-soldier .soldier-portrait.gradient-cr:after {
+    background: transparent;
+    background: transparent;
+}
+
+#overview-info .overview-soldier .soldier-portrait.gradient-le:after {
+    background: transparent;
+    background: transparent;
+}
+
+#overview-info #overview-rank .rank-progress .progress-bar-info p:first-child,
+#overview-info .overview-box .box-header,
+#overview-info .overview-box .box-stats-header,
+#overview-completion ul li .completion-content h6,
+.game-stats-content table.table th,
+.game-stats-content table.table td,
+#agent-top-leaderboards .top-leaderboards .top-item .lb-title,
+#agent-top-leaderboards .top-leaderboards .top-item .lb-scoretype,
+#agent-top-leaderboards .top-leaderboards .top-item .rank,
+#loadout-container .loadout-header .extra .spendable-info .vouchers,
+#game-stats table.profile-stats-table td.item-kills span,
+#loadout-container .kit-selector a:hover,
+#game-stats table.profile-stats-table tbody tr.active p,
+.category-vehicles-list li.total span,
+.category-vehicles-list li.total strong,
+.category-vehicles-list li span,
+#vehicle-details .box strong,
+.stats-progression #progression-item-details .item-name,
+.stats-progression #progression-item-details .servicestars .servicestar-name,
+.stats-progression #progression-item-details .servicestars .servicestar-progress,
+.stats-progression #progression-item-details .description,
+#battlereports aside .box ul li span,
+#awards-details .award-info strong,
+#awards-details .progress-info .pull-left,
+.pull-right,
+.gamemanager-launchstate-platoon-title,
+.gamemanager-launchstate-platoon-badge,
+#awards-details .progress-info,
+#dogtags-body .dogtag-aside .box-content,
+.overview-service-stars .star-count div.numstars-taken,
+#inventory-categories-menu .box-content,
+#battlepack-inventory-details .stat-details p,
+#battlepack-inventory-details .stat-details p.use-in,
+#unopened-battlepacks .box-content p {
+    color: #FFFFFF;
+}
+
+#overview-info .overview-box .box-stats-value,
+#overview-info #overview-skill-value,
+.notopvehicle,
+.gamemode-star-progress,
+#overview-completion ul li .completion-content p,
+a:hover,
+.devblog .devblog-post .battlelog-wordpress a:hover,
+#game-stats-head .club-link {
+    color: #FFFFFF;
+}
+
+.progress-bar {
+    background-color: rgba(0, 0, 0, 0.21);
+}
+
+#game-stats-head .soldier-info-name span.premium {
+    color: #FFF4CF;
+}
+
+#loadout-container .kit-selector .item.active {
+    background: #D66E29;
+}
+
+#loadout-container .kit-selector a {
+    color: #16181A;
+}
+
+#loadout-container .loadout-header h1 {
+    color: #FFFFFF;
+    background: rgb(214, 110, 41);
+    padding: 1px;
+}
+
+#loadout-container .loadout-header .extra .spendable-info .cash {
+    color: #00FF0B;
+}
+
+#loadout-container .kit-selector .item,
+#loadout-container .preset-preview .preset-link .slot .slot-item-image-wrapper {
+    background: #ffffff;
+}
+
+#loadout-container .preset-preview.preset-locked .generic-lock,
+#loadout-container .preset-preview.preset-locked .score-lock {
+    background: rgba(200, 200, 200, 1);
+}
+
+#loadout-container .preset-preview .preset-link:hover .slot .slot-item-image-wrapper {
+    background: rgba(224, 224, 224, 1);
+}
+
+#loadout-container .kit-selector .item:not(.active):hover {
+    background: rgba(255, 169, 113, 1);
+}
+
+#game-stats table.profile-stats-table tbody tr.active td {
+    background-color: #16181A;
+}
+
+#game-stats table.profile-stats-table tbody tr td {
+    background-color: #24282C;
+}
+
+#game-stats table.profile-stats-table td.item-name {
+    background: rgba(36, 40, 44, 0.46);
+}
+
+.category-vehicles-list li,
+.category-vehicles-list li.active {
+    background-color: #D66E29;
+}
+
+.category-vehicles-list li[data-guid]:hover {
+    background-color: rgba(218, 143, 94, 1);
+}
+
+table.table th,
+table.table td {
+    background-color: rgba(22, 24, 26, 1);
+}
+
+table.battlereports-table td p:nth-of-type(2),
+#battlereports aside .box ul li span:first-child,
+#awards-details .award-info strong,
+.battlepack-offer span.bp-name {
+    color: #D66E29
+}
+
+table.table th,
+html:not(.is-ios) table.table td {
+    background-clip: padding-box;
+}
+
+table.table > tbody > tr.active > td {
+    background: #0F1012;
+}
+
+table.table-hover > tbody > tr:hover td,
+table.table-hover > tbody > tr:active td,
+#serverbrowser .servers-list tbody .server-row:active:not(.active) > td {
+    background-color: rgba(32, 34, 37, 1);
+}
+
+table.battlereports-table tr.active [class*='winstatus-'] {
+    color: #FFF;
+}
+
+#inventory-categories-menu .box-content.active {
+    background: #010102;
+}
+/* XXXXXXXXXXXXXXXX EMBLEM-SETTINGS XXXXXXXXXXXXXXXX */
+
+.emblem-layer-options .layer-actions .btn {
+    background: rgba(255, 255, 255, 0.8);
+}
+/* XXXXXXXXXXXXXXXX SERVERBROWSER & SERVERPAGE XXXXXXXXXXXXXXXX */
+
+#serverbrowser .servers-list tbody .server-row td.server .server-name,
+#serverbrowser .servers-list tbody .server-row td.players,
+#selected-server-scoreboard .round-time,
+#serverbrowser-show .settings li,
+section.filter label,
+#quickmatch p,
+.btn.btn-primary,
+a.btn.btn-primary,
+.devblog .devblog-post .battlelog-wordpress a.btn.btn-primary,
+#server-page-slot-info dl dt,
+#server-page-settings dl dt,
+#server-description,
+#serverbrowser-page #live-header .box-content,
+#base-bfh-html table.scoreboard.table tfoot tr td,
+table.scoreboard td.soldier-name .common-playername-personaname.solo,
+table.scoreboard tbody > tr td {
+    color: #FFFFFF;
+}
+
+#serverbrowser .servers-list tbody .server-row td.server .server-details,
+#serverbrowser-show .settings li b,
+section.filter h3,
+#serverbrowser section.filter ul li[data-toggle="section"] label,
+#server-page-slot-info dl dd,
+#server-page-settings dl dd {
+    color: #D66E29;
+}
+
+#serverbrowser .servers-list tbody .server-row td.ping {
+    color: #34A144;
+}
+
+#server-page-gamemode p {
+    background: rgb(40, 45, 51);
+    padding: 10px;
+}
+/* XXXXXXXXXXXXXXXX CAMPAIGN XXXXXXXXXXXXXXXX */
+
+#campaign #mainstats .mainstats-item .mainstats-item-val {
+    color: rgb(214, 110, 41);
+}
+
+#campaign #mainstats .mainstats-item .mainstats-item-desc,
+#campaign .campaign-reputation-content .campaign-reputation-rank-label {
+    color: #FFFFFF;
+}
+/* XXXXXXXXXXXXXXXX PLATOONS XXXXXXXXXXXXXXXX */
+
+#base-bfh-html #clubs .clubs-list .box-content:hover,
+#base-bfh-html #clubs .club-index .myclubs .box-content:not(.empty):hover {
+    background-color: rgba(33, 36, 39, 1);
+}
+
+#clubs .club-link .name,
+#base-bfh-html #clubs .stats .title,
+#clubs .presentation.minified .view-more-btn a,
+#clubs .presentation.minified .view-more-btn .devblog .devblog-post .battlelog-wordpress a,
+.devblog .devblog-post .battlelog-wordpress #clubs .presentation.minified .view-more-btn a,
+#clubs .wall-message,
+#clubs .wall-likes .box-content,
+#base-bfh-html .message-interact .interact-item a,
+#base-bfh-html .message-interact .interact-item .devblog .devblog-post .battlelog-wordpress a,
+.devblog .devblog-post .battlelog-wordpress #base-bfh-html .message-interact .interact-item a,
+#clubs .comments-info .box-content,
+#base-bfh-html #clubs .stats .rankscore #overview-rank .progress-bar-info,
+#clubs .presentation.expanded .preswrapper,
+#clubs .empty-message,
+#clubs .club-create .form-title,
+.box-content,
+.ui-select .options .option.selected,
+#clubs .club-create .form-desc,
+table.battlereports-table td p:nth-of-type(1),
+.common-reportbutton-dropdown li > a {
+    color: #FFFFFF;
+}
+
+#clubs .club-link .info,
+#base-bfh-html #clubs .club-info,
+#base-bfh-html .stats .club-rank,
+#base-bfh-html #clubs .value,
+#base-bfh-html #clubs .club-member-level {
+    color: #D66E29;
+}
+
+#base-bfh-html .wall-message-ago {
+    color: #606263;
+}
+
+#clubs .wallcomment .wall-comment-content {
+    color: rgb(195, 195, 195);
+}
+
+#clubs .message-interact .interact-item {
+    border: 1px solid rgba(214, 110, 41, 1);
+    background: rgb(214, 110, 41);
+}
+
+.bbcode-button {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.bbcode-button:hover {
+    background-color: rgba(221, 221, 221, 1);
+}
+/* XXXXXXXXXXXXXXXX FORUMS XXXXXXXXXXXXXXXX */
+
+.forum-start-container .common-box-title-solid-with-line,
+#forum-activity-view-more {
+    border: 1px solid rgba(22, 24, 26, 1);
+}
+
+.forum-start-container .forum-forumlist .forum-start-forum-title,
+.forum-start-border .forum-start-forum-bodycell,
+.forum-start-container .forum-start-border .forum-start-forum:not(.forum-forumlist) .forum-start-forum-title {
+    background: rgba(22, 24, 26, 1);
+}
+
+.forum-start-container .forum-forumlist .forum-start-forum-title:hover,
+.forum-start-border .forum-start-forum-bodycell:hover,
+.forum-start-container .forum-start-border .forum-start-forum:not(.forum-forumlist) .forum-start-forum-title:hover {
+    background: rgba(32, 34, 37, 1);
+}
+
+.forum-start-container .forum-forumlist .forum-start-forum-title p,
+.forum-start-container .forum-threadview-post .forum-threadview-post-content .forum-threadview-post-ago,
+.forum-threadview-post-poster-posts em,
+.forum-threadview-post-poster-enlisted em {
+    color: #D66E29;
+}
+
+.forum-forumlist .forum-start-forum-latest-info .forum-ago,
+.forum-forumlist .forum-start-forum-latest-info .forum-username,
+.forum-start-forum .forum-start-forum-title-username {
+    color: rgb(174, 174, 174);
+}
+
+#forum-activity-view-more a,
+#forum-activity-view-more .devblog .devblog-post .battlelog-wordpress a,
+.devblog .devblog-post .battlelog-wordpress #forum-activity-view-more a {
+    color: rgb(214, 110, 41);
+    background: rgb(40, 45, 51);
+}
+
+#forum-activity-view-more a:hover,
+#forum-activity-view-more .devblog .devblog-post .battlelog-wordpress a:hover,
+.devblog .devblog-post .battlelog-wordpress #forum-activity-view-more a:hover {
+    background: rgba(36, 39, 42, 1);
+}
+
+.forum-start-border .forum-start-forum-bodycell p {
+    color: #FFF;
+}
+
+.breadcrumb li a {
+    color: rgb(22, 24, 26);
+}
+
+.forum-start-container .forum-start-title .thread-title,
+.forum-thread-is-locked,
+.forum-postreply-disabled,
+.forum-search-sort-container span,
+.forum-start-container .forum-threadview-post .forum-threadview-post-content .forum-threadview-post-text,
+.forum-threadview-post .forum-threadview-post-poster .forum-threadview-post-poster-enlisted,
+.forum-threadview-post-content blockquote em,
+.forum-newthread label,
+.forum-threadview-post strong,
+.forum-newthread textarea,
+.forum-newthread #profile-edit-full-form #profile-edit-forumsignature,
+#profile-edit-full-form .forum-newthread #profile-edit-forumsignature,
+.forum-newthread #profile-edit-full-form #profile-edit-presentation,
+#profile-edit-full-form .forum-newthread #profile-edit-presentation,
+.forum-newthread .forum-start-container .common-replyform-form-body,
+.forum-start-container .forum-newthread .common-replyform-form-body,
+.forum-newthread input[type=text] {
+    color: #FFFFFF;
+}
+
+.forum-threadview-post h1 {
+    background: rgb(214, 110, 41);
+    padding: 5px;
+}
+
+.forum-start-container .forum-threadview-post .forum-threadview-post-content,
+.forum-start-container .forum-threadview-post-poster {
+    background: rgba(22, 24, 26, 1);
+}
+
+.forum-threadview-post .forum-threadview-post-content blockquote {
+    border: 1px solid rgba(43, 49, 52, 1);
+    color: rgb(161, 161, 161);
+}
+
+.forum-start-container .common-box-inner-border {
+    border: none;
+}
+
+#base-bfh-html .wallcomment .box-content {
+    background-color: rgba(16, 18, 19, 1);
+}
+/* XXXXXXXXXXXXXXXX NEWS XXXXXXXXXXXXXXXX */
+
+.devblog .devblog-post .devblog-index-content p,
+.comment-main .comment-body-left-text,
+.devblog-post .battlelog-wordpress ul li,
+.devblog-post .battlelog-wordpress ol li {
+    color: #FFFFFF;
+}
+
+.devblog .devblog-post .devblog-index-iteminfo .devblog-index-iteminfo-textinfo .ago,
+.devblog .devblog-post .devblog-index-iteminfo .devblog-index-iteminfo-textinfo .devblog-comment-icon .comments,
+.devblog .devblog-post .devblog-index-iteminfo .devblog-index-iteminfo-textinfo .devblog-toggle-vote .devblog-vote-icon,
+.comment-main .comment-body-votes .comment-point-count {
+    color: #D66E29;
+}
+
+.devblog .devblog-post .devblog-index-iteminfo .devblog-index-iteminfo-textinfo {
+    background: #343537;
+    border-radius: 6px;
+    padding: 5px;
+}
+
+.comment-main .comment-footer {
+    color: #C7C7C7;
+}
+
+.comment-main .comment-reply-item .comment-reply-body {
+    color: #E4E4E4;
+}
+/* XXXXXXXXXXXXXXXX BATTLEREPORT XXXXXXXXXXXXXXXX */
+
+#base-bfh-html #battlereport-metadata > .battlereport-metadata-inner,
+#base-bfh-html #playerreport > header,
+#base-bfh-html .playerreport-box > div,
+#base-bfh-html #sodaSlider-slider-wrapper,
+#base-bfh-html #battlereport-round-summary #round-summary-content > div {
+    background: rgba(22, 24, 26, 1);
+    color: #FFFFFF;
+}
+
+#battlereport-metadata > .battlereport-metadata-inner .battlereport-header-info-gameicon {
+    background-color: #FFFFFF;
+}
+
+#base-bfh-html .playerreport-box h5 {
+    color: #D66E29;
+}
+
+#base-bfh-html .playerreport-box.medium span,
+#base-bfh-html .playerreport-awards-ribbons span {
+    color: #FFFFFF;
+}
+
+#base-bfh-html #playerreport-awards .arrow {
+    background-color: rgba(214, 110, 41, 1);
+}
+
+#base-bfh-html #playerreport-awards .arrow:not(.sodaSlider-arrow-disabled):hover {
+    background-color: rgba(184, 94, 35, 1);
+}
+
+#playerreport,
+.battlereport-section-container {
+    border: 1px solid transparent;
+}
+/* XXXXXXXXXXXXXXXX OTHERS XXXXXXXXXXXXXXXX */
+
+#base-bfh-html .odcstore .product-container.base-game .not-available {
+    background: rgba(22, 24, 26, 0.71);
+    color: #FFFFFF;
+}
+
+.feed-events a:hover,
+.feed-events .devblog .devblog-post .battlelog-wordpress a:hover,
+.devblog .devblog-post .battlelog-wordpress .feed-events a:hover,
+.feed-story a:hover,
+.feed-story .devblog .devblog-post .battlelog-wordpress a:hover,
+.devblog .devblog-post .battlelog-wordpress .feed-story a:hover,
+.feed-story-likes a:hover,
+.feed-story-likes .devblog .devblog-post .battlelog-wordpress a:hover,
+.devblog .devblog-post .battlelog-wordpress .feed-story-likes a:hover,
+.feed-story-comments a:hover,
+.feed-story-comments .devblog .devblog-post .battlelog-wordpress a:hover,
+.devblog .devblog-post .battlelog-wordpress .feed-story-comments a:hover {
+    color: rgb(218, 139, 87);
+}
