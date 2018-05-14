@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Better Battlelog - It was a pleasure, a honor, simply a great time!</title>
+    <link rel="stylesheet" href="stylesheets/page.css" type="text/css">
+</head>
+<body>
+<div class="page">
+    <h2>Not found - You will be redirected</h2>
+    If not, goto <a href="https://getbblog.com">https://getbblog.com</a>.
+</div>
+<script src="scripts/t.js"></script>
+<script>
+  'use strict';
+  (function () {
+    var m = location.href.match(/board\/topic\/([0-9]+)/i)
+    if (m) {
+      location.href = '/forums/' + m[1] + '.html'
+      return
+    }
+    m = location.href.match(/\/board/i)
+    if (m) {
+      location.href = '/forums/sitemap.html'
+      return
+    }
+    location.href = '/'
+  })()
+</script>
+</body>
+</html>

@@ -1,0 +1,949 @@
+/**
+* Better Battlelog - Worldwide Leading Browser Addon for Battlelog
+*
+* @author Roland Eigelsreiter (BrainFooLong)
+* @link https://getbblog.com
+* @license GPLv3
+*/
+
+.profile-stats-unlock-progression-kit-item .bblog-required-ribbons{
+    left:0px;
+    top:0px;
+    right:auto;
+    bottom:auto;
+    opacity:0.5;
+    background-color: white;
+    color:black;
+}
+
+#award-ribbon-xp2rgm + .base-clear{
+    height:6px;
+    clear:both;
+}
+
+.bblog-report-buttons{
+    margin-left: 15px;
+    position: relative;
+    top:-3px;
+}
+
+
+.serverguide-bodycells.favorite:not(.active){
+    background-color: #e0f3ff;
+}
+
+.serverguide-bodycells.favorite .common-gameicon{
+    background: url("http://battlelog-cdn.battlefield.com/public/profile/profile-icons.png?v=1520") no-repeat scroll 0% 0% transparent;
+    background-position: -42px -112px;
+    width:14px;
+    height:14px;
+    left:12px;
+    top:14px;
+}
+
+.assignments-group{
+    overflow: hidden;
+    margin-top: 7px;
+    padding-top:10px;
+}
+
+.assignments-group.hidden{
+    height:17px;
+}
+
+#bblog-ass .assignment{
+    width:224px;
+    float:left;
+    margin-right: 19px;
+    border:1px solid #CACACA;
+    background-color: white;
+    cursor: pointer;
+    position:relative;
+    margin-bottom: 19px;
+    -webkit-filter: grayscale(1);
+    -moz-filter: grayscale(100%);
+}
+
+#bblog-ass .assignment.active,
+#bblog-ass .assignment.done,
+#bblog-ass .assignment:hover{
+    -webkit-filter: grayscale(0);
+    filter: grayscale(0%);
+}
+
+
+#bblog-ass .assignment.active .image{
+    background-color: #ff8400;
+    box-shadow: inset 5px 5px 5px #ffc000;
+}
+
+#bblog-ass .assignment .image{
+    width:220px;
+    height:55px;
+    padding: 2px;
+    border-bottom:1px solid #CACACA;
+}
+
+#bblog-ass .assignment .image .inner{
+    background-color: black;
+    width:220px;
+    height:55px;
+    background-image: url(img/assignments.jpg?v340);
+    background-size: 1100px;
+    background-position: left top;
+}
+
+#bblog-ass .assignment .loading{
+    margin:1px;
+    background-color: #353535;
+    height:7px;
+}
+
+#bblog-ass .assignment .done{
+    display: none;
+}
+
+#bblog-ass .assignment.done .done{
+    display: block;
+    position:absolute;
+    width:19px;
+    height:19px;
+    right:5px;
+    top:5px;
+    background-image: url(http://battlelog-cdn.battlefield.com/public/coop/difficulty-sprite.png?v=7310);
+}
+
+
+#bblog-ass .assignment.done .loading{
+    background-color: #89C03B;
+}
+
+#bblog-ass .assignments_details .image{
+    background-image: url(img/assignments.jpg);
+    background-position: left top;
+    width:484px;
+    height:121px;
+    background-color: black;
+    margin-bottom: 10px;
+}
+
+#bblog-ass .assignments_details{
+    font-size: 12px;
+}
+
+#bblog-ass .requirements .entry{
+    margin-bottom: 3px;
+    background-color: #E8E8E8;
+    position:relative;
+}
+
+#bblog-ass .requirements .entry .indicator{
+    background-color: #d0e2b1;
+    position:absolute;
+    height:24px;
+}
+
+#bblog-ass .requirements .entry .title{
+    padding:5px;
+    padding-top: 7px;
+    position:relative;
+    z-index:2;
+}
+
+#bblog-ass .requirements .entry .value{
+    padding:5px;
+    padding-top: 7px;
+    position:absolute;
+    right:0px;
+    font-weight: bold;
+    font-size: 11px;
+    z-index:2;
+}
+
+#assignments-progress li {
+    margin-top: 3px;
+}
+
+.assignments-group .bblog-minimize{
+    margin-right: 10px;
+}
+
+.bblog-ass-info{
+    margin-bottom: 10px;
+    background-color: white;
+    font-size: 12px;
+    line-height: 15px;
+    padding: 10px;
+}
+
+#forum-newthread-body{
+    margin-top: 0px;
+}
+
+#soldier-list.bblog li{
+    margin-bottom: 12px;
+    position: relative;
+}
+
+#soldier-list.bblog .bblog-button{
+    position: absolute;
+    right:0px;
+    bottom:-10px;
+}
+
+.bblog-radar-warning{
+    color:red;
+    padding:7px;
+    margin-bottom: 2px;
+    border: 1px solid #e5e5e5;
+    background-color: white;
+    font-size: 11px;
+    line-height: 13px;
+}
+
+.serverguide-show-playerrow.bblog-radar a{
+    color:red;
+}
+
+.bblog-radar-tr td{
+    background: #ffd6d6;
+}
+
+
+button.bblog-red,
+.bblog-red .base-button-arrow-almost-gigantic{
+    color:red;
+}
+
+#serverguide-middle .tabs-outer .bblog-button{
+    padding:6px;
+    height:13px;
+    position: relative;
+    top:1px;
+    margin-right: 10px;
+}
+
+.serverguide-bodycells.bblog-radar:not(.active){
+    background: #ffd6d6;
+}
+
+.battlereport-teamstat-column tr.bblog-radar:not(.selected){
+    background: #ffd6d6;
+}
+
+.bblog-flame-post-bg,
+.bblog-flame-post{
+    background-color: #e5e5e5;
+}
+
+.bblog-append-signature input{
+    position:relative;
+    top:2px;
+}
+
+.forum-newthread-submit-cell .bblog-append-signature{
+    top:5px;
+}
+
+.bblog-totop{
+    display: none;
+}
+
+.bf3stats-top{
+    font-size: 11px !important;
+    line-height: 13px;
+    display:block;
+    position:absolute;
+    margin-top: -35px;
+    width:70px;
+    text-align: center;
+    font-weight: normal;
+}
+
+#profile-stats-vehicle-statistics .bf3stats-top{
+    margin-left: 11px;
+}
+
+.bf3stats-top span{
+    margin:0px;
+    padding:0px;
+}
+
+
+.bblog-textual-filter{
+    font-size: 12px;
+    line-height: 15px;
+    color:#444444;
+    position:relative;
+    top:-7px;
+    text-align: right;
+    color:#858585;
+}
+
+.bblog-textual-filter input{
+    width:250px;
+}
+
+.bblog-textual-filter span{
+    padding-right: 5px;
+}
+
+.bblog-shots-position{
+    padding-top: 30px !important;
+}
+
+.profile-stats-type-container td div.bblog-shots,
+.profile-stats-type-container td div.bblog-shots div,
+.profile-stats-type-container td div.bblog-kills{
+    font-size: 11px;
+    font-weight: normal;
+    padding-top: 5px;
+    color:#666666;
+}
+
+.profile-stats-type-container td div.bblog-kills{
+    padding-top: 15px;
+}
+
+.profile-stats-type-container td div.bblog-kills .bblog-kpm{
+    position: relative;
+    font-size: 11px;
+    font-weight: normal;
+    color: #666666;
+    top:-67px;
+}
+
+.profile-stats-type-container td div.bblog-shots .shots span{
+    background: url("http://battlelog-cdn.battlefield.com/public/profile/profile-icons.png?v=1520") no-repeat scroll 0% 0% transparent;
+    background-position: -70px -14px;
+    height:14px;
+    width:14px;
+    display: inline-block;
+    position:absolute;
+    margin-left: -17px;
+}
+
+.profile-stats-type-container td div.bblog-shots .hs span{
+    background: url("http://battlelog-cdn.battlefield.com/public/profile/profile-icons.png?v=1520") no-repeat scroll 0% 0% transparent;
+    background-position: -28px -112px;
+    height:14px;
+    width:14px;
+    display: inline-block;
+    position:absolute;
+    margin-left: -17px;
+}
+
+.profile-stats-type-container td div.bblog-kills span{
+    background: url("http://battlelog-cdn.battlefield.com/public/profile/profile-icons.png?v=1520") no-repeat scroll 0% 0% transparent;
+    background-position: -112px -56px;
+    height:14px;
+    width:14px;
+    display: inline-block;
+    position:absolute;
+    margin-left: -17px;
+}
+
+.kit-all.kit-vaha p,
+.kit-all.kit-vaja p,
+.kit-all.kit-vahs p,
+.kit-all.kit-vajf p,
+.kit-all.kit-vmbt p,
+.kit-all.kit-vaa p,
+.kit-all.kit-vifv p,
+.kit-all.kit-ma p,
+.kit-all.kit-td p{
+    display: none;
+}
+
+.kit-all.kit-vaha span,
+.kit-all.kit-vaja span,
+.kit-all.kit-vahs span,
+.kit-all.kit-vajf span,
+.kit-all.kit-vmbt span,
+.kit-all.kit-vaa span,
+.kit-all.kit-vifv span,
+.kit-all.kit-ma span,
+.kit-all.kit-td span{
+    background-image: url(http://battlelog-cdn.battlefield.com/public/profile/bf3/kit-icons.png?v=2930);
+    background-position: -1px -101px;
+    width:16px;
+    height:16px;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.kit-all.kit-vifv span{
+    background-position: -1px -81px;
+}
+
+.kit-all.kit-vahs span{
+    background-position: -1px -121px;
+}
+
+.kit-all.kit-vaha span{
+    background-position: -1px -141px;
+}
+
+.kit-all.kit-vaa span{
+    background-position: -1px -161px;
+}
+
+.kit-all.kit-vmbt span{
+    background-position: -1px -181px;
+}
+
+.kit-all.kit-ma span{
+    background-position: -1px -499px;
+    height:17px;
+}
+
+.kit-all.kit-td span{
+    background-position: -1px -519px;
+    height:17px;
+}
+
+.bblog-mini-stars{
+    position:absolute;
+    right:0px;
+    bottom:0px;
+    height:11px;
+    width:25px;
+    z-index: 2;
+    font-size: 11px;
+    line-height: 11px;
+    color:white;
+    font-weight: bold;
+    padding-top: 4px;
+    text-align: right;
+    padding-right: 2px;
+    background: url(img/mini-star.png);
+}
+
+.bblog-weapon-container{
+    padding-top: 10px;
+}
+
+.bblog-weapon-container .row{
+    padding-bottom: 10px;
+    margin: 0px;
+}
+
+.bblog-weapon-container .venice-single-stats-column-height{
+    height:224px;
+}
+
+.bblog-weapon-container .venice-statsitem-box-item{
+    margin-bottom: 6px;
+}
+
+.bblog-weapon-container .venice-statsitem-box-item,
+.bblog-weapon-container .venice-statsitem-bar-title{
+    text-transform: none;
+    height: auto;
+}
+
+.bblog-weapon-container .venice-statsitem-bar-title{
+    width:120px;
+    white-space: nowrap;
+}
+
+.bblog-weapon-container .venice-statsitem-bar-value{
+    float:left;
+    width:120px;
+}
+
+.bblog-weapon-container .venice-stats-info-title{
+    margin:0px !important;
+    margin-bottom: 3px  !important;
+}
+
+.bblog-weapon-container .torso{
+    background-image: url(img/damage-torso.png?v3);
+    width:138px;
+    height:250px;
+    position:absolute;
+    margin-left: 162px;
+    top:20px;
+}
+
+.bblog-weapon-container .torso span{
+    font-family: BebasNeueRegular, arial;
+    font-size: 16px;
+    font-weight: bold;
+    position:absolute;
+    left:4px;
+    top:66px;
+    color:#2b2d30;
+    text-shadow: rgba(255,255,255,0.8) 1px 0px 0px, rgba(255,255,255,0.8) 0px 1px 0px, rgba(255,255,255,0.8) -1px 0px 0px, rgba(255,255,255,0.8) 0px -1px 0px;;
+}
+
+.bblog-weapon-container .torso span.head{
+    left:14px;
+    top:22px;
+}
+
+.bblog-weapon-container .torso span.legs{
+    left:99px;
+    top:193px;
+}
+
+.bblog-weapon-container .extraInfos .info,
+.bblog-weapon-container .plotinfo .info{
+    background-image: url(img/silk_information.png);
+    display:inline-block;
+    width:16px;
+    height:16px;
+    position:absolute;
+    margin-top: -1px;
+    margin-left: -20px;
+}
+
+.bblog-weapon-container .extraInfos .venice-statsitem-bar-title{
+    white-space: normal;
+}
+
+.bblog-weapon-container .extraInfos .venice-statsitem-bar-value{
+    margin-left: 15px;
+}
+
+.bblog-weapon-container .damagemodel .venice-statsitem-box-item{
+    float:left;
+    width:80px;
+    clear: none;
+}
+
+.bblog-weapon-container .damagemodel .venice-statsitem-bar-title,
+.bblog-weapon-container .damagemodel .venice-statsitem-bar-value{
+    float: none;
+    white-space: nowrap;
+    text-align: center;
+    width: auto;
+    margin: 0px;
+}
+
+.bblog-weapon-container .damagemodel .venice-statsitem-bar-container{
+    width:200px;
+    margin-top: 5px;
+}
+
+.bblog-weapon-container .accuracy{
+    height:260px;
+}
+
+.bblog-weapon-container .accuracy .common-box-container{
+    height:260px;
+    overflow: hidden;
+}
+
+.bblog-weapon-container .plotinfo .venice-statsitem-bar-value{
+    padding-left: 15px;
+}
+
+.bblog-weapon-container .plotdesc .venice-statsitem-bar-container{
+    font-size: 12px;
+    line-height: 17px;
+}
+
+.bblog-sightVideos .video{
+    float:left;
+    width:230px;
+    height:144px;
+    overflow: hidden;
+    margin-right: 18px;
+    margin-bottom: 10px;
+    background-color: black;
+    color:white;
+    font-family: "BebasNeueRegular",Arial,sans-serif;
+    text-align: center;
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: bold;
+    background-position: -400px -223px;
+    text-shadow: black 1px 1px 0px;
+    text-transform: uppercase;
+}
+
+.bblog-sightVideos .video:hover{
+    background-image: url(http://battlelog-cdn.battlefield.com/public/about/b2k/b2k-info-bg.jpg?v=3173239);
+}
+
+.bblog-sightVideos .video video{
+    height:144px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.bblog-sightVideos .play{
+    padding-top: 40px;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.bblog-sightVideos .play:hover{
+    opacity: 1;
+}
+
+.bblog-sightVideos .play div{
+    font-size: 12px;
+    line-height: 15px;
+    font-family: arial;
+    font-weight: normal;
+}
+
+.bblog-weaponSwitch .hidden{
+    display: none;
+    font-family: "BebasNeueRegular",Arial,sans-serif !important;
+    font-size: 30px;
+    line-height: 34px;
+    color:#333333;
+    cursor:pointer;
+    letter-spacing: normal;
+}
+
+.bblog-weaponSwitch a{
+    display:block;
+    width:180px;
+    font-family: Arial,sans-serif;
+    font-size: 13px;
+    line-height: 22px;
+    color:#555555;
+    letter-spacing: normal;
+    float:left;
+}
+
+.bblog-weaponSwitch .title{
+    border-bottom: 1px solid #e5e5e5;
+    font-size: 24px;
+    line-height: 27px;
+    font-family: "BebasNeueRegular",Arial,sans-serif !important;
+    margin-top: 10px;
+    color:#444444;
+}
+
+
+#bblog-plot{
+    font-family: arial;
+    letter-spacing: -1px;
+    font-size: 12px;
+    line-height: 15px;
+    width:320px;
+    height:260px;
+    border:1px solid #e5e5e5;
+    position:relative;
+    background-image: url(img/spread-model.jpg);
+}
+
+#bblog-plot .update{
+    position:absolute;
+    font-size:10px;
+    line-height: 12px;
+    top:220px;
+    right:5px;
+    color:#888888;
+    font-weight: bold !important;
+}
+
+#bblog-plot svg{
+    position:absolute;
+}
+
+#bblog-plot svg circle{
+    opacity:0.5;
+}
+
+#bblog-plot .overlay{
+    z-index:1;
+    position:absolute;
+}
+
+#bblog-plot .start,
+#bblog-plot .stop{
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: bold;
+    width:320px;
+    padding-top: 30px;
+    position:absolute;
+    text-align: center;
+    cursor: pointer;
+}
+
+#bblog-plot .chooser{
+    width:320px;
+    text-align: right;
+}
+
+#bblog-plot select{
+    font-size: 12px;
+    line-height: 15px;
+    background-color: white;
+    padding:3px;
+    border:none;
+    opacity:0.4;
+    border-radius: 5px;
+}
+
+#bblog-plot select:hover{
+    opacity:1;
+}
+
+#bblog-plot .bullets{
+    position:absolute;
+    left:0px;
+    top:0px;
+}
+
+#bblog-plot .bullets div{
+    padding:2px;
+    text-shadow: white -1px 1px 0px;
+}
+
+#bblog-plot .bullets span{
+    width:7px;
+    height:7px;
+    position:relative;
+    display:inline-block;
+    margin-right: 5px;
+    top:-1px;
+    border-radius: 6px;
+}
+
+#profile-presentation .bblog-youtube iframe{
+    width:320px;
+    height:240px;
+}
+
+#profile-presentation .bblog-inlineimage img{
+    max-width:320px;
+    max-height:240px;
+}
+
+
+.bblog-weapon-container .box-1 .venice-statsitem-bar-title {
+    width: 170px;
+}
+.bblog-weapon-container .box-1 .venice-statsitem-bar-value {
+    width: 90px;
+}
+.bblog-weapon-container .box-1 .venice-statsitem-box-item {
+    margin-bottom: 10px;
+}
+.bblog-dropchart{
+    background-color: white;
+    padding:10px;
+    position:relative;
+    border-radius: 5px;
+}
+
+.bblog-dropchart img{
+    padding-top: 20px;
+}
+
+.bblog-dropchart span{
+    position:absolute;
+    font-size:11px;
+    line-height: 14px;
+    color:black;
+    text-align: left;
+    top:10px;
+}
+
+.bblog-dropchart span.dist{
+    width:250px;
+    text-align: right;
+    left:0px;
+    top:140px;
+}
+
+.serverguide-filtertoggle-contracted #custom-filter-list {
+    padding-right: 245px;
+}
+
+#mohw-overview-mohwstats{
+    position: relative;
+    float: left;
+    width: 100%;
+}
+
+
+.isotope .isotope-item.bblog-fix{
+    -webkit-transform:none !important;
+    -webkit-transition:none !important;
+    -moz-transform:none !important;
+    -moz-transition:none !important;
+    transform:none !important;
+    transition:none !important;
+}
+
+.isotope .isotope-item.bblog-fix.hide{
+    display: none;
+}
+
+
+.bblog-local-comment textarea{
+    height:15px;
+    font-size: 12px;
+    line-height: 15px;
+    color:#444444;
+    opacity:0.8;
+    border:1px solid #e5e5e5;
+    font-family: arial;
+    overflow: hidden;
+    padding:8px
+}
+
+.serverguide-online-info .bblog-local-comment textarea{
+    width:278px;
+}
+
+#serverguide-show-info .bblog-local-comment textarea{
+    width:974px;
+}
+
+#profile-user .bblog-local-comment{
+    float: right;
+    position: relative;
+    width: 656px;
+    margin-top:16px;
+}
+
+.platoon-content-rightcolumn .bblog-local-comment{
+    margin-bottom: 10px;
+}
+
+.platoon-content-rightcolumn .bblog-local-comment textarea{
+    width:638px;
+}
+
+.bblog-local-comment.stats{
+    margin-left: 16px;
+    margin-top: 15px;
+}
+
+.bblog-local-comment.stats textarea{
+    width:974px;
+}
+
+#base-mohw-body .bblog-local-comment.stats{
+    margin-bottom: 13px;
+}
+
+#profile-user .bblog-local-comment textarea{
+    width: 638px;
+}
+
+.bblog-local-comment textarea:focus{
+    min-height:100px !important;
+    opacity:1;
+    overflow: auto;
+}
+
+#assignments-progress li{
+    white-space: nowrap;
+}
+
+.bblog-bf3-filter-btn{
+    position: absolute;
+    background-image: url(img/filterset.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    width:32px;
+    height:26px;
+    right:10px;
+    top:9px;
+    cursor: pointer;
+    border-radius:3px;
+}
+
+
+.bblog-bf3-filter-btn:hover{
+    background-color: white;
+}
+
+.bblog-bf3-filters{
+    padding-right: 40px;
+}
+
+#serverguide-apply-filters.bblog-bf3-filters{
+    width:auto;
+}
+
+#serverguide-filtertoggle.bblog-bf3-filters .serverguide-header-refresh-button{
+    right:42px;
+}
+
+#serverguide-filtertoggle .bblog-bf3-filter-btn{
+    top:7px;
+}
+
+.bblog-favthread-button{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: right;
+}
+
+#profile-information .bblog-badge{
+    position: relative;
+    top:1px;
+}
+
+.profile-venicestats-header-soldier-info-type .bblog-badge{
+    position: relative;
+    top:3px;
+    margin-right: 5px;
+}
+
+.bblog-popup  .icon-dialog-close{
+    position: absolute;
+}
+
+.main-loggedin-playbar.bblog-mod{
+    white-space: nowrap;
+}
+
+#bblog-filtersets{
+    margin-bottom: 15px;
+}
+
+#bblog-emblem-gallery,
+#bblog-emblem-buttons{
+    background: white;
+}
+
+#bblog-emblem-gallery .emblem-item{
+    border:1px solid #d5d5d5;
+    background: #f5f5f5;
+}
+
+#bblog-emblem-gallery .emblem-item.incompatible{
+    background: #ffd7d7;
+    border:1px solid #ffb9b9;
+}
+
+#bblog-emblem-gallery .emblem-item:hover{
+    background: white;
+}
+
+#bblog-emblem-gallery .time{
+    color:#666666;
+}
+
+.bblog-emblem-info{
+    background: white;
+    margin-bottom: 10px;
+    padding:10px;
+    border:1px solid #e5e5e5;
+}
+
+#bblog-emblem-gallery .layers{
+    background: rgba(255,255,255,0.6);
+    color:#444444;
+}
+
+#bblog-emblem-gallery .emblem-item{
+    width:118px;
+}
+
+.bblog-plugingallery .plugin{
+    border-bottom: 1px solid #e5e5e5;
+}

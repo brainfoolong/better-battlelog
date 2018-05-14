@@ -1,1 +1,8 @@
-"Feature disabled"
+'use strict';
+
+(function () {
+  var callbackName = document.currentScript.getAttribute('src').match(/jsoncallback\=(.*?)\&/)
+  if (callbackName) {
+    window[callbackName[1]]("Feature disabled")
+  }
+})()

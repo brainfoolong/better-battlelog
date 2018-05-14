@@ -1,0 +1,241 @@
+/**
+* Better Battlelog - Worldwide Leading Browser Addon for Battlelog
+*
+* @author Roland Eigelsreiter (BrainFooLong)
+* @link https://getbblog.com
+* @license GPLv3
+*/
+
+.bblog-checkbox{
+    width:10px;
+    height:10px;
+    top:1px;
+    margin-right: 4px;
+    background: url(http://battlelog-cdn.battlefield.com/cdnprefix/5d22da678b1572e00b/public/serverbrowserwarsaw/icon-checkbox-4.png) 0px -301px;
+}
+
+.bblog-checkbox.active{
+    background-position: 0px 0px;
+}
+
+.bblog-button{
+    background: #414851;
+    color:white;
+    text-shadow:none;
+    box-shadow:none;
+    border:0;
+    border-radius:0px;
+    font-family: "Frutiger", sans-serif;
+}
+
+.bblog-button:hover,
+.bblog-button:hover:active{
+    background: #525b67;
+    border:none;
+    box-shadow:none;
+}
+
+.bblog-button:hover:active{
+    box-shadow:none;
+    border:none;
+}
+
+.bblog-minimize{
+    background-color: rgba(255,255,255,0.5);
+    border-radius:5px;
+}
+
+#serverbrowser-filters.bblog-bfh-filters .toggle{
+    width:886px;
+}
+
+#serverbrowser-filters.bblog-bfh-filters .toggle #custom-filter-list-content{
+    max-width: 690px;
+}
+
+.bblog-bfh-filter-btn{
+    cursor: pointer;
+    font-size: 21px;
+    line-height: 40px;
+    float: right;
+    color: #aaa;
+    width:20px;
+    margin-left: 1px;
+    text-align: center;
+    background-image: url(img/filterset.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.bblog-bfh-filter-btn:hover{
+    background-color: black;
+}
+
+.bblog-bf4-redbg, .btn.bblog-bf4-redbg{
+    background-color: rgba(255,0,0,0.3);
+}
+
+#bblog-emblem-gallery,
+#bblog-emblem-buttons,
+#bblog-emblem-gallery .emblem-item,
+#bblog-emblem-gallery .layers{
+    background: rgba(0,0,0,0.1);
+}
+
+#user .bblog-badge{
+    position: relative;
+    margin-right: 5px;
+    top:3px;
+}
+
+#game-stats-head .bblog-badge{
+    position: relative;
+    top:3px;
+}
+
+.bblog-flame-post{
+    background: rgba(7,7,7,0.6);
+}
+
+.bblog-append-signature{
+    margin-left: 10px;
+    color:white;
+}
+
+.bblog-hide{
+    display:none !important;
+}
+
+.bblog-radar-warning{
+    color:red;
+    padding:7px;
+    margin-bottom: 2px;
+    border: 1px solid #e5e5e5;
+    background-color: rgba(0,0,0,0.5);
+    font-size: 11px;
+    line-height: 13px;
+    text-shadow:black 0px 0px 4px;
+}
+
+#serverbrowser-show button.btn-primary.bblog-red,
+#server-page-join-buttons .bblog-red{
+    color:red !important;
+    border:2px solid red !important;
+}
+
+#server-players-list tr.bblog-radar td,
+#battlereport-teamstats tr.bblog-radar td{
+    color:red !important;
+}
+
+#popup-bblog-option .theme.active{
+    background-color: rgba(255,255,255,0.1);
+}
+
+#bblog-sidebar .bblog-button{
+    font-weight: normal;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius:2px;
+}
+
+#popup-bblog-option input,
+#popup-bblog-option textarea{
+    box-shadow:#7cc6e1 0px 0px 10px;
+}
+
+#bblog-emblem-gallery .pages .active{
+    background: rgba(255,255,255,0.3);
+}
+
+#popup-weapon-info .dialog-body{
+    background: #111111;
+}
+
+#weapon-list .bblog-bfhstats-rank{
+    position: absolute;
+    width:90px;
+    text-align: center;
+    margin-left:-45px;
+}
+
+#vehicle-details .bblog-bfhstats-rank{
+    font-size: 10px;
+    position: absolute;
+    left:200px;
+}
+
+#overview-rank .bblog-rank{
+    position: absolute;
+    bottom:-15px;
+    font-size: 11px;
+    width:128px;
+    text-align: center;
+}
+
+.bblog-textual-filter{
+    margin-bottom: 10px;
+}
+
+.bblog-textual-filter input{
+    width:97%;
+}
+
+.bblog-textual-filter .buttons{
+    margin-top: 10px;
+}
+
+.bblog-textual-filter .buttons .button{
+    float:left;
+    min-width:20px;
+    text-align: center;
+    height:20px;
+    border:1px solid rgba(255,255,255,0.3);
+    margin-right: 1px;
+    cursor: pointer;
+    font-size: 9px;
+    line-height: 11px;
+}
+
+.bblog-textual-filter .buttons .button span{
+    padding-left: 5px;
+    padding-right: 5px;
+    position: relative;
+    top:5px;
+    white-space: nowrap;
+}
+
+.bblog-textual-filter .buttons .button:hover,
+.bblog-textual-filter .buttons .button.active{
+    background-color: rgba(255,255,255,0.2);
+}
+
+.bblog-local-comment textarea{
+    height:15px;
+    font-size: 12px;
+    line-height: 15px;
+    opacity:0.8;
+    border:1px solid #e5e5e5;
+    font-family: arial;
+    overflow: hidden;
+    padding:8px
+}
+
+#serverbrowser-show .bblog-local-comment textarea{
+    width:218px;
+    margin-top: 10px;
+}
+
+#server-page .bblog-local-comment textarea{
+    width:975px;
+    margin-top: 10px;
+}
+
+#game-stats .bblog-local-comment textarea{
+    width:975px;
+}
+
+#user .bblog-local-comment textarea{
+    width:303px;
+    margin-bottom: 10px;
+}

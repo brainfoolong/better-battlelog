@@ -1,1 +1,832 @@
-null
+'use strict';
+
+(function () {
+  var callbackName = document.currentScript.getAttribute("src").match(/jsoncallback\=(.*?)\&/)
+    if (callbackName) {
+      window[callbackName[1]]({
+      'symthic.frame': 'http:\/\/symthic.jjj.fi\/bblog-frame.php',
+      'symthic.frame.bfh': 'http:\/\/symthic.juhala.io\/bblog-frame-bfh.php',
+      'themes-new': {
+        '128704': {
+          'info': {
+            'lastupdate': 1413380788,
+            'version': '3.15',
+            'game': 'BF3',
+            'count': 0,
+            'creator': 'juress',
+            'feedback-topic': '[BF3] Dark Theme Blue'
+          },
+          'id': 128704,
+          'name': 'Dark Theme',
+          'desc': 'Shadow style',
+          'url': 'https:\/\/getbblog.com\/theme\/128704\/Dark-Theme',
+          'cssurl': 'https:\/\/getbblog.com\/themes\/user\/128704.css',
+          'imgurl': 'https:\/\/getbblog.com\/themes\/user\/128704.jpg'
+        },
+        '139609': {
+          'info': {
+            'lastupdate': 1462179957,
+            'version': '1.5.3',
+            'game': 'BF4',
+            'count': 0,
+            'creator': 'DaniluK4000',
+            'feedback-topic': 'Night Theme'
+          },
+          'id': 139609,
+          'name': 'Night Theme',
+          'desc': 'Nice, lite and night transparent theme for the BF4 Battlelog. Fast loading, no bugs including, regular updates',
+          'url': 'https:\/\/getbblog.com\/theme\/139609\/Night-Theme',
+          'cssurl': 'https:\/\/getbblog.com\/themes\/user\/139609.css',
+          'imgurl': 'https:\/\/getbblog.com\/themes\/user\/139609.jpg'
+        },
+        '128621': {
+          'info': {
+            'lastupdate': 1413272119,
+            'version': '1.3',
+            'game': 'BF4',
+            'count': 0,
+            'creator': 'BrainFooLong',
+            'feedback-topic': '[BF4] Battlelog Clean Chocolate Theme'
+          },
+          'id': 128621,
+          'name': 'BF4 Clean Chocolate Theme',
+          'desc': 'Simple Design that removes all the nasty glow stuff from BF4 Battlelog and add some sweetness to it.',
+          'url': 'https:\/\/getbblog.com\/theme\/128621\/BF4-Clean-Chocolate-Theme',
+          'cssurl': 'https:\/\/getbblog.com\/themes\/user\/128621.css',
+          'imgurl': 'https:\/\/getbblog.com\/themes\/user\/128621.jpg'
+        },
+        '128808': {
+          'info': {
+            'lastupdate': 1426590109,
+            'version': '1.3',
+            'game': 'BF4',
+            'count': 0,
+            'creator': 'T3RRORTOAST',
+            'feedback-topic': '[BF4] Black Shadow Theme'
+          },
+          'id': 128808,
+          'name': 'Black Shadow Theme',
+          'desc': 'A dark-black looking theme.',
+          'url': 'https:\/\/getbblog.com\/theme\/128808\/Black-Shadow-Theme',
+          'cssurl': 'https:\/\/getbblog.com\/themes\/user\/128808.css',
+          'imgurl': 'https:\/\/getbblog.com\/themes\/user\/128808.jpg'
+        },
+        '128702': {
+          'info': {
+            'lastupdate': 1420727044,
+            'version': '1.10',
+            'game': 'BF3',
+            'count': 0,
+            'creator': 'juress',
+            'feedback-topic': '[BF3] Battlefield 4 Theme'
+          },
+          'id': 128702,
+          'name': 'Battlefield 4 Theme',
+          'desc': 'Modern Battlefield 4 Battlelog look.',
+          'url': 'https:\/\/getbblog.com\/theme\/128702\/Battlefield-4-Theme',
+          'cssurl': 'https:\/\/getbblog.com\/themes\/user\/128702.css',
+          'imgurl': 'https:\/\/getbblog.com\/themes\/user\/128702.jpg'
+        },
+        '150023': {
+          'info': {
+            'lastupdate': 1458891658,
+            'version': '1.2.1',
+            'game': 'BF4',
+            'count': 0,
+            'creator': 'IIDOGHUNTERII',
+            'feedback-topic': '[BF4] X-RAY Dark Glass Theme by jpfive'
+          },
+          'id': 150023,
+          'name': 'X-Ray Dark Glass Theme v1.2.1',
+          'desc': 'A flat, dark glass battlelog theme with a modern design and clean visual interface.',
+          'url': 'https:\/\/getbblog.com\/theme\/150023\/X-Ray-Dark-Glass-Theme-v1-2-1',
+          'cssurl': 'https:\/\/getbblog.com\/themes\/user\/150023.css',
+          'imgurl': 'https:\/\/getbblog.com\/themes\/user\/150023.jpg'
+        },
+        '129102': {
+          'info': {
+            'lastupdate': 1413898578,
+            'version': '1.2.2',
+            'game': 'BF3',
+            'count': 0,
+            'creator': 'BrainFooLong',
+            'feedback-topic': '[BF3] [Retired] Steam Theme'
+          },
+          'id': 129102,
+          'name': 'Steam Theme',
+          'desc': 'The idea behind the Steam Theme, is to make Battlelog look and feel more like Steam does. This theme is retired, originally made by xXJumpyXx and still look awesome.',
+          'url': 'https:\/\/getbblog.com\/theme\/129102\/Steam-Theme',
+          'cssurl': 'https:\/\/getbblog.com\/themes\/user\/129102.css',
+          'imgurl': 'https:\/\/getbblog.com\/themes\/user\/129102.jpg'
+        },
+        '128800': {
+          'info': {
+            'lastupdate': 1432049798,
+            'version': '1.1.7',
+            'game': 'BF4',
+            'count': 0,
+            'creator': 'T3RRORTOAST',
+            'feedback-topic': '[BF4] Battlelog 2.0 Theme'
+          },
+          'id': 128800,
+          'name': 'Battlelog 2.0 Theme',
+          'desc': 'A theme which is really unlike any other.',
+          'url': 'https:\/\/getbblog.com\/theme\/128800\/Battlelog-2-0-Theme',
+          'cssurl': 'https:\/\/getbblog.com\/themes\/user\/128800.css',
+          'imgurl': 'https:\/\/getbblog.com\/themes\/user\/128800.jpg'
+        },
+        '128809': {
+          'info': {
+            'lastupdate': 1413560675,
+            'version': '1.3',
+            'game': 'BF3',
+            'count': 0,
+            'creator': 'T3RRORTOAST',
+            'feedback-topic': '[BF3] Vintage Theme: \u2116 1'
+          },
+          'id': 128809,
+          'name': 'Vintage Theme: \u2116 1',
+          'desc': 'A theme for BF3 in vintage style.',
+          'url': 'https:\/\/getbblog.com\/theme\/128809\/Vintage-Theme-1',
+          'cssurl': 'https:\/\/getbblog.com\/themes\/user\/128809.css',
+          'imgurl': 'https:\/\/getbblog.com\/themes\/user\/128809.jpg'
+        },
+        '133602': {
+          'info': {
+            'lastupdate': 1430583720,
+            'version': '1.0.1.1',
+            'game': 'BF4',
+            'count': 0,
+            'creator': 'DaniluK4000',
+            'feedback-topic': '[BF4] Battlefield Hardline Old Theme'
+          },
+          'id': 133602,
+          'name': '[BF4] Battlefield Hardline Old Theme',
+          'desc': 'If you like old Hardline theme',
+          'url': 'https:\/\/getbblog.com\/theme\/133602\/BF4-Battlefield-Hardline-Old-Theme',
+          'cssurl': 'https:\/\/getbblog.com\/themes\/user\/133602.css',
+          'imgurl': 'https:\/\/getbblog.com\/themes\/user\/133602.jpg'
+        },
+        '139019': {
+          'info': {
+            'lastupdate': 1451049069,
+            'version': '0.1',
+            'game': 'BF3',
+            'count': 0,
+            'creator': 'DaniluK4000',
+            'feedback-topic': '[BF3] White Theme'
+          },
+          'id': 139019,
+          'name': 'White theme',
+          'desc': 'Nice white-looking theme for BF3 Battlelog',
+          'url': 'https:\/\/getbblog.com\/theme\/139019\/White-theme',
+          'cssurl': 'https:\/\/getbblog.com\/themes\/user\/139019.css',
+          'imgurl': 'https:\/\/getbblog.com\/themes\/user\/139019.jpg'
+        },
+        '134230': {
+          'info': {
+            'lastupdate': 1430583860,
+            'version': '1.0.5.2',
+            'game': 'BFH',
+            'count': 0,
+            'creator': 'DaniluK4000',
+            'feedback-topic': '[BF4] Battlefield Hardline Old Theme'
+          },
+          'id': 134230,
+          'name': '[BFH] Dark theme',
+          'desc': 'It\'s old, perfect dark-looking theme from old BFH BL design!',
+          'url': 'https:\/\/getbblog.com\/theme\/134230\/BFH-Dark-theme',
+          'cssurl': 'https:\/\/getbblog.com\/themes\/user\/134230.css',
+          'imgurl': 'https:\/\/getbblog.com\/themes\/user\/134230.jpg'
+        },
+        '128805': {
+          'info': {
+            'lastupdate': 1413559594,
+            'version': '1.3.3',
+            'game': 'BF4',
+            'count': 0,
+            'creator': 'T3RRORTOAST',
+            'feedback-topic': '[BF4] White Shadow Theme'
+          },
+          'id': 128805,
+          'name': 'White Shadow Theme',
+          'desc': 'A nice looking clean white theme for BF4 Battlelog',
+          'url': 'https:\/\/getbblog.com\/theme\/128805\/White-Shadow-Theme',
+          'cssurl': 'https:\/\/getbblog.com\/themes\/user\/128805.css',
+          'imgurl': 'https:\/\/getbblog.com\/themes\/user\/128805.jpg'
+        },
+        '128847': {
+          'info': {
+            'lastupdate': 1426570026,
+            'version': '1.1.3',
+            'game': 'BF4',
+            'count': 0,
+            'creator': 'DaniluK4000',
+            'feedback-topic': '[BF4] Battlefield Hardline Theme'
+          },
+          'id': 128847,
+          'name': '[BF4] Battlefield Hardline Theme',
+          'desc': 'Theme in the style of Battlelog for Battlefield Hardline made especially for fans of the game.',
+          'url': 'https:\/\/getbblog.com\/theme\/128847\/BF4-Battlefield-Hardline-Theme',
+          'cssurl': 'https:\/\/getbblog.com\/themes\/user\/128847.css',
+          'imgurl': 'https:\/\/getbblog.com\/themes\/user\/128847.jpg'
+        },
+        '135961': {
+          'info': {
+            'lastupdate': 1427032947,
+            'version': '1.0.8',
+            'game': 'BFH',
+            'count': 0,
+            'creator': 'T3RRORTOAST',
+            'feedback-topic': '[BFH] Hardfine Theme'
+          },
+          'id': 135961,
+          'name': 'Hardfine Theme',
+          'desc': 'Flat, new, modern looking theme in great grey and orange tones',
+          'url': 'https:\/\/getbblog.com\/theme\/135961\/Hardfine-Theme',
+          'cssurl': 'https:\/\/getbblog.com\/themes\/user\/135961.css',
+          'imgurl': 'https:\/\/getbblog.com\/themes\/user\/135961.jpg'
+        },
+        '136066': {
+          'info': {
+            'lastupdate': 1426601623,
+            'version': '0.9',
+            'game': 'BFH',
+            'count': 0,
+            'creator': 'BrainFooLong',
+            'feedback-topic': '[BFH] Clean Chocolate Theme'
+          },
+          'id': 136066,
+          'name': 'BFH Clean Chocolate Theme',
+          'desc': 'Warm design with straight colors. Just for some eye-candy polishing.',
+          'url': 'https:\/\/getbblog.com\/theme\/136066\/BFH-Clean-Chocolate-Theme',
+          'cssurl': 'https:\/\/getbblog.com\/themes\/user\/136066.css',
+          'imgurl': 'https:\/\/getbblog.com\/themes\/user\/136066.jpg'
+        }
+      },
+      'team': {
+        '8': 'BrainFooLong',
+        '9': 'wasakakero',
+        '10': 'Meaurk',
+        '11': '-M-lNano',
+        '14': 'MANGUSTE-Dendari',
+        '15': 'ORFK',
+        '22': 'juress',
+        '229': 'Amkhatar',
+        '46102': 'dapil',
+        '46137': 'T3RRORTOAST',
+        '108995': 'KuIczakk',
+        '114643': 'ArnoldLayne-xXx',
+        '123738': 'DaniluK4000',
+        '147440': 'I-MrFixIt-I'
+      },
+      'hotfixActive': false,
+      'plugins': {
+        '160260': {
+          'info': {
+            'lastupdate': 1507759789,
+            'version': '1.3',
+            'games': 'BF4',
+            'count': 0,
+            'creator': 'xfileFIN',
+            'feedback-topic': 'True Player Counts'
+          },
+          'id': 160260,
+          'name': 'True Player Counts',
+          'desc': 'True Player Counts - Shows the true player count on the server (Not the ones in queue\/cheating with the bots).',
+          'url': 'https:\/\/getbblog.com\/plugin\/160260\/True-Player-Counts',
+          'jsurl': 'https:\/\/getbblog.com\/plugins\/user\/160260.js',
+          'imgurl': 'https:\/\/getbblog.com\/plugins\/user\/160260.jpg'
+        },
+        '126663': {
+          'info': {
+            'lastupdate': 1467045675,
+            'version': '1.7.0',
+            'games': 'BF3, BF4, BFH',
+            'count': 0,
+            'creator': 'GreatApo',
+            'feedback-topic': '[BF3\/BF4\/BFH][v1.7][27.06.2016] Show Map Rotation'
+          },
+          'id': 126663,
+          'name': 'Show Map Rotation',
+          'desc': 'This addon shows each servers\' map rotation as small map icons on the server bowser.',
+          'url': 'https:\/\/getbblog.com\/plugin\/126663\/Show-Map-Rotation',
+          'jsurl': 'https:\/\/getbblog.com\/plugins\/user\/126663.js',
+          'imgurl': 'https:\/\/getbblog.com\/plugins\/user\/126663.jpg'
+        },
+        '147658': {
+          'info': {
+            'lastupdate': 1494668529,
+            'version': '1.1.1',
+            'games': 'BF4',
+            'count': 0,
+            'creator': 'I-MrFixIt-I',
+            'feedback-topic': '[BF4][v1.1.1] Advanced Player Links [13.05.2017]'
+          },
+          'id': 147658,
+          'name': 'BF4 Advanced Player Links',
+          'desc': 'Admins want to check player if they are hacking or not. For this they often use third-party software\/websites which check there stats and other things. This plugin will add some known websites to all player profiles. Click them and you will be redirected to this website :)',
+          'url': 'https:\/\/getbblog.com\/plugin\/147658\/BF4-Advanced-Player-Links',
+          'jsurl': 'https:\/\/getbblog.com\/plugins\/user\/147658.js',
+          'imgurl': 'https:\/\/getbblog.com\/plugins\/user\/147658.jpg'
+        },
+        '126727': {
+          'info': {
+            'lastupdate': 1466456705,
+            'version': 'v1.6.0',
+            'games': 'BF3, BF4, BFH',
+            'count': 0,
+            'creator': 'DarkThanos',
+            'feedback-topic': '[BF3\/BF4\/BFH][v1.6.0][29.06.2016] Has PBBans'
+          },
+          'id': 126727,
+          'name': 'Has PBBans',
+          'desc': 'This plug in will help you find a server with "PBBans", "GCC-Stream" or "Anticheat Inc" active, in order to play fair with no hackers to disturb you.\r\nBy adding 3 icons (each for every service) on the server browser and on the server info page, it provide a fast way to know if the server is streaming on any of these 3 services.',
+          'url': 'https:\/\/getbblog.com\/plugin\/126727\/Has-PBBans',
+          'jsurl': 'https:\/\/getbblog.com\/plugins\/user\/126727.js',
+          'imgurl': 'https:\/\/getbblog.com\/plugins\/user\/126727.jpg'
+        },
+        '147931': {
+          'info': {
+            'lastupdate': 1452954058,
+            'version': '1.0',
+            'games': 'BF4, BFH',
+            'count': 0,
+            'creator': 'I-MrFixIt-I',
+            'feedback-topic': '[BF4][BFH][v1.0] Friends Highlighter [16.01.2016]'
+          },
+          'id': 147931,
+          'name': 'Friends Highlighter',
+          'desc': 'Highlights your friends in the scoreboard and battlereports',
+          'url': 'https:\/\/getbblog.com\/plugin\/147931\/Friends-Highlighter',
+          'jsurl': 'https:\/\/getbblog.com\/plugins\/user\/147931.js',
+          'imgurl': 'https:\/\/getbblog.com\/plugins\/user\/147931.jpg'
+        },
+        '126693': {
+          'info': {
+            'lastupdate': 1411329205,
+            'version': '3.0',
+            'games': 'BF3, BF4',
+            'count': 0,
+            'creator': 'dapil',
+            'feedback-topic': '[BF3\/BF4][v3.0] Platoon Dropdown'
+          },
+          'id': 126693,
+          'name': 'Platoon Dropdown',
+          'desc': 'This plugin adds a submenu to the Platoons item in the header and you can add your platoons to the menu.',
+          'url': 'https:\/\/getbblog.com\/plugin\/126693\/Platoon-Dropdown',
+          'jsurl': 'https:\/\/getbblog.com\/plugins\/user\/126693.js',
+          'imgurl': 'https:\/\/getbblog.com\/plugins\/user\/126693.jpg'
+        },
+        '133899': {
+          'info': {
+            'lastupdate': 1451325387,
+            'version': '1.4.0',
+            'games': 'BF4',
+            'count': 0,
+            'creator': 'XjSv',
+            'feedback-topic': 'Additional Enhancements Plugin (Previously knows as &quot;BBLog-Remove-Buy-BattlePacks&quot;)'
+          },
+          'id': 133899,
+          'name': 'Additional Enhancements',
+          'desc': 'Removes various elements from BattleLog. Currently removes \'Buy Battlepacks\', Tiles, Buy Hardline Ad & Right Sidebar in the landing page. Also added by Sil3ntStorm: Removes the Com Center &  removes the Cookie Preferences bar \/ button.',
+          'url': 'https:\/\/getbblog.com\/plugin\/133899\/Additional-Enhancements',
+          'jsurl': 'https:\/\/getbblog.com\/plugins\/user\/133899.js',
+          'imgurl': 'https:\/\/getbblog.com\/plugins\/user\/133899.jpg'
+        },
+        '126646': {
+          'info': {
+            'lastupdate': 1426846744,
+            'version': '1.2',
+            'games': 'BF3, BF4, BFH, MOHW',
+            'count': 0,
+            'creator': 'BrainFooLong',
+            'feedback-topic': '[ALL][v1.2] Battlelog Mods'
+          },
+          'id': 126646,
+          'name': 'Battlelog Mods',
+          'desc': 'A plugin that give some love to battlelog mods. It add text templates to make forum posts easier. It add new menu entries into user profile triangle.',
+          'url': 'https:\/\/getbblog.com\/plugin\/126646\/Battlelog-Mods',
+          'jsurl': 'https:\/\/getbblog.com\/plugins\/user\/126646.js',
+          'imgurl': 'https:\/\/getbblog.com\/plugins\/user\/126646.jpg'
+        },
+        '126690': {
+          'info': {
+            'lastupdate': 1411190811,
+            'version': '1.1.1',
+            'games': 'BF4',
+            'count': 0,
+            'creator': 'dapil',
+            'feedback-topic': '[BF4][v1.1.1]General Enhancements'
+          },
+          'id': 126690,
+          'name': 'General Enhancements',
+          'desc': 'This plugin adds small features to many areas of Battlelog. All of the ideas were submitted by GeneralHastati, thanks! More details are available in the forum thread.',
+          'url': 'https:\/\/getbblog.com\/plugin\/126690\/General-Enhancements',
+          'jsurl': 'https:\/\/getbblog.com\/plugins\/user\/126690.js',
+          'imgurl': 'https:\/\/getbblog.com\/plugins\/user\/126690.jpg'
+        },
+        '139627': {
+          'info': {
+            'lastupdate': 1432055429,
+            'version': '0.1',
+            'games': 'BF3, BF4, BFH',
+            'count': 0,
+            'creator': 'CoIdlce',
+            'feedback-topic': '[ALL][19.05.2015] Custom Teamspeak Server'
+          },
+          'id': 139627,
+          'name': 'Custom Teamspeak',
+          'desc': 'Lets You set a custom Teamspeak Server in Better Battlelog\r\n',
+          'url': 'https:\/\/getbblog.com\/plugin\/139627\/Custom-Teamspeak',
+          'jsurl': 'https:\/\/getbblog.com\/plugins\/user\/139627.js',
+          'imgurl': 'https:\/\/getbblog.com\/plugins\/user\/139627.jpg'
+        },
+        '147502': {
+          'info': {
+            'lastupdate': 1452200256,
+            'version': '0.1',
+            'games': 'BF4',
+            'count': 0,
+            'creator': 'I-MrFixIt-I',
+            'feedback-topic': '[BF4][v0.1] Live Scoreboard Sorter [07.01.2016]'
+          },
+          'id': 147502,
+          'name': 'BF4 Live-Scoreboard Sorter',
+          'desc': 'Normally the scoreboard is sorted descending by the score. But as an admin (even as a normal player) it\'s sometimes easier sorting a table by your own needs. And this plugin will do excatly this for you :)',
+          'url': 'https:\/\/getbblog.com\/plugin\/147502\/BF4-Live-Scoreboard-Sorter',
+          'jsurl': 'https:\/\/getbblog.com\/plugins\/user\/147502.js',
+          'imgurl': 'https:\/\/getbblog.com\/plugins\/user\/147502.jpg'
+        },
+        '132336': {
+          'info': {
+            'lastupdate': 1429446475,
+            'version': '0.3',
+            'games': 'BF4',
+            'count': 0,
+            'creator': 't9c5f',
+            'feedback-topic': 'Rank progressbar'
+          },
+          'id': 132336,
+          'name': 'Progressbar To Rank 140',
+          'desc': 'Shows a progressbar right under the stats page, telling you how many points the player achieved. 100% = Rank 140, time is calculated by the current spm',
+          'url': 'https:\/\/getbblog.com\/plugin\/132336\/Progressbar-To-Rank-140',
+          'jsurl': 'https:\/\/getbblog.com\/plugins\/user\/132336.js',
+          'imgurl': 'https:\/\/getbblog.com\/plugins\/user\/132336.jpg'
+        },
+        '147809': {
+          'info': {
+            'lastupdate': 1452772150,
+            'version': '1.1',
+            'games': 'BF3, BF4, BFH, MOHW',
+            'count': 0,
+            'creator': 'DaniluK4000',
+            'feedback-topic': '[ALL] [1.1] Update page'
+          },
+          'id': 147809,
+          'name': 'Update page',
+          'desc': ' Simply plugin just add block to update current BL page by ajax, it is not need to reload page anymore ',
+          'url': 'https:\/\/getbblog.com\/plugin\/147809\/Update-page',
+          'jsurl': 'https:\/\/getbblog.com\/plugins\/user\/147809.js',
+          'imgurl': 'https:\/\/getbblog.com\/plugins\/user\/147809.jpg'
+        },
+        '126667': {
+          'info': {
+            'lastupdate': 1424213175,
+            'version': '2.2.0',
+            'games': 'BF4',
+            'count': 0,
+            'creator': 'GreatApo',
+            'feedback-topic': '[BF4][v2.2] Completed Assignments [18.02.2015]'
+          },
+          'id': 126667,
+          'name': 'Completed Assignments',
+          'desc': 'This addon hides\/shows your completed assignments by clicking one button. It also colors red your locked assignments.',
+          'url': 'https:\/\/getbblog.com\/plugin\/126667\/Completed-Assignments',
+          'jsurl': 'https:\/\/getbblog.com\/plugins\/user\/126667.js',
+          'imgurl': 'https:\/\/getbblog.com\/plugins\/user\/126667.jpg'
+        },
+        '126691': {
+          'info': {
+            'lastupdate': 1416375266,
+            'version': '1.5.5',
+            'games': 'BF4',
+            'count': 0,
+            'creator': 'dapil',
+            'feedback-topic': '[BF4][v1.6] Show by DLC'
+          },
+          'id': 126691,
+          'name': 'Show by DLC',
+          'desc': 'This plugin adds buttons to show only assignments\/weapons\/awards\/weapon unlocks from specific DLC\/base game.',
+          'url': 'https:\/\/getbblog.com\/plugin\/126691\/Show-by-DLC',
+          'jsurl': 'https:\/\/getbblog.com\/plugins\/user\/126691.js',
+          'imgurl': 'https:\/\/getbblog.com\/plugins\/user\/126691.jpg'
+        },
+        '147823': {
+          'info': {
+            'lastupdate': 1452714880,
+            'version': '1.0',
+            'games': 'BF4, BFH',
+            'count': 0,
+            'creator': 'I-MrFixIt-I',
+            'feedback-topic': '[BF4][BFH][v1.0] Categorized Favorites [13.01.2016]'
+          },
+          'id': 147823,
+          'name': 'Categorized Favorites',
+          'desc': 'This plugin gives you the ability to create categories for you server favorites.',
+          'url': 'https:\/\/getbblog.com\/plugin\/147823\/Categorized-Favorites',
+          'jsurl': 'https:\/\/getbblog.com\/plugins\/user\/147823.js',
+          'imgurl': 'https:\/\/getbblog.com\/plugins\/user\/147823.jpg'
+        },
+        '137519': {
+          'info': {
+            'lastupdate': 1430039660,
+            'version': '1.0.2',
+            'games': 'BF4',
+            'count': 0,
+            'creator': 'dapil',
+            'feedback-topic': '[BF4][v1.0.2]Second Assault Map Names Correction'
+          },
+          'id': 137519,
+          'name': 'Second Assault Map Names Correction',
+          'desc': 'This plugin removes 2014 from the names of Second Assault maps.\r\n\r\nBased on this request: http:\/\/getbblog.com\/board\/topic\/115125\/1\/Second-Assault-Server-Browser-Correction',
+          'url': 'https:\/\/getbblog.com\/plugin\/137519\/Second-Assault-Map-Names-Correction',
+          'jsurl': 'https:\/\/getbblog.com\/plugins\/user\/137519.js',
+          'imgurl': 'https:\/\/getbblog.com\/plugins\/user\/137519.jpg'
+        },
+        '141066': {
+          'info': {
+            'lastupdate': 1455050478,
+            'version': '1.1.3',
+            'games': 'BF3, BF4, BFH, MOHW',
+            'count': 0,
+            'creator': 'DaniluK4000',
+            'feedback-topic': '[ALL] [1.1.2] Battlelog Some Improvements\/Removes'
+          },
+          'id': 141066,
+          'name': 'BL Some Improvements\/Removes',
+          'desc': 'The plugin add some functions, for ex., you can hide the ComCenter, and it just remove and fix some things. The idea belongs to the user I-Billy-Bonka-I, and I liked it immediately',
+          'url': 'https:\/\/getbblog.com\/plugin\/141066\/BL-Some-Improvements-Removes',
+          'jsurl': 'https:\/\/getbblog.com\/plugins\/user\/141066.js',
+          'imgurl': 'https:\/\/getbblog.com\/plugins\/user\/141066.jpg'
+        },
+        '126692': {
+          'info': {
+            'lastupdate': 1411149200,
+            'version': '1.2.1',
+            'games': 'BF4',
+            'count': 0,
+            'creator': 'dapil',
+            'feedback-topic': '[BF4][v1.2.1] Missions Screen Enhancer'
+          },
+          'id': 126692,
+          'name': 'Missions Screen Enhancer',
+          'desc': 'This plugin enhances the Missions screen. More details are available in the forum thread.\r\n\r\nBased on this request: http:\/\/getbblog.com\/board\/topic\/111865\/1\/Request-Improved-Missions-tab',
+          'url': 'https:\/\/getbblog.com\/plugin\/126692\/Missions-Screen-Enhancer',
+          'jsurl': 'https:\/\/getbblog.com\/plugins\/user\/126692.js',
+          'imgurl': 'https:\/\/getbblog.com\/plugins\/user\/126692.jpg'
+        },
+        '147537': {
+          'info': {
+            'lastupdate': 1452266223,
+            'version': '1.0',
+            'games': 'BF4',
+            'count': 0,
+            'creator': 'I-MrFixIt-I',
+            'feedback-topic': '[BF4][v1.0] Battlereport Prizes Fixer [08.01.2016]'
+          },
+          'id': 147537,
+          'name': 'BF4 Battlereport Prizes Fixer',
+          'desc': 'Since the latest patch all battlereports containing the "Elite Squad" prize there is a little bug with the alignment of the prizes. This plugin will correct the positioning of the "Elite Squad" prize in the battlereport.',
+          'url': 'https:\/\/getbblog.com\/plugin\/147537\/BF4-Battlereport-Prizes-Fixer',
+          'jsurl': 'https:\/\/getbblog.com\/plugins\/user\/147537.js',
+          'imgurl': 'https:\/\/getbblog.com\/plugins\/user\/147537.jpg'
+        },
+        '137420': {
+          'info': {
+            'lastupdate': 1428166005,
+            'version': '1.0.0.1',
+            'games': 'BF3, BF4, BFH, MOHW',
+            'count': 0,
+            'creator': 'magni1200s',
+            'feedback-topic': '[MOHW\/BF3\/BF4\/BFH][v1.0.0.1][05.04.2015] BFH weapon unlock feeds remover'
+          },
+          'id': 137420,
+          'name': 'BFH weapon unlock feeds remover',
+          'desc': 'This plugin hides all weapon unlock messages of Battlefiled Hardline ( "[your friend name] purchased [unlocked weapon name]" ) from your battle feed.\r\n\r\nNote: It does not support any unlock messages of Battlefiled Hardline BETA.',
+          'url': 'https:\/\/getbblog.com\/plugin\/137420\/BFH-weapon-unlock-feeds-remover',
+          'jsurl': 'https:\/\/getbblog.com\/plugins\/user\/137420.js',
+          'imgurl': 'https:\/\/getbblog.com\/plugins\/user\/137420.jpg'
+        },
+        '137332': {
+          'info': {
+            'lastupdate': 1430038952,
+            'version': '1.0.1',
+            'games': 'BF4',
+            'count': 0,
+            'creator': 'dapil',
+            'feedback-topic': '[BF4][v1.0.1]Auto Expand Battlescreen'
+          },
+          'id': 137332,
+          'name': 'Auto Expand Battlescreen',
+          'desc': 'This plugin automatically expands Battlescreen to fullscreen.\r\n\r\nBased on this request: http:\/\/getbblog.com\/board\/topic\/119085\/1\/REQUEST-Auto-Expand-Battlescreen',
+          'url': 'https:\/\/getbblog.com\/plugin\/137332\/Auto-Expand-Battlescreen',
+          'jsurl': 'https:\/\/getbblog.com\/plugins\/user\/137332.js',
+          'imgurl': 'https:\/\/getbblog.com\/plugins\/user\/137332.jpg'
+        },
+        '142801': {
+          'info': {
+            'lastupdate': 1439298052,
+            'version': '1.2',
+            'games': 'BF3',
+            'count': 0,
+            'creator': 'Georgeto',
+            'feedback-topic': 'Scoreboard+'
+          },
+          'id': 142801,
+          'name': 'Scoreboard+',
+          'desc': 'This plugin adds the average rank and score, for each team on the selected server, to the scoreboard in the serverbrowser.',
+          'url': 'https:\/\/getbblog.com\/plugin\/142801\/Scoreboard',
+          'jsurl': 'https:\/\/getbblog.com\/plugins\/user\/142801.js',
+          'imgurl': 'https:\/\/getbblog.com\/plugins\/user\/142801.jpg'
+        },
+        '137542': {
+          'info': {
+            'lastupdate': 1428256714,
+            'version': '1.1',
+            'games': 'BF3, BF4, BFH, MOHW',
+            'count': 0,
+            'creator': 'dapil',
+            'feedback-topic': '[BF3\/BF4\/BFH\/MOHW][v1.1]Move BBLog Button'
+          },
+          'id': 137542,
+          'name': 'Move BBLog Button',
+          'desc': 'This plugin allows you to set the distance of the BBLog button from the top of the page.\r\n\r\nBased on this request: http:\/\/getbblog.com\/board\/topic\/116010\/1\/General-Question',
+          'url': 'https:\/\/getbblog.com\/plugin\/137542\/Move-BBLog-Button',
+          'jsurl': 'https:\/\/getbblog.com\/plugins\/user\/137542.js',
+          'imgurl': 'https:\/\/getbblog.com\/plugins\/user\/137542.jpg'
+        },
+        '147544': {
+          'info': {
+            'lastupdate': 1452270629,
+            'version': '1.0',
+            'games': 'BF3, BF4, BFH, MOHW',
+            'count': 0,
+            'creator': 'I-MrFixIt-I',
+            'feedback-topic': '[BF3][BF4][BFH][MOHW][v1.0] Comcenter Remover [08.01.2016]'
+          },
+          'id': 147544,
+          'name': 'Comcenter Remover',
+          'desc': 'Some people are not using the comcenter (chat and friendlist), so the comcenter takes a lot of space which could be removed. This plugin will remove the comcenter and repositioning the whole website for you.',
+          'url': 'https:\/\/getbblog.com\/plugin\/147544\/Comcenter-Remover',
+          'jsurl': 'https:\/\/getbblog.com\/plugins\/user\/147544.js',
+          'imgurl': 'https:\/\/getbblog.com\/plugins\/user\/147544.jpg'
+        },
+        '138606': {
+          'info': {
+            'lastupdate': 1429979683,
+            'version': '1.0.1',
+            'games': 'BF3, BF4, BFH',
+            'count': 0,
+            'creator': 'dapil',
+            'feedback-topic': '[BF3\/BF4\/BFH][v1.0.1]Add Twitter Feed'
+          },
+          'id': 138606,
+          'name': 'Add Twitter Feed',
+          'desc': 'This plugin adds a Twitter feed of @Battlefield to the Battlelog homepage.\r\n\r\nBased on this request: http:\/\/getbblog.com\/board\/topic\/126517\/1\/Add-Battlefield-Twitter-feed-to-Battlelog',
+          'url': 'https:\/\/getbblog.com\/plugin\/138606\/Add-Twitter-Feed',
+          'jsurl': 'https:\/\/getbblog.com\/plugins\/user\/138606.js',
+          'imgurl': 'https:\/\/getbblog.com\/plugins\/user\/138606.jpg'
+        },
+        '145580': {
+          'info': {
+            'lastupdate': 1446649947,
+            'version': '1.0.2',
+            'games': 'BF4',
+            'count': 0,
+            'creator': 'r15ch13',
+            'feedback-topic': '[BF4][v1.2.0] BBLog Preset Updater'
+          },
+          'id': 145580,
+          'name': 'Preset Updater',
+          'desc': 'Allows updating and renaming of BF4 Weapon Presets without deleting them first.',
+          'url': 'https:\/\/getbblog.com\/plugin\/145580\/Preset-Updater',
+          'jsurl': 'https:\/\/getbblog.com\/plugins\/user\/145580.js',
+          'imgurl': 'https:\/\/getbblog.com\/plugins\/user\/145580.jpg'
+        },
+        '142219': {
+          'info': {
+            'lastupdate': 1437914363,
+            'version': '1.1',
+            'games': 'BF4, BFH',
+            'count': 0,
+            'creator': 'The_HydroX',
+            'feedback-topic': '[BF4\/BFH][v1.1]Like2Hooah'
+          },
+          'id': 142219,
+          'name': 'Like2Hooah',
+          'desc': 'German\r\n==================\r\nersetzt den \'Like\' Button mit einem \'Hooah\' Button\r\n\r\nEnglisch\r\n==================\r\nreplaces the \'Like\' button with a \'Hooah\' button',
+          'url': 'https:\/\/getbblog.com\/plugin\/142219\/Like2Hooah',
+          'jsurl': 'https:\/\/getbblog.com\/plugins\/user\/142219.js',
+          'imgurl': 'https:\/\/getbblog.com\/plugins\/user\/142219.jpg'
+        },
+        '126694': {
+          'info': {
+            'lastupdate': 1430039026,
+            'version': '2.6.2',
+            'games': 'BF3, BF4',
+            'count': 0,
+            'creator': 'dapil',
+            'feedback-topic': '[BF3\/BF4][v2.6.2]Hide Forum'
+          },
+          'id': 126694,
+          'name': 'Hide Forum',
+          'desc': 'This plugin hides all traces of the forums.\r\n\r\nBased on this request: http:\/\/getbblog.com\/board\/topic\/1484\/1\/Option-to-hide-the-forum',
+          'url': 'https:\/\/getbblog.com\/plugin\/126694\/Hide-Forum',
+          'jsurl': 'https:\/\/getbblog.com\/plugins\/user\/126694.js',
+          'imgurl': 'https:\/\/getbblog.com\/plugins\/user\/126694.jpg'
+        },
+        '138648': {
+          'info': {
+            'lastupdate': 1430037689,
+            'version': '1.1',
+            'games': 'BF3, BF4, BFH, MOHW',
+            'count': 0,
+            'creator': 'dapil',
+            'feedback-topic': '[BF3\/BF4\/BFH\/MOHW][v1.1]Disable Dropdowns'
+          },
+          'id': 138648,
+          'name': 'Disable Dropdowns',
+          'desc': 'This plugin disables the dropdowns in the main menu.\r\n\r\nBased on this request: http:\/\/getbblog.com\/board\/topic\/108614\/1\/Ability-to-disable-the-Soldier-Multiplayer-dropdowns',
+          'url': 'https:\/\/getbblog.com\/plugin\/138648\/Disable-Dropdowns',
+          'jsurl': 'https:\/\/getbblog.com\/plugins\/user\/138648.js',
+          'imgurl': 'https:\/\/getbblog.com\/plugins\/user\/138648.jpg'
+        },
+        '147278': {
+          'info': {
+            'lastupdate': 1451734685,
+            'version': '1.0',
+            'games': 'BF4',
+            'count': 0,
+            'creator': 'Lexo91',
+            'feedback-topic': '[BF4] Keyboard Navigation in Assignment list and Dogtag list'
+          },
+          'id': 147278,
+          'name': 'List Keyboard Navigation',
+          'desc': 'Keyboard navigation for "Assignement" and "Dogtag" list.',
+          'url': 'https:\/\/getbblog.com\/plugin\/147278\/List-Keyboard-Navigation',
+          'jsurl': 'https:\/\/getbblog.com\/plugins\/user\/147278.js',
+          'imgurl': 'https:\/\/getbblog.com\/plugins\/user\/147278.jpg'
+        },
+        '148492': {
+          'info': {
+            'lastupdate': 1454280927,
+            'version': '1.0',
+            'games': 'BF3, BF4, BFH, MOHW',
+            'count': 0,
+            'creator': 'dapil',
+            'feedback-topic': '[BF3\/BF4\/BFH\/MOHW][v1.0]Embedded Vimeo Videos'
+          },
+          'id': 148492,
+          'name': 'Embedded Vimeo Videos',
+          'desc': 'This plugin replaces Vimeo links with embedded videos.\r\n\r\nBased on this request: https:\/\/getbblog.com\/board\/topic\/139752\/1\/Embed-vimeo-link-just-like-youtube-links',
+          'url': 'https:\/\/getbblog.com\/plugin\/148492\/Embedded-Vimeo-Videos',
+          'jsurl': 'https:\/\/getbblog.com\/plugins\/user\/148492.js',
+          'imgurl': 'https:\/\/getbblog.com\/plugins\/user\/148492.jpg'
+        },
+        '126695': {
+          'info': {
+            'lastupdate': 1410212901,
+            'version': '1.3.1',
+            'games': 'BF3',
+            'count': 0,
+            'creator': 'dapil',
+            'feedback-topic': '[BF3][v1.3.1] To Top in Loadout'
+          },
+          'id': 126695,
+          'name': 'To Top in Loadout',
+          'desc': 'This plugin adds a To Top button to the Loadout page of the BF3 Battlelog.\r\n\r\nOriginal 2.x plugin by encryptedband: http:\/\/getbblog.com\/board\/topic\/1953\/1\/To-top-button-in-Loadout-request#post-5225',
+          'url': 'https:\/\/getbblog.com\/plugin\/126695\/To-Top-in-Loadout',
+          'jsurl': 'https:\/\/getbblog.com\/plugins\/user\/126695.js',
+          'imgurl': 'https:\/\/getbblog.com\/plugins\/user\/126695.jpg'
+        },
+        '138664': {
+          'info': {
+            'lastupdate': 1430050458,
+            'version': '1.0',
+            'games': 'BF4',
+            'count': 0,
+            'creator': 'dapil',
+            'feedback-topic': '[BF4][v1.0]French Spelling Correction'
+          },
+          'id': 138664,
+          'name': 'French Spelling Correction',
+          'desc': 'This plugin fixes some errors in the french translation of Battlelog.\r\n\r\nBased on a request sent to me by an email.',
+          'url': 'https:\/\/getbblog.com\/plugin\/138664\/French-Spelling-Correction',
+          'jsurl': 'https:\/\/getbblog.com\/plugins\/user\/138664.js',
+          'imgurl': 'https:\/\/getbblog.com\/plugins\/user\/138664.jpg'
+        }
+      }
+    })
+  }
+})()

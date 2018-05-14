@@ -1,0 +1,879 @@
+/**
+* Better Battlelog - Worldwide Leading Browser Addon for Battlelog
+*
+* @author Roland Eigelsreiter (BrainFooLong)
+* @link https://getbblog.com
+* @license GPLv3
+*/
+
+.customfont{
+    font-family: BebasNeueRegular, Purista, Arial, sans-serif;
+}
+
+.purista{
+    font-family: Purista, Arial, sans-serif;
+}
+
+.frutiger{
+    font-family: Frutiger, Arial;
+}
+
+.bblog-checkbox{
+    background-image: url(http://battlelog-cdn.battlefield.com/public/serverguide/icon-checkbox-2.png?v=6170);
+    background-position: 0 -297px;
+    width:13px;
+    height:16px;
+    cursor: pointer;
+    display: inline-block;
+    position:relative;
+    top:3px;
+}
+
+.bblog-checkbox.active{
+    background-position: 0 4px;
+}
+
+.bblog-switch{
+    display: inline-block;
+    width:20px;
+    padding:1px;
+    height:9px;
+    background: #222222;
+    cursor: pointer;
+    border:1px solid rgba(255,255,255,0.2);
+    position:relative;
+    top:2px;
+    margin-right:5px;
+}
+
+.bblog-switch:not(.active)::after{
+    content:"";
+    display: block;
+    width:10px;
+    height:9px;
+    background: white;
+    box-shadow:rgba(0,0,0,0.2) 0px 0px 4px inset;
+    position: absolute;
+}
+
+.bblog-switch.active{
+    background: #7dbe56;
+}
+
+.bblog-switch.active::after{
+    content:"";
+    display: block;
+    width:10px;
+    height:9px;
+    background: white;
+    position: absolute;
+    margin-left:10px;
+}
+
+.bblog-button{
+    border-radius: 3px;
+    display:inline-block;
+    cursor: pointer;
+    font-family: Arial,sans-serif;
+    font-size: 12px;
+    line-height: 15px;
+    padding:3px;
+    height:25px;
+    padding-left: 7px;
+    padding-right: 7px;
+    font-weight: bold;
+    text-shadow: #fcda7d 0px 1px 0px;
+    margin-bottom: 2px;
+    color:black;
+    background-image: -moz-linear-gradient(bottom, rgb(245,169,4) 9%, rgb(252,207,82) 78%);
+    background-image: -webkit-linear-gradient(bottom, rgb(245,169,4) 9%, rgb(252,207,82) 78%);
+    border-top:1px solid #feecbb;
+    border-left:1px solid #f69d0d;
+    border-right:1px solid #f69d0d;
+    border-bottom:1px solid #c07001;
+    box-shadow: 0px -1px 0px #fcc42e;
+}
+
+span.bblog-button{
+    height:auto;
+}
+
+.bblog-button.tiny{
+    font-size: 11px;
+    line-height: 13px;
+    padding:2px;
+}
+
+.bblog-button:hover{
+    background-image: -moz-linear-gradient(bottom, rgb(246,179,23) 9%, rgb(252,219,128) 78%);
+    background-image: -webkit-linear-gradient(bottom, rgb(246,179,23) 9%, rgb(252,219,128) 78%);
+    border-top:1px solid #feecbb;
+    border-left:1px solid #fac033;
+    border-right:1px solid #fac033;
+    border-bottom:1px solid #c17909;
+    box-shadow: 0px -1px 0px #fcd34c;
+}
+
+.bblog-button:hover:active{
+    background-image: -moz-linear-gradient(bottom, rgb(216,145,3) 9%, rgb(221,169,56) 78%);
+    background-image: -webkit-linear-gradient(bottom, rgb(216,145,3) 9%, rgb(221,169,56) 78%);
+    border-top:1px solid #ab7519;
+    border-left:1px solid #cc8419;
+    border-right:1px solid #cc8419;
+    border-bottom:1px solid #d46f01;
+    box-shadow: inset 0px 2px 2px #ba9032;
+}
+
+.bblog-minimize{
+    cursor: pointer;
+    display: inline-block;
+    width:12px;
+    height:12px;
+    background-position: 0px -24px;
+    background-image: url(http://battlelog-cdn.battlefield.com/public/base/shared/row_icon_collapse_expand.png?v=7310);
+}
+
+.bblog-minimize:hover{
+    background-position: 0px -36px;
+}
+
+.bblog-minimize.plus{
+    background-position: 0px 0px;
+}
+
+.bblog-minimize.plus:hover{
+    background-position: 0px -12px;
+}
+
+span.bblog-badge{
+    width:60px;
+    height:14px;
+    background: url(img/bblog-badge.gif);
+    display: inline-block;
+}
+
+#bblog-contextmenu{
+    position:absolute;
+    top:0px;
+    background-color: rgba(0,0,0,0.9);
+    padding:8px;
+    color:white;
+    display: none;
+    border-radius:3px;
+    font-size: 11px;
+    line-height: 13px;
+    font-family: Arial,sans-serif;
+    z-index:1002;
+}
+
+#bblog-contextmenu:hover{
+    box-shadow:rgba(255,255,255,0.4) 0px 0px 5px;
+}
+
+#bblog-contextmenu div{
+    padding:6px;
+    cursor: pointer;
+}
+
+#bblog-contextmenu div:hover{
+    background: rgba(255,255,255, 0.2);
+    border-radius:3px;
+}
+
+.bblog-flame-post-hidden{
+    display: none;
+}
+
+.bblog-flame-post{
+    padding:5px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 15px;
+    cursor: pointer;
+}
+
+.bblog-youtube iframe{
+    width:620px;
+    height:370px;
+}
+
+.bblog-inlineimage img{
+    max-width:620px;
+    max-height:450px;
+    cursor:pointer;
+}
+
+.bblog-youtube-anchor{
+    position: relative;
+}
+
+#receipt-container{
+    z-index: 100002;
+}
+
+.bblog-delete{
+    border-radius:3px;
+    background-color: white;
+    display: inline-block;
+    width:13px;
+    height:13px;
+    background-image: url(http://battlelog-cdn.battlefield.com/public/base/shared/row_icon_chat.png?v=3173239);
+    background-position: 0px -26px;
+    cursor:pointer;
+}
+
+.bblog-delete:hover{
+    background-position: 0px -39px;
+}
+
+.bblog-append-signature{
+    float:right;
+    font-size: 12px;
+    line-height: 14px;
+    color:#555555;
+    padding-right: 20px;
+    position:relative;
+    top:4px;
+}
+
+#profile-secondary-column .profile-avatar a,
+#user .avatar-container a{
+    position: relative;
+}
+
+#profile-secondary-column .profile-avatar .bblog-button,
+#user .avatar-container .bblog-button{
+    position: absolute;
+    right:5px;
+    top: 5px;
+    z-index: 1;
+    opacity:0.8;
+}
+
+#profile-secondary-column .profile-avatar .bblog-button:hover,
+#user .avatar-container .bblog-button:hover{
+    opacity:1;
+}
+
+#bblog-altersort{
+    position: absolute;
+    z-index:2;
+    background: rgba(0,0,0,0.9);
+    color:white;
+    text-align: left;
+    font-size: 11px;
+    line-height: 13px;
+    white-space: nowrap;
+}
+
+#bblog-altersort .inner{
+    padding:10px;
+}
+
+#bblog-altersort .inner div{
+    margin-bottom: 3px;
+    cursor: pointer;
+}
+
+#bblog-altersort .inner div:hover,
+#bblog-altersort .inner div.active{
+    text-decoration: underline;
+}
+
+#selected-server-scoreboard .max_tickets{
+    text-align: center;
+    font-size: 12px;
+    line-height: 15px;
+    margin-bottom: 8px;
+}
+
+#bblog-teamspeak{
+    position: fixed;
+    z-index: 1000;
+    left:0px;
+    top:170px;
+    width:27px;
+    height:152px;
+    background: url(img/teamspeak.png);
+    cursor: pointer;
+    opacity:0.6;
+}
+
+#bblog-teamspeak:hover{
+    opacity:1;
+}
+
+#bblog-icon{
+    position: fixed;
+    z-index: 1000;
+    left:0px;
+    top:10px;
+    width:27px;
+    height:149px;
+    background: url(img/bblog.png);
+    cursor: pointer;
+    opacity:0.6;
+}
+
+#bblog-icon:hover{
+    opacity:1;
+}
+
+#bblog-sidebar-help{
+    position: absolute;
+    z-index: 1001;
+    left:300px;
+    top:0px;
+    color:white;
+    font-size: 11px;
+    line-height: 14px;
+    background-color: rgba(0,0,0,0.9);
+    display: none;
+    width:250px;
+}
+
+#bblog-sidebar-help .inner{
+    padding:10px;
+}
+
+#bblog-sidebar{
+    position: fixed;
+    z-index: 1001;
+    left:0px;
+    top:0px;
+    background-color: rgba(0,0,0,0.9);
+    width:300px;
+    height:100%;
+    color:white;
+    font-size: 11px;
+    line-height: 14px;
+}
+
+#bblog-sidebar .inner{
+    padding:10px;
+}
+
+#bblog-sidebar .title{
+    font-family: frutiger, purista, arial;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#bblog-sidebar .title:hover{
+    text-decoration: underline;
+}
+
+#bblog-sidebar .section-title{
+    font-family: purista, arial;
+    font-size: 14px;
+    line-height: 16px;
+    margin-top: 5px;
+    color:#ffba00;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+#bblog-sidebar .section-title .bblog-minimize{
+    position: relative;
+    top:1px;
+    background-color: rgba(255,255,255,0.5);
+    border-radius:5px;
+}
+
+#bblog-sidebar .option-group{
+    margin-bottom: 10px;
+}
+
+#bblog-sidebar .section-config{
+    margin-left: 5px;
+    margin-bottom: 3px;
+    opacity:0.8;
+    position: relative;
+    cursor: help;
+}
+
+#bblog-sidebar .section-config:hover{
+    opacity:1;
+}
+
+#bblog-sidebar .jspDrag{
+    border-radius:3px;
+    background: rgba(255,255,255,0.3);
+}
+
+#bblog-sidebar .bblog-checkbox{
+    width:10px;
+    height:10px;
+    top:1px;
+    margin-right: 4px;
+    background: url(http://battlelog-cdn.battlefield.com/cdnprefix/5d22da678b1572e00b/public/serverbrowserwarsaw/icon-checkbox-4.png) 0px -301px;
+}
+
+#bblog-sidebar .ads{
+    font-size: 10px;
+}
+
+#bblog-sidebar .ads a,
+#bblog-sidebar .ads a:hover,
+#bblog-sidebar .ads a:active,
+#bblog-sidebar .ads a:visited{
+    color:rgba(255,255,255,0.8);
+}
+
+#bblog-sidebar .ads a:hover{
+    text-decoration: underline;
+    color:#ffba00;
+}
+
+#bblog-sidebar .bblog-checkbox.active{
+    background-position: 0px 0px;
+}
+
+#bblog-sidebar .help{
+    cursor: help;
+    color:#ffba00;
+}
+
+#bblog-sidebar .importexport{
+    position: relative;
+    margin-top: 5px;
+}
+
+#bblog-sidebar .importexport input{
+    width:100px;
+    height:22px;
+    position: absolute;
+    opacity:0;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+#bblog-sidebar .build-nr{
+    opacity:0.5;
+    font-size: 8px;
+    text-transform: uppercase;
+}
+
+#bblog-sidebar .importexport .bblog-button{
+    margin-right: 5px;
+}
+
+#bblog-sidebar .importexport .export{
+    position: relative;
+    z-index:1;
+}
+
+#popup-bblog-option .dialog-body{
+    overflow-y:auto;
+}
+
+#popup-bblog-option .dialog-body > div{
+    padding-bottom: 50px;
+}
+
+#popup-bblog-option table{
+    width:100%;
+    border:none;
+}
+
+#popup-bblog-option table td{
+    padding:3px;
+    font-size: 11px;
+    line-height: 13px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+#popup-bblog-option .right{
+    text-align: right;
+}
+
+#popup-bblog-option .section-description{
+    border-bottom: 1px solid #e5e5e5;
+    margin-bottom: 10px;
+    padding:5px;
+}
+
+#popup-bblog-option input[type='text'],
+#popup-bblog-option textarea{
+    width:98%;
+    padding:5px;
+    border:1px solid #e5e5e5;
+    color:#aaaaaa;
+    font-family: arial;
+    font-size: 12px;
+    line-height: 14px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#popup-bblog-option input:focus,
+#popup-bblog-option textarea:focus{
+    color:#444444;
+    box-shadow:#aaaaaa 0px 0px 5px;
+}
+
+#popup-bblog-option .source-input{
+    margin-bottom: 5px;
+}
+
+#popup-bblog-option .theme{
+    font-size: 11px;
+    line-height: 13px;
+    padding:5px;
+    border-bottom: 1px solid #e5e5e5;
+    cursor: pointer;
+}
+
+#popup-bblog-option .theme.active{
+    background-color: #e5e5e5;
+}
+
+#popup-bblog-option .theme-title{
+    font-size: 12px;
+    font-weight: bold;
+}
+
+#popup-bblog-option td .bblog-checkbox{
+    position: relative;
+    top:0px;
+}
+
+#popup-bblog-option td .bblog-delete{
+    position: relative;
+    top:2px;
+}
+
+#popup-bblog-option .theme-options{
+    margin-top: 5px;
+}
+
+#bblog-filtersets{
+    display: none;
+    margin-top: 5px;
+}
+
+#bblog-filtersets .btn{
+    margin-top: 2px;
+    margin-right: 5px;
+}
+
+
+#bblog-emblem-gallery,
+#bblog-emblem-buttons{
+    font-size: 10px;
+    line-height: 13px;
+    margin-bottom: 10px;
+    padding: 10px;
+    position: relative;
+    text-align: center;
+}
+
+#bblog-emblem-buttons button{
+    margin-bottom: 10px;
+}
+
+#bblog-emblem-buttons .bblog-button{
+    margin-bottom: 3px;
+}
+
+#bblog-emblem-gallery .close-button{
+    position: absolute;
+    right:10px;
+    top:10px;
+}
+
+#bblog-emblem-gallery .emblem-list{
+    margin-top: 5px;
+}
+
+#bblog-emblem-gallery .emblem-item{
+    padding-top:5px;
+    text-align: center;
+    background: rgba(0,0,0,0.6);
+    width: 120px;
+    height:150px;
+    float:left;
+    cursor: pointer;
+    margin-right: 1px;
+    margin-bottom: 1px;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+}
+
+#bblog-emblem-gallery .emblem-item.incompatible{
+    background: rgba(0,0,0,0.2);
+}
+
+#bblog-emblem-gallery .emblem-item:hover{
+    background: rgba(0,0,0,0.4);
+}
+
+#bblog-emblem-gallery .time{
+    color:#dddddd;
+}
+
+#bblog-emblem-gallery .emblem-item .img{
+    padding:5px;
+}
+
+#bblog-emblem-gallery .sorts{
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+#bblog-emblem-gallery .sorts .sort{
+    padding-right: 20px;
+}
+
+#bblog-emblem-gallery .pages{
+    margin-top: 5px;
+}
+
+#bblog-emblem-gallery .pages .active{
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#bblog-emblem-gallery .layers{
+    position: absolute;
+    top:0px;
+    right:0px;
+    padding:3px;
+    padding-left: 6px;
+    padding-right: 6px;
+    background: rgba(0,0,0,0.4);
+    border-bottom-left-radius:10px;
+}
+
+#bblog-emblem-gallery .colors{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#bblog-emblem-gallery .colors .color{
+    display: inline-block;
+    cursor: pointer;
+    width:14px;
+    height: 14px;
+    margin-right: 3px;
+    border:2px solid transparent;
+}
+
+#bblog-emblem-gallery .colors .color:hover,
+#bblog-emblem-gallery .colors .color.active{
+    border:2px solid white;
+}
+
+#popup-emblem .layers{
+    display: none;
+}
+
+.bblog-emblem-info{
+    margin-top:10px;
+    font-size:12px;
+    line-height: 15px;
+}
+
+#bblog-emblem-options{
+    display: none;
+}
+
+#bblog-emblem-options .box-content{
+    font-size:12px;
+    margin-bottom: 5px;
+}
+
+#bblog-emblem-options layer{
+    display: inline-block;
+    width:80px;
+    white-space: nowrap;
+    margin-right: 10px;
+}
+
+#bblog-canvas-container{
+    position: absolute;
+    width: 512px;
+    height: 512px;
+    left: 0px;
+    top: 0px;
+    -webkit-user-select: none;
+    cursor: default;
+    background-size: 512px 512px;
+    opacity:0.5;
+}
+
+#popup-emblem{
+    text-align: center;
+}
+
+#popup-emblem .tags{
+    margin-bottom: 10px;
+}
+
+#popup-emblem .tags span{
+    cursor: pointer;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+#popup-emblem .tags span:hover{
+    text-decoration: underline;
+}
+
+#popup-emblem .warning{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background: #ff4200;
+    padding:10px;
+    font-size: 11px;
+    color:white;
+}
+
+#popup-emblem h2{
+    margin: 0px;
+}
+
+.bblog-overflow-hidden{
+    overflow: hidden;
+}
+
+.bblog-plugingallery{
+    margin-bottom: 25px;
+}
+
+.bblog-plugingallery .plugin{
+    margin-bottom: 5px;
+    border-bottom: 1px solid white;
+    padding:5px;
+    cursor: pointer;
+}
+
+.bblog-plugingallery .plugin .img,
+.bblog-plugingallery .plugin .info{
+    display: none;
+}
+
+.bblog-plugingallery .plugin.active .img,
+.bblog-plugingallery .plugin.active .info{
+    display: block;
+}
+
+.bblog-plugingallery .plugin .title{
+    font-weight: bold;
+    font-family: purista;
+    font-size: 15px;
+}
+
+.bblog-plugingallery .info{
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.bblog-plugingallery .info > div{
+    padding:1px;
+    font-size: 11px;
+}
+
+.bblog-plugingallery .info .cell-a{
+    display: inline-block;
+    min-width:200px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.bblog-plugingallery .warn{
+    border: 1px solid red;
+    padding:10px;
+    margin-bottom: 5px;
+}
+
+.bblog-popup{
+    position: fixed;
+    top:20%;
+    height:60%;
+    width:60%;
+    left:0px;
+    margin-left: 20%;
+    overflow: hidden;
+}
+
+#bblog-code-editor{
+    height:200px;
+    position: relative;
+    margin-top: 10px;
+}
+
+#bblog-code-editor-fullscreen{
+    position: fixed;
+    width:100%;
+    height:100%;
+    z-index:99999;
+    left:0px;
+    top:0px;
+    margin: 0px;
+}
+
+#bblog-code-editor-fullscreen .bblog-button{
+    position: fixed;
+    z-index:1000000;
+    right:0px;
+    top:0px;
+    margin:5px;
+}
+
+#bblog-code-editor-fullscreen #bblog-code-editor{
+    position: fixed;
+    width:100%;
+    height:100%;
+    z-index:99999;
+    left:0px;
+    top:0px;
+    margin: 0px;
+}
+
+#bblog-code-editor-receipt{
+    background: rgba(51, 153, 102, 0.9);
+    color:white;
+    padding:6px;
+    display: none;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#bblog-sidebar .ts3v span.ts3v_server a,
+#bblog-sidebar .ts3v span.ts3v_server a:hover,
+#bblog-sidebar .ts3v span.ts3v_server a:active,
+#bblog-sidebar .ts3v span.ts3v_server a:visited{
+    font-family: purista;
+    font-size: 14px !important;
+    color:#ffba00 !important;
+    font-weight: normal !important;
+}
+
+.bblog-collapsequotes .forum-threadview-post-text > blockquote > blockquote{
+    height:15px;
+    overflow: hidden;
+}
+
+.bblog-collapsequotes .forum-threadview-post-text > blockquote:hover > blockquote{
+    height:auto;
+}
+
+.bblog-collapsequotes .forum-threadview-post-text > blockquote:hover > blockquote em + br{
+    display: block;
+}
+
+.bblog-collapsequotes .forum-threadview-post-text > blockquote > blockquote em + br{
+    display: none;
+}
+
+.bblog-collapsequotes .forum-threadview-post-text > blockquote > blockquote em{
+    padding-right: 5px;
+}
+
+.scoreboard span.bblog-tag{
+    margin-right: 3px;
+}

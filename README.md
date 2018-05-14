@@ -20,8 +20,16 @@ But, goto [Chrome Store](https://chrome.google.com/webstore/detail/better-battle
 
 All things what we ever have talked about are still here. Check this out -> [Forums for the one's who know what great times we had, and for sure, all the others](https://getbblog.com/forums).
 
+## Plugins / Themes
+
+Most plugins and themes have been developed by the community. The code for this is also in this repository and is still functioning for the extension. If you are a former plugin/theme developer and you want to remove your code from this repository, just contact me via [Issues Tracker](https://github.com/brainfoolong/better-battlelog/issues) or fork, remove and do a pull request.
+
 ## Questions?
 
 You can use the [Issues Tracker](https://github.com/brainfoolong/better-battlelog/issues) to ask me something about the past, the present and the future.
+
+## After party support 
+
+This project took hundreds of hours of hard work and the project is already. But if you want to show some after party love, you can sponsor some virtual coffee/redbull, i will appriciate it. You can do this on [Patreon](https://www.patreon.com/brainfoolong) or via [PayPal](https://www.paypal.me/brainfoolong). But DO NOT forget the community behind this project. Most of them also invested much time and work. If you was an community helper and you want your support link here as well, than contact me.
 
 King regards, Roland Eigelsreiter aka Brain Foo Long
