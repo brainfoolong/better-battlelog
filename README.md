@@ -1,3 +1,5 @@
+![Header](https://github.com/brainfoolong/better-battlelog/raw/master/images/github-header.jpg)
+
 # Better Battlelog - Worldwide Leading Battlelog Browser Addon (It will ever be)
 
 All good things come to an end. So does BBLog. This repository hold legacy code, website data, forums and some other nostalgia stuff.
@@ -18,7 +20,7 @@ But, goto [Chrome Store](https://chrome.google.com/webstore/detail/better-battle
 
 ## Visit legacy read only forums
 
-All things what we ever have talked about are still here. Check this out -> [Forums for the one's who know what great times we had, and for sure, all the others](https://getbblog.com/forums).
+All things what we ever have talked about are still here. Check this out -> [Forums for the one's who know what great times we had, and for sure, all the others](https://getbblog.com/forums/sitemap.html).
 
 ## Plugins / Themes
 
@@ -30,6 +32,6 @@ You can use the [Issues Tracker](https://github.com/brainfoolong/better-battlelo
 
 ## After party support 
 
-This project took hundreds of hours of hard work and the project is already. But if you want to show some after party love, you can sponsor some virtual coffee/redbull, i will appriciate it. You can do this on [Patreon](https://www.patreon.com/brainfoolong) or via [PayPal](https://www.paypal.me/brainfoolong). But DO NOT forget the community behind this project. Most of them also invested much time and work. If you was an community helper and you want your support link here as well, than contact me.
+This project took hundreds of hours of hard work and the project is already closed. But if you want to show some after party love, you can sponsor some virtual coffee/redbull, i will appriciate it. You can do this on [Patreon](https://www.patreon.com/brainfoolong) or via [PayPal](https://www.paypal.me/brainfoolong). But DO NOT forget the community behind this project. Most of them also invested much time and work. If you was an community helper and you want your support link here as well, than contact me.
 
 King regards, Roland Eigelsreiter aka Brain Foo Long
