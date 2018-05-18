@@ -7,7 +7,7 @@
     <script>
       'use strict';
       (function () {
-        if (location.pathname.substr(-1) === '/') {
+        if (location.pathname.substr(-1) === '/' && location.pathname.length > 2) {
           location.pathname = location.pathname.substring(0, location.pathname.length - 1)
           return
         }
