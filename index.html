@@ -4,7 +4,25 @@
     <meta charset="UTF-8">
     <title>Better Battlelog - It was a pleasure, a honor, simply a great time!</title>
     <link rel="stylesheet" href="stylesheets/page.css" type="text/css">
-    <script src="scripts/p.js"></script>
+    <script>
+      'use strict';
+      (function () {
+        if (location.pathname.substr(-1) === '/') {
+          location.pathname = location.pathname.substring(0, location.pathname.length - 1)
+          return
+        }
+        var m = location.href.match(/board\/topic\/([0-9]+)/i)
+        if (m) {
+          location.href = '/forums/' + m[1] + '.html'
+          return
+        }
+        m = location.href.match(/\/board/i)
+        if (m) {
+          location.href = '/forums/sitemap.html'
+          return
+        }
+      })()
+    </script>
 </head>
 <body>
 <div class="page">
@@ -174,7 +192,7 @@
             </div>
         </div>
     </div>
-    
+
     <div class="team">
         <div class="image padding"><img src="images/nopicture.png"></div>
         <div class="empty"></div>
@@ -184,10 +202,13 @@
             <div class="light">Czechia - 19 years old (in 2018)</div>
             <div class="quote">
                 <small>-Quote-</small>
-                " I don't play games much anymore, but this amazing project has basically changed my life. It all started
+                " I don't play games much anymore, but this amazing project has basically changed my life. It all
+                started
                 when I was trying to fix a plugin to work with a newer version of BBLog. That sparked my interest in
-                Javascript and I started learning it and web development in general, which became my hobby and eventually
-                turned into a job. The community here has been brilliant and I want to thank everyone for making BBLog what
+                Javascript and I started learning it and web development in general, which became my hobby and
+                eventually
+                turned into a job. The community here has been brilliant and I want to thank everyone for making BBLog
+                what
                 it was. "
             </div>
         </div>
