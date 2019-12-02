@@ -12,6 +12,6 @@ _paq.push(['trackPageView']);
   g.type = 'text/javascript'
   g.defer = true
   g.async = true
-  g.src = u + 'pw.js'
+  g.src = u + 't.js'
   s.parentNode.insertBefore(g, s)
 })()
