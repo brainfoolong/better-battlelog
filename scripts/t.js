@@ -1,9 +1,6 @@
 'use strict'
 
-var _paq = _paq || []
-_paq.push(['disableCookies'])
-_paq.push(['trackPageView']);
-
+var _paq = _paq || [];
 (function () {
   var u = 'https://matomo.0x.at/'
   _paq.push(['disableCookies'])
