@@ -7,7 +7,7 @@ _paq.push(['trackPageView']);
 (function () {
   var u = 'https://matomo.0x.at/'
   _paq.push(['disableCookies'])
-  _paq.push(['setCookieDomain', '*.nullix.at'])
+  _paq.push(['setCookieDomain', '*.getbblog.com'])
   _paq.push(['trackPageView'])
   _paq.push(['enableLinkTracking']);
   _paq.push(['setTrackerUrl', u + 't.php'])
