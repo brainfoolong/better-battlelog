@@ -4,6 +4,10 @@
 
 All good things come to an end. So does BBLog. This repository hold legacy code, website data, forums and some other nostalgia stuff.
 
+## Update 29.01.2020
+
+I've decided to push one more update to the [chrome store extension](https://chrome.google.com/webstore/detail/better-battlelog-bblog/kjlfnjepjdmlppapoikepbaabbghofma), which enables BBLog again on the https version of battlelog. Have fun. I can't let die this extension just because of this... :)
+
 ## Contribute to BBLog
 
 Nope. There is nothing to contribute to anymore. You should've came sometime between December 2011 and May 2018 :)
