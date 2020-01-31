@@ -8,15 +8,20 @@ All good things come to an end. So does BBLog. This repository hold legacy code,
 
 I've decided to push one more update to the [chrome store extension](https://chrome.google.com/webstore/detail/better-battlelog-bblog/kjlfnjepjdmlppapoikepbaabbghofma), which enables BBLog again on the https version of battlelog. Have fun. I can't let die this extension just because of this... :)
 
+## How to install on firefox
+
+There is also a latest firefox version that should work in https version of battlelog.
+Download [bblog.xpi](https://github.com/brainfoolong/better-battlelog/raw/master/versions/4.9.3/bblog.xpi).
+Goto firefox -> addons -> drop the XPI file into that window or goto the gear symbol and load extension from file
+
+
 ## Contribute to BBLog
 
 Nope. There is nothing to contribute to anymore. You should've came sometime between December 2011 and May 2018 :)
 
-## Download BBLog
+## All versions
 
-Well, good things also never die. Head to directory [versions](https://github.com/brainfoolong/better-battlelog/blob/master/versions) for all ever released versions. I definetely do not recommend to take out any code reference from this, it's older than what is good for you.
-
-But, goto [Chrome Store](https://chrome.google.com/webstore/detail/better-battlelog-bblog/kjlfnjepjdmlppapoikepbaabbghofma) to give this thing a last try, if you wish.
+Head to directory [versions](https://github.com/brainfoolong/better-battlelog/blob/master/versions) for all ever released versions. I definetely do not recommend to take out any code reference from this, it's older than what is good for you.
 
 ## Visit our last, once and for all, website
 
