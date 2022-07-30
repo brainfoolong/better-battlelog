@@ -4,9 +4,11 @@
 
 All good things come to an end. So does BBLog. This repository hold legacy code, website data, forums and some other nostalgia stuff.
 
-## Update 29.01.2020
+## Update July 2022
 
-I've decided to push one more update to the [chrome store extension](https://chrome.google.com/webstore/detail/better-battlelog-bblog/kjlfnjepjdmlppapoikepbaabbghofma), which enables BBLog again on the https version of battlelog. Have fun. I can't let die this extension just because of this... :)
+Chrome Store have updated extension rules and the old source code of the extension is no longer compliant with this rules. There will be no update from our side, so installing the extension from chrome web store is now impossible.
+
+But there is a workaround you can use: https://github.com/brainfoolong/better-battlelog/issues/7
 
 ## How to install on firefox
 
