@@ -8,7 +8,7 @@ All good things come to an end. So does BBLog. This repository hold legacy code,
 
 Chrome Store have updated extension rules and the old source code of the extension is no longer compliant with this rules. There will be no update from our side, so installing the extension from chrome web store is now impossible.
 
-But there is a workaround you can use: https://github.com/brainfoolong/better-battlelog/issues/7
+But there is a workaround. You can use https://github.com/brainfoolong/better-battlelog/raw/master/versions/bblog.zip and install it with this method here  https://github.com/brainfoolong/better-battlelog/issues/7
 
 ## How to install on firefox
 
